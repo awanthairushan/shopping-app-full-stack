@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 import { IProduct } from '../types/ShoppingTypes';
 import Product from './Product';
+import { Row } from 'react-bootstrap';
 
 const ProductSection = () => {
 
-    const productList:IProduct[] =[
-        {name:"product 1",price:65, oldprice:65, img:"coconut"},
-        {name:"product 2",price:65, oldprice:null, img:"carret"},
-        {name:"product 3",price:65, oldprice:null, img:"coconut"},
-        {name:"product 4",price:65, oldprice:65, img:"carret"},
+    const productList: IProduct[] = [
+        { name: "product 1", price: "65.34", oldprice: "65.00", img: "coconut" },
+        { name: "product 2", price: "65.45", oldprice: null, img: "carrot" },
+        { name: "product 3", price: "65.00", oldprice: null, img: "coconut" },
+        { name: "product 4", price: "65.00", oldprice: "65.00", img: "carrot" },
     ];
     const [products, setProducts] = useState<IProduct[]>(productList);
 
@@ -22,7 +23,7 @@ const ProductSection = () => {
 
     const renderProducts = () => {
         return (
-            <ul className="">
+            <>
                 {products.map((product: IProduct, index: number) => (
                     <Product
                         product={product}
@@ -30,13 +31,13 @@ const ProductSection = () => {
                         key={index}
                     />
                 ))}
-            </ul>
+            </>
         );
     };
     return (
-        <div>
+        <Row className='product mb-5'>
             {renderProducts()}
-        </div>
+        </Row>
     )
 }
 export default ProductSection;
