@@ -1,10 +1,10 @@
 import React from 'react';
 import './App.scss';
+import ECommerceApp from './view/ECommerceApp';
 
 function App() {
   return (
-    <div>
-    </div>
+      <ECommerceApp/>
   );
 }
 
