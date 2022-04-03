@@ -2,8 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="89a0b3c7-a8f4-4d79-9d76-9fbc82feb883" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/assets/images/PromotionImage.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/promotionSection/PromotionSection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navbars/LogoBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbars/LogoBar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Home.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/ECommerceApp.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ECommerceApp.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -26,12 +30,15 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/assets/images" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="ts.external.directory.path" value="D:\WebStorm 2021.3.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\WEB PROJECT\React Training\shopping-app-full-stack\src\assets\images" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\WEB PROJECT\React Training\shopping-app-full-stack\src\assets" />
       <recent name="E:\WEB PROJECT\React Training\shopping-app-full-stack\src" />
@@ -49,7 +56,7 @@
       <workItem from="1648884258985" duration="5955000" />
       <workItem from="1648895655601" duration="294000" />
       <workItem from="1648907884377" duration="5003000" />
-      <workItem from="1648957321481" duration="13650000" />
+      <workItem from="1648957321481" duration="17999000" />
     </task>
     <servers />
   </component>
