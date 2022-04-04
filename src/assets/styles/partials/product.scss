@@ -7,7 +7,7 @@ $old-price-color:#8f8f8f;
         margin: 0;
         border: 1px solid $product-border;
         border-radius: 10px;
-
+        height: 100%;
         .product-img img {
             width: 100%;
             height: auto;
@@ -45,15 +45,27 @@ $old-price-color:#8f8f8f;
             border: 1px solid $product-border;
             height: 100%;
             margin-left: 10%;
-            border-radius: 5px;
+            border-radius: 2px;
+            // .up-down{
+            //     height: auto;
+            //     display: flex;
+            //     margin: auto;
+            //     align-items: center;
+            // }
         }
 
+        .quentity-form{
+            display: flex;
+        }
         .product-add-cart {
+            padding-left: calc(var(--bs-gutter-x) * .5);
             .add-cart-btn {
                 background-color: $price-color;
                 color: white;
                 font-weight: bold;
                 width: 100%;
+                height: 100%;
+                font-size: 100%;
             }
         }
     }

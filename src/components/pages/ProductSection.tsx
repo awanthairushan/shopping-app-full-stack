@@ -10,6 +10,10 @@ const ProductSection = () => {
         { name: "product 2", price: "65.45", oldprice: null, img: "carrot" },
         { name: "product 3", price: "65.00", oldprice: null, img: "coconut" },
         { name: "product 4", price: "65.00", oldprice: "65.00", img: "carrot" },
+        { name: "product 1", price: "65.34", oldprice: "65.00", img: "coconut" },
+        { name: "product 2", price: "65.45", oldprice: null, img: "carrot" },
+        { name: "product 3", price: "65.00", oldprice: null, img: "coconut" },
+        { name: "product 4", price: "65.00", oldprice: "65.00", img: "carrot" },
     ];
     const [products, setProducts] = useState<IProduct[]>(productList);
 
@@ -35,7 +39,7 @@ const ProductSection = () => {
         );
     };
     return (
-        <Row className='product mb-5'>
+        <Row className='product mb-5 mx-0 mx-md-3 mx-lg-5'>
             {renderProducts()}
         </Row>
     )

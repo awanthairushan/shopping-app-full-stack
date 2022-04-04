@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { IProduct } from '../types/ShoppingTypes';
 import { carrot, coconut } from "../../assets/images/images";
-import { Button, Col, Image, Row } from 'react-bootstrap';
+import { Button, Col, Image, Row, Form } from 'react-bootstrap';
+import NumberFormat from "react-number-format";
+import up from '../../assets/images/up.png';
+import down from '../../assets/images/down.png';
 
 type ProductProps = {
     product: IProduct,
@@ -9,6 +12,7 @@ type ProductProps = {
 }
 const Product: React.FC<ProductProps> = (props) => {
 
+    const [quentity, setQuentity] = useState<number>(0);
     const { product, index } = props;
     var imglink;
 
@@ -40,8 +44,29 @@ const Product: React.FC<ProductProps> = (props) => {
             )
         }
     }
+
+    const handleOnQuentityChanged = (num: number) => {
+        if (num === null) {
+            setQuentity(0);
+        }
+        setQuentity(num);
+    }
+    const quentityUp = () => {
+        setQuentity(quentity + 1);
+    }
+    const quentityDown = () => {
+        console.log(quentity);
+        if (quentity === 0) {
+            return;
+        } else {
+            setQuentity(quentity - 1);
+        }
+    }
+    const handleSubmit = () => {
+
+    }
     return (
-        <Col sm={6} md={4} lg={3}>
+        <Col xs={6} md={4} lg={3} className='mb-2 mb-md-3 px-1 px-md-2'>
             <Row className='product-item'>
                 <Col sm={12} className='product-img'>
                     <Image src={imglink} alt="product-img" />
@@ -52,30 +77,18 @@ const Product: React.FC<ProductProps> = (props) => {
                 <Col sm={12} className='product-price mb-4'>
                     {PriceShow()}
                 </Col>
-                <Col xs={4} className=' mb-4'>
-                    <Row className='product-quentity'>
-                        <Col xs={9}>
-                        </Col>
-                        <Col xs={3}>
-                            <Row>
-
-                            </Row>
-                        </Col>
-                    </Row>
+                <Col xs={12} sm={4} className='mb-1 mb-sm-4'>
+                    <Form noValidate onSubmit={handleSubmit} className='product-quentity'>
+                        <Form.Group className="mb-3">
+                            <Form.Control type='number' placeholder="" />
+                        </Form.Group>
+                    </Form>
                 </Col>
-                <Col xs={8} className='product-add-cart mb-4'>
-                <Button variant="light" className='add-cart-btn'>Add To Cart</Button>
+                <Col xs={12} sm={8} className='product-add-cart mb-4'>
+                    <Button variant="light" className='add-cart-btn'>Add To Cart</Button>
                 </Col>
             </Row>
         </Col>
     )
 }
 export default Product;
-
-
-{/* <img src={imglink}/>
-            
-            <p>{product.name}</p>
-            <p>{product.price}</p>
-            <p>{product.oldprice}</p>
-        </div> */}
