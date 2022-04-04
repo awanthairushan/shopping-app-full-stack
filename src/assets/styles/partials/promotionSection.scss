@@ -1,0 +1,142 @@
+.promotionSection {
+  .promotion-banner {
+    background: none;
+    border: none;
+    position: absolute;
+    top: 44%;
+    left: 61%;
+
+    .sub-title {
+      font-size: 1.2rem;
+      font-family: 'Libre Baskerville', serif;
+      font-weight: 400;
+    }
+
+    .title {
+      color: #4a8601;
+      font-size: 2.5rem;
+      font-family: 'Courgette', cursive;
+      font-weight: 700;
+      letter-spacing: 1px;
+    }
+
+    .shop-now-button {
+      width: 9rem;
+      height: 2.7rem;
+      border: none;
+      border-radius: 1.4rem;
+      font-size: 0.9rem;
+      font-weight: 500;
+      font-family: 'Libre Baskerville', serif;
+
+    }
+  }
+}
+//Horizontal iPad air
+@media (max-width: 1180px) {
+  .promotionSection {
+    .promotion-banner {
+      position: absolute;
+      top: 33% !important;
+    }
+
+    .sub-title {
+      font-size: 1.1rem !important;
+    }
+
+    .title {
+      font-size: 2.2rem !important;
+      letter-spacing: 0px !important;
+    }
+  }
+}
+
+////Horizontal Samsung galaxy s20
+@media (max-width: 916px) {
+  .promotionSection {
+    .promotion-banner {
+      position: absolute;
+      top: 53% !important;
+      left: 60%;
+    }
+
+    .sub-title {
+      font-size: 0.9rem !important;
+    }
+
+    .title {
+      font-size: 1.7rem !important;
+      letter-spacing: 0px !important;
+    }
+
+    .shop-now-button {
+      width: 7rem !important;
+      height: 2rem !important;
+      font-size: 0.7rem !important;
+    }
+  }
+}
+
+//vertical iPad air
+@media (max-width: 820px) {
+  .promotionSection {
+    .promotion-banner {
+      position: absolute;
+      top: 17% !important;
+      left: 60%;
+    }
+  }
+}
+
+
+@media (max-width: 576px) {
+  .promotionSection {
+    .promotion-banner {
+      position: absolute;
+      top: 15% !important;
+      left: 50%
+    }
+
+    .sub-title {
+      font-size: 0.6rem !important;
+    }
+
+    .title {
+      font-size: 1.2rem !important;
+      letter-spacing: 0px !important;
+    }
+
+    .shop-now-button {
+      width: 6rem !important;
+      height: 1.8rem !important;
+      font-size: 0.6rem !important;
+      margin-top: 0.2rem;
+    }
+  }
+}
+
+@media (max-width: 576px) {
+  .promotionSection {
+    .promotion-banner {
+      position: absolute;
+      top: 15% !important;
+      left: 50%
+    }
+
+    .sub-title {
+      font-size: 0.6rem !important;
+    }
+
+    .title {
+      font-size: 1.2rem !important;
+      letter-spacing: 0px !important;
+    }
+
+    .shop-now-button {
+      width: 6rem !important;
+      height: 1.8rem !important;
+      font-size: 0.6rem !important;
+      margin-top: 0.2rem;
+    }
+  }
+}
