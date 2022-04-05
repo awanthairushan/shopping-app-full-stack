@@ -2,9 +2,6 @@ import React, { useState } from 'react';
 import { IProduct } from '../types/ShoppingTypes';
 import { carrot, coconut } from "../../assets/images/images";
 import { Button, Col, Image, Row, Form } from 'react-bootstrap';
-import NumberFormat from "react-number-format";
-import up from '../../assets/images/up.png';
-import down from '../../assets/images/down.png';
 
 type ProductProps = {
     product: IProduct,
@@ -12,7 +9,7 @@ type ProductProps = {
 }
 const Product: React.FC<ProductProps> = (props) => {
 
-    const [quentity, setQuentity] = useState<number>(0);
+    const [quentity, setQuentity] = useState<string>("0");
     const { product, index } = props;
     var imglink;
 
@@ -23,6 +20,7 @@ const Product: React.FC<ProductProps> = (props) => {
     }
 
     const PriceShow = () => {
+        console.log(quentity);
         if (product.oldprice == null) {
             return (
                 <Row>
@@ -34,34 +32,21 @@ const Product: React.FC<ProductProps> = (props) => {
         } else {
             return (
                 <Row>
-                    <Col xs={6} className='new-price'>
+                    <Col xs={12} sm={6} className='new-price'>
                         <h4>Rs.{product.price}</h4>
                     </Col>
-                    <Col xs={6} className='old-price'>
-                        <h5>Rs.{product.oldprice}</h5>
+                    <Col xs={12} sm={6} className='old-price'>
+                        <h5><span className="strikediag"> Rs.{product.oldprice} </span></h5>
                     </Col>
                 </Row>
             )
         }
     }
 
-    const handleOnQuentityChanged = (num: number) => {
-        if (num === null) {
-            setQuentity(0);
-        }
+    const handleOnQuentityChanged = (num: string) => {
         setQuentity(num);
     }
-    const quentityUp = () => {
-        setQuentity(quentity + 1);
-    }
-    const quentityDown = () => {
-        console.log(quentity);
-        if (quentity === 0) {
-            return;
-        } else {
-            setQuentity(quentity - 1);
-        }
-    }
+
     const handleSubmit = () => {
 
     }
@@ -71,20 +56,23 @@ const Product: React.FC<ProductProps> = (props) => {
                 <Col sm={12} className='product-img'>
                     <Image src={imglink} alt="product-img" />
                 </Col>
-                <Col sm={12} className='product-name mb-2'>
+                <Col sm={12} className='product-name mb-sm-2'>
                     <h4>{product.name}</h4>
                 </Col>
-                <Col sm={12} className='product-price mb-4'>
+                <Col sm={12} className='product-price sm-1 mb-sm-4'>
                     {PriceShow()}
                 </Col>
-                <Col xs={12} sm={4} className='mb-1 mb-sm-4'>
+                <Col xs={12} sm={5} className='mb-1 mb-sm-4'>
                     <Form noValidate onSubmit={handleSubmit} className='product-quentity'>
-                        <Form.Group className="mb-3">
-                            <Form.Control type='number' placeholder="" />
+                        <Form.Group className="">
+                            <Form.Control type='number' min="0" value={quentity}
+                            onChange={(ev: React.ChangeEvent<HTMLInputElement>) =>
+                                handleOnQuentityChanged(ev.target.value)
+                              }/>
                         </Form.Group>
                     </Form>
                 </Col>
-                <Col xs={12} sm={8} className='product-add-cart mb-4'>
+                <Col xs={12} sm={7} className='product-add-cart mb-4 ps-sm-0'>
                     <Button variant="light" className='add-cart-btn'>Add To Cart</Button>
                 </Col>
             </Row>
