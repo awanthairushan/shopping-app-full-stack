@@ -2,6 +2,7 @@ import React,{useState} from 'react';
 import Logobar from '../navbars/LogoBar';
 import PromotionSection from './../promotionSection/PromotionSection'
 import {Row, Col} from 'react-bootstrap';
+import ContactBar from "../navbars/ContactBar";
 
 
 const Home: React.FC = () => {
@@ -15,6 +16,9 @@ const Home: React.FC = () => {
 
     return (
         <Row>
+          <Col xs={12}>
+            <ContactBar/>
+          </Col>
             <Col xs={12}>
                 <Logobar/>
             </Col>
