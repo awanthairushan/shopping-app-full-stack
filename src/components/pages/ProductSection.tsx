@@ -39,7 +39,7 @@ const ProductSection = () => {
         );
     };
     return (
-        <Row className='product mb-5 mx-0 mx-md-3 mx-lg-5'>
+        <Row className='product mb-5 mx-0 mx-md-3 mx-lg-5 mt-5'>
             {renderProducts()}
         </Row>
     )

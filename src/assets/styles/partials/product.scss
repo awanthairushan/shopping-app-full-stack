@@ -19,7 +19,7 @@ $old-price-color:#8f8f8f;
             justify-content: center;
 
             h4 {
-                font-size: 28px;
+                font-size: 24px;
             }
         }
 
@@ -27,12 +27,18 @@ $old-price-color:#8f8f8f;
             .new-price {
                 padding-left: 15%;
                 color: $price-color;
+                h4 {
+                    font-size: 20px;
+                }
             }
 
             .old-price-null {
                 padding-left: 0;
                 display: flex;
                 justify-content: center;
+                h4 {
+                    font-size: 20px;
+                }
             }
 
             .old-price {
