@@ -66,9 +66,9 @@ const Product: React.FC<ProductProps> = (props) => {
                     <Form noValidate onSubmit={handleSubmit} className='product-quentity'>
                         <Form.Group className="">
                             <Form.Control type='number' min="0" value={quentity}
-                            onChange={(ev: React.ChangeEvent<HTMLInputElement>) =>
-                                handleOnQuentityChanged(ev.target.value)
-                              }/>
+                                onChange={(ev: React.ChangeEvent<HTMLInputElement>) =>
+                                    handleOnQuentityChanged(ev.target.value)
+                                } />
                         </Form.Group>
                     </Form>
                 </Col>
