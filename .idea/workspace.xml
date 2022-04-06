@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="78cc330d-df12-4a3f-aa8c-5abd392e8ba2" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/components/navbars/ContactBar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/styles/partials/contact-bar.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Home.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/styles/_main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/_main.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navbars/ContactBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbars/ContactBar.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,6 +16,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="TypeScript JSX File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -40,6 +41,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/assets/images" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="ts.external.directory.path" value="F:\Studies\react\shoppingapp\shopping-app-full-stack\node_modules\typescript\lib" />
@@ -57,7 +59,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="89a0b3c7-a8f4-4d79-9d76-9fbc82feb883" name="Changes" comment="" />
+      <changelist id="78cc330d-df12-4a3f-aa8c-5abd392e8ba2" name="Changes" comment="" />
       <created>1648878041599</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -68,7 +70,16 @@
       <workItem from="1648907884377" duration="5003000" />
       <workItem from="1648957321481" duration="18646000" />
       <workItem from="1649046907318" duration="10428000" />
+      <workItem from="1649209436514" duration="1037000" />
     </task>
+    <task id="LOCAL-00001" summary="Add contact bar">
+      <created>1649179419040</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1649179419040</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -85,5 +96,9 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Add contact bar" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add contact bar" />
   </component>
 </project>
