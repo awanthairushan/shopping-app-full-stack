@@ -4,26 +4,31 @@ import {PhoneCall, Truck} from "react-feather";
 
 const ContactBar: React.FC = () => {
   return (
-    <Row>
-      <Col xs={12} md={6} className="offset-md-6 offset-sm-0 contact-bar">
+    <Row >
+      <Col md={{span: 6, offset: 6}} className="contact-bar">
         <Row>
-          <Col xs={12} md={3} className="offset-md-3 offset-sm-0 p-0 contact-details">
-            <Truck className="me-1 text-end offset-md-2"/>
-            <span className="pe-3 mt-2 text-end ">Delivery Areas</span>
+          <Col xs={12} md={3} className="offset-md-2 d-inline-flex align-self-end
+            offset-sm-0 d-flex justify-content-center">
+            <span className="label text-muted ">
+              <Truck/>
+              <span className="ps-2 ">Delivery Areas</span>
+            </span>
           </Col>
-          <Col xs={12} md={3} className="contact-details">
-            <PhoneCall className="m-1 offset-md-3 offset-sm-0 p-0" />
-            <span className="pe-3">+94 112 123456</span>
+          <Col xs={12} md={3} className="d-inline-flex align-items-end d-flex justify-content-center">
+            <span className="label" >
+              <PhoneCall/>
+              <span className="ps-2 text-black">+94 112 123456</span>
+            </span>
           </Col>
-          <Col xs={12} md={3} className="m-0 p-0 ">
-            <Row>
-              <Col xs={6} className="label-color">
-                <span className="pe-3 contact-details ">Register</span>
-              </Col>
-              <Col xs={6} className="label-color">
-                <span className="contact-details">Login</span>
-              </Col>
-            </Row>
+          <Col xs={12} md={2} className="d-inline-flex align-items-end pe-0 d-flex justify-content-center buttons">
+            <label className="buttons">
+              Login
+            </label>
+          </Col>
+          <Col xs={12} md={2} className="d-inline-flex align-items-end ms-0 d-flex justify-content-center buttons">
+            <label>
+              Register
+            </label>
           </Col>
         </Row>
       </Col>

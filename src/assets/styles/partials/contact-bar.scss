@@ -1,14 +1,18 @@
 .contact-bar{
-  .label-color {
-    color: #89f302;
+  .label {
     :hover {
-      border-style: solid ;
-      border-color: #89f302;
-      border-width: 1px;
       cursor: pointer;
     }
   }
-  .contact-details {
-    cursor: pointer;
+  .buttons {
+    color: #89f302;
+    :hover {
+      cursor: pointer;
+      border-width:1px;
+      border-style: solid ;
+      border-color: #23af23;
+    }
   }
 }
+
+
