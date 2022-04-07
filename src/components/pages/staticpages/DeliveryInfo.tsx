@@ -1,7 +1,7 @@
 import React from 'react';
 
 const DeliveryInfo = () => {
-    return(
+    return (
         <h1>Delivery Info</h1>
     )
 }

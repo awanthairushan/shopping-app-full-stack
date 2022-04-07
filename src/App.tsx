@@ -1,13 +1,24 @@
 import React from 'react';
 import './App.scss';
+import {BrowserRouter, Routes, Route} from "react-router-dom";
 import ECommerceApp from './view/ECommerceApp';
-import {Container} from 'react-bootstrap';
+import Home from "./components/pages/Home";
+import AboutUs from "./components/pages/staticpages/AboutUs";
+import ContactUs from "./components/pages/staticpages/ContactUs";
+import FAQ from "./components/pages/staticpages/FAQ";
 
 function App() {
     return (
-        <Container fluid className="p-0 m-0">
-            <ECommerceApp/>
-        </Container>
+        <BrowserRouter>
+            <Routes>
+                <Route path='/' element={<ECommerceApp/>}>
+                    <Route path='/' element={<Home/>}/>
+                    <Route path='/about' element={<AboutUs/>}/>
+                    <Route path='/contact' element={<ContactUs/>}/>
+                    <Route path='/faq' element={<FAQ/>}/>
+                </Route>
+            </Routes>
+        </BrowserRouter>
     );
 }
 
