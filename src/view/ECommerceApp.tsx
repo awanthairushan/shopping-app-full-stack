@@ -1,14 +1,20 @@
 import React from 'react';
-import Home from '../components/pages/Home';
-import {Row, Col} from 'react-bootstrap';
+import {Container, Row} from 'react-bootstrap';
+import LogoBar from "../components/navbars/LogoBar";
+import {Outlet} from "react-router-dom";
+import NavBar from "../components/navbars/NavBar";
 
 const ECommerceApp: React.FC = () => {
     return (
-        <Row className="mx-0">
-            <Col>
-                <Home/>
-            </Col>
-        </Row>
+        <Container fluid={true}>
+            <Row>
+                <LogoBar/>
+                <NavBar/>
+
+            </Row>
+            <Outlet/>
+
+        </Container>
     )
 }
 
