@@ -2,6 +2,7 @@ import React,{useState} from 'react';
 import Logobar from '../navbars/LogoBar';
 import PromotionSection from './../promotionSection/PromotionSection'
 import {Row, Col} from 'react-bootstrap';
+import ProductSection from './ProductSection';
 
 
 const Home: React.FC = () => {
@@ -20,6 +21,7 @@ const Home: React.FC = () => {
             </Col>
             <Col xs={12} className="px-0">
                 <PromotionSection setProductSectionVisible={setProductSectionVisible}/>
+                <ProductSection/>
             </Col>
         </Row>
     )
