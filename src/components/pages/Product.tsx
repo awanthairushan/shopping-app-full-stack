@@ -62,7 +62,7 @@ const Product: React.FC<ProductProps> = (props) => {
                 <Col sm={12} className='product-price sm-1 mb-sm-4'>
                     {PriceShow()}
                 </Col>
-                <Col xs={12} sm={5} className='mb-1 mb-sm-4'>
+                <Col xs={12} sm={5} md={4} className='mb-1 mb-sm-4'>
                     <Form noValidate onSubmit={handleSubmit} className='product-quentity'>
                         <Form.Group className="">
                             <Form.Control type='number' min="0" value={quentity}
@@ -72,8 +72,8 @@ const Product: React.FC<ProductProps> = (props) => {
                         </Form.Group>
                     </Form>
                 </Col>
-                <Col xs={12} sm={7} className='product-add-cart mb-4 ps-sm-0'>
-                    <Button variant="light" className='add-cart-btn'>Add To Cart</Button>
+                <Col xs={12} sm={7} md={8} className='product-add-cart mb-4 ps-sm-0'>
+                    <Button variant="light" className='add-cart-btn py-1'>Add To Cart</Button>
                 </Col>
             </Row>
         </Col>
