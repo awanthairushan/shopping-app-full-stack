@@ -2,14 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="89a0b3c7-a8f4-4d79-9d76-9fbc82feb883" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/assets/styles/partials/promotionSection.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/promotionSection/PromotionBanner.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/styles/partials/footer.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/footer/Footer.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/images/PromotionImage.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/images/PromotionImage.jpg" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assets/styles/_main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/_main.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/pages/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Home.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/promotionSection/PromotionSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/promotionSection/PromotionSection.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +55,10 @@
       <workItem from="1648895655601" duration="294000" />
       <workItem from="1648907884377" duration="5003000" />
       <workItem from="1648957321481" duration="18646000" />
-      <workItem from="1649046907318" duration="10428000" />
+      <workItem from="1649046907318" duration="15029000" />
+      <workItem from="1649222147400" duration="6846000" />
+      <workItem from="1649264010435" duration="633000" />
+      <workItem from="1649302604814" duration="3948000" />
     </task>
     <servers />
   </component>
