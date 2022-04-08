@@ -2,22 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f790917c-906b-41e0-bb1d-5e4234d6bef3" name="Changes" comment="Added react router">
-      <change afterPath="$PROJECT_DIR$/src/Types/ISelectOption.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/navbars/NavBar.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Types/CategoryDateList.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/styles/variables/_variables.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/assets/styles/variables/mixins.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/CategoryList/CategoryList.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/styles/partials/navbars.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/partials/navbars.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/styles/_main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/_main.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/pages/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Home.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/promotionSection/PromotionBanner.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Promotion/PromotionBanner.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/promotionSection/PromotionSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Promotion/PromotionSection.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/ECommerceApp.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ECommerceApp.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/ProductSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/ProductSection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/types/ShoppingTypes.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/types/ShoppingTypes.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="SCSS File" />
+        <option value="TypeScript JSX File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -41,10 +48,11 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/navbars" />
+    <property name="list.type.of.created.stylesheet" value="SCSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="ts.external.directory.path" value="D:\Academic\Skills\React Industrial Trainng\Group Projects\shopping-app-full-stack\node_modules\typescript\lib" />
+    <property name="ts.external.directory.path" value="E:\Industrial Training\shopping-app-full-stack\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
@@ -90,6 +98,7 @@
       <workItem from="1649046907318" duration="10428000" />
       <workItem from="1649082138212" duration="13295000" />
       <workItem from="1649321244034" duration="5784000" />
+      <workItem from="1649430968972" duration="8103000" />
     </task>
     <task id="LOCAL-00001" summary="Added react router">
       <created>1649080412243</created>
@@ -114,6 +123,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added react router" />

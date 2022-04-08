@@ -1,47 +1,67 @@
-import React, { useState } from 'react';
-import { IProduct } from '../types/ShoppingTypes';
+import React, {useState} from 'react';
+import {IProduct} from '../types/ShoppingTypes';
 import Product from './Product';
-import { Row } from 'react-bootstrap';
+import {Row} from 'react-bootstrap';
 
-const ProductSection = () => {
+type ProductSectionProps = {
+  selectedCategory: String
+}
 
-    const productList: IProduct[] = [
-        { name: "product 1", price: "65.34", oldprice: "65.00", img: "coconut" },
-        { name: "product 2", price: "65.45", oldprice: null, img: "carrot" },
-        { name: "product 3", price: "65.00", oldprice: null, img: "coconut" },
-        { name: "product 4", price: "65.00", oldprice: "65.00", img: "carrot" },
-        { name: "product 1", price: "65.34", oldprice: "65.00", img: "coconut" },
-        { name: "product 2", price: "65.45", oldprice: null, img: "carrot" },
-        { name: "product 3", price: "65.00", oldprice: null, img: "coconut" },
-        { name: "product 4", price: "65.00", oldprice: "65.00", img: "carrot" },
-    ];
-    const [products, setProducts] = useState<IProduct[]>(productList);
+const ProductSection: React.FC<ProductSectionProps> = (props) => {
 
-    if (products.length === 0) {
-        return (
-            <p className="">
-                <i>No Product List Here</i>
-            </p>
-        );
-    }
+  const {selectedCategory} = props;
+  const productList: IProduct[] = [
+    {name: "product 1", price: "65.34", oldprice: "65.00", img: "coconut", category: "Food"},
+    {name: "product 2", price: "65.45", oldprice: null, img: "carrot", category: "Grocery"},
+    {name: "product 3", price: "65.00", oldprice: null, img: "coconut", category: "Pharmacy"},
+    {name: "product 4", price: "65.00", oldprice: "65.00", img: "carrot", category: "Electronic"},
+    {name: "product 1", price: "65.34", oldprice: "65.00", img: "coconut", category: "Food"},
+    {name: "product 2", price: "65.45", oldprice: null, img: "carrot", category: "Grocery"},
+    {name: "product 3", price: "65.00", oldprice: null, img: "coconut", category: "Pharmacy"},
+    {name: "product 4", price: "65.00", oldprice: "65.00", img: "carrot", category: "Electronic"},
+  ];
+  const [products, setProducts] = useState<IProduct[]>(productList);
 
-    const renderProducts = () => {
-        return (
-            <>
-                {products.map((product: IProduct, index: number) => (
-                    <Product
-                        product={product}
-                        index={index}
-                        key={index}
-                    />
-                ))}
-            </>
-        );
-    };
+  if (products.length === 0) {
     return (
-        <Row className='product mb-5 mx-0 mx-md-3 mx-lg-5 mt-5'>
-            {renderProducts()}
-        </Row>
-    )
+        <p className="">
+          <i>No Product List Here</i>
+        </p>
+    );
+  }
+
+  const renderProducts = () => {
+    if(selectedCategory === 'All'){
+      return (
+          <>
+            {products.map((product: IProduct, index: number) => (
+                <Product
+                    product={product}
+                    index={index}
+                    key={index}
+                />
+            ))}
+          </>
+      );
+    }
+    return (
+        <>
+          {products.filter(products => products.category === selectedCategory).map((product: IProduct, index: number) => (
+                  <Product
+                      product={product}
+                      index={index}
+                      key={index}
+                  />
+              )
+          )}
+        </>
+    );
+  }
+
+  return (
+      <Row className='product mb-5 mx-0 mx-md-3 mx-lg-5 mt-5'>
+        {renderProducts()}
+      </Row>
+  )
 }
 export default ProductSection;

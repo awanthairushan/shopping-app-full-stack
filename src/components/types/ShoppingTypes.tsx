@@ -3,4 +3,5 @@ export interface IProduct {
   price: string;
   oldprice: string | null;
   img: string;
+  category: string;
 }
