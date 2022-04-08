@@ -4,7 +4,7 @@ import {PhoneCall, Truck} from "react-feather";
 
 const ContactBar: React.FC = () => {
   return (
-    <Nav className="justify-content-end contact-bar ">
+    <Nav className="justify-content-md-end justify-content-center contact-bar ">
       <Nav.Item className="text-muted label">
         <Truck />
         <span className="ms-2">Delivery Areas</span>
@@ -20,7 +20,6 @@ const ContactBar: React.FC = () => {
         <span>Login</span>
       </Nav.Item>
     </Nav>
-
   );
 }
 
