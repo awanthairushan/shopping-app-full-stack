@@ -3,6 +3,7 @@ $price-color:#4caf50;
 $old-price-color:#8f8f8f;
 
 .product {
+    position: relative;
     .product-item {
         margin: 0;
         border: 1px solid $product-border;
