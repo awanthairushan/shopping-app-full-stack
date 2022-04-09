@@ -1,8 +1,9 @@
+$quentity-color:#cacaca;
 .logobar {
   padding-top: 2rem;
   padding-bottom: 1rem;
   border-top: 1px solid #717171;
-
+  box-shadow: 0 5px 10px $quentity-color;
   .img-fluid {
     height: 3.5rem;
   }
@@ -104,6 +105,7 @@
 
 //Navbar styles
 .header-navbar {
+  position: unset;
   font-size: 25px;
   color: #555555;
   font-weight: 600;
