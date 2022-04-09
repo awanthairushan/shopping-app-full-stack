@@ -1,0 +1,30 @@
+.search-icon {
+  background-color: white;
+  border:none;
+  :hover {
+    cursor: pointer;
+  }
+}
+
+.search-box {
+  border: none;
+  :focus {
+    border-color: #202020;
+  }
+  :hover {
+    cursor: text;
+  }
+}
+.search-bar {
+  border-style: solid;
+  border-color: #00ff22;
+  border-width: 2px;
+  border-radius: 8px;
+  :hover {
+
+    border-color: #23af23;
+    border-width: 5px;
+
+  }
+}
+

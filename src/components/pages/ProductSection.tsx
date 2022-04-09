@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import { IProduct } from '../types/ShoppingTypes';
+import React, {useState} from 'react';
+import {IProduct} from '../types/ShoppingTypes';
 import Product from './Product';
-import { Row } from 'react-bootstrap';
+import {Row} from 'react-bootstrap';
 
 const ProductSection = () => {
 
@@ -42,6 +42,7 @@ const ProductSection = () => {
         <Row className='product mb-5 mx-0 mx-md-3 mx-lg-5 mt-5'>
             {renderProducts()}
         </Row>
+
     )
 }
 export default ProductSection;
