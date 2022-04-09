@@ -2,9 +2,13 @@ import React, {useState} from 'react';
 import PromotionSection from '../Promotion/PromotionSection'
 import {Row, Col} from 'react-bootstrap';
 import ProductSection from './ProductSection';
+import { ICart } from '../types/ShoppingTypes';
 
-const Home: React.FC = () => {
-
+type HomeProps = {
+    onCartItemCreate: (newItem: ICart) => void;
+  };
+const Home: React.FC<HomeProps> = (props) => {
+    const {onCartItemCreate} = props;
     const [isProductSectionVisible, setIsProductSectionVisible] = useState<Boolean>(false);
 
     const setProductSectionVisible = (isProductSectionVisible: Boolean) => {
@@ -16,7 +20,7 @@ const Home: React.FC = () => {
         <Row>
             <Col xs={12} className="px-0">
                 <PromotionSection setProductSectionVisible={setProductSectionVisible}/>
-                <ProductSection/>
+                <ProductSection onCartItemCreate={onCartItemCreate}/>
             </Col>
         </Row>
     )
