@@ -1,20 +1,21 @@
 import React, { useState } from 'react';
-import { Row, Col } from 'react-bootstrap';
+import { Row, Col, Image } from 'react-bootstrap';
 import 'react-dropdown/style.css';
 import { ICart } from '../types/ShoppingTypes';
 import CartDropDownItem from './CartDropDownItem';
+import cartempty from './../../assets/images/cart-empty.jpg';
 
 type CartDropDownProp = {
     cartItems: ICart[],
 }
 const CartDropDown: React.FC<CartDropDownProp> = (props) => {
-    const {cartItems} = props;
+    const { cartItems } = props;
 
     const subTotalSet = () => {
-        var subtotal= 0;
-        for(var i = 0; i<cartItems.length; i++){
+        var subtotal = 0;
+        for (var i = 0; i < cartItems.length; i++) {
             var num = parseInt(cartItems[i].price) + subtotal
-            subtotal=num;
+            subtotal = num;
         }
         return subtotal;
     }
@@ -30,21 +31,23 @@ const CartDropDown: React.FC<CartDropDownProp> = (props) => {
     }
 
     const totalItemSet = () => {
-        var quentityTotal= 0;
-        for(var i = 0; i<cartItems.length; i++){
+        var quentityTotal = 0;
+        for (var i = 0; i < cartItems.length; i++) {
             var num = parseInt(cartItems[i].quentity) + quentityTotal
-            quentityTotal=num;
+            quentityTotal = num;
         }
         return quentityTotal;
     }
+    if (cartItems.length === 0) {
+        return (
+            <Row className='cart-priview-header'>
+                <Col xs={12}>
+                <Image src={cartempty} className="cart-empty"/>
+                </Col>
+            </Row>
+        );
+    }
     const renderCartItems = () => {
-        if (cartItems.length === 0) {
-            return (
-                <p className="">
-                    <i>No Product List Here</i>
-                </p>
-            );
-        }
         return (
             <>
                 {cartItems.map((item: ICart, index: number) => (
