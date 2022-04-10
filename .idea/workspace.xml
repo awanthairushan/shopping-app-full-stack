@@ -1,18 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f790917c-906b-41e0-bb1d-5e4234d6bef3" name="Changes" comment="Added react router">
-      <change afterPath="$PROJECT_DIR$/src/Types/ISelectOption.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/navbars/NavBar.tsx" afterDir="false" />
+    <list default="true" id="f790917c-906b-41e0-bb1d-5e4234d6bef3" name="Changes" comment="Completed the NavBar">
+      <change afterPath="$PROJECT_DIR$/src/assets/styles/partials/_checkout.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/components/CheckOut/CheckOutTableItem.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/styles/partials/navbars.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/partials/navbars.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Home.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/promotionSection/PromotionBanner.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Promotion/PromotionBanner.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/promotionSection/PromotionSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Promotion/PromotionSection.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/ECommerceApp.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ECommerceApp.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/styles/_main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/_main.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/styles/partials/common.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/partials/_common.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/styles/partials/navbars.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/partials/_navbars.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/styles/partials/product.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/partials/_product.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/styles/partials/promotionSection.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/partials/_promotionSection.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navbars/NavBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbars/NavBar.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,7 +21,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="dev" />
+        <entry key="$PROJECT_DIR$" value="VH/CC-88/navbar-UX" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -89,7 +88,8 @@
       <workItem from="1648957321481" duration="18646000" />
       <workItem from="1649046907318" duration="10428000" />
       <workItem from="1649082138212" duration="13295000" />
-      <workItem from="1649321244034" duration="5784000" />
+      <workItem from="1649321244034" duration="10289000" />
+      <workItem from="1649512083508" duration="1382000" />
     </task>
     <task id="LOCAL-00001" summary="Added react router">
       <created>1649080412243</created>
@@ -98,7 +98,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649080412243</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Completed the NavBar">
+      <created>1649332206929</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1649332206929</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -117,6 +124,7 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added react router" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added react router" />
+    <MESSAGE value="Completed the NavBar" />
+    <option name="LAST_COMMIT_MESSAGE" value="Completed the NavBar" />
   </component>
 </project>

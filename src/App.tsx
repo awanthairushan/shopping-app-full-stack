@@ -6,6 +6,7 @@ import Home from "./components/pages/Home";
 import AboutUs from "./components/pages/staticpages/AboutUs";
 import ContactUs from "./components/pages/staticpages/ContactUs";
 import FAQ from "./components/pages/staticpages/FAQ";
+import CheckOutTableItem from "./components/CheckOut/CheckOutTableItem";
 
 function App() {
     return (
@@ -16,6 +17,8 @@ function App() {
                     <Route path='/about' element={<AboutUs/>}/>
                     <Route path='/contact' element={<ContactUs/>}/>
                     <Route path='/faq' element={<FAQ/>}/>
+                    //test
+                    <Route path='/checkout' element={<CheckOutTableItem/>}/>
                 </Route>
             </Routes>
         </BrowserRouter>

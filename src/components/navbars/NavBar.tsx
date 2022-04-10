@@ -44,6 +44,9 @@ const NavBar: React.FC = () => {
                     <NavLink as={Link} to='/faq' className='mx-lg-2'>FAQ</NavLink>
                     <NavLink as={Link} to='/about' className='mx-lg-2'>About Us</NavLink>
                     <NavLink as={Link} to='/contact' className='mx-lg-2'>Contact Us</NavLink>
+                    {/*test navigation*/}
+                    <NavLink as={Link} to='/checkout' className='mx-lg-2'>CheckOut</NavLink>
+
                 </Nav>
             </Navbar.Collapse>
         </Navbar>
