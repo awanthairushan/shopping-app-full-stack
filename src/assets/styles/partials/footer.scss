@@ -7,13 +7,15 @@
     td {
       border: none;
       padding: 1rem 2rem;
-      P {
+
+      Link, a {
         color: #9a9a9a;
         font-size: 1.1rem;
         font-weight: 500;
         cursor: pointer;
         margin: 0;
         padding: 0;
+        text-decoration: none;
       }
     }
   }
@@ -35,18 +37,27 @@
         vertical-align: middle;
         cursor: pointer;
 
-        .facebook, .twitter, .linkedin, .instagram, .wifi, .youtube {
-          width: 30px;
-          height: 30px;
-          margin-top: 0.5rem;
+        a {
+          text-decoration: none;
+          color: #ffffff;
+          margin: 0;
+          padding: 0;
+
+          .facebook, .twitter, .linkedin, .instagram, .rss, .youtube {
+            width: 30px;
+            height: 30px;
+            margin-top: 0.5rem;
+          }
         }
       }
     }
   }
+
   .copyright-section {
     font-size: 1.15rem;
   }
 }
+
 @media (max-width: 1200px) {
   .footer {
     .static-pages-route {
@@ -54,11 +65,13 @@
         padding: 1rem 1.5rem;
       }
     }
+
     .copyright-section {
       font-size: 1.05rem;
     }
   }
 }
+
 @media (max-width: 992px) {
   .footer {
     .static-pages-route {
@@ -66,17 +79,20 @@
         padding: 1rem 1.2rem;
       }
     }
+
     .copyright-section {
       font-size: 1rem;
     }
   }
 }
+
 @media (max-width: 576px) {
   .footer {
     .static-pages-route {
       td {
         padding: 1rem 0.5rem;
-        p {
+
+        Link, a {
           font-size: 0.9rem;
         }
       }

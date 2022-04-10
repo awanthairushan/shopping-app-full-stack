@@ -1,47 +1,53 @@
 import React from 'react';
 import {Row, Col, Table} from 'react-bootstrap';
-import {Facebook, Twitter, Linkedin, Instagram, Wifi, Youtube} from 'react-feather';
+import {Link} from 'react-router-dom';
+import {Facebook, Twitter, Linkedin, Instagram, Rss, Youtube} from 'react-feather';
 
 const Footer = () => {
     return (
         <Row className="footer">
             <Col xs={12} className="px-0 mx-sm-auto">
-                <Table className="w-xl-50 mx-auto aligh-center d-flex justify-content-center mt-3 mb-0 static-pages-route">
+                <Table
+                    className="w-xl-50 mx-auto aligh-center d-flex justify-content-center mt-3 mb-0 static-pages-route">
                     <tbody>
                     <tr>
-                        <td><p>ABOUT US</p></td>
-                        <td><p>FAQ</p></td>
-                        <td><p>DELIVERY INFO</p></td>
-                        <td><p>CONTACT US</p></td>
+                        <td><Link to='about'>ABOUT US</Link></td>
+                        <td><Link to='faq'>FAQ</Link></td>
+                        <td><Link to='/'>DELIVERY INFO</Link></td>
+                        <td><Link to='contact'>CONTACT US</Link></td>
                     </tr>
                     </tbody>
                 </Table>
-                <Table className="w-50 mx-auto aligh-center d-flex justify-content-center mt-sm-2 mb-sm-4 social-media-route">
+                <Table
+                    className="w-50 mx-auto aligh-center d-flex justify-content-center mt-sm-2 mb-sm-4 social-media-route">
                     <tbody>
                     <tr>
                         <td>
-                            <div><Facebook  className="facebook"/></div>
+                            <div><a href='https://www.facebook.com/'><Facebook className="facebook"/></a></div>
                         </td>
                         <td>
-                            <div><Twitter className="twitter"/></div>
+                            <div><a href='https://twitter.com/'><Twitter className="twitter"/></a></div>
                         </td>
                         <td>
-                            <div ><Linkedin className="linkedin"/></div>
+                            <div><a href='https://lk.linkedin.com/'><Linkedin className="linkedin"/></a></div>
                         </td>
                         <td>
-                            <div><Instagram className="instagram"/></div>
+                            <div><a href='https://www.instagram.com/'><Instagram className="instagram"/></a></div>
                         </td>
                         <td>
-                            <div><Wifi className="wifi"/></div>
+                            <div><a href='https://rss.com/'><Rss className="rss"/></a></div>
                         </td>
                         <td>
-                            <div><Youtube className="youtube"/></div>
+                            <div><a href='https://www.youtube.com/'><Youtube className="youtube"/></a></div>
                         </td>
                     </tr>
                     </tbody>
                 </Table>
-                <div className="d-flex justify-content-center copyright-section">Copyright © 2020. All Rights Reserved. <span className="text-light d-none d-sm-block">Powered By SoftVessel</span></div>
-                <div className="d-flex justify-content-center text-light d-block d-sm-none copyright-section">Powered By SoftVessel</div>
+                <div className="d-flex justify-content-center copyright-section">Copyright © 2020. All Rights
+                    Reserved. <span className="text-light d-none d-sm-block">Powered By SoftVessel</span></div>
+                <div className="d-flex justify-content-center text-light d-block d-sm-none copyright-section">Powered By
+                    SoftVessel
+                </div>
             </Col>
         </Row>
     )
