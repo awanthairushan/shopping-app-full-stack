@@ -4,3 +4,10 @@ export interface IProduct {
   oldprice: string | null;
   img: string;
 }
+
+export interface ICart {
+  name: string;
+  price: string;
+  quentity: string;
+  img: string;
+}

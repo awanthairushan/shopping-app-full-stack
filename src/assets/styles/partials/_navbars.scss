@@ -1,8 +1,9 @@
+$quentity-color:#cacaca;
 .logobar {
   padding-top: 2rem;
   padding-bottom: 1rem;
   border-top: 1px solid #717171;
-
+  box-shadow: 0 5px 10px $quentity-color;
   .img-fluid {
     height: 3.5rem;
   }
@@ -20,6 +21,19 @@
     width: 50px;
     height: 50px;
   }
+  .cart-basket {
+    font-size: 1rem;
+    position: relative;
+    margin-top: -50px;
+    margin-left: 40px;
+    margin-bottom: -25px;
+    width: 20px;
+    height: 20px;
+    color: #fff;
+    background-color: #4caf50;
+    border: 1.5px solid #8f8f8f;
+    border-radius: 50%;
+  }
 }
 
 @media (max-width: 992px) {
@@ -29,14 +43,19 @@
     }
 
     .btn {
-      height: 3rem;
-      width: 13rem;
-      font-size: 2rem;
+      height: 2.8rem;
+      width: 12.8rem;
+      font-size: 1.8rem;
     }
 
     .shopping-cart {
       width: 40px;
       height: 40px;
+    }
+    .cart-basket {
+      margin-top: -43px;
+      margin-left: 30px;
+      margin-bottom: -25px;
     }
   }
   .header-navbar{
@@ -69,6 +88,14 @@
       width: 30px;
       height: 30px;
     }
+    .cart-basket {
+      font-size: 0.8rem;
+      margin-top: -30px;
+      margin-left: 20px;
+      margin-bottom: -25px;
+      width: 15px;
+      height: 15px;
+    }
   }
 
   .header-navbar{
@@ -78,6 +105,7 @@
 
 //Navbar styles
 .header-navbar {
+  position: unset;
   font-size: 25px;
   color: #555555;
   font-weight: 600;
