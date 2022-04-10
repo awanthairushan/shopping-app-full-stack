@@ -17,8 +17,8 @@ const Home: React.FC<HomeProps> = (props) => {
     }
 
     return (
-        <Row>
-            <Col xs={12} className="px-0">
+        <Row className=''>
+            <Col xs={12} className="">
                 <PromotionSection setProductSectionVisible={setProductSectionVisible}/>
                 <ProductSection onCartItemCreate={onCartItemCreate}/>
             </Col>

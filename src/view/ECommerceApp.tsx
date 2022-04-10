@@ -13,11 +13,13 @@ type ECommerceAppProps = {
 const ECommerceApp: React.FC<ECommerceAppProps> = (props) => {
     const {cartItems} = props;
     return (
-        <Container fluid={true} className='p-0'>
+        <Container fluid={true}>
             <Row>
-                <ContactBar/>
-                <LogoBar cartItems={cartItems}/>
-                <NavBar/>
+                <Col>
+                    <ContactBar/>
+                    <LogoBar cartItems={cartItems}/>
+                    <NavBar/>
+                </Col>
             </Row>
             <Outlet/>
             <Row>

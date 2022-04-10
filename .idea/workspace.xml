@@ -3,10 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="7f96a56f-b0ca-45c1-91c4-255175a5958c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/styles/partials/footer.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/partials/footer.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/footer/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/footer/Footer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Promotion/PromotionSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Promotion/PromotionSection.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/pages/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Home.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/ECommerceApp.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ECommerceApp.tsx" afterDir="false" />
     </list>
