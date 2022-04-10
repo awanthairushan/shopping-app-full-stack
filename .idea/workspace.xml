@@ -1,17 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f790917c-906b-41e0-bb1d-5e4234d6bef3" name="Changes" comment="Completed the NavBar">
-      <change afterPath="$PROJECT_DIR$/src/assets/styles/partials/_checkout.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/CheckOut/CheckOutTableItem.tsx" afterDir="false" />
+    <list default="true" id="f790917c-906b-41e0-bb1d-5e4234d6bef3" name="Changes" comment="Created the basic raw template">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/styles/_main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/_main.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/styles/partials/common.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/partials/_common.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/styles/partials/navbars.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/partials/_navbars.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/styles/partials/product.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/partials/_product.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/styles/partials/promotionSection.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/partials/_promotionSection.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/navbars/NavBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbars/NavBar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/styles/partials/_checkout.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/partials/_checkout.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/styles/partials/_common.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/partials/_common.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/CheckOut/CheckOutTableItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CheckOut/CheckOutTableItem.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,6 +84,7 @@
       <workItem from="1649082138212" duration="13295000" />
       <workItem from="1649321244034" duration="10289000" />
       <workItem from="1649512083508" duration="1382000" />
+      <workItem from="1649558041597" duration="4162000" />
     </task>
     <task id="LOCAL-00001" summary="Added react router">
       <created>1649080412243</created>
@@ -105,7 +100,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649332206929</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Created the basic raw template">
+      <created>1649558268296</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1649558268296</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -125,6 +127,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Added react router" />
     <MESSAGE value="Completed the NavBar" />
-    <option name="LAST_COMMIT_MESSAGE" value="Completed the NavBar" />
+    <MESSAGE value="Created the basic raw template" />
+    <option name="LAST_COMMIT_MESSAGE" value="Created the basic raw template" />
   </component>
 </project>
