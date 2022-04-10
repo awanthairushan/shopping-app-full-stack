@@ -1,6 +1,6 @@
 import React from 'react';
 import { Row, Col, Image } from 'react-bootstrap';
-import { ICart } from '../types/ShoppingTypes';
+import { ICart } from '../../Types/ShoppingTypes';
 import { carrot, coconut } from "../../assets/images/images";
 
 type CartDropDownItemProps = {

@@ -3,7 +3,7 @@ import { Row, Col, Image } from 'react-bootstrap';
 import Logo from '../../assets/images/LOGO.png';
 import { ShoppingCart } from 'react-feather';
 import CartDropDown from '../pages/CartDropDown';
-import { ICart } from '../types/ShoppingTypes';
+import { ICart } from '../../Types/ShoppingTypes';
 
 type LogoBarProp = {
     cartItems: ICart[],

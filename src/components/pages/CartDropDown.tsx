@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Row, Col, Image } from 'react-bootstrap';
 import 'react-dropdown/style.css';
-import { ICart } from '../types/ShoppingTypes';
+import { ICart } from '../../Types/ShoppingTypes';
 import CartDropDownItem from './CartDropDownItem';
 import cartempty from './../../assets/images/cart-empty.jpg';
 
