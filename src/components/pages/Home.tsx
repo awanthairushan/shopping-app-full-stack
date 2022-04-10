@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import PromotionSection from '../Promotion/PromotionSection'
 import {Row, Col} from 'react-bootstrap';
 import ProductSection from './ProductSection';
-import { ICart } from '../types/ShoppingTypes';
+import { ICart } from '../../Types/ShoppingTypes';
 
 type HomeProps = {
     onCartItemCreate: (newItem: ICart) => void;

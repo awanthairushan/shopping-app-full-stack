@@ -4,7 +4,7 @@ import LogoBar from "../components/navbars/LogoBar";
 import {Outlet} from "react-router-dom";
 import NavBar from "../components/navbars/NavBar";
 import ContactBar from '../components/navbars/ContactBar';
-import { ICart } from '../components/types/ShoppingTypes';
+import { ICart } from '../Types/ShoppingTypes';
 
 type ECommerceAppProps = {
     cartItems: ICart[],
