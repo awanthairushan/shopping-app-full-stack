@@ -11,8 +11,8 @@ const PromotionSection:React.FC<PromotionSectionProps> = (props) => {
     return (
         <Row className="promotionSection">
             <Col xs={12} className='px-0'>
-                <Image src={PromotionImage} className="img-fluid"/>
-                {/*<PromotionBanner setProductSectionVisible={props.setProductSectionVisible}/>*/}
+                <Image src={PromotionImage} className="img-fluid promotion-image"/>
+                <PromotionBanner setProductSectionVisible={props.setProductSectionVisible}/>
             </Col>
         </Row>
     );
