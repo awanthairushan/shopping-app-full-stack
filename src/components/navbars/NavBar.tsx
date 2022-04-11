@@ -23,15 +23,17 @@ const NavBar: React.FC = () => {
 
     const renderCategories = () => {
         return options.map((option) => {
-            return <NavDropdown.Item key={option.value} eventKey={option.value}>{option.label}</NavDropdown.Item>
+            return <NavDropdown.Item key={option.value} eventKey={option.value}
+                                     onClick={() => setExpanded(false)}>{option.label}</NavDropdown.Item>
         })
     }
     const [selectedCategoryDropdownItem, SetSelectedCategoryDropdownItem] = useState<null | ISelectOption>(null)
-
+    const [expanded, setExpanded] = useState(false);
     return (
         <Col className="ms-lg-5 ms-3">
-            <Navbar className='py-4 header-navbar' collapseOnSelect expand='lg'>
-                <Navbar.Toggle aria-controls="responsive-navbar-nav" className="mb-2"/>
+            <Navbar className='py-4 header-navbar' collapseOnSelect expand='lg' expanded={expanded}>
+                <Navbar.Toggle aria-controls="responsive-navbar-nav" className="mb-2"
+                               onClick={() => setExpanded(!expanded)}/>
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav>
                         <NavDropdown
@@ -40,10 +42,13 @@ const NavBar: React.FC = () => {
                             onSelect={onHandleDropdownSelect}>
                             {renderCategories()}
                         </NavDropdown>
-                        <NavLink as={Link} to='/' className='mx-lg-2'>Home</NavLink>
-                        <NavLink as={Link} to='/faq' className='mx-lg-2'>FAQ</NavLink>
-                        <NavLink as={Link} to='/about' className='mx-lg-2'>About Us</NavLink>
-                        <NavLink as={Link} to='/contact' className='mx-lg-2'>Contact Us</NavLink>
+                        <NavLink as={Link} to='/' className='mx-lg-2' onClick={() => setExpanded(false)}>Home</NavLink>
+                        <NavLink as={Link} to='/faq' className='mx-lg-2'
+                                 onClick={() => setExpanded(false)}>FAQ</NavLink>
+                        <NavLink as={Link} to='/about' className='mx-lg-2' onClick={() => setExpanded(false)}>About
+                            Us</NavLink>
+                        <NavLink as={Link} to='/contact' className='mx-lg-2' onClick={() => setExpanded(false)}>Contact
+                            Us</NavLink>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
