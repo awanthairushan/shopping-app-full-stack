@@ -42,13 +42,22 @@ const NavBar: React.FC = () => {
                             onSelect={onHandleDropdownSelect}>
                             {renderCategories()}
                         </NavDropdown>
-                        <NavLink as={Link} to='/' className='mx-lg-2' onClick={() => setExpanded(false)}>Home</NavLink>
+                        <NavLink as={Link} to='/' className='ms-lg-5 mx-lg-2'
+                                 onClick={() => setExpanded(false)}>
+                            Home
+                        </NavLink>
                         <NavLink as={Link} to='/faq' className='mx-lg-2'
-                                 onClick={() => setExpanded(false)}>FAQ</NavLink>
-                        <NavLink as={Link} to='/about' className='mx-lg-2' onClick={() => setExpanded(false)}>About
-                            Us</NavLink>
-                        <NavLink as={Link} to='/contact' className='mx-lg-2' onClick={() => setExpanded(false)}>Contact
-                            Us</NavLink>
+                                 onClick={() => setExpanded(false)}>
+                            FAQ
+                        </NavLink>
+                        <NavLink as={Link} to='/about' className='mx-lg-2'
+                                 onClick={() => setExpanded(false)}>
+                            About Us
+                        </NavLink>
+                        <NavLink as={Link} to='/contact' className='mx-lg-2'
+                                 onClick={() => setExpanded(false)}>
+                            Contact Us
+                        </NavLink>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>

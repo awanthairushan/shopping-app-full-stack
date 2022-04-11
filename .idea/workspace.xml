@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f790917c-906b-41e0-bb1d-5e4234d6bef3" name="Changes" comment="Reduced the width of dropdown menu on tab and mobile">
+    <list default="true" id="f790917c-906b-41e0-bb1d-5e4234d6bef3" name="Changes" comment="Added dropdown collapse on select/click">
       <change beforePath="$PROJECT_DIR$/src/components/navbars/NavBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbars/NavBar.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -81,7 +81,7 @@
       <workItem from="1649046907318" duration="10428000" />
       <workItem from="1649082138212" duration="13295000" />
       <workItem from="1649321244034" duration="5784000" />
-      <workItem from="1649682122365" duration="2592000" />
+      <workItem from="1649682122365" duration="2899000" />
     </task>
     <task id="LOCAL-00001" summary="Added react router">
       <created>1649080412243</created>
@@ -104,7 +104,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649684420111</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added dropdown collapse on select/click">
+      <created>1649684854377</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1649684854377</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -125,6 +132,7 @@
     <MESSAGE value="Added react router" />
     <MESSAGE value="Aligned the navbar with the logo" />
     <MESSAGE value="Reduced the width of dropdown menu on tab and mobile" />
-    <option name="LAST_COMMIT_MESSAGE" value="Reduced the width of dropdown menu on tab and mobile" />
+    <MESSAGE value="Added dropdown collapse on select/click" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added dropdown collapse on select/click" />
   </component>
 </project>
