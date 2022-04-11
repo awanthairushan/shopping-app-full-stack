@@ -16,7 +16,6 @@ const CategoryList: React.FC<CategoryListProps> = (props: CategoryListProps) => 
 
   const handleCategoryChange = (category: String) => {
     setSelectedCategory(category);
-    console.log(category);
   }
 
   const getProductByCategory = () => {
