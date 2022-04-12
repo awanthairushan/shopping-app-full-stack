@@ -4,6 +4,7 @@ import 'react-dropdown/style.css';
 import { ICart } from '../../Types/ShoppingTypes';
 import CartDropDownItem from './CartDropDownItem';
 import cartempty from './../../assets/images/cart-empty.jpg';
+import {Triangle} from "react-feather";
 
 type CartDropDownProp = {
     cartItems: ICart[],
@@ -64,6 +65,7 @@ const CartDropDown: React.FC<CartDropDownProp> = (props) => {
     return (
         <Row className='cart-priview-header'>
             <Col xs={12}>
+                {/* <Triangle className='triangle'/> */}
                 {renderCartItems()}
                 <Row>
                     <Col xs={7}>

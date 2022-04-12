@@ -3,7 +3,7 @@ $quentity-color:#8f8f8f;
 
 .cart-priview{
     position: absolute;
-    margin-top: 60px;
+    margin-top: 72px;
     z-index: 1000;
 }
 .cart-priview-header{
@@ -49,6 +49,22 @@ $quentity-color:#8f8f8f;
 .cart-empty{
     width: 100%;
 }
+@media(max-width:992px){
+    .cart-priview{
+        margin-top: 63px;
+    }
+    .cart-priview-header{
+        height: auto;
+        width: 400px;
+        margin-right: 4.5%;
+        padding: 15px 30px;
+    }
+}
+@media(max-width:576px){
+    .cart-priview{
+        margin-top: 48px;
+    }
+}
 @media(max-width:450px){
     .cart-priview-header{
         width: 95%;
@@ -65,4 +81,11 @@ $quentity-color:#8f8f8f;
             font-size: 15px;
         }
     }
+}
+.triangle{
+    color: gray;
+    font-weight: lighter;
+    margin-left: 47.5%;
+    margin-top: -20%;
+    z-index: 0;
 }
