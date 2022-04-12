@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="89a0b3c7-a8f4-4d79-9d76-9fbc82feb883" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/assets/styles/partials/footer.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/footer/Footer.tsx" afterDir="false" />
+    <list default="true" id="7f96a56f-b0ca-45c1-91c4-255175a5958c" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/styles/_main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/_main.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Home.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/styles/partials/promotionSection.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/partials/promotionSection.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Promotion/PromotionBanner.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Promotion/PromotionBanner.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Promotion/PromotionSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Promotion/PromotionSection.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,6 +19,7 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="27EGskkCarwIwHvp7NEVF33Awh9" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -45,7 +45,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="89a0b3c7-a8f4-4d79-9d76-9fbc82feb883" name="Changes" comment="" />
+      <changelist id="7f96a56f-b0ca-45c1-91c4-255175a5958c" name="Changes" comment="" />
       <created>1648878041599</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -59,6 +59,9 @@
       <workItem from="1649222147400" duration="6846000" />
       <workItem from="1649264010435" duration="633000" />
       <workItem from="1649302604814" duration="3948000" />
+      <workItem from="1649487663188" duration="945000" />
+      <workItem from="1649566830778" duration="7012000" />
+      <workItem from="1649652899607" duration="945000" />
     </task>
     <servers />
   </component>
@@ -70,7 +73,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="dev" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
