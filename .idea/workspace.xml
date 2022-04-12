@@ -1,18 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f790917c-906b-41e0-bb1d-5e4234d6bef3" name="Changes" comment="Added react router">
-      <change afterPath="$PROJECT_DIR$/src/Types/ISelectOption.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/components/navbars/NavBar.tsx" afterDir="false" />
+    <list default="true" id="f790917c-906b-41e0-bb1d-5e4234d6bef3" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/styles/partials/navbars.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/partials/navbars.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/styles/partials/_search-bar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/partials/_search-bar.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/pages/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Home.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/promotionSection/PromotionBanner.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Promotion/PromotionBanner.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/promotionSection/PromotionSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Promotion/PromotionSection.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/ECommerceApp.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ECommerceApp.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/SearchBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/SearchBar.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,11 +13,6 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="dev" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -40,16 +28,13 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/navbars" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/assets/images" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="ts.external.directory.path" value="D:\Academic\Skills\React Industrial Trainng\Group Projects\shopping-app-full-stack\node_modules\typescript\lib" />
+    <property name="ts.external.directory.path" value="D:\WebStorm 2021.3.1\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Academic\Skills\React Industrial Trainng\Group Projects\shopping-app-full-stack\src\components\navbars" />
       <recent name="E:\WEB PROJECT\React Training\shopping-app-full-stack\src\assets\images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -57,27 +42,10 @@
       <recent name="E:\WEB PROJECT\React Training\shopping-app-full-stack\src" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="start" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-      <method v="2" />
-    </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="npm.start" />
-      </list>
-    </recent_temporary>
-  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="f790917c-906b-41e0-bb1d-5e4234d6bef3" name="Changes" comment="Added react router" />
+      <changelist id="7f96a56f-b0ca-45c1-91c4-255175a5958c" name="Changes" comment="" />
       <created>1648878041599</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -87,18 +55,14 @@
       <workItem from="1648895655601" duration="294000" />
       <workItem from="1648907884377" duration="5003000" />
       <workItem from="1648957321481" duration="18646000" />
-      <workItem from="1649046907318" duration="10428000" />
-      <workItem from="1649082138212" duration="13295000" />
-      <workItem from="1649321244034" duration="5784000" />
+      <workItem from="1649046907318" duration="15029000" />
+      <workItem from="1649222147400" duration="6846000" />
+      <workItem from="1649264010435" duration="633000" />
+      <workItem from="1649302604814" duration="3948000" />
+      <workItem from="1649487663188" duration="945000" />
+      <workItem from="1649566830778" duration="7012000" />
+      <workItem from="1649652899607" duration="945000" />
     </task>
-    <task id="LOCAL-00001" summary="Added react router">
-      <created>1649080412243</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1649080412243</updated>
-    </task>
-    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -109,14 +73,22 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="dev" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
     </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added react router" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added react router" />
   </component>
 </project>

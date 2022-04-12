@@ -9,12 +9,10 @@ type PromotionSectionProps = {
 
 const PromotionSection:React.FC<PromotionSectionProps> = (props) => {
     return (
-        <Row className="mx-0 promotionSection">
-            <Col xs={12} className="px-0">
-                <Image src={PromotionImage} className="img-fluid"/>
+        <Row className="promotionSection">
+            <Col xs={12} className='px-0'>
+                <Image src={PromotionImage} className="img-fluid promotion-image"/>
                 <PromotionBanner setProductSectionVisible={props.setProductSectionVisible}/>
-            </Col>
-            <Col>
             </Col>
         </Row>
     );
