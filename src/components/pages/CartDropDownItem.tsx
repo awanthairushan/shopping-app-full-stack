@@ -11,9 +11,9 @@ const CartDropDownItem: React.FC<CartDropDownItemProps> = (props) => {
     const { item } = props;
     var imglink;
 
-    if (item.img == "carrot") {
+    if (item.img === "carrot") {
         imglink = carrot;
-    } else if (item.img == "coconut") {
+    } else if (item.img === "coconut") {
         imglink = coconut;
     }
     return (

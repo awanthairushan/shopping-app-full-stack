@@ -27,7 +27,7 @@ const App = () => {
                 num=0;
             }
         }
-        if(num==0){
+        if(num===0){
         allItems.push(newItem);
         setCartItems(allItems);
         }

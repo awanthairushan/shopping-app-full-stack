@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { ICart, IProduct } from '../../Types/ShoppingTypes';
 import { carrot, coconut } from "../../assets/images/images";
-import { Button, Col, Image, Row, Form, Alert } from 'react-bootstrap';
+import { Button, Col, Image, Row, Form } from 'react-bootstrap';
 
 type ProductProps = {
     product: IProduct,
@@ -15,9 +15,9 @@ const Product: React.FC<ProductProps> = (props) => {
     const { product, index } = props;
     var imglink;
 
-    if (product.img == "carrot") {
+    if (product.img === "carrot") {
         imglink = carrot;
-    } else if (product.img == "coconut") {
+    } else if (product.img === "coconut") {
         imglink = coconut;
     }
 
