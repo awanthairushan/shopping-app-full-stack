@@ -7,7 +7,7 @@ type PromotionBannerProps = {
 
 const PromotionBanner: React.FC<PromotionBannerProps> = (props) => {
     return (
-        <Row className="promotion-banner">
+        <div className="promotion-banner">
             <Card.Body>
                 <Card.Subtitle className="text-dark sub-title mb-lg-2 my-md-1">100% Healthy & Affordable</Card.Subtitle>
                 <Card.Title className="title">organic vegetables</Card.Title>
@@ -16,7 +16,7 @@ const PromotionBanner: React.FC<PromotionBannerProps> = (props) => {
                 <Button className="bg-light text-dark shop-now-button"
                         onClick={() => props.setProductSectionVisible(true)}>Shop Now</Button>
             </Card.Body>
-        </Row>
+        </div>
     )
 }
 
