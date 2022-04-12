@@ -4,7 +4,7 @@ $quentity-color:#8f8f8f;
 .cart-priview{
     position: absolute;
     margin-top: 60px;
-    z-index: 0;
+    z-index: 1000;
 }
 .cart-priview-header{
     box-shadow: 0 1px 10px $quentity-color;
