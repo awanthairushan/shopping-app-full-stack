@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f790917c-906b-41e0-bb1d-5e4234d6bef3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/styles/partials/_search-bar.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/partials/_search-bar.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Home.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/components/pages/SearchBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/SearchBar.tsx" afterDir="false" />
+
+    <list default="true" id="f790917c-906b-41e0-bb1d-5e4234d6bef3" name="Changes" comment="Added dropdown collapse on select/click">
+      <change beforePath="$PROJECT_DIR$/src/components/navbars/NavBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbars/NavBar.tsx" afterDir="false" />
+
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -13,6 +12,14 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
+
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="CC-96_cart_preview" />
+      </map>
+    </option>
+
+
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -42,6 +49,26 @@
       <recent name="E:\WEB PROJECT\React Training\shopping-app-full-stack\src" />
     </key>
   </component>
+
+  <component name="RunManager">
+    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="start" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.start" />
+        <item itemvalue="npm.start" />
+      </list>
+    </recent_temporary>
+  </component>
+
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -55,14 +82,42 @@
       <workItem from="1648895655601" duration="294000" />
       <workItem from="1648907884377" duration="5003000" />
       <workItem from="1648957321481" duration="18646000" />
-      <workItem from="1649046907318" duration="15029000" />
-      <workItem from="1649222147400" duration="6846000" />
-      <workItem from="1649264010435" duration="633000" />
-      <workItem from="1649302604814" duration="3948000" />
-      <workItem from="1649487663188" duration="945000" />
-      <workItem from="1649566830778" duration="7012000" />
-      <workItem from="1649652899607" duration="945000" />
+
+      <workItem from="1649046907318" duration="10428000" />
+      <workItem from="1649082138212" duration="13295000" />
+      <workItem from="1649321244034" duration="5784000" />
+      <workItem from="1649682122365" duration="2899000" />
     </task>
+    <task id="LOCAL-00001" summary="Added react router">
+      <created>1649080412243</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1649080412243</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Aligned the navbar with the logo">
+      <created>1649683627259</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1649683627259</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Reduced the width of dropdown menu on tab and mobile">
+      <created>1649684420111</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1649684420111</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Added dropdown collapse on select/click">
+      <created>1649684854377</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1649684854377</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -91,4 +146,13 @@
       </map>
     </option>
   </component>
+
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Added react router" />
+    <MESSAGE value="Aligned the navbar with the logo" />
+    <MESSAGE value="Reduced the width of dropdown menu on tab and mobile" />
+    <MESSAGE value="Added dropdown collapse on select/click" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added dropdown collapse on select/click" />
+  </component>
+
 </project>
