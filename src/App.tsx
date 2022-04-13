@@ -6,9 +6,9 @@ import Home from "./components/pages/Home";
 import AboutUs from "./components/pages/staticpages/AboutUs";
 import ContactUs from "./components/pages/staticpages/ContactUs";
 import FAQ from "./components/pages/staticpages/FAQ";
-import CheckOutTableItem from "./components/CheckOut/CheckOutTableItem";
 import { ICart } from './components/types/ShoppingTypes';
 import { useToasts } from 'react-toast-notifications';
+import CheckOut from "./components/pages/CheckOut";
 
 const App = () => {
     const { addToast } = useToasts();
@@ -43,7 +43,7 @@ const App = () => {
                     <Route path='/contact' element={<ContactUs/>}/>
                     <Route path='/faq' element={<FAQ/>}/>
                     //test
-                    <Route path='/checkout' element={<CheckOutTableItem/>}/>
+                    <Route path='/checkout' element={<CheckOut/>}/>
                 </Route>
             </Routes>
         </BrowserRouter>
