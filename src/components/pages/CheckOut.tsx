@@ -86,6 +86,14 @@ const CheckOut: FC<CheckoutProps> = (props) => {
                             </Form>
                         </td>
                     </tr>
+                    <tr>
+                        <td colSpan={5}>Delivery Charge</td>
+                        <td colSpan={2}>Rs.400.99</td>
+                    </tr>
+                    <tr className="checkout-total">
+                        <td colSpan={5}>Total</td>
+                        <td colSpan={2} className="text-red fw-bold">Rs.400.99</td>
+                    </tr>
                     </tbody>
                 </Table>
             </Col>

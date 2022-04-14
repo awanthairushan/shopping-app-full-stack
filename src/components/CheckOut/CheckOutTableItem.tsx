@@ -44,7 +44,7 @@ const CheckOutTableItem: FC<checkOutTableItemProps> = (props) => {
         <tr>
             <td>{index + 1}</td>
             <td>
-                <Image src={cartItem.img} className='checkout-table-item-image' fluid={false}/>
+                <Image src={Carrot} className='checkout-table-item-image' fluid={false}/>
             </td>
             <td>{cartItem.name}</td>
             <td>
