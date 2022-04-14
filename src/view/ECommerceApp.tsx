@@ -18,13 +18,6 @@ const ECommerceApp: React.FC<ECommerceAppProps> = (props) => {
                 <ContactBar/>
                 <LogoBar cartItems={cartItems}/>
                 <NavBar/>
-        <Container fluid={true}>
-            <Row>
-                <Col>
-                    <ContactBar/>
-                    <LogoBar cartItems={cartItems}/>
-                    <NavBar/>
-                </Col>
             </Row>
             <Outlet/>
             <Row>
@@ -37,4 +30,4 @@ const ECommerceApp: React.FC<ECommerceAppProps> = (props) => {
     )
 }
 
-export default ECommerceApp;
+export  default ECommerceApp;
