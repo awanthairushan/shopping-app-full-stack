@@ -1,8 +1,13 @@
 .promotionSection {
+  z-index: 0;
+  position: relative;
+
   .promotion-banner {
-    margin-top: -23%;
-    margin-left: 61.5%;
-    margin-bottom: 7%;
+    z-index: 1;
+    position: absolute;
+    top: 38%;
+    left: 61%;
+
     .sub-title {
       font-size: 1.2rem;
       font-family: 'Libre Baskerville', serif;
@@ -18,6 +23,7 @@
     }
 
     .shop-now-button {
+      cursor: pointer;
       width: 9rem;
       height: 2.7rem;
       border: none;
@@ -25,22 +31,28 @@
       font-size: 0.9rem;
       font-weight: 500;
       font-family: 'Libre Baskerville', serif;
-
     }
   }
 }
+
 //Horizontal iPad air
 @media (max-width: 1180px) {
   .promotionSection {
+    position: relative;
 
+    .promotion-banner {
+      position: absolute;
+      top: 38%;
+      left: 61%;
 
-    .sub-title {
-      font-size: 1.1rem !important;
-    }
+      .sub-title {
+        font-size: 1.1rem !important;
+      }
 
-    .title {
-      font-size: 2.2rem !important;
-      letter-spacing: 0px !important;
+      .title {
+        font-size: 2.2rem !important;
+        letter-spacing: 0px !important;
+      }
     }
   }
 }
@@ -48,61 +60,83 @@
 ////Horizontal Samsung galaxy s20
 @media (max-width: 916px) {
   .promotionSection {
+    position: relative;
 
-    .sub-title {
-      font-size: 0.9rem !important;
-    }
+    .promotion-banner {
+      position: absolute;
+      top: 35%;
+      left: 61%;
 
-    .title {
-      font-size: 1.7rem !important;
-      letter-spacing: 0px !important;
-    }
+      .sub-title {
+        font-size: 0.9rem !important;
+      }
 
-    .shop-now-button {
-      width: 7rem !important;
-      height: 2rem !important;
-      font-size: 0.7rem !important;
-    }
-  }
-}
+      .title {
+        font-size: 1.7rem !important;
+        letter-spacing: 0px !important;
+      }
 
-
-@media (max-width: 576px) {
-  .promotionSection {
-    .sub-title {
-      font-size: 0.6rem !important;
-    }
-
-    .title {
-      font-size: 1.2rem !important;
-      letter-spacing: 0px !important;
-    }
-
-    .shop-now-button {
-      width: 6rem !important;
-      height: 1.8rem !important;
-      font-size: 0.6rem !important;
-      margin-top: 0.2rem;
+      .shop-now-button {
+        width: 7rem !important;
+        height: 2rem !important;
+        font-size: 0.7rem !important;
+      }
     }
   }
 }
 
 @media (max-width: 576px) {
   .promotionSection {
-    .sub-title {
-      font-size: 0.6rem !important;
-    }
+    position: relative;
 
-    .title {
-      font-size: 1.2rem !important;
-      letter-spacing: 0px !important;
-    }
+    .promotion-banner {
+      position: absolute;
+      top: 38%;
+      left: 50%;
 
-    .shop-now-button {
-      width: 6rem !important;
-      height: 1.8rem !important;
-      font-size: 0.6rem !important;
-      margin-top: 0.2rem;
+      .sub-title {
+        font-size: 0.6rem !important;
+      }
+
+      .title {
+        font-size: 1.2rem !important;
+        letter-spacing: 0px !important;
+      }
+
+      .shop-now-button {
+        width: 6rem !important;
+        height: 1.8rem !important;
+        font-size: 0.6rem !important;
+        margin-top: 0.2rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .promotionSection {
+    position: relative;
+
+    .promotion-banner {
+      position: absolute;
+      top: 30%;
+      left: 45%;
+
+      .sub-title {
+        font-size: 0.6rem !important;
+      }
+
+      .title {
+        font-size: 1.2rem !important;
+        letter-spacing: 0px !important;
+      }
+
+      .shop-now-button {
+        width: 6rem !important;
+        height: 1.5rem !important;
+        font-size: 0.6rem !important;
+        margin-top: 0.1rem;
+      }
     }
   }
 }

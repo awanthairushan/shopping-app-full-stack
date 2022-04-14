@@ -1,21 +1,22 @@
 import React from 'react';
-import {Row, Card,Button} from 'react-bootstrap';
+import {Row, Card, Button} from 'react-bootstrap';
 
 type PromotionBannerProps = {
-    setProductSectionVisible: (isProductSectionVisible : Boolean) => void;
+    setProductSectionVisible: (isProductSectionVisible: Boolean) => void;
 }
 
 const PromotionBanner: React.FC<PromotionBannerProps> = (props) => {
     return (
-        <Row className="promotion-banner">
-
+        <div className="promotion-banner">
             <Card.Body>
                 <Card.Subtitle className="text-dark sub-title mb-lg-2 my-md-1">100% Healthy & Affordable</Card.Subtitle>
                 <Card.Title className="title">organic vegetables</Card.Title>
-                <Card.Subtitle className="text-dark sub-title my-lg-3 my-md-2">Small Chages Big Difference</Card.Subtitle>
-                <Button className="bg-light text-dark shop-now-button" onClick={ () => props.setProductSectionVisible(true)}>Shop Now</Button>
+                <Card.Subtitle className="text-dark sub-title my-lg-3 my-md-2">Small Chages Big
+                    Difference</Card.Subtitle>
+                <Button className="bg-light text-dark shop-now-button"
+                        onClick={() => props.setProductSectionVisible(true)}>Shop Now</Button>
             </Card.Body>
-        </Row>
+        </div>
     )
 }
 
