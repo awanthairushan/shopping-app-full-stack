@@ -1,11 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f790917c-906b-41e0-bb1d-5e4234d6bef3" name="Changes" comment="Created the basic raw template">
+    <list default="true" id="b75bf849-9b5c-414c-adae-43b18d1f48f9" name="Changes" comment="Added react-table">
+      <change afterPath="$PROJECT_DIR$/src/Types/react-table/index.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/App.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/App.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/assets/styles/partials/_checkout.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/partials/_checkout.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/assets/styles/partials/_common.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/partials/_common.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/CheckOut/CheckOutTableItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/CheckOut/CheckOutTableItem.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navbars/ContactBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbars/ContactBar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/navbars/LogoBar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/navbars/LogoBar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/CartDropDown.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/CartDropDown.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/CartDropDownItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/CartDropDownItem.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/CheckOut.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/CheckOut.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/Home.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Home.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/Product.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/Product.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/pages/ProductSection.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/ProductSection.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/types/ShoppingTypes.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/Types/ShoppingTypes.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/ECommerceApp.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ECommerceApp.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,7 +27,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="VH/CC-88/navbar-UX" />
+        <entry key="$PROJECT_DIR$" value="dev" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -33,19 +45,21 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/navbars" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/components/pages" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="ts.external.directory.path" value="D:\Academic\Skills\React Industrial Trainng\Group Projects\shopping-app-full-stack\node_modules\typescript\lib" />
+    <property name="ts.external.directory.path" value="C:\Users\VH\Desktop\shopping-app-full-stack\node_modules\typescript\lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\VH\Desktop\shopping-app-full-stack\src\components\pages" />
       <recent name="D:\Academic\Skills\React Industrial Trainng\Group Projects\shopping-app-full-stack\src\components\navbars" />
       <recent name="E:\WEB PROJECT\React Training\shopping-app-full-stack\src\assets\images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\VH\Desktop\shopping-app-full-stack\src\Types" />
       <recent name="E:\WEB PROJECT\React Training\shopping-app-full-stack\src\assets" />
       <recent name="E:\WEB PROJECT\React Training\shopping-app-full-stack\src" />
     </key>
@@ -70,7 +84,7 @@
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="f790917c-906b-41e0-bb1d-5e4234d6bef3" name="Changes" comment="Added react router" />
+      <changelist id="b75bf849-9b5c-414c-adae-43b18d1f48f9" name="Changes" comment="Added react-table" />
       <created>1648878041599</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
@@ -85,6 +99,9 @@
       <workItem from="1649321244034" duration="10289000" />
       <workItem from="1649512083508" duration="1382000" />
       <workItem from="1649558041597" duration="4162000" />
+      <workItem from="1649869322213" duration="1253000" />
+      <workItem from="1649871101593" duration="255000" />
+      <workItem from="1649909052584" duration="12857000" />
     </task>
     <task id="LOCAL-00001" summary="Added react router">
       <created>1649080412243</created>
@@ -107,7 +124,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649558268296</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Added react-table">
+      <created>1649857917228</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1649857917229</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -128,6 +152,7 @@
     <MESSAGE value="Added react router" />
     <MESSAGE value="Completed the NavBar" />
     <MESSAGE value="Created the basic raw template" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created the basic raw template" />
+    <MESSAGE value="Added react-table" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added react-table" />
   </component>
 </project>

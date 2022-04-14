@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ICart, IProduct } from '../types/ShoppingTypes';
+import { ICart, IProduct } from '../../Types/ShoppingTypes';
 import Product from './Product';
 import { Row } from 'react-bootstrap';
 

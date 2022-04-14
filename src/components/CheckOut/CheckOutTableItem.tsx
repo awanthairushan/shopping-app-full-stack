@@ -8,7 +8,7 @@ type checkOutTableItemProps = {
 }
 const CheckOutTableItem: FC<checkOutTableItemProps> = (props) => {
     const {onClose} = props;
-    const unitPrice: number = 999.00; //This should be replaced with the real unit value
+    const unitPrice: number = 99999.00; //This should be replaced with the real unit value
     const [itemQty, setItemQty] = useState<number>(0);
     const [itemTotal, setItemTotal] = useState<number>(0)
 
@@ -38,37 +38,23 @@ const CheckOutTableItem: FC<checkOutTableItemProps> = (props) => {
         // onClose();
     }
     return (
-        <Table className='checkout-table'>
-            <thead>
-            <tr>
-                <td>#</td>
-                <td/>
-                <td>Item</td>
-                <td>Qty</td>
-                <td>Unit Price</td>
-                <td>Amount</td>
-                <td/>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
+            <tr >
                 <td>1</td>
                 <td>
-                    <Image src={Carrot} className='checkout-table-item-image' fluid={true}/>
+                    <Image src={Carrot} className='checkout-table-item-image' fluid={false}/>
                 </td>
-                <td>Carrot 1Kg</td>
+                <td className="">Carrot 1Kg</td>
                 <td>
-                    <MinusCircle size="20" className="hover-pointer" id="increaseQty"
+                    <MinusCircle size="20" className="hover-pointer table-item-icon" id="increaseQty"
                                  onClick={handleOnItemQtyDecrease}/>
-                    <span className="px-1">{itemQty}</span>
-                    <PlusCircle size="20" className="hover-pointer" id="decreaseQty" onClick={handleOnItemQtyIncrease}/>
+                    <span className="px-1 ">{itemQty}</span>
+                    <PlusCircle size="20" className="hover-pointer table-item-icon" id="decreaseQty" onClick={handleOnItemQtyIncrease}/>
                 </td>
                 <td>Rs.{unitPrice.toFixed(2)}</td>
                 <td>Rs.{itemTotal}</td>
                 <td><X className="hover-pointer" onClick={handleOnRemoveItemClick}/></td>
             </tr>
-            </tbody>
-        </Table>
+
     )
 }
 

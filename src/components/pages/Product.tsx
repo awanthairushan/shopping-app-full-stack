@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { ICart, IProduct } from '../types/ShoppingTypes';
+import { ICart, IProduct } from '../../Types/ShoppingTypes';
 import { carrot, coconut } from "../../assets/images/images";
 import { Button, Col, Image, Row, Form, Alert } from 'react-bootstrap';
 

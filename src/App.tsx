@@ -6,7 +6,7 @@ import Home from "./components/pages/Home";
 import AboutUs from "./components/pages/staticpages/AboutUs";
 import ContactUs from "./components/pages/staticpages/ContactUs";
 import FAQ from "./components/pages/staticpages/FAQ";
-import { ICart } from './components/types/ShoppingTypes';
+import { ICart } from './Types/ShoppingTypes';
 import { useToasts } from 'react-toast-notifications';
 import CheckOut from "./components/pages/CheckOut";
 
