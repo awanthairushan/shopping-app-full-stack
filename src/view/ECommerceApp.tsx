@@ -16,7 +16,6 @@ const ECommerceApp: React.FC<ECommerceAppProps> = (props) => {
             <Row className="mx-0">
                 <ContactBar/>
                 <LogoBar cartItems={cartItems}/>
-                <NavBar/>
             </Row>
             <Outlet/>
         </Container>

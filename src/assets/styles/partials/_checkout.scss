@@ -12,13 +12,13 @@ $icon-grey: #8E8E8E;
   th:nth-child(3) {
     width: 40% !important;
   }
+
   :not(:first-child) {
     border-top: 0;
   }
   .table-item-icon{
     color: $icon-grey;
   }
-
 }
 
 .checkout-table-item-image {
@@ -32,5 +32,4 @@ $icon-grey: #8E8E8E;
 
 .page-title{
   font-weight: 600;
-
 }

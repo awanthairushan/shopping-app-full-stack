@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b75bf849-9b5c-414c-adae-43b18d1f48f9" name="Changes" comment="Created checkout table">
+    <list default="true" id="b75bf849-9b5c-414c-adae-43b18d1f48f9" name="Changes" comment="Added responsiveness on mobile and tab">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/assets/styles/partials/_checkout.scss" beforeDir="false" afterPath="$PROJECT_DIR$/src/assets/styles/partials/_checkout.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/components/pages/CheckOut.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/pages/CheckOut.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/ECommerceApp.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ECommerceApp.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +89,7 @@
       <workItem from="1649558041597" duration="4162000" />
       <workItem from="1649869322213" duration="1253000" />
       <workItem from="1649871101593" duration="255000" />
-      <workItem from="1649909052584" duration="13172000" />
+      <workItem from="1649909052584" duration="13812000" />
     </task>
     <task id="LOCAL-00001" summary="Added react router">
       <created>1649080412243</created>
@@ -123,7 +126,14 @@
       <option name="project" value="LOCAL" />
       <updated>1649922829880</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Added responsiveness on mobile and tab">
+      <created>1649923184836</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1649923184836</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -146,6 +156,7 @@
     <MESSAGE value="Created the basic raw template" />
     <MESSAGE value="Added react-table" />
     <MESSAGE value="Created checkout table" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created checkout table" />
+    <MESSAGE value="Added responsiveness on mobile and tab" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added responsiveness on mobile and tab" />
   </component>
 </project>
