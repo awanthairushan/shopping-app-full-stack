@@ -1,8 +1,26 @@
 import React, {FC} from 'react';
 import {Col, Row, Table} from "react-bootstrap";
 import CheckOutTableItem from "../CheckOut/CheckOutTableItem";
+import {ICart} from "../../Types/ShoppingTypes";
+import {map} from "react-bootstrap/ElementChildren";
 
-const CheckOut: FC = () => {
+type CheckoutProps = {
+    cartItems: ICart[];
+    setCartItems: (items: ICart[]) => void;
+}
+const CheckOut: FC<CheckoutProps> = (props) => {
+    const {cartItems , setCartItems} = props;
+
+    const handleOnItemRemoved = (index: number) => {
+        cartItems.splice(index, 1);
+        setCartItems([...cartItems]);
+    }
+
+    const renderCartItems = () => {
+        return cartItems.map((item, index) => {
+            return <CheckOutTableItem cartItem={item} onRemoveItem={handleOnItemRemoved} index={index}/>;
+        })
+    }
     return (
         <Row className="ms-lg-5 mx-md-4 mx-3 px-lg-3 px-md-2 pt-3 my-5 ">
             <h2 className="ps-0 page-title">Checkout</h2>
@@ -21,12 +39,7 @@ const CheckOut: FC = () => {
                     </tr>
                     </thead>
                     <tbody>
-                    <CheckOutTableItem/>
-                    <CheckOutTableItem/>
-                    <CheckOutTableItem/>
-                    <CheckOutTableItem/>
-                    <CheckOutTableItem/>
-                    <CheckOutTableItem/>
+                    {renderCartItems()}
                     </tbody>
                 </Table>
             </Col>

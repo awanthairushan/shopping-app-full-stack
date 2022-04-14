@@ -43,7 +43,7 @@ const App = () => {
                     <Route path='/contact' element={<ContactUs/>}/>
                     <Route path='/faq' element={<FAQ/>}/>
                     //test
-                    <Route path='/checkout' element={<CheckOut/>}/>
+                    <Route path='/checkout' element={<CheckOut cartItems={cartItems} setCartItems={setCartItems}/>}/>
                 </Route>
             </Routes>
         </BrowserRouter>
