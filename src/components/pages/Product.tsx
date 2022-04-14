@@ -11,7 +11,7 @@ type ProductProps = {
 const Product: React.FC<ProductProps> = (props) => {
 
     const { onCartItemCreate } = props;
-    const [quentity, setQuentity] = useState<string>("1");
+    const [quentity, setQuentity] = useState<number>(1);
     const { product, index } = props;
     var imglink;
 
@@ -45,14 +45,14 @@ const Product: React.FC<ProductProps> = (props) => {
     }
 
     const handleOnQuentityChanged = (num: string) => {
-        setQuentity(num);
+        setQuentity(parseInt(num));
     }
 
     const handleSubmit = (event: any) => {
         event.preventDefault();
         const newItem: ICart = { name: product.name, price: product.price, quentity: quentity, img: product.img };
         onCartItemCreate(newItem);
-        setQuentity("1");
+        setQuentity(1);
     }
     return (
         <Col xs={6} md={4} lg={3} className='mt-1 mb-1 mb-md-3 products'>
