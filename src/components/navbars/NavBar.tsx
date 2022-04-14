@@ -58,6 +58,10 @@ const NavBar: React.FC = () => {
                                  onClick={() => setExpanded(false)}>
                             Contact Us
                         </NavLink>
+                        <NavLink as={Link} to='/checkout' className='mx-lg-2'
+                                 onClick={() => setExpanded(false)}>
+                            Checkout
+                        </NavLink>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>

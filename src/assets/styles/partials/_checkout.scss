@@ -1,8 +1,10 @@
 $grey: #ECECEC;
 $icon-grey: #8E8E8E;
+$apply-green: #4CAF50;
 
 .checkout-table {
   font-size: 20px;
+  width: 100% !important;
 
   td, th {
     vertical-align: middle;
@@ -11,14 +13,37 @@ $icon-grey: #8E8E8E;
   }
 
   th:nth-child(3) {
-    width: 40% !important;
+    //min-width: 340px !important;
+    //max-width: 470px !important;
+    width: 45% !important;
+    max-width: 45% !important;
   }
 
   :not(:first-child) {
     border-top: 0;
   }
-  .table-item-icon{
+
+  .table-item-icon {
     color: $icon-grey;
+  }
+
+  .apply-discount {
+    background-color: $apply-green;
+    border: none;
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+
+  .discount-input {
+    border: 1px solid #ced4da;
+    box-shadow: none;
+  }
+
+  .discount-code-text {
+    font-size: 17px !important;
+    font-weight: 500;
   }
 }
 
@@ -31,6 +56,6 @@ $icon-grey: #8E8E8E;
   border-radius: 10px;
 }
 
-.page-title{
+.page-title {
   font-weight: 600;
 }
