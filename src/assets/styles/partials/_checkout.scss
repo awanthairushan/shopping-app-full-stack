@@ -1,0 +1,36 @@
+$grey: #ECECEC;
+$icon-grey: #8E8E8E;
+
+.checkout-table {
+  font-size: 20px;
+
+  td, th {
+    vertical-align: middle;
+    white-space: nowrap !important;
+    font-weight: 500;
+  }
+
+  th:nth-child(3) {
+    width: 40% !important;
+  }
+
+  :not(:first-child) {
+    border-top: 0;
+  }
+  .table-item-icon{
+    color: $icon-grey;
+  }
+}
+
+.checkout-table-item-image {
+  width: 100px;
+}
+
+.checkout {
+  border: 2px solid $grey;
+  border-radius: 10px;
+}
+
+.page-title{
+  font-weight: 600;
+}

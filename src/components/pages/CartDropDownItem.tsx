@@ -26,7 +26,7 @@ const CartDropDownItem: React.FC<CartDropDownItemProps> = (props) => {
                     <h5>{item.name}</h5>
                 </Row>
                 <Row className='cart-d-quentity'>
-                    <h5>Qty: {item.quentity}</h5>
+                    <h5>Qty: {item.quantity}</h5>
                 </Row>
             </Col>
             <Col xs={4} className="cart-d-price p-0">
