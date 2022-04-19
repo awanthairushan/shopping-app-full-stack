@@ -10,14 +10,14 @@ const ProductSection:React.FC<ProductSectionProps> = (props) => {
 
     const {onCartItemCreate} = props;
     const productList: IProduct[] = [
-        { name: "product 1", price: "65.34", oldPrice: "65.00", img: "coconut" },
-        { name: "product 2", price: "65.45", oldPrice: null, img: "carrot" },
-        { name: "product 3", price: "65.00", oldPrice: null, img: "coconut" },
-        { name: "product 4", price: "65.00", oldPrice: "65.00", img: "carrot" },
-        { name: "product 1", price: "65.34", oldPrice: "65.00", img: "coconut" },
-        { name: "product 2", price: "65.45", oldPrice: null, img: "carrot" },
-        { name: "product 3", price: "65.00", oldPrice: null, img: "coconut" },
-        { name: "product 4", price: "65.00", oldPrice: "65.00", img: "carrot" },
+        { name: "product 1", price: "65.34", oldprice: "65.00", img: "coconut" },
+        { name: "product 2", price: "65.45", oldprice: null, img: "carrot" },
+        { name: "product 3", price: "65.00", oldprice: null, img: "coconut" },
+        { name: "product 4", price: "65.00", oldprice: "65.00", img: "carrot" },
+        { name: "product 1", price: "65.34", oldprice: "65.00", img: "coconut" },
+        { name: "product 2", price: "65.45", oldprice: null, img: "carrot" },
+        { name: "product 3", price: "65.00", oldprice: null, img: "coconut" },
+        { name: "product 4", price: "65.00", oldprice: "65.00", img: "carrot" },
     ];
     const [products, setProducts] = useState<IProduct[]>(productList);
 

@@ -22,16 +22,16 @@ const LogoBar: React.FC<LogoBarProp> = (props) => {
 
     return (
         <Row className="logobar">
-            <Col xl={9} lg={8} sm={7} xs={6} className="ps-4 ">
+            <Col xl={8} lg={8} sm={7} xs={6} className="ps-3 me-xl-4">
                 <Image src={Logo} className="img-fluid ms-md-5" />
             </Col>
-            <Col xl={1} lg={1} sm={1} xs={1} onClick={cartVisible}>
-                <ShoppingCart className="shopping-cart mt-md-2 me-2" />
+            <Col xl={1} lg={1} sm={1} xs={2} onClick={cartVisible} className='ms-xl-5 ps-xl-5'>
+                <ShoppingCart className="shopping-cart mt-md-2 me-0" />
                 <span className="d-flex align-items-center justify-content-center cart-basket">
                     {cartItems.length}
                 </span>
             </Col>
-            <Col xl={2} lg={3} sm={4} xs={5}>
+            <Col xl={2} lg={3} sm={4} xs={4} className='d-flex justify-content-end justify-content-sm-start ps-xl-3 ps-sm-3 ps-0 '>
                 <button type="button" className=" py-0 btn text-light">Check out</button>
             </Col>
             <Col xs={12} className='cart-priview'>

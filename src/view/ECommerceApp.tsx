@@ -5,7 +5,7 @@ import React, {useState} from 'react';
 import LogoBar from "../components/navbars/LogoBar";
 import {Outlet} from "react-router-dom";
 import ContactBar from '../components/navbars/ContactBar';
-import {ICart} from '../Types/ShoppingTypes';
+import { ICart } from '../Types/ShoppingTypes';
 
 type ECommerceAppProps = {
     cartItems: ICart[],
@@ -13,11 +13,13 @@ type ECommerceAppProps = {
 const ECommerceApp: React.FC<ECommerceAppProps> = (props) => {
     const {cartItems} = props;
     return (
-        <Container fluid className='p-0 m-0'>
-            <Row className="mx-0">
-                <ContactBar/>
-                <LogoBar cartItems={cartItems}/>
-                <NavBar/>
+        <Container fluid={true}>
+            <Row>
+                <Col>
+                    <ContactBar/>
+                    <LogoBar cartItems={cartItems}/>
+                    <NavBar/>
+                </Col>
             </Row>
             <Outlet/>
             <Row>
@@ -30,4 +32,4 @@ const ECommerceApp: React.FC<ECommerceAppProps> = (props) => {
     )
 }
 
-export  default ECommerceApp;
+export default ECommerceApp;

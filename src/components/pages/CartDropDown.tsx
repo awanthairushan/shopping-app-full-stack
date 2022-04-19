@@ -33,7 +33,7 @@ const CartDropDown: React.FC<CartDropDownProp> = (props) => {
     const totalItemSet = () => {
         var quentityTotal = 0;
         for (var i = 0; i < cartItems.length; i++) {
-            var num = parseInt(cartItems[i].quantity) + quentityTotal
+            var num = parseInt(cartItems[i].quentity) + quentityTotal
             quentityTotal = num;
         }
         return quentityTotal;
