@@ -1,7 +1,7 @@
 export interface IProduct {
   name: string;
   price: string;
-  oldPrice: string | null;
+  oldprice: string | null;
   img: string;
 }
 
