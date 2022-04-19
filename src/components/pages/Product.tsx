@@ -22,7 +22,7 @@ const Product: React.FC<ProductProps> = (props) => {
     }
 
     const PriceShow = () => {
-        if (product.oldprice == null) {
+        if (product.oldPrice == null) {
             return (
                 <Row>
                     <Col xs={12} className='new-price old-price-null'>
@@ -37,7 +37,7 @@ const Product: React.FC<ProductProps> = (props) => {
                         <h4>Rs.{product.price}</h4>
                     </Col>
                     <Col xs={{ span: 12, order: 1 }} sm={{ span: 6, order: 2 }} className='old-price'>
-                        <h5><span className="strikediag"> Rs.{product.oldprice} </span></h5>
+                        <h5><span className="strikediag"> Rs.{product.oldPrice} </span></h5>
                     </Col>
                 </Row>
             )

@@ -1,9 +1,10 @@
-$quentity-color:#cacaca;
+$quentity-color: #cacaca;
 .logobar {
   padding-top: 2rem;
   padding-bottom: 1rem;
   border-top: 1px solid #717171;
   box-shadow: 0 5px 10px $quentity-color;
+
   .img-fluid {
     height: 3.5rem;
   }
@@ -21,6 +22,7 @@ $quentity-color:#cacaca;
     width: 50px;
     height: 50px;
   }
+
   .cart-basket {
     font-size: 1rem;
     position: relative;
@@ -52,14 +54,18 @@ $quentity-color:#cacaca;
       width: 40px;
       height: 40px;
     }
+
     .cart-basket {
       margin-top: -43px;
       margin-left: 30px;
       margin-bottom: -25px;
     }
   }
-  .header-navbar{
+  .header-navbar {
     font-size: 20px !important;
+  }
+  .navbar-dropdown{
+    width: 40%;
   }
 }
 
@@ -88,6 +94,7 @@ $quentity-color:#cacaca;
       width: 30px;
       height: 30px;
     }
+
     .cart-basket {
       font-size: 0.8rem;
       margin-top: -30px;
@@ -98,7 +105,7 @@ $quentity-color:#cacaca;
     }
   }
 
-  .header-navbar{
+  .header-navbar {
     font-size: 17px !important;
   }
 }
@@ -110,14 +117,15 @@ $quentity-color:#cacaca;
   color: #555555;
   font-weight: 600;
 
-  .navbar-dropdown{
+  .navbar-dropdown {
     border: 2px solid #797979;
     border-radius: 5px;
 
-    #collasible-nav-dropdown{
-      &a{
+    #collasible-nav-dropdown {
+      &a {
         color: #202020;
       }
+
       display: flex;
       align-items: center;
     }
