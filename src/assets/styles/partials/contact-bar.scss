@@ -6,12 +6,12 @@
   }
   .buttons {
     color: #89f302;
-    :hover {
+      display:block;
       cursor: pointer;
       border-width:1px;
       border-style: solid ;
       border-color: #23af23;
-    }
+
   }
 }
 

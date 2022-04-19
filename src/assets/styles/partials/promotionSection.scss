@@ -1,9 +1,11 @@
 .promotionSection {
+  z-index: 0;
+  position: relative;
+
   .promotion-banner {
-    background: none;
-    border: none;
+    z-index: 1;
     position: absolute;
-    top: 44%;
+    top: 38%;
     left: 61%;
 
     .sub-title {
@@ -21,6 +23,7 @@
     }
 
     .shop-now-button {
+      cursor: pointer;
       width: 9rem;
       height: 2.7rem;
       border: none;
@@ -28,25 +31,28 @@
       font-size: 0.9rem;
       font-weight: 500;
       font-family: 'Libre Baskerville', serif;
-
     }
   }
 }
+
 //Horizontal iPad air
 @media (max-width: 1180px) {
   .promotionSection {
+    position: relative;
+
     .promotion-banner {
       position: absolute;
-      top: 33% !important;
-    }
+      top: 38%;
+      left: 61%;
 
-    .sub-title {
-      font-size: 1.1rem !important;
-    }
+      .sub-title {
+        font-size: 1.1rem !important;
+      }
 
-    .title {
-      font-size: 2.2rem !important;
-      letter-spacing: 0px !important;
+      .title {
+        font-size: 2.2rem !important;
+        letter-spacing: 0px !important;
+      }
     }
   }
 }
@@ -54,89 +60,83 @@
 ////Horizontal Samsung galaxy s20
 @media (max-width: 916px) {
   .promotionSection {
+    position: relative;
+
     .promotion-banner {
       position: absolute;
-      top: 53% !important;
-      left: 60%;
-    }
+      top: 35%;
+      left: 61%;
 
-    .sub-title {
-      font-size: 0.9rem !important;
-    }
+      .sub-title {
+        font-size: 0.9rem !important;
+      }
 
-    .title {
-      font-size: 1.7rem !important;
-      letter-spacing: 0px !important;
-    }
+      .title {
+        font-size: 1.7rem !important;
+        letter-spacing: 0px !important;
+      }
 
-    .shop-now-button {
-      width: 7rem !important;
-      height: 2rem !important;
-      font-size: 0.7rem !important;
-    }
-  }
-}
-
-//vertical iPad air
-@media (max-width: 820px) {
-  .promotionSection {
-    .promotion-banner {
-      position: absolute;
-      top: 17% !important;
-      left: 60%;
-    }
-  }
-}
-
-
-@media (max-width: 576px) {
-  .promotionSection {
-    .promotion-banner {
-      position: absolute;
-      top: 15% !important;
-      left: 50%
-    }
-
-    .sub-title {
-      font-size: 0.6rem !important;
-    }
-
-    .title {
-      font-size: 1.2rem !important;
-      letter-spacing: 0px !important;
-    }
-
-    .shop-now-button {
-      width: 6rem !important;
-      height: 1.8rem !important;
-      font-size: 0.6rem !important;
-      margin-top: 0.2rem;
+      .shop-now-button {
+        width: 7rem !important;
+        height: 2rem !important;
+        font-size: 0.7rem !important;
+      }
     }
   }
 }
 
 @media (max-width: 576px) {
   .promotionSection {
+    position: relative;
+
     .promotion-banner {
       position: absolute;
-      top: 15% !important;
-      left: 50%
-    }
+      top: 38%;
+      left: 50%;
 
-    .sub-title {
-      font-size: 0.6rem !important;
-    }
+      .sub-title {
+        font-size: 0.6rem !important;
+      }
 
-    .title {
-      font-size: 1.2rem !important;
-      letter-spacing: 0px !important;
-    }
+      .title {
+        font-size: 1.2rem !important;
+        letter-spacing: 0px !important;
+      }
 
-    .shop-now-button {
-      width: 6rem !important;
-      height: 1.8rem !important;
-      font-size: 0.6rem !important;
-      margin-top: 0.2rem;
+      .shop-now-button {
+        width: 6rem !important;
+        height: 1.8rem !important;
+        font-size: 0.6rem !important;
+        margin-top: 0.2rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 400px) {
+  .promotionSection {
+    position: relative;
+
+    .promotion-banner {
+      position: absolute;
+      top: 30%;
+      left: 45%;
+
+      .sub-title {
+        font-size: 0.6rem !important;
+      }
+
+      .title {
+        font-size: 1.2rem !important;
+        letter-spacing: 0px !important;
+      }
+
+      .shop-now-button {
+        width: 6rem !important;
+        height: 1.5rem !important;
+        font-size: 0.6rem !important;
+        margin-top: 0.1rem;
+      }
     }
   }
 }

@@ -1,17 +1,20 @@
 import React, {useState} from 'react';
 import {Col, Row, Card, CardImg} from "react-bootstrap";
 import ProductSection from "../pages/ProductSection";
+import {ICart} from "../../Types/ShoppingTypes";
 
 type CategoryListProps = {
   items: {
     id: number
     name: string
     image: string
-  }[]
+  }[],
+  onCartItemCreate: (newItem: ICart) => void;
 }
 
 const CategoryList: React.FC<CategoryListProps> = (props: CategoryListProps) => {
 
+  const {onCartItemCreate} = props;
   const [selectedCategory, setSelectedCategory] = useState<String>("All");
 
   const handleCategoryChange = (category: String) => {
@@ -20,12 +23,13 @@ const CategoryList: React.FC<CategoryListProps> = (props: CategoryListProps) => 
 
   const getProductByCategory = () => {
     if(selectedCategory){
-      return <ProductSection selectedCategory={selectedCategory}/>
+      return <ProductSection selectedCategory={selectedCategory}
+                              onCartItemCreate={onCartItemCreate}/>
     }
   }
   return (
       <React.Fragment>
-      <Row xs={12} className='d-flex flex-row justify-content-center mt-3 mx-0 category'>
+      <Row xs={12} className='d-flex flex-row justify-content-center pt-4 mx-0 category'>
         <h2 className='text-center'>Our Products</h2>
         <Col xl={10} lg={12} xs={12} className='d-flex flex-md-row flex-column justify-content-center mb-2'>
           {props.items.map(item => {

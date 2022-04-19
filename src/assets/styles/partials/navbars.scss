@@ -1,8 +1,9 @@
+$quentity-color:#cacaca;
 .logobar {
   padding-top: 2rem;
-  padding-bottom: 1rem;
+  padding-bottom: 1.6rem;
   border-top: 1px solid #717171;
-
+  box-shadow: 0 5px 10px $quentity-color;
   .img-fluid {
     height: 3.5rem;
   }
@@ -19,18 +20,20 @@
   .shopping-cart {
     width: 50px;
     height: 50px;
+    cursor: pointer;
   }
   .cart-basket {
-    font-size: 1rem;
+    cursor: pointer;
+    font-size: 1.5rem;
     position: relative;
     margin-top: -50px;
     margin-left: 40px;
     margin-bottom: -25px;
-    width: 20px;
-    height: 20px;
+    width: 28px;
+    height: 28px;
     color: #fff;
     background-color: #4caf50;
-    border: 1.5px solid #8f8f8f;
+    border: 2px solid #8f8f8f;
     border-radius: 50%;
   }
 }
@@ -76,8 +79,46 @@
 
     .btn {
       height: 2rem;
-      width: 9rem;
+      width: 8rem;
       font-size: 1.3rem;
+      background-color: #4caf50;
+      border-radius: 0.5rem;
+      font-weight: 500;
+    }
+
+    .shopping-cart {
+      width: 30px;
+      height: 30px;
+    }
+    .cart-basket {
+      font-size: 0.8rem;
+      margin-top: -30px;
+      margin-left: 20px;
+      margin-bottom: -25px;
+      width: 15px;
+      height: 15px;
+    }
+  }
+
+  .header-navbar{
+    font-size: 17px !important;
+  }
+}
+@media (max-width: 411px) {
+
+  .logobar {
+    padding-top: 2rem;
+    padding-bottom: 1rem;
+    border-top: 1px solid #717171;
+
+    .img-fluid {
+      height: 2rem;
+    }
+
+    .btn {
+      height: 2rem;
+      width: 8rem;
+      font-size: 1.06rem;
       background-color: #4caf50;
       border-radius: 0.5rem;
       font-weight: 500;
@@ -104,6 +145,7 @@
 
 //Navbar styles
 .header-navbar {
+  position: unset;
   font-size: 25px;
   color: #555555;
   font-weight: 600;

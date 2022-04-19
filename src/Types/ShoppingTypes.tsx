@@ -5,3 +5,10 @@ export interface IProduct {
   img: string;
   category: string;
 }
+
+export interface ICart {
+  name: string;
+  price: string;
+  quentity: number;
+  img: string;
+}

@@ -3,9 +3,15 @@ import PromotionSection from '../Promotion/PromotionSection'
 import {Row, Col} from 'react-bootstrap';
 import CategoryList from "../CategoryList/CategoryList";
 import CategoryDateList from "../../Types/CategoryDateList";
+import ProductSection from './ProductSection';
+import { ICart } from '../../Types/ShoppingTypes';
+import SearchBar from './SearchBar';
 
-const Home: React.FC = () => {
-
+type HomeProps = {
+    onCartItemCreate: (newItem: ICart) => void;
+  };
+const Home: React.FC<HomeProps> = (props) => {
+    const {onCartItemCreate} = props;
     const [isProductSectionVisible, setIsProductSectionVisible] = useState<Boolean>(false);
 
     const setProductSectionVisible = (isProductSectionVisible: Boolean) => {
@@ -15,10 +21,12 @@ const Home: React.FC = () => {
 
     const [category] = useState(CategoryDateList);
     return (
-        <Row>
-            <Col xs={12} className="px-0">
+        <Row className=''>
+            <Col xs={12} className="">
                 <PromotionSection setProductSectionVisible={setProductSectionVisible}/>
-                <CategoryList items={category}/>
+                <SearchBar/>
+                <CategoryList items={category} onCartItemCreate={onCartItemCreate}/>
+                {/* <ProductSection onCartItemCreate={onCartItemCreate}/> */}
             </Col>
         </Row>
     )
