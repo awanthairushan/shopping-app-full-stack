@@ -5,5 +5,8 @@
 @import "partials/footer";
 @import './partials/product.scss';
 @import "partials/contact-bar";
+@import "variables/variables";
+@import "variables/mixins";
+@import "partials/category";
 @import 'partials/search-bar';
 @import "partials/cart.scss";

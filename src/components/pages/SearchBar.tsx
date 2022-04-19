@@ -4,7 +4,7 @@ import {Col, Form, InputGroup} from "react-bootstrap";
 
 const SearchBar: React.FC = () => {
   return (
-      <Col  xs={12} >
+      <Col  xs={12} className='mb-4' >
 
         <Form>
           <Form.Group className=" search-bar mx-auto d-flex align-items-end" >
