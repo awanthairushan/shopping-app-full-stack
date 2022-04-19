@@ -8,6 +8,6 @@ export interface IProduct {
 export interface ICart {
   name: string;
   price: string;
-  quentity: string;
+  quentity: number;
   img: string;
 }

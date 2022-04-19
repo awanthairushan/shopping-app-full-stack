@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Row, Col, Image } from 'react-bootstrap';
 import 'react-dropdown/style.css';
 import { ICart } from '../../Types/ShoppingTypes';
 import CartDropDownItem from './CartDropDownItem';
 import cartempty from './../../assets/images/cart-empty.jpg';
+import {Triangle} from "react-feather";
 
 type CartDropDownProp = {
     cartItems: ICart[],
@@ -33,7 +34,7 @@ const CartDropDown: React.FC<CartDropDownProp> = (props) => {
     const totalItemSet = () => {
         var quentityTotal = 0;
         for (var i = 0; i < cartItems.length; i++) {
-            var num = parseInt(cartItems[i].quentity) + quentityTotal
+            var num = cartItems[i].quentity + quentityTotal
             quentityTotal = num;
         }
         return quentityTotal;
@@ -64,6 +65,7 @@ const CartDropDown: React.FC<CartDropDownProp> = (props) => {
     return (
         <Row className='cart-priview-header'>
             <Col xs={12}>
+                {/* <Triangle className='triangle'/> */}
                 {renderCartItems()}
                 <Row>
                     <Col xs={7}>
