@@ -1,1 +1,0 @@
-export module 'react-table';

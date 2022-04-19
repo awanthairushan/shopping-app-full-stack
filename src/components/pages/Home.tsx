@@ -3,7 +3,7 @@ import PromotionSection from '../Promotion/PromotionSection'
 import {Row, Col} from 'react-bootstrap';
 import ProductSection from './ProductSection';
 import { ICart } from '../../Types/ShoppingTypes';
-import SearchBar from './../pages/SearchBar'
+import SearchBar from './SearchBar';
 
 type HomeProps = {
     onCartItemCreate: (newItem: ICart) => void;

@@ -22,7 +22,7 @@ const Product: React.FC<ProductProps> = (props) => {
     }
 
     const PriceShow = () => {
-        if (product.oldPrice == null) {
+        if (product.oldprice == null) {
             return (
                 <Row>
                     <Col xs={12} className='new-price old-price-null'>
@@ -37,7 +37,7 @@ const Product: React.FC<ProductProps> = (props) => {
                         <h4>Rs.{product.price}</h4>
                     </Col>
                     <Col xs={12} sm={6} className='old-price'>
-                        <h5><span className="strikediag"> Rs.{product.oldPrice} </span></h5>
+                        <h5><span className="strikediag"> Rs.{product.oldprice} </span></h5>
                     </Col>
                 </Row>
             )
@@ -50,7 +50,7 @@ const Product: React.FC<ProductProps> = (props) => {
 
     const handleSubmit = (event: any) => {
         event.preventDefault();
-        const newItem: ICart = { name: product.name, price: product.price, quantity: quentity, img: product.img };
+        const newItem: ICart = { name: product.name, price: product.price, quentity: quentity, img: product.img };
         onCartItemCreate(newItem);
         setQuentity("1");
     }
