@@ -1,6 +1,18 @@
 $price-color:#4caf50;
 $quentity-color:#8f8f8f;
 
+.colour-red{
+    color: red;
+}
+.font-12px{
+    font-size: 12px;
+}
+.float-right{
+    float: right;
+}
+.colour-gray{
+    color: #5a6268;
+}
 .cart-priview{
     position: absolute;
     margin-top: 60px;
@@ -10,12 +22,15 @@ $quentity-color:#8f8f8f;
     box-shadow: 0 1px 10px $quentity-color;
     border-radius: 10px;
     height: auto;
-    width: 450px;
+    //width: 450px;
     display: flex;
     float: right;
     margin-right: 4.5%;
-    padding: 15px 30px;
+    padding: 20px 10px 0 25px ;
     background-color: white;
+    .cart-content{
+        width: 360px;
+    }
     .cart-d-img img{
         width: 100%;
     }
@@ -29,25 +44,28 @@ $quentity-color:#8f8f8f;
         float: right;
         color: $price-color;
         vertical-align: text-bottom;
-        margin-top: 57px;
+        //margin-top: 57px;
     }
     .cart-d-quentity{
-        margin-top: 25px;
+        //margin-top: 25px;
     }
     .cart-values h5{
         display: flex;
         float: right;
         font-weight: bold;
     }
-    .cart-subtotal{
-        color: red;
-    }
-    .cart-total{
-        color: red;
-    }
 }
+
 .cart-empty{
-    width: 100%;
+    width: 130px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.cart-empty-text{
+    margin-bottom: 0;
+    display: flex;
+    justify-content: center;
 }
 @media(max-width:992px){
     .cart-priview{
@@ -55,9 +73,9 @@ $quentity-color:#8f8f8f;
     }
     .cart-priview-header{
         height: auto;
-        width: 400px;
+        //width: 400px;
         margin-right: 4.5%;
-        padding: 15px 30px;
+        padding: 20px 10px 0 25px ;
     }
 }
 @media(max-width:576px){
@@ -72,10 +90,10 @@ $quentity-color:#8f8f8f;
         margin-left: 2%;
         padding: 5px 10px;
         .cart-d-price h5{
-            margin-top: 45px;
+            //margin-top: 45px;
         }
         .cart-d-quentity{
-            margin-top: 20px;
+            //margin-top: 20px;
         }
         h5{
             font-size: 15px;
@@ -88,4 +106,23 @@ $quentity-color:#8f8f8f;
     margin-left: 47.5%;
     margin-top: -20%;
     z-index: 0;
+}
+.cart-trash{
+    width: 17px;
+}
+.cart-items{
+    max-height: 250px;
+    overflow-y: scroll;
+}
+.hr{
+    width: 93%;
+}
+.cart-checkout{
+    border: none !important;
+    font-size: 12px !important;
+    height: unset !important;
+    width: unset !important;
+    border-radius: 30px !important;
+    padding: 5px 30px;
+    margin-left: -10px;
 }
