@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {Link} from "react-router-dom";
-import {Navbar, NavLink, Nav, NavDropdown} from "react-bootstrap";
+import {Navbar, NavLink, Nav, NavDropdown, Button} from "react-bootstrap";
 import {ISelectOption} from "../../Types/ISelectOption";
 
 const NavBar: React.FC = () => {
@@ -41,8 +41,11 @@ const NavBar: React.FC = () => {
                         {renderCategories()}
                     </NavDropdown>
                     <NavLink as={Link} to='/' className='mx-lg-2'>Home</NavLink>
-                    <NavLink as={Link} to='/faq' className='mx-lg-2'>FAQ</NavLink>
                     <NavLink as={Link} to='/about' className='mx-lg-2'>About Us</NavLink>
+                    <NavLink as={Link} to='/faq' className='mx-lg-2'>FAQ</NavLink>
+                    <NavLink as={Link} to='/pricing' id="pricing-link" className='mx-lg-2 px-3 py-0 d-inline-flex align-items-center'>
+                        Pricing
+                    </NavLink>
                     <NavLink as={Link} to='/contact' className='mx-lg-2'>Contact Us</NavLink>
                 </Nav>
             </Navbar.Collapse>

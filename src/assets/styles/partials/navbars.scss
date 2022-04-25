@@ -1,4 +1,8 @@
 $quentity-color:#cacaca;
+$pricing-red : #dc3545;
+$link-black: #262626;
+$link-padding: 6px;
+
 .logobar {
   padding-top: 2rem;
   padding-bottom: 1.6rem;
@@ -65,7 +69,6 @@ $quentity-color:#cacaca;
   }
 }
 
-
 @media (max-width: 576px) {
 
   .logobar {
@@ -104,6 +107,7 @@ $quentity-color:#cacaca;
     font-size: 17px !important;
   }
 }
+
 @media (max-width: 411px) {
 
   .logobar {
@@ -146,20 +150,37 @@ $quentity-color:#cacaca;
 //Navbar styles
 .header-navbar {
   position: unset;
-  font-size: 25px;
-  color: #555555;
-  font-weight: 600;
+  font-size: 20px;
+  font-weight: 400;
+  color: red !important;
 
+  .nav-link{
+    color: $link-black !important;
+    padding-top: $link-padding !important;
+    padding-bottom: $link-padding !important;
+
+  }
   .navbar-dropdown{
     border: 2px solid #797979;
     border-radius: 5px;
 
     #collasible-nav-dropdown{
       &a{
-        color: #202020;
+        color: red !important;
       }
       display: flex;
       align-items: center;
+    }
+  }
+
+  #pricing-link{
+    color: $pricing-red !important;
+    border: 1px solid $pricing-red;
+    border-radius: 5px;
+
+    &:hover{
+      color: white !important;
+      background-color: $pricing-red;
     }
   }
 }
