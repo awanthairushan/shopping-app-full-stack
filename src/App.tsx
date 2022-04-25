@@ -9,6 +9,7 @@ import FAQ from "./components/pages/staticpages/FAQ";
 import { ICart } from './Types/ShoppingTypes';
 import { useToasts } from 'react-toast-notifications';
 import CheckOut from "./components/pages/CheckOut";
+import Pricing from "./components/pages/staticpages/Pricing";
 
 const App = () => {
     const { addToast } = useToasts();
@@ -42,6 +43,7 @@ const App = () => {
                     <Route path='/about' element={<AboutUs/>}/>
                     <Route path='/contact' element={<ContactUs/>}/>
                     <Route path='/faq' element={<FAQ/>}/>
+                    <Route path='/pricing' element={<Pricing/>}/>
                     <Route path='/checkout' element={<CheckOut cartItems={cartItems} setCartItems={setCartItems}/>}/>
                 </Route>
             </Routes>
