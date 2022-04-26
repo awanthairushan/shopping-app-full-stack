@@ -14,7 +14,7 @@ const CartDropDown: React.FC<CartDropDownProp> = (props) => {
     const subTotalSet = () => {
         var subtotal = 0;
         for (var i = 0; i < cartItems.length; i++) {
-            var num = parseInt(cartItems[i].price) + subtotal
+            var num = (parseInt(cartItems[i].price)*cartItems[i].quentity) + subtotal
             subtotal = num;
         }
         return subtotal;
@@ -51,7 +51,7 @@ const CartDropDown: React.FC<CartDropDownProp> = (props) => {
     }
     const renderCartItems = () => {
         return (
-            <Row className='cart-items'>
+            <Row className='cart-items pe-2'>
                 {cartItems.map((item: ICart, index: number) => (
                     <CartDropDownItem
                         item={item}
