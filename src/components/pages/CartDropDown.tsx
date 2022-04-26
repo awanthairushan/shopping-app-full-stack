@@ -4,25 +4,30 @@ import 'react-dropdown/style.css';
 import { ICart } from '../../Types/ShoppingTypes';
 import CartDropDownItem from './CartDropDownItem';
 import cartempty from './../../assets/images/cart.png';
+import NumberFormat from 'react-number-format';
 
 type CartDropDownProp = {
     cartItems: ICart[],
+    onCartItemRemove: (index: number) => void;
 }
 const CartDropDown: React.FC<CartDropDownProp> = (props) => {
-    const { cartItems } = props;
+
+    const { cartItems, onCartItemRemove } = props;
 
     const subTotalSet = () => {
         var subtotal = 0;
         for (var i = 0; i < cartItems.length; i++) {
-            var num = (parseInt(cartItems[i].price)*cartItems[i].quentity) + subtotal
+            var num = (parseInt(cartItems[i].price) * cartItems[i].quentity) + subtotal
             subtotal = num;
         }
         return subtotal;
     }
+
     const discountSet = () => {
         var discount = 30;
         return discount;
     }
+
     const totalSet = () => {
         var subTotal = subTotalSet();
         var discount = discountSet();
@@ -38,6 +43,7 @@ const CartDropDown: React.FC<CartDropDownProp> = (props) => {
         }
         return quentityTotal;
     }
+
     if (cartItems.length === 0) {
         return (
             <Row className='cart-priview-header'>
@@ -49,6 +55,7 @@ const CartDropDown: React.FC<CartDropDownProp> = (props) => {
             </Row>
         );
     }
+
     const renderCartItems = () => {
         return (
             <Row className='cart-items pe-2'>
@@ -57,6 +64,7 @@ const CartDropDown: React.FC<CartDropDownProp> = (props) => {
                         item={item}
                         index={index}
                         key={index}
+                        onCartItemRemove={onCartItemRemove}
                     />
                 ))}
             </Row>
@@ -66,7 +74,6 @@ const CartDropDown: React.FC<CartDropDownProp> = (props) => {
     return (
         <Row className='cart-priview-header'>
             <Col xs={12} className='cart-content'>
-                {/* <Triangle className='triangle'/> */}
                 {renderCartItems()}
                 <Row className='mt-3'>
                     <Col xs={8}>
@@ -78,8 +85,8 @@ const CartDropDown: React.FC<CartDropDownProp> = (props) => {
                         </Row>
                     </Col>
                     <Col xs={4} className="cart-values">
-                        <h5 className='colour-red font-12px pe-4'>Rs. {subTotalSet()}.00</h5>
-                        <h5 className='font-12px pe-4'>Rs. {discountSet()}.00</h5>
+                        <h5 className='colour-red font-12px pe-4'><NumberFormat value={subTotalSet()} displayType={'text'} thousandSeparator={true} prefix={'Rs. '} />.00</h5>
+                        <h5 className='font-12px pe-4'><NumberFormat value={discountSet()} displayType={'text'} thousandSeparator={true} prefix={'Rs. '} />.00</h5>
                     </Col>
                     <hr className='hr' />
                 </Row>
@@ -89,7 +96,7 @@ const CartDropDown: React.FC<CartDropDownProp> = (props) => {
                         <h5 className='font-12px ps-0'>Total</h5>
                     </Col>
                     <Col xs={6} className="cart-values">
-                        <h5 className='colour-red font-12px pe-4'>Rs. {totalSet()}.00</h5>
+                        <h5 className='colour-red font-12px pe-4'><NumberFormat value={totalSet()} displayType={'text'} thousandSeparator={true} prefix={'Rs. '} />.00</h5>
                     </Col>
                 </Row>
                 <Button className='cart-checkout mb-3 mt-1'>checkout</Button>
