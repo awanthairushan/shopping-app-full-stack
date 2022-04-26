@@ -163,11 +163,10 @@ $link-padding: 6px;
     color: $link-black !important;
     padding-top: $link-padding !important;
     padding-bottom: $link-padding !important;
-
   }
 
   .navbar-dropdown {
-    border: 2px solid #797979;
+    border: 1px solid #1E7F35;
     border-radius: 5px;
 
     #collasible-nav-dropdown {
