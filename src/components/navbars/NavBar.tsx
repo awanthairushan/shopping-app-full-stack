@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {Link} from "react-router-dom";
-import {Navbar, NavLink, Nav, NavDropdown, Button} from "react-bootstrap";
+import {Navbar, NavLink, Nav, NavDropdown} from "react-bootstrap";
 import {ISelectOption} from "../../Types/ISelectOption";
 
 const NavBar: React.FC = () => {
