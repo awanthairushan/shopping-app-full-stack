@@ -31,7 +31,7 @@ const NavBar: React.FC = () => {
 
     return (
         <Navbar className='py-4 header-navbar' collapseOnSelect>
-            <Nav className='ms-0 ms-lg-5 ms-md-4'>
+            <Nav className='ms-0 ms-lg-5 ms-md-4 my-1'>
                 <NavDropdown
                     title={selectedCategoryDropdownItem ? selectedCategoryDropdownItem.label : "Categories"}
                     id="collasible-nav-dropdown" className="navbar-dropdown ps-0 px-lg-3 py-0"
