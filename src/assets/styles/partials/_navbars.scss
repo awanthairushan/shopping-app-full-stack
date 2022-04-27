@@ -180,11 +180,11 @@ $link-padding: 6px;
     border: 1px solid #1E7F35;
     border-radius: 5px;
 
-    #collasible-nav-dropdown {
-      &a {
-        color: red !important;
-      }
+    .dropdown-item{
+      color: #212529 !important;
+    }
 
+    #collasible-nav-dropdown {
       display: flex;
       align-items: center;
     }
