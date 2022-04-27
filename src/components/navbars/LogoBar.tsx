@@ -23,19 +23,19 @@ const LogoBar: React.FC<LogoBarProp> = (props) => {
 
     return (
         <Row className="logobar">
-            <Col xl={8} lg={8} sm={7} xs={6} className="ps-3 me-xl-4">
+            <Col lg={9} sm={7} xs={6} className="ps-3">
                 <Image src={Logo} className="img-fluid ms-md-5"/>
             </Col>
-            <Col xl={1} lg={1} sm={1} xs={2} onClick={cartVisible} className='ms-xl-5 ps-xl-5'>
-                <ShoppingCart className="shopping-cart mt-md-2 me-0"/>
+            <Col lg={1} sm={1} xs={2} onClick={cartVisible} className='ms-xl-3 ms-lg-0'>
+                <ShoppingCart className="shopping-cart mt-lg-0 me-0 ms-5"/>
                 <span className="d-flex align-items-center justify-content-center cart-basket">
                     {cartItems.length}
                 </span>
             </Col>
-            <Col xl={2} lg={3} sm={4} xs={4}
-                 className='d-flex justify-content-end justify-content-sm-start ps-xl-3 ps-sm-3 ps-0 '>
+            <Col lg={1} sm={4} xs={4}
+                 className='d-flex justify-content-end justify-content-sm-start ps-xl-0 ps-sm-3 ps-0 '>
                 <Link to='/checkout'>
-                    <button type="button" className=" py-0 btn text-light">Check out</button>
+                    <button type="button" className=" py-0 btn text-light">Checkout</button>
                 </Link>
             </Col>
             <Col xs={12} className='cart-priview'>
