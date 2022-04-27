@@ -5,6 +5,8 @@ import {ISelectOption} from "../../Types/ISelectOption";
 
 const NavBar: React.FC = () => {
 
+    const [selectedCategoryDropdownItem, SetSelectedCategoryDropdownItem] = useState<null | ISelectOption>(null)
+
     //handle categories dropdown
     const onHandleDropdownSelect = (e: null | string) => {
         options.forEach((item) => {
@@ -26,26 +28,25 @@ const NavBar: React.FC = () => {
             return <NavDropdown.Item key={option.value} eventKey={option.value}>{option.label}</NavDropdown.Item>
         })
     }
-    const [selectedCategoryDropdownItem, SetSelectedCategoryDropdownItem] = useState<null | ISelectOption>(null)
-
 
     return (
-        <Navbar className='py-4 header-navbar' collapseOnSelect expand='lg'>
-            <Navbar.Toggle aria-controls="responsive-navbar-nav" className="ms-1 mb-2 ms-lg-5 ms-md-4 ps-2"/>
-            <Navbar.Collapse id="responsive-navbar-nav">
-                <Nav className='ms-0 ms-lg-5 ms-md-4'>
-                    <NavDropdown
-                        title={selectedCategoryDropdownItem ? selectedCategoryDropdownItem.label : "Categories"}
-                        id="collasible-nav-dropdown" className="navbar-dropdown ps-0 px-lg-3 py-0"
-                        onSelect={onHandleDropdownSelect}>
-                        {renderCategories()}
-                    </NavDropdown>
-                    <NavLink as={Link} to='/' className='mx-lg-2'>Home</NavLink>
-                    <NavLink as={Link} to='/faq' className='mx-lg-2'>FAQ</NavLink>
-                    <NavLink as={Link} to='/about' className='mx-lg-2'>About Us</NavLink>
-                    <NavLink as={Link} to='/contact' className='mx-lg-2'>Contact Us</NavLink>
-                </Nav>
-            </Navbar.Collapse>
+        <Navbar className='py-4 header-navbar' collapseOnSelect>
+            <Nav className='ms-0 ms-lg-5 ms-md-4'>
+                <NavDropdown
+                    title={selectedCategoryDropdownItem ? selectedCategoryDropdownItem.label : "Categories"}
+                    id="collasible-nav-dropdown" className="navbar-dropdown ps-0 px-lg-3 py-0"
+                    onSelect={onHandleDropdownSelect}>
+                    {renderCategories()}
+                </NavDropdown>
+                <NavLink as={Link} to='/' className='mx-lg-2'>Home</NavLink>
+                <NavLink as={Link} to='/about' className='mx-lg-2'>About Us</NavLink>
+                <NavLink as={Link} to='/faq' className='mx-lg-2'>FAQ</NavLink>
+                <NavLink as={Link} to='/pricing' id="pricing-link"
+                         className='mx-lg-2 px-3 py-0 d-inline-flex align-items-center'>
+                    Pricing
+                </NavLink>
+                <NavLink as={Link} to='/contact' className='mx-lg-2'>Contact Us</NavLink>
+            </Nav>
         </Navbar>
     );
 }
