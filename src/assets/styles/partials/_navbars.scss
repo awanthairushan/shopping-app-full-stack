@@ -112,7 +112,7 @@ $link-padding: 6px;
   }
 }
 
-@media (max-width: 411px) {
+@media all and (max-width: 411px) {
 
   .logobar {
     padding-top: 2rem;
@@ -149,6 +149,17 @@ $link-padding: 6px;
 
   .header-navbar {
     font-size: 17px !important;
+  }
+}
+
+@media all and (max-width: 360px) {
+  .header-navbar{
+    font-size: 12px !important;
+
+    .nav-link{
+      padding-right: 4px !important;
+      padding-left: 4px !important;
+    }
   }
 }
 
