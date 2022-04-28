@@ -3,29 +3,39 @@ $icon-grey: #8E8E8E;
 $apply-green: #4CAF50;
 $green: #89f302;
 
-.contact-bar{
+.contact-bar {
+  font-size: 20px;
+
   .label {
-    color: $green;
+    color: $apply-green;
   }
 
   .button-login {
     padding-right: 0;
     text-align: start;
+    color: $apply-green;
+    cursor: pointer;
   }
+
   .href {
-
     color: #000000;
-
     text-decoration: none;
+    font-weight: 500;
   }
 
-  .buttons {
+  .register-button {
     color: $green;
-      display:block;
-      border-width:1px;
-      border-style: solid ;
-      border-color: $apply-green;
+    display: block;
+    border-width: 1px;
+    border-style: solid;
+    border-color: $apply-green;
+    border-radius: 3px;
+    cursor: pointer;
 
+    span{
+      color: $apply-green;
+      border-color: $apply-green;
+    }
   }
 }
 
