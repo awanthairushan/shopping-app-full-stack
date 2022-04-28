@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React,{useState} from 'react';
 import './App.scss';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ECommerceApp from './view/ECommerceApp';
@@ -9,6 +9,7 @@ import FAQ from "./components/pages/staticpages/FAQ";
 import { ICart } from './Types/ShoppingTypes';
 import { useToasts } from 'react-toast-notifications';
 import CheckOut from "./components/pages/CheckOut";
+import Pricing from "./components/pages/staticpages/Pricing";
 
 const App = () => {
     const { addToast } = useToasts();
@@ -46,12 +47,13 @@ const App = () => {
         <BrowserRouter>
             <Routes>
                 <Route path='/' element={<ECommerceApp cartItems={cartItems}
-                    onCartItemRemove={handleOnCartItemRemove} />}>
-                    <Route path='/' element={<Home onCartItemCreate={handleOnCartItemCreate} />} />
-                    <Route path='/about' element={<AboutUs />} />
-                    <Route path='/contact' element={<ContactUs />} />
-                    <Route path='/faq' element={<FAQ />} />
-                    <Route path='/checkout' element={<CheckOut cartItems={cartItems} setCartItems={setCartItems} />} />
+                    onCartItemRemove={handleOnCartItemRemove}/>}>
+                    <Route path='/' element={<Home onCartItemCreate={handleOnCartItemCreate}/>}/>
+                    <Route path='/about' element={<AboutUs/>}/>
+                    <Route path='/contact' element={<ContactUs/>}/>
+                    <Route path='/faq' element={<FAQ/>}/>
+                    <Route path='/pricing' element={<Pricing/>}/>
+                    <Route path='/checkout' element={<CheckOut cartItems={cartItems} setCartItems={setCartItems}/>}/>
                 </Route>
             </Routes>
         </BrowserRouter>

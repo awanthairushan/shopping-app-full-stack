@@ -1,9 +1,14 @@
-$quentity-color:#cacaca;
+$quentity-color: #cacaca;
+$pricing-red: #dc3545;
+$link-black: #262626;
+$link-padding: 6px;
+
 .logobar {
   padding-top: 2rem;
   padding-bottom: 1.6rem;
   border-top: 1px solid #717171;
   box-shadow: 0 5px 10px $quentity-color;
+
   .img-fluid {
     height: 3.5rem;
   }
@@ -22,6 +27,7 @@ $quentity-color:#cacaca;
     height: 50px;
     cursor: pointer;
   }
+
   .cart-basket {
     cursor: pointer;
     font-size: 1.5rem;
@@ -54,17 +60,17 @@ $quentity-color:#cacaca;
       width: 40px;
       height: 40px;
     }
+
     .cart-basket {
       margin-top: -43px;
       margin-left: 30px;
       margin-bottom: -25px;
     }
   }
-  .header-navbar{
+  .header-navbar {
     font-size: 20px !important;
   }
 }
-
 
 @media (max-width: 576px) {
 
@@ -90,6 +96,7 @@ $quentity-color:#cacaca;
       width: 30px;
       height: 30px;
     }
+
     .cart-basket {
       font-size: 0.8rem;
       margin-top: -30px;
@@ -100,11 +107,12 @@ $quentity-color:#cacaca;
     }
   }
 
-  .header-navbar{
-    font-size: 17px !important;
+  .header-navbar {
+    font-size: 10px !important;
   }
 }
-@media (max-width: 411px) {
+
+@media all and (max-width: 411px) {
 
   .logobar {
     padding-top: 2rem;
@@ -128,6 +136,7 @@ $quentity-color:#cacaca;
       width: 30px;
       height: 30px;
     }
+
     .cart-basket {
       font-size: 0.8rem;
       margin-top: -30px;
@@ -138,28 +147,57 @@ $quentity-color:#cacaca;
     }
   }
 
-  .header-navbar{
+  .header-navbar {
     font-size: 17px !important;
+  }
+}
+
+@media all and (max-width: 360px) {
+  .header-navbar{
+    font-size: 12px !important;
+
+    .nav-link{
+      padding-right: 4px !important;
+      padding-left: 4px !important;
+    }
   }
 }
 
 //Navbar styles
 .header-navbar {
   position: unset;
-  font-size: 25px;
-  color: #555555;
-  font-weight: 600;
+  font-size: 20px;
+  font-weight: 400;
+  color: red !important;
 
-  .navbar-dropdown{
-    border: 2px solid #797979;
+  .nav-link {
+    color: $link-black !important;
+    padding-top: $link-padding !important;
+    padding-bottom: $link-padding !important;
+  }
+
+  .navbar-dropdown {
+    border: 1px solid #1E7F35;
     border-radius: 5px;
 
-    #collasible-nav-dropdown{
-      &a{
-        color: #202020;
+    #collasible-nav-dropdown {
+      &a {
+        color: red !important;
       }
+
       display: flex;
       align-items: center;
+    }
+  }
+
+  #pricing-link {
+    color: $pricing-red !important;
+    border: 1px solid $pricing-red;
+    border-radius: 5px;
+
+    &:hover {
+      color: white !important;
+      background-color: $pricing-red;
     }
   }
 }
