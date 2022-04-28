@@ -23,17 +23,17 @@ const LogoBar: React.FC<LogoBarProp> = (props) => {
 
     return (
         <Row className="logobar">
-            <Col lg={9} sm={7} xs={6} className="ps-3">
-                <Image src={Logo} className="img-fluid ms-md-5"/>
+            <Col lg={9} sm={8} xs={10} className="ps-3 ps-sm-4">
+                <Image src={Logo} className="img-fluid ms-md-5 ms-sm-4"/>
             </Col>
-            <Col lg={1} sm={1} xs={2} onClick={cartVisible} className='ms-xl-3 ms-lg-0'>
-                <ShoppingCart className="shopping-cart mt-lg-0 me-0 ms-5"/>
+            <Col lg={1} sm={1} xs={2} onClick={cartVisible} className='ms-xl-3 ms-lg-0 shopping-cart-and-basket ps-md-0 ps-sm-1 ps-0'>
+                <ShoppingCart className="shopping-cart mt-lg-0 me-0"/>
                 <span className="d-flex align-items-center justify-content-center cart-basket">
                     {cartItems.length}
                 </span>
             </Col>
-            <Col lg={1} sm={4} xs={4}
-                 className='d-flex justify-content-end justify-content-sm-start ps-xl-0 ps-sm-3 ps-0 '>
+            <Col lg={1} sm={2}
+                 className='ps-md-0 ps-sm-0 ps-0 d-sm-block d-none'>
                 <Link to='/checkout'>
                     <button type="button" className=" py-0 btn text-light">Checkout</button>
                 </Link>
