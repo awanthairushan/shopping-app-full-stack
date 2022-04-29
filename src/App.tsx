@@ -17,8 +17,8 @@ const App = () => {
 
     const handleOnCartItemCreate = (newItem: ICart) => {
         const allItems: ICart[] = cartItems.slice();
-        var num = 0;
-        for (var i = 0; i < allItems.length; i++) {
+        let num = 0;
+        for (let i = 0; i < allItems.length; i++) {
             if (allItems[i].name === newItem.name) {
                 allItems.splice(i, 1, newItem);
                 setCartItems(allItems);

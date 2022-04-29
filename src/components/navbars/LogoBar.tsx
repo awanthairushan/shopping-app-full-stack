@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Row, Col, Image } from 'react-bootstrap';
 import Logo from '../../assets/images/LOGO.png';
 import { ShoppingCart } from 'react-feather';
-import CartDropDown from '../pages/CartDropDown';
+import CartDropDown from '../cartDropDown/CartDropDown';
 import { ICart } from '../../Types/ShoppingTypes';
 import { Link } from "react-router-dom";
 

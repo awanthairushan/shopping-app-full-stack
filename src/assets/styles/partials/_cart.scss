@@ -44,7 +44,6 @@ $quentity-color:#8f8f8f;
         float: right;
         color: $price-color;
         vertical-align: text-bottom;
-        //margin-top: 57px;
     }
     .cart-values h5{
         display: flex;
@@ -99,6 +98,9 @@ $quentity-color:#8f8f8f;
 }
 .cart-trash{
     width: 17px;
+}
+.cart-trash:hover{
+    cursor: pointer;
 }
 .cart-items{
     max-height: 250px;
