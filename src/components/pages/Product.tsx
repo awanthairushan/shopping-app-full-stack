@@ -26,7 +26,7 @@ const Product: React.FC<ProductProps> = (props) => {
             return (
                 <Row>
                     <Col xs={12} className='new-price old-price-null'>
-                        <h4>Rs.{product.price}</h4>
+                        <p>Rs.{product.price}</p>
                     </Col>
                 </Row>
             )
@@ -34,7 +34,7 @@ const Product: React.FC<ProductProps> = (props) => {
             return (
                 <Row>
                     <Col xs={{ span: 12, order: 2 }} sm={{ span: 6, order: 1 }} className='new-price'>
-                        <h4>Rs.{product.price}</h4>
+                        <p>Rs.{product.price}</p>
                     </Col>
                     <Col xs={{ span: 12, order: 1 }} sm={{ span: 6, order: 2 }} className='old-price'>
                         <h5><span className="strikediag"> Rs.{product.oldprice} </span></h5>
@@ -57,11 +57,11 @@ const Product: React.FC<ProductProps> = (props) => {
     return (
         <Col xs={6} md={4} lg={3} className='mt-1 mb-1 mb-md-3 products'>
             <Row className='product-item'>
-                <Col sm={12} className='product-img mt-1 mb-2'>
+                <Col sm={12} className='product-img mt-1'>
                     <Image src={imglink} alt="product img" />
                 </Col>
-                <Col sm={12} className='product-name mb-sm-2 px-3'>
-                    <h4>{product.name}</h4>
+                <Col sm={12} className='product-name mb-sm-4 px-3'>
+                    <p>{product.name}</p>
                 </Col>
                 <Col sm={12} className='product-price sm-1 mb-sm-4 px-4'>
                     {PriceShow()}
