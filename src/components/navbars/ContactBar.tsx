@@ -5,7 +5,7 @@ import {PhoneCall, Truck} from "react-feather";
 const ContactBar: React.FC = () => {
   return (
 
-  <Navbar bg="light" expand="lg" className="contact-bar ">
+  <Navbar bg="light" expand="lg" className="contact-bar float-end">
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="me-auto">
