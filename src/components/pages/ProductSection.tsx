@@ -32,11 +32,11 @@ const ProductSection:React.FC<ProductSectionProps> = (props) => {
     );
   }
 
-  const renderProducts = () => {
+  const renderProducts = (item:IProduct[]) => {
     if(selectedCategory === 'All'){
       return (
           <>
-            {products.map((product: IProduct, index: number) => (
+            {item.map((product: IProduct, index: number) => (
                 <Product
                     product={product}
                     index={index}
@@ -63,8 +63,13 @@ const ProductSection:React.FC<ProductSectionProps> = (props) => {
   }
 
   return (
-      <Row className='product mb-5 mx-0 mx-md-3 mx-lg-5 mt-5'>
-        {renderProducts()}
+      <Row className='product mb-5 mx-0 mx-lg-5 px-lg-4'>
+        <p className='my-2 catagery-types-text'>Grocery</p>
+        {renderProducts(products)}
+        <p className='my-2 catagery-types-text'>Fruits</p>
+        {renderProducts(products)}
+        <p className='my-2 catagery-types-text'>Vegetables</p>
+        {renderProducts(products)}
       </Row>
   )
 }
