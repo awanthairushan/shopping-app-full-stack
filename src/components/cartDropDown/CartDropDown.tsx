@@ -5,6 +5,7 @@ import { ICart } from '../../Types/ShoppingTypes';
 import CartDropDownItem from './CartDropDownItem';
 import cartEmpty from './../../assets/images/cart.png';
 import NumberFormat from 'react-number-format';
+import { Link } from 'react-router-dom';
 
 type CartDropDownProp = {
     cartItems: ICart[],
@@ -46,7 +47,7 @@ const CartDropDown: React.FC<CartDropDownProp> = (props) => {
 
     if (cartItems.length === 0) {
         return (
-            <Row className='cart-priview-header'>
+            <Row className='cart-priview-header cart-priview-header1'>
                 <Col xs={12} className='p-0'>
                     <Image src={cartEmpty} className="cart-empty" />
                     <p className='cart-empty-text colour-red font-12px'>Your Cart is empty</p>
@@ -99,7 +100,9 @@ const CartDropDown: React.FC<CartDropDownProp> = (props) => {
                         <h5 className='colour-red font-12px pe-4'><NumberFormat value={totalSet()} displayType={'text'} thousandSeparator={true} prefix={'Rs. '} />.00</h5>
                     </Col>
                 </Row>
-                <Button className='cart-checkout mb-0 mt-1'>checkout</Button>
+                <Link to='/checkout'>
+                    <Button className='cart-checkout mb-2 mb-lg-0 mt-1'>checkout</Button>
+                </Link>
             </Col>
         </Row>
     )
