@@ -99,7 +99,7 @@ const CartDropDown: React.FC<CartDropDownProp> = (props) => {
                         <h5 className='colour-red font-12px pe-4'><NumberFormat value={totalSet()} displayType={'text'} thousandSeparator={true} prefix={'Rs. '} />.00</h5>
                     </Col>
                 </Row>
-                <Button className='cart-checkout mb-3 mt-1'>checkout</Button>
+                <Button className='cart-checkout mb-0 mt-1'>checkout</Button>
             </Col>
         </Row>
     )
