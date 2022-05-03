@@ -25,7 +25,7 @@ $quentity-color:#8f8f8f;
     display: flex;
     float: right;
     margin-right: 20%;
-    padding: 20px 10px 0 25px ;
+    padding: 10px 25px 15px 25px ;
     background-color: white;
     position: relative;
     .cart-content{
@@ -54,6 +54,7 @@ $quentity-color:#8f8f8f;
 
 .cart-empty{
     width: 130px;
+    height: 140px;
     padding-left: 10px;
     padding-right: 10px;
 }
