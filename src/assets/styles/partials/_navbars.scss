@@ -3,10 +3,12 @@ $pricing-red: #dc3545;
 $link-black: #262626;
 $link-padding: 6px;
 .logo-bar {
+    background-color: #ffffff;
     padding-top: 1.1rem;
     padding-bottom: 1rem;
+    padding-left: 12px;
     border-top: 1px solid #e0e0e0;
-    box-shadow: 0 2px 6px $quentity-color;
+    box-shadow: 0px 2px 6px -1px $quentity-color;
     .img-fluid {
         height: 2.2rem
     }

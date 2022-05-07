@@ -22,9 +22,9 @@ const LogoBar: React.FC<LogoBarProp> = (props) => {
     }
 
     return (
-        <Row className="logo-bar">
-            <Col lg={9} sm={8} xs={9} className="ps-3 ps-sm-4">
-                <Image src={Logo} className="img-fluid ms-md-5 ms-sm-4"/>
+        <Row className="logo-bar sticky-top mt-5">
+            <Col lg={9} sm={8} xs={9} className="ps-0">
+                <Image src={Logo} className="img-fluid ms-lg-5 ms-md-4 ms-sm-0"/>
             </Col>
             <Col lg={1} sm={1} xs={2} onClick={cartVisible}
                  className='shopping-cart-and-basket d-flex justify-content-end pe-sm-3 ms-xl-5 pe-0'>
