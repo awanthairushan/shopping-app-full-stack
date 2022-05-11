@@ -5,23 +5,23 @@ import {PhoneCall, Truck} from "react-feather";
 const ContactBar: React.FC = () => {
   return (
 
-  <Navbar bg="light" expand="lg" className="contact-bar float-end">
+  <Navbar bg="light" expand="lg" className="contact-bar">
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
-    <Navbar.Collapse id="basic-navbar-nav">
-      <Nav className="me-auto">
-        <Nav.Item className="text-muted label ps-2">
+    <Navbar.Collapse id="basic-navbar-nav " >
+      <Nav className="me-auto" >
+        <Nav.Item className="text-muted label ps-2 ">
           <Truck/>
           <span className="ms-2">Delivery Areas</span>
         </Nav.Item>
-        <Nav.Item>
+        <Nav.Item className="d-flex float-end">
           <span className="mx-2">
             <a href="tel:+94 112 123456" className="href ms-2"> <PhoneCall/> +94 112 123456</a>
           </span>
         </Nav.Item>
-        <Nav.Item className="register-button ms-2">
+        <Nav.Item className="register-button ms-2 d-flex float-end">
           <span className="px-2 mx-2">Register</span>
         </Nav.Item>
-        <Nav.Item className="button-login ps-2 ms-3 me-2">
+        <Nav.Item className="button-login ps-2 ms-3 me-2 d-flex float-end">
           <span>Login</span>
         </Nav.Item>
       </Nav>
