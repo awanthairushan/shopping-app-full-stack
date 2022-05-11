@@ -22,7 +22,7 @@ const LogoBar: React.FC<LogoBarProp> = (props) => {
     }
 
     return (
-        <Row className="logo-bar sticky-top mt-5">
+        <Row className="logo-bar sticky-top">
             <Col lg={9} sm={8} xs={9} className="ps-0">
                 <Image src={Logo} className="img-fluid ms-lg-5 ms-md-4 ms-sm-0"/>
             </Col>
