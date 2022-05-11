@@ -81,33 +81,39 @@ $link-padding: 6px;
 
 //Navbar styles
 .header-navbar {
-    position: unset;
-    font-size: 20px;
-    font-weight: 400;
-    color: red !important;
-    .nav-link {
-        color: $link-black !important;
-        padding-top: $link-padding !important;
-        padding-bottom: $link-padding !important;
+  position: unset;
+  font-size: 20px;
+  font-weight: 400;
+  color: red !important;
+
+  .nav-link {
+    color: $link-black !important;
+    padding-top: $link-padding !important;
+    padding-bottom: $link-padding !important;
+  }
+
+  .navbar-dropdown {
+    border: 1px solid #1E7F35;
+    border-radius: 5px;
+
+    .dropdown-item{
+      color: #212529 !important;
     }
-    .navbar-dropdown {
-        border: 1px solid #1E7F35;
-        border-radius: 5px;
-        #collasible-nav-dropdown {
-            &a {
-                color: red !important;
-            }
-            display: flex;
-            align-items: center;
-        }
+
+    #collasible-nav-dropdown {
+      display: flex;
+      align-items: center;
     }
-    #pricing-link {
-        color: $pricing-red !important;
-        border: 1px solid $pricing-red;
-        border-radius: 5px;
-        &:hover {
-            color: white !important;
-            background-color: $pricing-red;
-        }
+  }
+
+  #pricing-link {
+    color: $pricing-red !important;
+    border: 1px solid $pricing-red;
+    border-radius: 5px;
+
+    &:hover {
+      color: white !important;
+      background-color: $pricing-red;
     }
+  }
 }
