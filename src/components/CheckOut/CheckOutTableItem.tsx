@@ -1,8 +1,9 @@
 import {BaseSyntheticEvent, FC, useEffect, useState} from 'react';
 import Carrot from '../../assets/images/carrot.png';
-import {Image, Table} from "react-bootstrap";
+import {Image} from "react-bootstrap";
 import {MinusCircle, PlusCircle, X} from "react-feather";
 import {ICart} from "../../Types/ShoppingTypes";
+import NumberFormat from 'react-number-format';
 
 type checkOutTableItemProps = {
     onRemoveItem: (index: number) => void;
@@ -54,8 +55,10 @@ const CheckOutTableItem: FC<checkOutTableItemProps> = (props) => {
                 <PlusCircle size="20" className="hover-pointer table-item-icon" id="decreaseQty"
                             onClick={handleOnItemQtyIncrease}/>
             </td>
-            <td>Rs.{unitPrice.toFixed(2)}</td>
-            <td>Rs.{itemTotal}</td>
+            <td><NumberFormat className='checkout-number-format' prefix="Rs." value={unitPrice} decimalScale={2}
+                              fixedDecimalScale={true} readOnly/></td>
+            <td><NumberFormat className='checkout-number-format' prefix="Rs." value={itemTotal} decimalScale={2}
+                              fixedDecimalScale={true}/></td>
             <td><X className="hover-pointer" onClick={handleOnRemoveItemClick}/></td>
         </tr>
 
