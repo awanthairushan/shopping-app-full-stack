@@ -48,14 +48,14 @@ const Product: React.FC<ProductProps> = (props) => {
                     <p>{product.name}</p>
                 </Col>
                 <Col sm={12} className='product-price sm-1 px-4'>
-                <Row>
-                    <Col xs={6} className='old-price'>
-                        <p>Rs.{product.oldprice}</p>
-                    </Col>
-                    <Col xs={6} className='new-price'>
-                        <p>Rs.{product.price}</p>
-                    </Col>
-                </Row>
+                    <Row>
+                        <Col xs={6} className='old-price'>
+                            <p>Rs.{product.oldprice}</p>
+                        </Col>
+                        <Col xs={6} className='new-price'>
+                            <p>Rs.{product.price}</p>
+                        </Col>
+                    </Row>
                 </Col>
                 <Col className='px-4 mb-1'>
                     <Form noValidate onSubmit={handleSubmit} className='product-quentity'>
