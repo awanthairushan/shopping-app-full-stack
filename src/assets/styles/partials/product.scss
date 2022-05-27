@@ -52,7 +52,7 @@ $old-price-color:#8f8f8f;
                     position: relative;
                     color: #4caf50;
                     color: var(--primary-color);
-                    font-size: 1.1rem;
+                    font-size: 1rem;
                     text-align: center;
                     font-weight: 600;
                 }
@@ -61,7 +61,7 @@ $old-price-color:#8f8f8f;
             .old-price {
                 p {
                     color: #757575;
-                    font-size: 1.1rem;
+                    font-size: 1rem;
                     text-align: left;
                     text-decoration: line-through;
                 }
