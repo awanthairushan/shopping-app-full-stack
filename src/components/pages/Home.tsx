@@ -3,7 +3,7 @@ import PromotionSection from '../Promotion/PromotionSection'
 import {Row, Col} from 'react-bootstrap';
 import CategoryList from "../CategoryList/CategoryList";
 import CategoryDateList from "../../Types/CategoryDateList";
-import ProductSection from './ProductSection';
+import ProductSection from '../products/ProductSection';
 import { ICart } from '../../Types/ShoppingTypes';
 import SearchBar from './SearchBar';
 

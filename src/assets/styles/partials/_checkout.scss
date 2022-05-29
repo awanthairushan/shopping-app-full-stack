@@ -1,72 +1,83 @@
 $grey: #ECECEC;
 $icon-grey: #8E8E8E;
 $apply-green: #4CAF50;
+$black-font : #424242;
 
-.checkout-table {
-  font-size: 20px;
-  width: 100% !important;
+.checkout {
+  border: 2px solid $grey !important;
+  border-radius: 10px;
 
-  td, th {
-    vertical-align: middle;
-    white-space: nowrap !important;
-    font-weight: 500;
-  }
+  .checkout-table {
+    font-size: 20px;
+    width: 100% !important;
 
-  td:nth-child(7){
-    text-align: right;
-  }
+    td, th {
+      vertical-align: middle;
+      white-space: nowrap !important;
+      font-weight: 500;
+    }
 
-  th:nth-child(3) {
-    //min-width: 340px !important;
-    //max-width: 470px !important;
-    width: 45% !important;
-    max-width: 45% !important;
-  }
+    td:nth-child(7) {
+      text-align: right;
+    }
 
-  :not(:first-child) {
-    border-top: 0;
-  }
+    th:nth-child(3) {
+      //min-width: 340px !important;
+      //max-width: 470px !important;
+      width: 45% !important;
+      max-width: 45% !important;
+    }
 
-  .table-item-icon {
-    color: $icon-grey;
-  }
+    :not(:first-child) {
+      border-top: 0;
+    }
 
-  .apply-discount {
-    background-color: $apply-green;
-    border: none;
+    .table-item-icon {
+      color: $icon-grey;
+    }
 
-    &:focus {
+    .apply-discount {
+      background-color: $apply-green;
+      border: none;
+
+      &:focus {
+        box-shadow: none;
+      }
+    }
+
+    .discount-input {
+      border: 1px solid #ced4da;
       box-shadow: none;
     }
-  }
 
-  .discount-input {
-    border: 1px solid #ced4da;
-    box-shadow: none;
-  }
-
-  .discount-code-text {
-    font-size: 17px !important;
-    font-weight: 500;
+    .discount-code-text {
+      font-size: 17px !important;
+      font-weight: 500;
+    }
   }
 }
+
 
 .checkout-table-item-image {
   width: 100px;
-}
-
-.checkout {
-  border: 2px solid $grey;
-  border-radius: 10px;
 }
 
 .page-title {
   font-weight: 600;
 }
 
-.text-red{
+.text-red {
   color: #FF3939;
 }
+
 .checkout-total td {
   border-bottom-width: 0 !important;
+}
+
+.checkout-number-format{
+  border: none transparent;
+
+  &:focus{
+    outline: none;
+  }
 }
