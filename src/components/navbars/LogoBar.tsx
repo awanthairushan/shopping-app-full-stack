@@ -1,16 +1,17 @@
-import React, {useState} from 'react';
-import {Row, Col, Image} from 'react-bootstrap';
+import React, { useState } from 'react';
+import { Row, Col, Image } from 'react-bootstrap';
 import Logo from '../../assets/images/LOGO.png';
-import {ShoppingCart} from 'react-feather';
-import CartDropDown from '../pages/CartDropDown';
-import {ICart} from '../../Types/ShoppingTypes';
-import {Link} from "react-router-dom";
+import { ShoppingCart } from 'react-feather';
+import CartDropDown from '../cartDropDown/CartDropDown';
+import { ICart } from '../../Types/ShoppingTypes';
+import { Link } from "react-router-dom";
 
 type LogoBarProp = {
     cartItems: ICart[],
+    onCartItemRemove: (index: number) => void;
 }
 const LogoBar: React.FC<LogoBarProp> = (props) => {
-    const {cartItems} = props;
+    const { cartItems, onCartItemRemove } = props;
     const [isCartVisible, setIsCartVisible] = useState(false);
 
     const cartVisible = () => {
@@ -40,7 +41,8 @@ const LogoBar: React.FC<LogoBarProp> = (props) => {
                 </Link>
             </Col>
             <Col xs={12} className='cart-priview'>
-                {isCartVisible && <CartDropDown cartItems={cartItems}/>}
+                {isCartVisible && <CartDropDown cartItems={cartItems}
+                    onCartItemRemove={onCartItemRemove} />}
             </Col>
         </Row>
     )

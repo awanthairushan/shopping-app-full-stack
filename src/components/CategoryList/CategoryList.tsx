@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {Col, Row, Card, CardImg} from "react-bootstrap";
-import ProductSection from "../pages/ProductSection";
+import ProductSection from "../products/ProductSection";
 import {ICart} from "../../Types/ShoppingTypes";
 
 type CategoryListProps = {

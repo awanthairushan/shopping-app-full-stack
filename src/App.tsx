@@ -1,6 +1,6 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import './App.scss';
-import {BrowserRouter, Routes, Route} from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import ECommerceApp from './view/ECommerceApp';
 import Home from "./components/pages/Home";
 import AboutUs from "./components/pages/staticpages/AboutUs";
@@ -18,8 +18,8 @@ const App = () => {
 
     const handleOnCartItemCreate = (newItem: ICart) => {
         const allItems: ICart[] = cartItems.slice();
-        var num = 0;
-        for (var i = 0; i < allItems.length; i++) {
+        let num = 0;
+        for (let i = 0; i < allItems.length; i++) {
             if (allItems[i].name === newItem.name) {
                 allItems.splice(i, 1, newItem);
                 setCartItems(allItems);
@@ -33,18 +33,26 @@ const App = () => {
             allItems.push(newItem);
             setCartItems(allItems);
         }
-        addToast("Item Add To Cart", {appearance: 'success', autoDismiss: true});
+        addToast("Item Add To Cart", { appearance: 'success', autoDismiss: true });
     };
+
+    const handleOnCartItemRemove = (index: number) => {
+        const allItems: ICart[] = cartItems.slice();
+        allItems.splice(index, 1);
+        setCartItems(allItems);
+        addToast("Item Deleted", { appearance: 'success', autoDismiss: true });
+    }
+
     return (
         <BrowserRouter>
             <Routes>
-                <Route path='/' element={<ECommerceApp cartItems={cartItems}/>}>
-                    <Route path='/' element={<Home onCartItemCreate={handleOnCartItemCreate}/>}/>
-                    <Route path='/about' element={<AboutUs/>}/>
-                    <Route path='/contact' element={<ContactUs/>}/>
-                    <Route path='/faq' element={<FAQ/>}/>
-                    <Route path='/pricing' element={<Pricing/>}/>
-                    <Route path='/checkout' element={<CheckOut cartItems={cartItems} setCartItems={setCartItems}/>}/>
+                <Route path='/' element={<ECommerceApp cartItems={cartItems}
+                    onCartItemRemove={handleOnCartItemRemove} />}>
+                    <Route path='/' element={<Home onCartItemCreate={handleOnCartItemCreate} />} />
+                    <Route path='/about' element={<AboutUs />} />
+                    <Route path='/contact' element={<ContactUs />} />
+                    <Route path='/faq' element={<FAQ />} />
+                    <Route path='/checkout' element={<CheckOut cartItems={cartItems} setCartItems={setCartItems} />} />
                 </Route>
             </Routes>
         </BrowserRouter>
