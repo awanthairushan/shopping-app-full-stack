@@ -1,3 +1,4 @@
+$apply-green: #4CAF50;
 .login-and-signup {
   background-color: #e1ffc1;
   padding: 3rem 10rem;
@@ -7,6 +8,36 @@
 
 .login {
   background-color: white;
+  .signin-btn{
+    background-color:$apply-green;
+    margin-top: 2rem;
+    border: none;
+    height: 2.5rem;
+    width: 10rem;
+    border-radius: 1.25rem;
+    font-weight: 500;
+  }
+  h3 {
+    color: $apply-green;
+    padding: 2rem;
+  }
+  .fogotton-pass-label{
+    margin-left: 15rem;
+    margin-top: 1rem;
+    font-weight: bold;
+  }
+  .data-field {
+    width: 70%;
+    margin: auto;
+    color: #000;
+    height: 2.5rem;
+    input {
+      border: 0px;
+      height: 2.5rem;
+      background-color: #f5f8f7;
+    }
+  }
+
 }
 
 .signup {

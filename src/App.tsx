@@ -11,6 +11,7 @@ import {useToasts} from 'react-toast-notifications';
 import CheckOut from "./components/pages/CheckOut";
 import Pricing from "./components/pages/staticpages/Pricing";
 import LoginAndSignUp from './components/pages/loginAndSignUp';
+import ForgotPassWord from "./components/pages/staticpages/ForgotPassWord";
 
 const App = () => {
     const {addToast} = useToasts();
@@ -55,6 +56,7 @@ const App = () => {
                     <Route path='/faq' element={<FAQ />} />
                     <Route path='/checkout' element={<CheckOut cartItems={cartItems} setCartItems={setCartItems} />} />
                     <Route path='/loginandsignup' element={<LoginAndSignUp/>}/>
+                    <Route path='/forgotpassword' element={<ForgotPassWord/>}/>
                 </Route>
             </Routes>
         </BrowserRouter>
