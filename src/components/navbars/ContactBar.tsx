@@ -1,6 +1,7 @@
 import React from 'react';
 import {Nav} from "react-bootstrap";
 import {PhoneCall, Truck} from "react-feather";
+import {Link} from "react-router-dom";
 
 const ContactBar: React.FC = () => {
   return (
@@ -17,7 +18,7 @@ const ContactBar: React.FC = () => {
         <span className="ms-2" >Register</span>
       </Nav.Item>
       <Nav.Item className="label ps-4">
-        <span>Login</span>
+        <span><Link to={"LoginAndSignup"}>Login</Link></span>
       </Nav.Item>
     </Nav>
   );
