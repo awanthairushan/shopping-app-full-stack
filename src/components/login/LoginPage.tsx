@@ -1,6 +1,7 @@
-import {Button, Form} from "react-bootstrap";
+import {Button, Card, Form} from "react-bootstrap";
 import React from "react";
 import {Link} from "react-router-dom";
+import {Truck} from "react-feather";
 
 const LoginPage = () => {
   return (
@@ -9,7 +10,8 @@ const LoginPage = () => {
         <h3>Sign in to Shopping Cart</h3>
       </Form.Group>
       <Form.Group className="xs-12 md-9 px-5 mx-5" controlId="formUserName">
-        <Form.Control type="text" placeholder="Enter User Name" />
+
+        <Form.Control type="text" placeholder="Enter User Name"  ></Form.Control>
       </Form.Group>
       <Form.Group className="md-12 md-9 px-5 mx-5 pt-2" controlId="formBasicPassword">
         <Form.Control type="password" placeholder="Password" />

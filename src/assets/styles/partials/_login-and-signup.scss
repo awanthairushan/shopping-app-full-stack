@@ -29,12 +29,15 @@ $apply-green: #4CAF50;
   .data-field {
     width: 70%;
     margin: auto;
-    color: #000;
     height: 2.5rem;
     input {
       border: 0px;
       height: 2.5rem;
       background-color: #f5f8f7;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #000;
+
     }
   }
 
