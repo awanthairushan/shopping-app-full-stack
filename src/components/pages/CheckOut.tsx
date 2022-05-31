@@ -57,9 +57,9 @@ const CheckOut: FC<CheckoutProps> = (props) => {
         }
     }
     return (
-        <Row className="mx-lg-5 mx-md-4 mx-3 px-lg-5 px-md-2 pt-3 my-5 ">
+        <Row className="mx-lg-5 mx-md-4 mx-3 px-lg-5 px-md-2 pt-3 my-5 justify-content-center">
             <h5 className="ps-0 page-title mx-lg-5">Checkout Page</h5>
-            <Col className="checkout p-3 mx-5">
+            <Col xs={11} className="checkout p-3 mx-5">
                 <h5 className="ps-2 table-title">Shopping Cart</h5>
                 <Table className='checkout-table' responsive={true}>
                     <thead>
@@ -109,13 +109,21 @@ const CheckOut: FC<CheckoutProps> = (props) => {
                     </tbody>
                 </Table>
             </Col>
-            <Col xs={5} className="ms-5 me-2 mt-4 border">
-                w
+            <Col xs={11} >
+                <Row className="justify-content-end">
+                    <Col xs={5} className="me-3  mt-4 border">
+                        w
+                    </Col>
+
+                    <Col xl={6} className="me-3 mt-4 border">
+                        a
+                    </Col>
+                    <Col xl={6} className="me-3 mt-4 border">
+                        a
+                    </Col>
+                </Row>
             </Col>
 
-            <Col xl={6} className="ms-1 me-5 mt-4 border">
-                a
-            </Col>
         </Row>
     )
 }
