@@ -57,13 +57,13 @@ const CheckOut: FC<CheckoutProps> = (props) => {
         }
     }
     return (
-        <Row className="ms-lg-5 mx-md-4 mx-3 px-lg-3 px-md-2 pt-3 my-5 ">
-            <h2 className="ps-0 page-title">Checkout</h2>
-            <Col className="checkout p-3">
-                <h5 className="fw-bold ps-2">Shopping Cart</h5>
+        <Row className="mx-lg-5 mx-md-4 mx-3 px-lg-5 px-md-2 pt-3 my-5 ">
+            <h5 className="ps-0 page-title mx-lg-5">Checkout Page</h5>
+            <Col className="checkout p-3 mx-5">
+                <h5 className="ps-2 table-title">Shopping Cart</h5>
                 <Table className='checkout-table' responsive={true}>
                     <thead>
-                    <tr className="test">
+                    <tr>
                         <th>#</th>
                         <th/>
                         <th className="">Item</th>
@@ -99,7 +99,8 @@ const CheckOut: FC<CheckoutProps> = (props) => {
                     <tr className="checkout-total">
                         <td colSpan={5}>Total</td>
                         <td colSpan={2} className=" ">
-                            <NumberFormat className='checkout-number-format text-red fw-bold' prefix="Rs." value={400.99}
+                            <NumberFormat className='checkout-number-format text-red fw-bold' prefix="Rs."
+                                          value={400.99}
                                           decimalScale={2}
                                           fixedDecimalScale={true}
                             />
@@ -107,6 +108,13 @@ const CheckOut: FC<CheckoutProps> = (props) => {
                     </tr>
                     </tbody>
                 </Table>
+            </Col>
+            <Col xs={5} className="ms-5 me-2 mt-4 border">
+                w
+            </Col>
+
+            <Col xl={6} className="ms-1 me-5 mt-4 border">
+                a
             </Col>
         </Row>
     )
