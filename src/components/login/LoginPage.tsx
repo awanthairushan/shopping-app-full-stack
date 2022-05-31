@@ -10,11 +10,10 @@ const LoginPage = () => {
         <h3>Sign in to Shopping Cart</h3>
       </Form.Group>
       <Form.Group className="xs-12 md-9 px-5 mx-5" controlId="formUserName">
-
-        <Form.Control type="text" placeholder="Enter User Name"  ></Form.Control>
+        <Form.Control type="text" placeholder="Enter User Name"  required></Form.Control>
       </Form.Group>
       <Form.Group className="md-12 md-9 px-5 mx-5 pt-2" controlId="formBasicPassword">
-        <Form.Control type="password" placeholder="Password" />
+        <Form.Control type="password" placeholder="Password" required/>
       </Form.Group>
       <Button className="xs-12 md-9  signin-btn" type="submit" >
         Sign in
