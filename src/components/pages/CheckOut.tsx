@@ -3,6 +3,7 @@ import {Button, Col, Form, FormControl, FormLabel, Row, Table} from "react-boots
 import CheckOutTableItem from "../CheckOut/CheckOutTableItem";
 import {ICart} from "../../Types/ShoppingTypes";
 import NumberFormat from "react-number-format";
+import ShippingForm from "../CheckOut/ShippingForm";
 
 type CheckoutProps = {
     cartItems: ICart[];
@@ -125,46 +126,7 @@ const CheckOut: FC<CheckoutProps> = (props) => {
                         <p className="border-bottom py-3 px-2">
                             Shipping and Billing Address
                         </p>
-
-                        <Form className="px-3 py-2 shipping-form">
-                            <FormLabel>Full Name*</FormLabel>
-                            <FormControl type="text" placeholder="Your Full Name"/>
-
-                            <FormLabel>Address*</FormLabel>
-                            <FormControl type="text" placeholder="Street Address"/>
-
-                            <Row>
-                                <Col>
-                                    <FormLabel>City / suburb*</FormLabel>
-                                    <FormControl type="text" placeholder="City / suburb"/>
-                                </Col>
-                                <Col>
-                                    <FormLabel>Postal Code*</FormLabel>
-                                    <FormControl type="text" placeholder="Postal Code*"/>
-                                </Col>
-                                <Col>
-                                    <FormLabel>Country*</FormLabel>
-                                    <FormControl type="text" placeholder="Country*"/>
-                                </Col>
-                            </Row>
-
-                            <FormLabel>Contact Number*</FormLabel>
-                            <FormControl type="text" placeholder="Street Address"/>
-
-                            <Row>
-                                <Col>
-                                    <FormLabel>Email*</FormLabel>
-                                    <FormControl type="email" placeholder="Email"/>
-                                </Col>
-                                <Col>
-                                    <FormLabel>Retype Email*</FormLabel>
-                                    <FormControl type="email" placeholder=""/>
-                                </Col>
-                            </Row>
-
-                            <FormLabel>Choose Your Password*</FormLabel>
-                            <FormControl type="password" placeholder="Street Address"/>
-                        </Form>
+                        <ShippingForm />
                     </Col>
                 </Row>
             </Col>
