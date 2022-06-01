@@ -1,5 +1,5 @@
 import React, {FC, useEffect, useState} from 'react';
-import {Button, Col, Form, FormControl, Row, Table} from "react-bootstrap";
+import {Button, Col, Form, FormControl, FormLabel, Row, Table} from "react-bootstrap";
 import CheckOutTableItem from "../CheckOut/CheckOutTableItem";
 import {ICart} from "../../Types/ShoppingTypes";
 import NumberFormat from "react-number-format";
@@ -57,9 +57,9 @@ const CheckOut: FC<CheckoutProps> = (props) => {
         }
     }
     return (
-        <Row className="mx-lg-5 mx-md-4 mx-3 px-lg-5 px-md-2 pt-3 my-5 justify-content-center">
+        <Row className="mx-lg-5 mx-md-4 mx-3 px-lg-5 px-md-2 pt-3 my-5 ">
             <h5 className="ps-0 page-title mx-lg-5">Checkout Page</h5>
-            <Col xs={11} className="checkout p-3 mx-5">
+            <Col md={12} className="checkout p-3 ">
                 <h5 className="ps-2 table-title">Shopping Cart</h5>
                 <Table className='checkout-table' responsive={true}>
                     <thead>
@@ -109,21 +109,65 @@ const CheckOut: FC<CheckoutProps> = (props) => {
                     </tbody>
                 </Table>
             </Col>
-            <Col xs={11} >
-                <Row className="justify-content-end">
-                    <Col xs={5} className="me-3  mt-4 border">
-                        w
-                    </Col>
 
-                    <Col xl={6} className="me-3 mt-4 border">
-                        a
+            <Col md={6} className="mt-3">
+                w
+            </Col>
+
+            <Col md={6} className="mt-3">
+                <Row>
+                    <Col md={12} className="border py-4">
+                        <span>
+                            Already have an account?
+                        </span>
                     </Col>
-                    <Col xl={6} className="me-3 mt-4 border">
-                        a
+                    <Col md={12} className="border px-0 mt-1">
+                        <p className="border-bottom py-3 px-2">
+                            Shipping and Billing Address
+                        </p>
+
+                        <Form className="px-3 py-2 shipping-form">
+                            <FormLabel>Full Name*</FormLabel>
+                            <FormControl type="text" placeholder="Your Full Name"/>
+
+                            <FormLabel>Address*</FormLabel>
+                            <FormControl type="text" placeholder="Street Address"/>
+
+                            <Row>
+                                <Col>
+                                    <FormLabel>City / suburb*</FormLabel>
+                                    <FormControl type="text" placeholder="City / suburb"/>
+                                </Col>
+                                <Col>
+                                    <FormLabel>Postal Code*</FormLabel>
+                                    <FormControl type="text" placeholder="Postal Code*"/>
+                                </Col>
+                                <Col>
+                                    <FormLabel>Country*</FormLabel>
+                                    <FormControl type="text" placeholder="Country*"/>
+                                </Col>
+                            </Row>
+
+                            <FormLabel>Contact Number*</FormLabel>
+                            <FormControl type="text" placeholder="Street Address"/>
+
+                            <Row>
+                                <Col>
+                                    <FormLabel>Email*</FormLabel>
+                                    <FormControl type="email" placeholder="Email"/>
+                                </Col>
+                                <Col>
+                                    <FormLabel>Retype Email*</FormLabel>
+                                    <FormControl type="email" placeholder=""/>
+                                </Col>
+                            </Row>
+
+                            <FormLabel>Choose Your Password*</FormLabel>
+                            <FormControl type="password" placeholder="Street Address"/>
+                        </Form>
                     </Col>
                 </Row>
             </Col>
-
         </Row>
     )
 }

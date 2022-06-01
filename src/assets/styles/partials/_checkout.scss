@@ -3,6 +3,7 @@ $icon-grey: #8E8E8E;
 $apply-green: #4CAF50;
 $black-font: #424242;
 $border-radius: 6px;
+$border-color: #DFDEDE;
 
 .checkout {
   border: 1px solid $grey !important;
@@ -70,8 +71,17 @@ $border-radius: 6px;
       font-weight: 500;
     }
   }
+
+
 }
 
+.shipping-form{
+  label{
+    margin-top: 8px;
+    margin-bottom: 0 ;
+  }
+
+}
 .checkout-table-item-image {
   width: 100px;
 }
@@ -93,7 +103,7 @@ $border-radius: 6px;
 }
 
 .border{
-  border: 2px solid $grey !important;
+  border: 2px solid $border-color !important;
   border-radius: $border-radius;
 
 }
