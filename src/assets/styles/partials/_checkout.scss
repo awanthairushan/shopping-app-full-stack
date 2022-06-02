@@ -4,6 +4,7 @@ $apply-green: #4CAF50;
 $black-font: #424242;
 $border-radius: 6px;
 $border-color: #DFDEDE;
+$button-green: #4CAF50;
 
 .checkout {
   border: 1px solid $grey !important;
@@ -53,7 +54,7 @@ $border-color: #DFDEDE;
     }
 
     .apply-discount {
-      background-color: $apply-green;
+      background-color: $button-green;
       border: none;
 
       &:focus {
@@ -75,13 +76,21 @@ $border-color: #DFDEDE;
 
 }
 
-.shipping-form{
-  label{
+.shipping-form {
+  label {
     margin-top: 8px;
-    margin-bottom: 0 ;
+    margin-bottom: 0;
+  }
+
+  input{
+    &:focus{
+      box-shadow: none;
+      border: 1px solid $border-color;
+    }
   }
 
 }
+
 .checkout-table-item-image {
   width: 100px;
 }
@@ -102,8 +111,38 @@ $border-color: #DFDEDE;
   }
 }
 
-.border{
+.border {
   border: 2px solid $border-color !important;
   border-radius: $border-radius;
+}
 
+.signing-button {
+  background-color: $button-green;
+  border: none;
+  padding: 4px 30px;
+
+  &:hover {
+    border: none;
+    background-color: $button-green;
+  }
+
+  &:focus{
+    border: none;
+    background-color: $button-green;
+    box-shadow: none;
+  }
+}
+
+@media all and (max-width: 768px) {
+  .shipping-form, .input-group-text {
+    font-size: 13px;
+
+    input {
+      font-size: 12px;
+    }
+
+    #shipping-country {
+      height: 32px !important;
+    }
+  }
 }

@@ -1,9 +1,10 @@
 import React, {FC, useEffect, useState} from 'react';
-import {Button, Col, Form, FormControl, FormLabel, Row, Table} from "react-bootstrap";
+import {Button, Col, Form, FormControl, FormLabel, Image, Row, Table} from "react-bootstrap";
 import CheckOutTableItem from "../CheckOut/CheckOutTableItem";
 import {ICart} from "../../Types/ShoppingTypes";
 import NumberFormat from "react-number-format";
 import ShippingForm from "../CheckOut/ShippingForm";
+import banner from '../../assets/images/banners/checkoutPageBanner.png';
 
 type CheckoutProps = {
     cartItems: ICart[];
@@ -111,22 +112,30 @@ const CheckOut: FC<CheckoutProps> = (props) => {
                 </Table>
             </Col>
 
-            <Col md={6} className="mt-3">
-                w
+            <Col lg={6} md={12} className="mt-3">
+                <Image src={banner} fluid={true} className="border p-1"/>
             </Col>
 
-            <Col md={6} className="mt-3">
+            <Col lg={6} md={12} className="mt-3">
                 <Row>
                     <Col md={12} className="border py-4">
-                        <span>
+                        <Row>
+                            <Col lg={6} md={6} className='align-items-center d-inline-flex'>
+                              <span>
                             Already have an account?
                         </span>
+                            </Col>
+                            <Col lg={6} md={6}>
+                                <Button className="signing-button" type="submit">Sign in</Button>
+                            </Col>
+                        </Row>
+
                     </Col>
                     <Col md={12} className="border px-0 mt-1">
                         <p className="border-bottom py-3 px-2">
                             Shipping and Billing Address
                         </p>
-                        <ShippingForm />
+                        <ShippingForm/>
                     </Col>
                 </Row>
             </Col>

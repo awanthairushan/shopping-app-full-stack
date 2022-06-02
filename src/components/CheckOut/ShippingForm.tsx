@@ -1,45 +1,103 @@
-import React, {FC} from "react";
-import {Col, Form, FormControl, FormGroup, FormLabel, InputGroup, Row} from "react-bootstrap";
+import React, {ChangeEvent, FC, useEffect, useState} from "react";
+import {Col, Form, FormControl, FormControlProps, FormGroup, FormLabel, InputGroup, Row} from "react-bootstrap";
 import Select from "react-select";
 import ReactCountryFlag from "react-country-flag";
+import countries from '../../assets/data/CountryCodes.json';
+import {ICountryItem} from "../../Types/ICountryItem";
+import {ISelectOption} from "../../Types/ISelectOption";
+import PasswordStrengthBar from "react-password-strength-bar";
 
 const ShippingForm: FC = () => {
-    const options = [
-        {value: 'chocolate', label: 'Chocolate'},
-        {value: 'strawberry', label: 'Strawberry'},
-        {value: 'vanilla', label: 'Vanilla'}
-    ]
+
+    const [fullName, setFullName] = useState<string>('');
+    const [address, setAddress] = useState<string>('');
+    const [city, setCity] = useState<string>('');
+    const [postalCode, setPostalCode] = useState<string>('');
+    const [selectedCountryCode, setSelectedCountryCode] = useState<string>('');
+    const [selectedCountryDialCode, setSelectedCountryDialCode] = useState<string>('');
+    const [contactNumber, setContactNumber] = useState<string>('');
+    const [email, setEmail] = useState<string>('');
+    const [retypedEmail, setRetypedEmail] = useState<string>('');
+    const [currentPassword, setCurrentPassword] = useState<string>('');
+
+    const countryList = countries.map((country, index) => {
+        const countryItem: ICountryItem = {
+            value: country.code,
+            label: country.name,
+            countryCode: country.dial_code
+        }
+        return countryItem;
+    });
+
+    const handleOnFullNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setFullName(e.target.value);
+    }
+
+    const handleOnAddressChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setAddress(e.target.value);
+    }
+
+    const handleOnCityChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setCity(e.target.value);
+    }
+
+    const handleOnPostalCodeChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setPostalCode(e.target.value);
+    }
+
+    const handleOnCountryChange = (selectedCountry: any) => {
+        setSelectedCountryCode(selectedCountry.value);
+        setSelectedCountryDialCode(selectedCountry.countryCode);
+    }
+
+    const handleOnContactNumberChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+        setContactNumber(e.target.value);
+    }
+
+    const handleOnEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setEmail(e.target.value);
+    }
+
+    const handleOnRetypedEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setRetypedEmail(e.target.value);
+    }
+
+    const handleOnPasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setCurrentPassword(e.target.value);
+    }
 
     return (
-        <Form className="px-3 py-2 shipping-form">
+        <Form className="px-3 pt-2 pb-5 shipping-form">
             <FormLabel>Full Name*</FormLabel>
-            <FormControl type="text" placeholder="Your Full Name"/>
+            <FormControl type="text" placeholder="Your Full Name" value={fullName} onChange={handleOnFullNameChange}/>
 
             <FormLabel>Address*</FormLabel>
-            <FormControl type="text" placeholder="Street Address"/>
+            <FormControl type="text" placeholder="Street Address" value={address} onChange={handleOnAddressChange}/>
 
             <Row>
-                <Col>
+                <Col sm={12}>
                     <FormLabel>City / suburb*</FormLabel>
-                    <FormControl type="text" placeholder="City / suburb"/>
+                    <FormControl type="text" placeholder="City / suburb" value={city} onChange={handleOnCityChange}/>
                 </Col>
                 <Col>
                     <FormLabel>Postal Code*</FormLabel>
-                    <FormControl type="text" placeholder="Postal Code*"/>
+                    <FormControl type="text" placeholder="Postal Code*" value={postalCode}
+                                 onChange={handleOnPostalCodeChange}/>
                 </Col>
                 <Col>
                     <FormLabel>Country*</FormLabel>
-                    <Select options={options} placeholder="Select..."/>
+                    <Select options={countryList} placeholder="Select..." id='shipping-country'
+                            onChange={handleOnCountryChange}/>
                 </Col>
             </Row>
 
             <FormLabel>Contact Number*</FormLabel>
             <FormGroup>
                 <InputGroup>
-                    <InputGroup.Text>
+                    {selectedCountryCode !== '' && <InputGroup.Text>
                         <ReactCountryFlag
                             className="me-2"
-                            countryCode="LK"
+                            countryCode={selectedCountryCode}
                             svg
                             cdnUrl="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.4.3/flags/4x3/"
                             cdnSuffix="svg"
@@ -49,25 +107,31 @@ const ShippingForm: FC = () => {
                                 fontSize: '17px'
                             }}
                         />
-                        +94
-                    </InputGroup.Text>
-                    <FormControl type="text" placeholder=""/>
+                        {selectedCountryDialCode}
+                    </InputGroup.Text>}
+                    <FormControl type="text" value={contactNumber} onChange={handleOnContactNumberChange}/>
                 </InputGroup>
             </FormGroup>
 
+
             <Row>
-                <Col>
+                <Col sm={12}>
                     <FormLabel>Email*</FormLabel>
-                    <FormControl type="email" placeholder="Email"/>
+                    <FormControl type="email" placeholder="Email" value={email} onChange={handleOnEmailChange}/>
                 </Col>
-                <Col>
+                <Col sm={12}>
                     <FormLabel>Retype Email*</FormLabel>
-                    <FormControl type="email" placeholder=""/>
+                    <FormControl type="email" placeholder="" value={retypedEmail} onChange={handleOnRetypedEmailChange}/>
                 </Col>
             </Row>
 
             <FormLabel>Choose Your Password*</FormLabel>
-            <FormControl type="password" placeholder="Street Address"/>
+            <FormControl type="password" onChange={handleOnPasswordChange}/>
+            <PasswordStrengthBar
+                password={currentPassword}
+                scoreWordStyle={{display: 'none'}}
+                scoreWords={['weak', 'weak', 'okay', 'okay', 'good', 'strong']}
+            />
         </Form>
     );
 }
