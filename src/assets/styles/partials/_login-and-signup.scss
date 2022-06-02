@@ -1,12 +1,63 @@
+$apply-green: #4CAF50;
 .login-and-signup {
-  background-color: #e1ffc1;
+  background-image: url("../../images/PromotionImage.jpg");
+  background-size: cover;
   padding: 3rem 10rem;
-
-  height: 70vh;
 }
 
 .login {
-  background-color: white;
+  background-color: #fff;
+  border-radius: 1.5rem 0 0 1.5rem;
+  text-align: center;
+  .signin-btn{
+    background-color: $price-color;
+    border: none;
+    height: 2.5rem;
+    width: 11rem;
+    border-radius: 1.25rem;
+    font-weight: 500;
+  }
+  h3 {
+    color: $price-color;
+  }
+  .forgot-pass-label {
+    text-decoration: none;
+    color: #000;
+    font-weight: 500;
+    letter-spacing: -0.7px;
+  }
+  .data-field {
+    width: 70%;
+    margin: auto;
+    height: 2.5rem;
+
+    input {
+      border: 0;
+      height: 2.5rem;
+      background-color: #f5f8f7;
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #000;
+    }
+
+    input:focus {
+      outline: 0 !important;
+      -webkit-appearance: none;
+      box-shadow: none !important;
+    }
+  }
+  .data-field-icon {
+    background-color: #f5f8f7;
+    border: none;
+    padding-left: 1.2rem;
+    padding-right: 0;
+
+    svg {
+      height: 16px;
+      width: 16px;
+    }
+  }
+
 }
 
 .signup {
@@ -24,7 +75,7 @@
     height: 2.5rem;
 
     input {
-      border: 0px;
+      border: 0;
       height: 2.5rem;
       background-color: #f5f8f7;
       font-size: 0.9rem;
@@ -33,7 +84,7 @@
     }
 
     input:focus {
-      outline: 0px !important;
+      outline: 0 !important;
       -webkit-appearance: none;
       box-shadow: none !important;
     }
@@ -57,7 +108,7 @@
     background-color: $price-color;
     border: none;
     height: 2.5rem;
-    width: 10rem;
+    width: 11rem;
     border-radius: 1.25rem;
     font-weight: 500;
   }
