@@ -4,9 +4,8 @@ import {User, Mail, Phone, Lock} from 'react-feather'
 
 const SignUp = () => {
     return (
-        <>
-            <h2 className='mt-2'>Create Account</h2>
             <Form>
+                <h2 className='mt-2'>Create Account</h2>
                 <Form.Text className="text-muted">
                     We'll never share your details with anyone else.
                 </Form.Text>
@@ -32,11 +31,10 @@ const SignUp = () => {
                     <Form.Control type="password" placeholder="Repassword" required
                                   pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"/> {/* Minimum eight characters, at least one letter and one number:*/}
                 </InputGroup>
-                <Button className='signup-button' type="submit">
+                <Button className='signup-button mb-3' type="submit">
                     SIGN UP
                 </Button>
             </Form>
-        </>
     )
 }
 
