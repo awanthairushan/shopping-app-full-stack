@@ -4,6 +4,8 @@ $apply-green: #4CAF50;
 $green: #89f302;
 
 .contact-bar {
+  padding-left: 0;
+  margin-left: 0;
   font-size: 20px;
   .label {
     color: $apply-green;
@@ -21,21 +23,52 @@ $green: #89f302;
     text-decoration: none;
     font-weight: 500;
   }
+}
 
-  .register-button {
-    color: $green;
-    display: block;
-    border-width: 1px;
-    border-style: solid;
-    border-color: $apply-green;
-    border-radius: 3px;
-    cursor: pointer;
-
-    span{
-      color: $apply-green;
+@media (min-width: 414px) {
+  .contact-bar {
+    font-size: 15px;
+    .register-button {
+      color: $green;
+      padding-right: 0;
+      display: contents;
+      border-width: 1px;
+      border-style: solid;
       border-color: $apply-green;
+      border-radius: 3px;
+      cursor: pointer;
+      width: 30%;
+      span{
+        color: $apply-green;
+        border-color: $apply-green;
+
+      }
     }
   }
+
+  // Large devices (desktops, 992px and up)
+  @media (min-width: 992px) {
+    .contact-bar {
+      .register-button {
+        color: $green;
+        padding-right: 0;
+        display: contents;
+        border-width: 1px;
+        border-style: solid;
+        border-color: $apply-green;
+        border-radius: 3px;
+        cursor: pointer;
+        width: auto;
+
+        span {
+          color: $apply-green;
+          border-color: $apply-green;
+
+        }
+      }
+    }
+  }
+
 }
 
 
