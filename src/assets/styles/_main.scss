@@ -10,7 +10,10 @@
 @import "partials/category";
 @import 'partials/search-bar';
 @import "partials/cart.scss";
+@import "partials/checkout";
+@import "partials/login-and-signup";
 
 *{
   font-family: "Montserrat",sans-serif;
+  font-weight: 400;
 }

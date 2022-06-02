@@ -2,6 +2,7 @@ import React, {FC, useEffect, useState} from 'react';
 import {Button, Col, Form, FormControl, Row, Table} from "react-bootstrap";
 import CheckOutTableItem from "../CheckOut/CheckOutTableItem";
 import {ICart} from "../../Types/ShoppingTypes";
+import NumberFormat from "react-number-format";
 
 type CheckoutProps = {
     cartItems: ICart[];
@@ -88,11 +89,21 @@ const CheckOut: FC<CheckoutProps> = (props) => {
                     </tr>
                     <tr>
                         <td colSpan={5}>Delivery Charge</td>
-                        <td colSpan={2}>Rs.400.99</td>
+                        <td colSpan={2}>
+                            <NumberFormat className='checkout-number-format' prefix="Rs." value={400.99}
+                                          decimalScale={2}
+                                          fixedDecimalScale={true}
+                            />
+                        </td>
                     </tr>
                     <tr className="checkout-total">
                         <td colSpan={5}>Total</td>
-                        <td colSpan={2} className="text-red fw-bold">Rs.400.99</td>
+                        <td colSpan={2} className=" ">
+                            <NumberFormat className='checkout-number-format text-red fw-bold' prefix="Rs." value={400.99}
+                                          decimalScale={2}
+                                          fixedDecimalScale={true}
+                            />
+                        </td>
                     </tr>
                     </tbody>
                 </Table>

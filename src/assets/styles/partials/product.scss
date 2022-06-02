@@ -1,13 +1,20 @@
-$product-border:#797979;
+$product-border:#bdbdbd;
+;
 $price-color:#4caf50;
 $old-price-color:#8f8f8f;
 
-.products{
-    padding-left: 10px;
-    padding-right: 10px;
+.products {
+    padding-left: 15px;
+    padding-right: 15px;
 }
+
 .product {
     position: relative;
+
+    .catagery-types-text{
+        font-weight: bold;
+        font-size: 95%;
+    }
     .product-item {
         margin: 0;
         border: 1px solid $product-border;
@@ -15,17 +22,25 @@ $old-price-color:#8f8f8f;
         height: 100%;
 
         .product-img img {
-            width: 100%;
+            width: 80%;
             height: auto;
+            display: flex;
+            margin: auto;
         }
 
         .product-name {
             display: flex;
             justify-content: center;
 
-            h4 {
-                font-size: 30px;
-                font-weight: bold;
+            p {
+                position: relative;
+                /* text-align: center; */
+                font-weight: 600;
+                font-size: 1.2rem;
+                min-height: 3em;
+                margin-top: 0.2rem;
+                margin-bottom: 0.5rem;
+                text-transform: capitalize;
             }
         }
 
@@ -33,30 +48,22 @@ $old-price-color:#8f8f8f;
             .new-price {
                 color: $price-color;
 
-                h4 {
-                    font-size: 28px;
-                    font-weight: bold;
-                }
-            }
-
-            .old-price-null {
-                padding-left: 0;
-                display: flex;
-                justify-content: center;
-
-                h4 {
-                    font-size: 28px;
+                p {
+                    position: relative;
+                    color: #4caf50;
+                    color: var(--primary-color);
+                    font-size: 1rem;
+                    text-align: center;
+                    font-weight: 600;
                 }
             }
 
             .old-price {
-                h5 {
-                    float: right;
-                    margin-top: 7px;
-                    font-size: 25px;
-                    .strikediag {
-                        background: linear-gradient(to left bottom, transparent 47.75%, currentColor 49.5%, currentColor 50.5%, transparent 52.25%);
-                    }
+                p {
+                    color: #757575;
+                    font-size: 1rem;
+                    text-align: left;
+                    text-decoration: line-through;
                 }
 
                 color: $old-price-color;
@@ -69,10 +76,12 @@ $old-price-color:#8f8f8f;
             .form-control {
                 border: 1px solid $product-border;
                 padding: 3px;
-                padding-left: 2px;
-                padding-right: 2px;
-                text-align: right;
-                font-size: 20px;
+                padding-left: 8px !important;
+                padding-right: 10px !important;
+                text-align: left;
+                font-size: 16px;
+                font-weight: 100;
+                color: #495057;
             }
         }
 
@@ -81,30 +90,39 @@ $old-price-color:#8f8f8f;
         }
 
         .product-add-cart {
-            padding-left: calc(var(--bs-gutter-x) * .5);
-
+            display: flex;
+            justify-content: center;
             .add-cart-btn {
                 background-color: $price-color;
                 color: white;
-                font-weight: bold;
-                width: 100%;
-                font-size: 130%;
-                border-radius: 8px;
+                border-radius: 50px;
+                height: 100%;
+                font-size: 90%;
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+            .add-cart-btn-u {
+                background-color: white;
+                color: #17a2b8;
+                border: 1px solid #17a2b8;
+                border-radius: 50px;
+                height: 100%;
+                font-size: 90%;
+                padding-left: 30%;
+                padding-right: 30%;
+                margin-left: 10%;
             }
         }
     }
 }
+
 @media(max-width:1180px) {
     .product-quentity {
         .form-control {
             padding: 1px !important;
-            padding-left: 2px;
-            padding-right: 2px;
         }
     }
-    .add-cart-btn {
-        font-size: 115% !important;
-    }
+
     .product {
         .product-item {
             .product-name {
@@ -113,39 +131,24 @@ $old-price-color:#8f8f8f;
                 }
             }
 
-            .product-price {
-                .new-price {
-                    h4 {
-                        font-size: 24px;
-                    }
-                }
-
-                .old-price-null {
-
-                    h4 {
-                        font-size: 24px;
-                    }
-                }
-
-                .old-price {
-
-                    h5 {
-                        padding-right: 0;
-                        font-size: 20px;
-                    }
-                }
-            }
-
-        }}
+        }
+    }
 }
+
 @media(max-width:576px) {
-    .products{
+    .products {
         padding-left: 5px;
         padding-right: 5px;
     }
-    .add-cart-btn {
-        font-size: 100% !important;
+    .add-cart-btn-u {
+        margin-left: 0 !important;
     }
+
+    .add-cart-btn {
+        padding-left: 12px !important;
+        padding-right: 12px !important;
+    }
+
     .product {
         .product-item {
             .product-name {
@@ -160,16 +163,8 @@ $old-price-color:#8f8f8f;
                     display: flex;
                     justify-content: center;
 
-                    h4 {
-                        font-size: 20px;
-                    }
-                }
-
-                .old-price-null {
-                    padding-left: 0;
-
-                    h4 {
-                        font-size: 20px;
+                    p {
+                        font-size: 14px;
                     }
                 }
 
@@ -177,22 +172,23 @@ $old-price-color:#8f8f8f;
                     display: flex;
                     justify-content: center;
 
-                    h5 {
+                    p {
                         padding-right: 0;
-                        font-size: 15px;
+                        font-size: 14px;
                     }
                 }
             }
 
             .form-control {
-                padding: 0 !important;
+                margin-bottom: 4px;
             }
         }
     }
 }
 
 input[type=number]::-webkit-outer-spin-button,
-input[type=number]::-webkit-inner-spin-button {
+input[type=number]::-webkit-inner-spin-button:hover {
     opacity: 1;
     margin-left: 10px;
+    display: block;
 }
