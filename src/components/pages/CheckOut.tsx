@@ -59,7 +59,7 @@ const CheckOut: FC<CheckoutProps> = (props) => {
         }
     }
     return (
-        <Row className="mx-lg-5 mx-md-4 mx-3 px-lg-5 px-md-2 pt-3 my-5 ">
+        <Row className="mx-lg-5 mx-md-4 mx-3 px-lg-5 px-md-2 pt-3 my-5 gx-lg-5">
             <h5 className="ps-0 page-title mx-lg-5">Checkout Page</h5>
             <Col md={12} className="checkout p-3 ">
                 <h5 className="ps-2 table-title">Shopping Cart</h5>
@@ -112,11 +112,11 @@ const CheckOut: FC<CheckoutProps> = (props) => {
                 </Table>
             </Col>
 
-            <Col lg={6} md={12} className="mt-3">
-                <Image src={banner} fluid={true} className="border p-1"/>
+            <Col lg={6} md={12} className="mt-3 mb-1 border banner-section">
+                <Image src={banner} fluid={true} className=" p-lg-1"/>
             </Col>
 
-            <Col lg={6} md={12} className="mt-3">
+            <Col lg={6} md={12} className="mt-lg-3 mt-0">
                 <Row>
                     <Col md={12} className="border py-4">
                         <Row>
