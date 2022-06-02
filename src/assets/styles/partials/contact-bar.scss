@@ -23,6 +23,25 @@ $green: #89f302;
     text-decoration: none;
     font-weight: 400;
   }
+  .my-account {
+    :hover{
+      color: #8f8f8f;
+      cursor: pointer;
+    }
+  }
+  .delivery-area{
+    color: #000000;
+    :hover {
+      color: #8f8f8f;
+      cursor: pointer;
+    }
+  }
+  .truck {
+    fill: #0c0c0c;
+    :hover {
+      cursor: default;
+    }
+  }
 }
 
 @media (min-width: 414px) {

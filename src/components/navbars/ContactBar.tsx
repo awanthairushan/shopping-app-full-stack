@@ -1,6 +1,6 @@
 import React from 'react';
 import {Col, Container, Nav, Navbar, Row} from "react-bootstrap";
-import {PhoneCall, Truck} from "react-feather";
+import {PhoneCall, Truck, User} from "react-feather";
 import {Link} from "react-router-dom";
 
 const ContactBar: React.FC = () => {
@@ -17,9 +17,13 @@ const ContactBar: React.FC = () => {
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="me-auto">
-                <Nav.Item className="text-muted label ps-2 ">
-                  <Truck/>
-                  <span className="ms-2">Delivery Areas</span>
+                <Nav.Item className="label ps-2 delivery-area ">
+                  <Truck className="truck"/>
+                  <span className="ms-2 ">Delivery Areas</span>
+                </Nav.Item>
+                <Nav.Item className="mx-3  my-account">
+                  <User/>
+                  <span className="ms-1">My Account</span>
                 </Nav.Item>
                 <Nav.Item className="register-button ms-2 d-flex float-end">
                   <span className="px-2 mx-2">Register</span>
