@@ -36,7 +36,6 @@ const ShippingForm: FC = () => {
             <FormLabel>Contact Number*</FormLabel>
             <FormGroup>
                 <InputGroup>
-
                     <InputGroup.Text>
                         <ReactCountryFlag
                             className="me-2"
