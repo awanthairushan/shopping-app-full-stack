@@ -5,6 +5,7 @@ import {ICart} from "../../Types/ShoppingTypes";
 import NumberFormat from "react-number-format";
 import ShippingForm from "../CheckOut/ShippingForm";
 import banner from '../../assets/images/banners/checkoutPageBanner.png';
+import ChangeShippingAddressSection from "../CheckOut/ChangeShippingAddressSection";
 
 type CheckoutProps = {
     cartItems: ICart[];
@@ -137,6 +138,8 @@ const CheckOut: FC<CheckoutProps> = (props) => {
                         </p>
                         <ShippingForm/>
                     </Col>
+                        <ChangeShippingAddressSection/>
+
                 </Row>
             </Col>
         </Row>
