@@ -74,10 +74,10 @@ const CartDropDown: React.FC<CartDropDownProp> = (props) => {
 
     return (
         <Row className='cart-priview-header'>
-            <Col xs={12} className='cart-content'>
+            <Col xs={12} className='cart-content p-0'>
                 {renderCartItems()}
                 <Row className='mt-3'>
-                    <Col xs={8}>
+                    <Col xs={6} md={8}>
                         <Row>
                             <h5 className='font-12px ps-0'>Subtotal ({calculateItemTotal()} items)</h5>
                         </Row>
@@ -85,7 +85,7 @@ const CartDropDown: React.FC<CartDropDownProp> = (props) => {
                             <h5 className='font-12px ps-0'>Discount</h5>
                         </Row>
                     </Col>
-                    <Col xs={4} className="cart-values">
+                    <Col xs={6} md={4} className="cart-values">
                         <h5 className='colour-red font-12px pe-4'><NumberFormat value={subTotalCalculate()} displayType={'text'} thousandSeparator={true} prefix={'Rs. '} />.00</h5>
                         <h5 className='font-12px pe-4'><NumberFormat value={discountCalculate()} displayType={'text'} thousandSeparator={true} prefix={'Rs. '} />.00</h5>
                     </Col>
