@@ -116,14 +116,12 @@ const CheckOut: FC<CheckoutProps> = (props) => {
                 <Image src={banner} fluid={true} className=" p-lg-1"/>
             </Col>
 
-            <Col lg={6} md={12} className="mt-lg-3 mt-0">
-                <Row>
+            <Col lg={6} md={12} className="mt-lg-3 pe-0 mt-0">
+                <Row className='mx-0'>
                     <Col md={12} className="border py-4">
                         <Row>
                             <Col lg={6} md={6} className='align-items-center d-inline-flex'>
-                              <span>
-                            Already have an account?
-                        </span>
+                                <span> Already have an account? </span>
                             </Col>
                             <Col lg={6} md={6}>
                                 <Button className="signing-button" type="submit">Sign in</Button>
@@ -132,7 +130,7 @@ const CheckOut: FC<CheckoutProps> = (props) => {
 
                     </Col>
                     <Col md={12} className="border px-0 mt-1">
-                        <p className="border-bottom py-3 px-2">
+                        <p className="border-bottom py-3 px-2 " id='shipping-address-label'>
                             Shipping and Billing Address
                         </p>
                         <ShippingForm/>

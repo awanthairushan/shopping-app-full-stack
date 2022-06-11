@@ -80,19 +80,29 @@ $button-green: #4CAF50;
   label {
     margin-top: 8px;
     margin-bottom: 0;
+    font-size: 13px;
   }
 
-  input{
-    &:focus{
+  input {
+    &:focus {
       box-shadow: none;
       border: 1px solid $border-color;
     }
+
+    &::placeholder {
+      font-size: 13px;
+    }
+
   }
 
 }
 
-.banner-section{
-    height: fit-content;
+#dial-code-label {
+ font-size: 14px;
+}
+
+.banner-section {
+  height: fit-content;
 }
 
 .checkout-table-item-image {
@@ -119,6 +129,14 @@ $button-green: #4CAF50;
   border: 2px solid $border-color !important;
   border-radius: $border-radius;
 }
+.border-red {
+  border: 2px solid red !important;
+  border-radius: $border-radius;
+}
+
+#shipping-address-label {
+  font-weight: 500;
+}
 
 .signing-button {
   background-color: $button-green;
@@ -130,7 +148,7 @@ $button-green: #4CAF50;
     background-color: $button-green;
   }
 
-  &:focus{
+  &:focus {
     border: none;
     background-color: $button-green;
     box-shadow: none;

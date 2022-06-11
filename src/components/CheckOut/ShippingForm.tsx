@@ -66,6 +66,16 @@ const ShippingForm: FC = () => {
         setCurrentPassword(e.target.value);
     }
 
+    const reactSelectCustomStyles = {
+        placeholder: (provided: any, state: any) => ({
+            ...provided,
+            fontSize: '50px'
+        }),
+        menuList: (provided: any, state: any) => ({
+            ...provided,
+            fontSize: '50px',
+        })
+    }
     return (
         <Form className="px-3 pt-2 pb-5 shipping-form">
             <FormLabel>Full Name*</FormLabel>
@@ -94,7 +104,7 @@ const ShippingForm: FC = () => {
             <FormLabel>Contact Number*</FormLabel>
             <FormGroup>
                 <InputGroup>
-                    {selectedCountryCode !== '' && <InputGroup.Text>
+                    {selectedCountryCode !== '' && <InputGroup.Text id='dial-code-label'>
                         <ReactCountryFlag
                             className="me-2"
                             countryCode={selectedCountryCode}
@@ -115,13 +125,14 @@ const ShippingForm: FC = () => {
 
 
             <Row>
-                <Col sm={12}>
+                <Col sm={12} md={6}>
                     <FormLabel>Email*</FormLabel>
                     <FormControl type="email" placeholder="Email" value={email} onChange={handleOnEmailChange}/>
                 </Col>
-                <Col sm={12}>
+                <Col sm={12} md={6}>
                     <FormLabel>Retype Email*</FormLabel>
-                    <FormControl type="email" placeholder="" value={retypedEmail} onChange={handleOnRetypedEmailChange}/>
+                    <FormControl type="email" placeholder="" value={retypedEmail}
+                                 onChange={handleOnRetypedEmailChange}/>
                 </Col>
             </Row>
 
