@@ -1,18 +1,32 @@
-.payment-method{
+.payment-method {
   [type=radio] {
     position: absolute;
     opacity: 0;
-    width: 0;
-    height: 0;
   }
 
-  /* IMAGE STYLES */
-  [type=radio] + svg {
+  [type=radio] + img {
     cursor: pointer;
   }
 
-  /* CHECKED STYLES */
-  [type=radio]:checked + svg {
-    outline: 2px solid #f00;
+  [type=radio]:checked {
+
+  }
+
+  img {
+    height: 90px;
+  }
+
+  .payment-method-card {
+    border: 1px solid #CCE4FE;
+    border-radius: 3px;
+
+    label:hover{
+      cursor: pointer !important;
+    }
+
+    &:focus-within {
+      outline: 2px solid #4CAF50;
+    }
   }
 }
+
