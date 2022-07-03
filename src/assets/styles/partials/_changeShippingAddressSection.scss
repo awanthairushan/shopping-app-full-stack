@@ -1,32 +1,26 @@
 .payment-method {
-  [type=radio] {
-    position: absolute;
-    opacity: 0;
-  }
-
-  [type=radio] + img {
-    cursor: pointer;
-  }
-
-  [type=radio]:checked {
-
-  }
-
-  img {
-    height: 90px;
-  }
 
   .payment-method-card {
+
+    [type=radio] {
+      position: absolute;
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
     border: 1px solid #CCE4FE;
     border-radius: 3px;
 
-    label:hover{
+    label:hover {
       cursor: pointer !important;
     }
 
-    &:focus-within {
-      outline: 2px solid #4CAF50;
-    }
+
+  }
+
+  .selected-payment-method{
+    outline: 2px solid red !important;
   }
 }
 

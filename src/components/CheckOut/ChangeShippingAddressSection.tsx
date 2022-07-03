@@ -1,4 +1,4 @@
-import React, {ChangeEvent, FC, useState} from "react";
+import React, {ChangeEvent, FC, useEffect, useState} from "react";
 import {Col, Form, FormCheck, FormControl, FormGroup, FormLabel, Image, Row} from "react-bootstrap";
 import {FaRegCreditCard, FaRegMoneyBillAlt} from "react-icons/fa";
 
@@ -8,6 +8,7 @@ import card from '../../assets/images/CheckOutForm/creditCard.png';
 const ChangeShippingAddressSection: FC = () => {
 
     const [isSameUserAddress, setIsSameUserAddress] = useState<boolean>(false);
+    const [selectedPaymentMethod, setSelectedPaymentMethod] = useState<string>('');
 
     const handleOnRadioChange = (e: ChangeEvent<HTMLInputElement>) => {
         const radioID: string = e.target.id;
@@ -21,8 +22,10 @@ const ChangeShippingAddressSection: FC = () => {
     }
 
     const handleOnPaymentTypeSelect = (e: ChangeEvent<HTMLInputElement>) => {
-        console.log(e.target.id)
+        console.log(e.target.value)
+        setSelectedPaymentMethod(e.target.value);
     }
+
     return (
         <Col className="px-0 mt-lg-4">
             <span>Change Shipping Address</span>
@@ -40,17 +43,23 @@ const ChangeShippingAddressSection: FC = () => {
                 <FormLabel className='my-lg-2'>Payment Methods</FormLabel>
 
                 <FormGroup className='payment-method'>
-                    <Row className='mx-3' >
-                        <Col className='payment-method-card px-0 me-2' id='card' onChange={handleOnPaymentTypeSelect}>
+                    <Row className='mx-3'>
+                        <Col
+                            className={'payment-method-card px-0 me-2 d-flex justify-content-around' + `${selectedPaymentMethod === 'card' ? 'selected-payment-method' : ''}`}
+                            id='card'>
                             <FormLabel className='d-grid justify-content-center m-0'>
-                                <input type='radio' name='payment-method' value='cash'/>
+                                <input className='payment-type-radio' type='radio' name='payment-method' value='card'
+                                       onChange={handleOnPaymentTypeSelect}/>
                                 <FaRegCreditCard fontSize='100px' display='block'/>
                                 <p>Credit/Debit Card</p>
                             </FormLabel>
                         </Col>
-                        <Col className='payment-method-card px-0 ms-3' id='cash' onChange={handleOnPaymentTypeSelect}>
+                        <Col
+                            className={'payment-method-card px-0 me-2 ' + `${selectedPaymentMethod === 'cash' ? 'selected-payment-method' : ''}`}
+                            id='cash'>
                             <FormLabel className='d-grid justify-content-center'>
-                                <input type='radio' name='payment-method' value='card'/>
+                                <input className='payment-type-radio' type='radio' name='payment-method' value='cash'
+                                       onChange={handleOnPaymentTypeSelect}/>
                                 <FaRegMoneyBillAlt fontSize='100px'/>
                                 <p>Cash on Delivery</p>
                             </FormLabel>
