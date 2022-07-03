@@ -2,6 +2,13 @@
 
   .payment-method-card {
 
+    label {
+      display: flex;
+      text-align: center;
+      justify-items: center;
+      //justify-content: center;
+    }
+
     [type=radio] {
       position: absolute;
       opacity: 0;
@@ -15,12 +22,17 @@
     label:hover {
       cursor: pointer !important;
     }
-
-
   }
 
-  .selected-payment-method{
-    outline: 2px solid red !important;
+  .selected-payment-method {
+    outline: 2px solid #4DAF51 !important;
+
+  }
+}
+
+@media (max-width: 819px) {
+  svg{
+    font-size: 75px;
   }
 }
 

@@ -43,11 +43,11 @@ const ChangeShippingAddressSection: FC = () => {
                 <FormLabel className='my-lg-2'>Payment Methods</FormLabel>
 
                 <FormGroup className='payment-method'>
-                    <Row className='mx-3'>
+                    <Row className='mx-0 '>
                         <Col
-                            className={'payment-method-card px-0 me-2 d-flex justify-content-around' + `${selectedPaymentMethod === 'card' ? 'selected-payment-method' : ''}`}
+                            className={'payment-method-card px-0 ms-0 me-4 ' + `${selectedPaymentMethod === 'card' ? 'selected-payment-method' : ''}`}
                             id='card'>
-                            <FormLabel className='d-grid justify-content-center m-0'>
+                            <FormLabel className='d-grid justify-content-center mx-0 my-2'>
                                 <input className='payment-type-radio' type='radio' name='payment-method' value='card'
                                        onChange={handleOnPaymentTypeSelect}/>
                                 <FaRegCreditCard fontSize='100px' display='block'/>
@@ -55,9 +55,9 @@ const ChangeShippingAddressSection: FC = () => {
                             </FormLabel>
                         </Col>
                         <Col
-                            className={'payment-method-card px-0 me-2 ' + `${selectedPaymentMethod === 'cash' ? 'selected-payment-method' : ''}`}
+                            className={'payment-method-card px-0 ms-4 ' + `${selectedPaymentMethod === 'cash' ? 'selected-payment-method' : ''}`}
                             id='cash'>
-                            <FormLabel className='d-grid justify-content-center'>
+                            <FormLabel className='d-grid justify-content-center mx-0 my-2'>
                                 <input className='payment-type-radio' type='radio' name='payment-method' value='cash'
                                        onChange={handleOnPaymentTypeSelect}/>
                                 <FaRegMoneyBillAlt fontSize='100px'/>
