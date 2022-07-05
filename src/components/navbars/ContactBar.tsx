@@ -39,5 +39,5 @@ const ContactBar: React.FC = () => {
     </Row>
   );
 }
-
+//test comment
 export default ContactBar;
