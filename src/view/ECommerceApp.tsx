@@ -20,7 +20,7 @@ const ECommerceApp: React.FC<ECommerceAppProps> = (props) => {
                     <ContactBar />
                     <LogoBar cartItems={cartItems}
                         onCartItemRemove={onCartItemRemove} />
-                    {/* <NavBar /> */}
+                    <NavBar />
                 </Col>
             </Row>
             <Outlet />
