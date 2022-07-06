@@ -1,5 +1,5 @@
 import React, {ChangeEvent, FC, useEffect, useState} from "react";
-import {Col, Form, FormCheck, FormControl, FormGroup, FormLabel, Image, Row} from "react-bootstrap";
+import {Button, Col, Form, FormCheck, FormControl, FormGroup, FormLabel, Image, Row} from "react-bootstrap";
 import {FaRegCreditCard, FaRegMoneyBillAlt} from "react-icons/fa";
 
 import cash from '../../assets/images/CheckOutForm/cash.png';
@@ -27,7 +27,7 @@ const ChangeShippingAddressSection: FC = () => {
     }
 
     return (
-        <Col className="px-0 mt-lg-4">
+        <>
             <span>Change Shipping Address</span>
             <Form>
                 <FormGroup className='float-start d-flex mt-lg-3'>
@@ -67,8 +67,9 @@ const ChangeShippingAddressSection: FC = () => {
                     </Row>
 
                 </FormGroup>
+
             </Form>
-        </Col>
+        </>
     );
 }
 export default ChangeShippingAddressSection;

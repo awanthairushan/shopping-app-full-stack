@@ -41,6 +41,11 @@ const CheckOut: FC<CheckoutProps> = (props) => {
         setDiscountCode(e.target.value);
     }
 
+    //Form submit button handler
+    const handleOnFormSubmit = (e: any) => {
+
+    }
+
     // create an event listener
     useEffect(() => {
         window.addEventListener("resize", handleResize)
@@ -138,7 +143,13 @@ const CheckOut: FC<CheckoutProps> = (props) => {
                         </p>
                         <ShippingForm/>
                     </Col>
+                    <Col md={12} className="px-0 mt-lg-4">
                         <ChangeShippingAddressSection/>
+                    </Col>
+                    <Col md={12} className='d-flex justify-content-center'>
+                        <Button className="signing-button mt-3 py-1" type="submit"
+                                onSubmit={handleOnFormSubmit}>Submit</Button>
+                    </Col>
 
                 </Row>
             </Col>
