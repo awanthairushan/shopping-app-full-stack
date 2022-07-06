@@ -7,6 +7,7 @@ $green: #89f302;
   padding-left: 0;
   margin-left: 0;
   font-size: 20px;
+
   .label {
     color: $apply-green;
   }
@@ -22,24 +23,43 @@ $green: #89f302;
     color: #000000;
     text-decoration: none;
     font-weight: 400;
+    font-size: 13px;
   }
+
+  .login {
+    color: $apply-green;
+  }
+
   .my-account {
-    :hover{
-      color: #8f8f8f;
-      cursor: pointer;
-    }
-  }
-  .delivery-area{
-    color: #000000;
     :hover {
       color: #8f8f8f;
       cursor: pointer;
     }
   }
+
+  .delivery-area {
+    color: #000000;
+
+    :hover {
+      color: #8f8f8f;
+      cursor: pointer;
+    }
+  }
+
   .truck {
     fill: #0c0c0c;
+
     :hover {
       cursor: default;
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .contact-bar {
+    .contact-number {
+      margin-right: -95%;
+      margin-left: 95%;
     }
   }
 }
@@ -47,6 +67,7 @@ $green: #89f302;
 @media (min-width: 414px) {
   .contact-bar {
     font-size: 15px;
+
     .register-button {
       color: $green;
       padding-right: 0;
@@ -57,11 +78,13 @@ $green: #89f302;
       border-radius: 3px;
       cursor: pointer;
       width: 30%;
-      span{
+
+      span {
         color: $apply-green;
         border-color: $apply-green;
 
       }
+
       .href {
         color: $apply-green;
         text-decoration: none;
@@ -94,5 +117,3 @@ $green: #89f302;
   }
 
 }
-
-
