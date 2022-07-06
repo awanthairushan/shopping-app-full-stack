@@ -15,7 +15,7 @@ $quentity-color:#8f8f8f;
 }
 .cart-priview{
     position: absolute;
-    margin-top: 50px;
+    margin-top: 60px;
     z-index: 1;
 }
 .cart-priview-header{
@@ -24,12 +24,12 @@ $quentity-color:#8f8f8f;
     height: auto;
     display: flex;
     float: right;
-    margin-right: 15%;
-    padding: 15px 15px 10px 35px ;
+    margin-right: 20%;
+    padding: 20px 10px 0 25px ;
     background-color: white;
     position: relative;
     .cart-content{
-        width: 300px;
+        width: 360px;
     }
     .cart-d-img img{
         width: 100%;
@@ -51,16 +51,11 @@ $quentity-color:#8f8f8f;
         font-weight: bold;
     }
 }
-.cart-priview-header1{
-    padding: 10px 20px 15px 20px ;
-}
+
 .cart-empty{
     width: 130px;
-    height: 140px;
     padding-left: 10px;
     padding-right: 10px;
-    display: flex;
-    margin: auto;
 }
 
 .cart-empty-text{
@@ -70,12 +65,12 @@ $quentity-color:#8f8f8f;
 }
 @media(max-width:992px){
     .cart-priview{
-        margin-top: 50px;
+        margin-top: 63px;
     }
     .cart-priview-header{
         height: auto;
-        margin-right: 28%;
-        padding: 15px 15px 0 35px ;
+        margin-right: 33%;
+        padding: 20px 10px 0 25px ;
     }
 }
 @media(max-width:576px){
@@ -85,23 +80,13 @@ $quentity-color:#8f8f8f;
 }
 @media(max-width:450px){
     .cart-priview-header{
-        display: flex;
-        float: right;
-        width: 85%;
-        margin-right: 11%;
-        margin-left: 11%;
-
-        .cart-d-price h5{
-            font-size: 12px;
-        }
-        .cart-values h5{
-            font-size: 12px;
-        }
-    }
-    .cart-priview-header1{
-        width: auto;
-        margin-right: 11%;
+        width: 95%;
+        margin-right: 2%;
+        margin-left: 2%;
         padding: 5px 10px;
+        h5{
+            font-size: 15px;
+        }
     }
 }
 .triangle{
