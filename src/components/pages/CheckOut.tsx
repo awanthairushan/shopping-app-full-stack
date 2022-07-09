@@ -118,7 +118,7 @@ const CheckOut: FC<CheckoutProps> = (props) => {
                 </Table>
             </Col>
 
-            <Col lg={5} md={12} className="mt-3">
+            <Col lg={5} md={12} className="mt-3 ps-0">
                 <Image src={banner} fluid={true} className="border p-1"/>
             </Col>
 
