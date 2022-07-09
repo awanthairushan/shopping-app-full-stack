@@ -1,9 +1,9 @@
-import { Container, Row, Col } from 'react-bootstrap';
+import {Container, Row, Col} from 'react-bootstrap';
 import NavBar from "../components/navbars/NavBar";
 import Footer from './../components/footer/Footer'
 import React from 'react';
 import LogoBar from "../components/navbars/LogoBar";
-import { Outlet } from "react-router-dom";
+import {Outlet} from "react-router-dom";
 import ContactBar from '../components/navbars/ContactBar';
 import {ICart} from '../Types/ShoppingTypes';
 
@@ -12,21 +12,23 @@ type ECommerceAppProps = {
     onCartItemRemove: (index: number) => void;
 }
 const ECommerceApp: React.FC<ECommerceAppProps> = (props) => {
-    const { cartItems, onCartItemRemove } = props;
+    const {cartItems, onCartItemRemove} = props;
     return (
-        <Container fluid={true}>
+        <Container fluid={true} className='outer'>
             <Row>
                 <Col>
-                    <ContactBar />
+                    <ContactBar/>
                     <LogoBar cartItems={cartItems}
-                        onCartItemRemove={onCartItemRemove} />
-                    <NavBar />
+                             onCartItemRemove={onCartItemRemove}/>
+                    <NavBar/>
                 </Col>
             </Row>
-            <Outlet />
+
+            <Outlet/>
+
             <Row>
                 <Col>
-                    <Footer />
+                    <Footer/>
                 </Col>
             </Row>
 
