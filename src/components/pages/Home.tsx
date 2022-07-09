@@ -4,12 +4,12 @@ import {Row, Col} from 'react-bootstrap';
 import CategoryList from "../CategoryList/CategoryList";
 import CategoryDateList from "../../Types/CategoryDateList";
 import ProductSection from '../products/ProductSection';
-import { ICart } from '../../Types/ShoppingTypes';
+import {ICart} from '../../Types/ShoppingTypes';
 import SearchBar from './SearchBar';
 
 type HomeProps = {
     onCartItemCreate: (newItem: ICart) => void;
-  };
+};
 const Home: React.FC<HomeProps> = (props) => {
     const {onCartItemCreate} = props;
     const [isProductSectionVisible, setIsProductSectionVisible] = useState<Boolean>(false);
@@ -25,7 +25,11 @@ const Home: React.FC<HomeProps> = (props) => {
             <Col xs={12} className="">
                 <PromotionSection setProductSectionVisible={setProductSectionVisible}/>
                 <SearchBar/>
-                <CategoryList items={category} onCartItemCreate={onCartItemCreate}/>
+                <Row className='mx-lg-5'>
+                    <Col className='mx-lg-4'>
+                        <CategoryList items={category} onCartItemCreate={onCartItemCreate}/>
+                    </Col>
+                </Row>
                 {/* <ProductSection onCartItemCreate={onCartItemCreate}/> */}
             </Col>
         </Row>

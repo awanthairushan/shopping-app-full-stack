@@ -18,7 +18,7 @@ const CartDropDown: React.FC<CartDropDownProp> = (props) => {
     const subTotalCalculate = () => {
         let subtotal = 0;
         for (let i = 0; i < cartItems.length; i++) {
-            let num = (parseInt(cartItems[i].price) * cartItems[i].quentity) + subtotal
+            let num = (parseInt(cartItems[i].price) * cartItems[i].quantity) + subtotal
             subtotal = num;
         }
         return subtotal;
@@ -39,7 +39,7 @@ const CartDropDown: React.FC<CartDropDownProp> = (props) => {
     const calculateItemTotal = () => {
         let quentityTotal = 0;
         for (let i = 0; i < cartItems.length; i++) {
-            let num = cartItems[i].quentity + quentityTotal
+            let num = cartItems[i].quantity + quentityTotal
             quentityTotal = num;
         }
         return quentityTotal;

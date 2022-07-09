@@ -13,14 +13,14 @@ const ProductSection: React.FC<ProductSectionProps> = (props) => {
   const { onCartItemCreate, selectedCategory } = props;
 
   const productList: IProduct[] = [
-    { name: "product 1", price: "65.34", oldprice: "65.00", img: "coconut", category: "Food" },
-    { name: "product 2", price: "65.45", oldprice: "65.00", img: "carrot", category: "Grocery" },
-    { name: "product 3", price: "65.00", oldprice: "65.00", img: "coconut", category: "Pharmacy" },
-    { name: "product 4", price: "65.00", oldprice: "65.00", img: "carrot", category: "Electronic" },
-    { name: "product 1", price: "65.34", oldprice: "65.00", img: "coconut", category: "Food" },
-    { name: "product 2", price: "65.45", oldprice: "65.00", img: "carrot", category: "Grocery" },
-    { name: "product 3", price: "65.00", oldprice: "65.00", img: "coconut", category: "Pharmacy" },
-    { name: "product 4", price: "65.00", oldprice: "65.00", img: "carrot", category: "Electronic" },
+    { name: "product 1", price: "65.34", oldPrice: "65.00", img: "coconut", category: "Food" },
+    { name: "product 2", price: "65.45", oldPrice: "65.00", img: "carrot", category: "Grocery" },
+    { name: "product 3", price: "65.00", oldPrice: "65.00", img: "coconut", category: "Pharmacy" },
+    { name: "product 4", price: "65.00", oldPrice: "65.00", img: "carrot", category: "Electronic" },
+    { name: "product 1", price: "65.34", oldPrice: "65.00", img: "coconut", category: "Food" },
+    { name: "product 2", price: "65.45", oldPrice: "65.00", img: "carrot", category: "Grocery" },
+    { name: "product 3", price: "65.00", oldPrice: "65.00", img: "coconut", category: "Pharmacy" },
+    { name: "product 4", price: "65.00", oldPrice: "65.00", img: "carrot", category: "Electronic" },
   ];
   const [products, setProducts] = useState<IProduct[]>(productList);
 

@@ -1,7 +1,7 @@
 export interface IProduct {
   name: string;
   price: string;
-  oldprice: string | null;
+  oldPrice: string | null;
   img: string;
   category: string;
 }
@@ -9,6 +9,6 @@ export interface IProduct {
 export interface ICart {
   name: string;
   price: string;
-  quentity: number;
+  quantity: number;
   img: string;
 }

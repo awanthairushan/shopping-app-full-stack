@@ -18,11 +18,13 @@ const CheckOut: FC<CheckoutProps> = (props) => {
     const [isTablet, setIsTablet] = useState<boolean>(false);
     const [colSpan1, setColSpan1] = useState<number>(3);
     const [colSpan2, setColSpan2] = useState<number>(4);
+    const [cartTotal, setCartTotal] = useState<number>(0);
 
     const handleOnItemRemoved = (index: number) => {
         cartItems.splice(index, 1);
         setCartItems([...cartItems]);
     }
+
 
     const renderCartItems = () => {
         return cartItems.map((item, index) => {
@@ -64,93 +66,100 @@ const CheckOut: FC<CheckoutProps> = (props) => {
             setColSpan2(7);
         }
     }
+
     return (
-        <Row className="mx-lg-5 mx-md-4 mx-3 px-lg-5 px-md-2 pt-3 my-5 ">
-            <h5 className="ps-0 page-title mx-lg-5">Checkout Page</h5>
-            <Col md={12} className="checkout p-3 ">
-                <h5 className="ps-2 table-title">Shopping Cart</h5>
-                <Table className='checkout-table' responsive={true}>
-                    <thead>
-                    <tr>
-                        <th>#</th>
-                        <th/>
-                        <th className="">Item</th>
-                        <th>Qty</th>
-                        <th>Unit Price</th>
-                        <th>Amount</th>
-                        <th/>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    {renderCartItems()}
-                    <tr className="px-0">
-                        {colSpan1 !== 0 && <td colSpan={colSpan1}/>}
-                        <td colSpan={colSpan2} className='pe-0'>
-                            <Form className="d-flex justify-content-start align-items-center"
-                                  onSubmit={handleOnDiscountCodeSubmit}>
-                                <span className="fs-5 me-3 discount-code-text">Have a discount code? </span>
-                                <FormControl type="text" className="discount-input me-3" value={discountCode}
-                                             onChange={handleOnDiscountCodeChange}/>
-                                <Button className="signing-button px-4" type="submit">APPLY</Button>
-                            </Form>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td colSpan={5}>Delivery Charge</td>
-                        <td colSpan={2}>
-                            <NumberFormat className='checkout-number-format' prefix="Rs." value={400.99}
-                                          decimalScale={2}
-                                          fixedDecimalScale={true}
-                            />
-                        </td>
-                    </tr>
-                    <tr className="checkout-total">
-                        <td colSpan={5}>Total</td>
-                        <td colSpan={2} className=" ">
-                            <NumberFormat className='checkout-number-format text-red fw-bold' prefix="Rs."
-                                          value={400.99}
-                                          decimalScale={2}
-                                          fixedDecimalScale={true}
-                            />
-                        </td>
-                    </tr>
-                    </tbody>
-                </Table>
-            </Col>
+        <Row className='mx-lg-5'>
+            <Col className='mx-lg-3'>
+                <Row className="mx-lg-5 mx-md-4 mx-3 px-lg-5 px-md-2 pt-3 my-5 ">
+                    <h5 className="ps-0 page-title">Checkout Page</h5>
+                    <Col md={12} className="checkout p-3 ">
+                        <h5 className="ps-2 table-title">Shopping Cart</h5>
+                        <Table className='checkout-table' responsive={true}>
+                            <thead>
+                            <tr>
+                                <th>#</th>
+                                <th/>
+                                <th>Name</th>
+                                <th>Qty</th>
+                                <th>Unit Price</th>
+                                <th>Amount</th>
+                                <th/>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {renderCartItems()}
+                            <tr className="px-0">
+                                {colSpan1 !== 0 && <td colSpan={colSpan1}/>}
+                                <td colSpan={colSpan2} className='pe-0'>
+                                    <Form className="d-flex justify-content-start align-items-center"
+                                          onSubmit={handleOnDiscountCodeSubmit}>
+                                        <span className="fs-5 me-3 discount-code-text">Have a discount code? </span>
+                                        <FormControl type="text" className="discount-input me-3" value={discountCode}
+                                                     onChange={handleOnDiscountCodeChange}/>
+                                        <Button className="signing-button px-4" type="submit">APPLY</Button>
+                                    </Form>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td colSpan={5}>Delivery Charge</td>
+                                <td colSpan={2}>
+                                    <NumberFormat className='checkout-number-format' prefix="Rs." value={400.99}
+                                                  decimalScale={2}
+                                                  fixedDecimalScale={true}
+                                                  disabled
+                                    />
+                                </td>
+                            </tr>
+                            <tr className="checkout-total">
+                                <td colSpan={5}>Total</td>
+                                <td colSpan={2} className=" ">
+                                    <NumberFormat className='checkout-number-format text-red fw-bold' prefix="Rs."
+                                                  value={cartTotal}
+                                                  decimalScale={2}
+                                                  fixedDecimalScale={true}
+                                                  disabled
+                                    />
+                                </td>
+                            </tr>
+                            </tbody>
+                        </Table>
+                    </Col>
 
-            <Col lg={5} md={12} className="mt-3 ps-0">
-                <Image src={banner} fluid={true} className="border p-1"/>
-            </Col>
+                    <Col lg={5} md={12} className="mt-3 ps-0 pe-0 pe-lg-3">
+                        <Image src={banner} fluid={true} className="border p-1"/>
+                    </Col>
 
-            <Col lg={7} md={12} className="mt-3">
-                <Row>
-                    <Col md={12} className="border py-4">
+                    <Col lg={7} md={12} className="mt-3 ps-lg-3">
                         <Row>
-                            <Col lg={9} md={6} className='align-items-center d-inline-flex'>
+                            <Col md={12} className="border py-4">
+                                <Row>
+                                    <Col lg={9} md={5} sm={6} className='align-items-center d-inline-flex'>
                               <span className='mx-2'>
                                 Already have an account?
                               </span>
+                                    </Col>
+                                    <Col lg={3} md={7} sm={3} className='d-flex justify-content-end'>
+                                        <Button className="signing-button" type="submit">Sign in</Button>
+                                    </Col>
+                                </Row>
+
                             </Col>
-                            <Col lg={3} md={3} className='d-flex justify-content-end'>
-                                <Button className="signing-button" type="submit">Sign in</Button>
+                            <Col md={12} className="border px-0 mt-1">
+                                <p className="border-bottom py-3 mx-3">
+                                    Shipping and Billing Address
+                                </p>
+                                <ShippingForm/>
                             </Col>
+                            <Col md={12} className="px-0 mt-lg-4">
+                                <ChangeShippingAddressSection/>
+                            </Col>
+                            <Col md={12} className='d-flex justify-content-center'>
+                                <Button className="signing-button mt-3 py-1" type="submit"
+                                        onSubmit={handleOnFormSubmit}>Submit</Button>
+                            </Col>
+
                         </Row>
-
                     </Col>
-                    <Col md={12} className="border px-0 mt-1">
-                        <p className="border-bottom py-3 mx-3">
-                            Shipping and Billing Address
-                        </p>
-                        <ShippingForm/>
-                    </Col>
-                    <Col md={12} className="px-0 mt-lg-4">
-                        <ChangeShippingAddressSection/>
-                    </Col>
-                    <Col md={12} className='d-flex justify-content-center'>
-                        <Button className="signing-button mt-3 py-1" type="submit"
-                                onSubmit={handleOnFormSubmit}>Submit</Button>
-                    </Col>
-
                 </Row>
             </Col>
         </Row>
