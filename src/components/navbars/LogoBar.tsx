@@ -24,15 +24,18 @@ const LogoBar: React.FC<LogoBarProp> = (props) => {
     let scrollFunc: () => void;
     window.addEventListener('load', () => {
         const navbar = document.getElementById("navigation");
-        // @ts-ignore
+
+        if (!navbar) {
+            return;
+        }
         const sticky = navbar.offsetTop;
 
         scrollFunc = () => {
             if (window.scrollY >= sticky) {
-                // @ts-ignore
+
                 navbar.classList.add("stick")
             } else {
-                // @ts-ignore
+
                 navbar.classList.remove("stick");
             }
         }
