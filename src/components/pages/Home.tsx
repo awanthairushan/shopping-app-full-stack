@@ -29,7 +29,6 @@ const Home: React.FC<HomeProps> = (props) => {
     return (
         <Row className=''>
             <Col xs={12} className="">
-
                     <PromotionSection setProductSectionVisible={executeScroll}/>
                     <SearchBar/>
                 <div ref={myRef}>
