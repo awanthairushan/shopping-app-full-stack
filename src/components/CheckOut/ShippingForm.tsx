@@ -115,11 +115,11 @@ const ShippingForm: FC = () => {
 
 
             <Row>
-                <Col sm={12}>
+                <Col sm={12} lg={6}>
                     <FormLabel>Email*</FormLabel>
                     <FormControl type="email" placeholder="Email" value={email} onChange={handleOnEmailChange}/>
                 </Col>
-                <Col sm={12}>
+                <Col sm={12} lg={6}>
                     <FormLabel>Retype Email*</FormLabel>
                     <FormControl type="email" placeholder="" value={retypedEmail} onChange={handleOnRetypedEmailChange}/>
                 </Col>
