@@ -147,6 +147,7 @@ input {
   border-radius: $border-radius;
 }
 
+
 .signing-button {
   background-color: $button-green;
   border: none;
@@ -176,4 +177,14 @@ input {
       height: 32px !important;
     }
   }
+}
+
+@media all and (max-width: 416px) {
+  .signup-banner{
+    div:nth-child(2){
+      width: auto;
+      padding-top: 5px;
+    }
+  }
+
 }

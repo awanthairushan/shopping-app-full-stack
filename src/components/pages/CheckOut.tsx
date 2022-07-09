@@ -132,13 +132,13 @@ const CheckOut: FC<CheckoutProps> = (props) => {
                     <Col lg={7} md={12} className="mt-3 ps-lg-3">
                         <Row>
                             <Col md={12} className="border py-4">
-                                <Row>
-                                    <Col lg={9} md={5} sm={6} className='align-items-center d-inline-flex'>
-                              <span className='mx-2'>
-                                Already have an account?
-                              </span>
+                                <Row className='signup-banner'>
+                                    <Col lg={9} md={9} sm={5} className='align-items-center d-inline-flex'>
+                                      <span className='mx-lg-2 mx-0'>
+                                        Already have an account?
+                                      </span>
                                     </Col>
-                                    <Col lg={3} md={7} sm={3} className='d-flex justify-content-end'>
+                                    <Col lg={3} md={3} sm={4} className='d-flex justify-content-end'>
                                         <Button className="signing-button" type="submit">Sign in</Button>
                                     </Col>
                                 </Row>
