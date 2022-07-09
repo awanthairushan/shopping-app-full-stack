@@ -87,7 +87,7 @@ const ShippingForm: FC = () => {
                 <Col>
                     <FormLabel>Country*</FormLabel>
                     <Select options={countryList} placeholder="Select..." id='shipping-country'
-                            onChange={handleOnCountryChange} />
+                            onChange={handleOnCountryChange}/>
                 </Col>
             </Row>
 
@@ -121,17 +121,23 @@ const ShippingForm: FC = () => {
                 </Col>
                 <Col sm={12} lg={6}>
                     <FormLabel>Retype Email*</FormLabel>
-                    <FormControl type="email" placeholder="" value={retypedEmail} onChange={handleOnRetypedEmailChange}/>
+                    <FormControl type="email" placeholder="" value={retypedEmail}
+                                 onChange={handleOnRetypedEmailChange}/>
                 </Col>
             </Row>
 
             <FormLabel>Choose Your Password*</FormLabel>
             <FormControl type="password" onChange={handleOnPasswordChange}/>
-            <PasswordStrengthBar
-                password={currentPassword}
-                scoreWordStyle={{display: 'none'}}
-                scoreWords={['weak', 'weak', 'okay', 'okay', 'good', 'strong']}
-            />
+            <Row>
+                <Col lg={7}>
+                    <PasswordStrengthBar
+                        password={currentPassword}
+                        scoreWordStyle={{display: 'none'}}
+                        scoreWords={['weak', 'weak', 'okay', 'okay', 'good', 'strong']}
+                    />
+
+                </Col>
+            </Row>
         </Form>
     );
 }

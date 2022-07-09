@@ -8,11 +8,12 @@ import ChangeShippingAddressForm from "./ChangeShippingAddressForm";
 
 const ChangeShippingAddressSection: FC = () => {
 
-    const [isSameUserAddress, setIsSameUserAddress] = useState<boolean>(false);
+    const [isSameUserAddress, setIsSameUserAddress] = useState<boolean>(true);
     const [selectedPaymentMethod, setSelectedPaymentMethod] = useState<string>('');
 
     const handleOnRadioChange = (e: ChangeEvent<HTMLInputElement>) => {
         const radioID: string = e.target.id;
+        console.log(radioID)
         switch (radioID) {
             case 'sameAddress':
                 setIsSameUserAddress(true);
@@ -23,7 +24,6 @@ const ChangeShippingAddressSection: FC = () => {
     }
 
     const handleOnPaymentTypeSelect = (e: ChangeEvent<HTMLInputElement>) => {
-        console.log(e.target.value)
         setSelectedPaymentMethod(e.target.value);
     }
 
@@ -31,14 +31,14 @@ const ChangeShippingAddressSection: FC = () => {
         <>
             <span >Change Shipping Address</span>
             <Form>
-                <FormGroup className='shipping-address-change-radio'>
+                <FormGroup className='shipping-address-change-radio my-2'>
                     <Row>
                         <Col lg={4}  md={12} className='pe-0'>
                             <FormCheck className='d-flex align-items-center' id='sameAddress'
                                        name='userAddressCheck' type='radio'
-                                       label='Same as user address' onChange={handleOnRadioChange}/>
+                                       label='Same as user address' onChange={handleOnRadioChange} checked={isSameUserAddress}/>
                         </Col>
-                        <Col lg={4} className='ps-0'>
+                        <Col lg={4} className='ps-lg-0'>
                             <FormCheck className='d-flex align-items-center' name='userAddressCheck' id='changeAddress'
                                        type='radio' label='Change shipping address'
                                        onChange={handleOnRadioChange}/>

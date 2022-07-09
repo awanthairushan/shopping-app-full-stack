@@ -52,7 +52,7 @@ const ShippingForm: FC = () => {
     }
 
     return (
-        <Form className="px-0 mt-lg-0 pt-2 pb-2 shipping-form">
+        <div className="px-0 mt-lg-0 pt-2 pb-2 shipping-form">
             <FormLabel>Name*</FormLabel>
             <FormControl type="text" placeholder="Your Full Name" value={name} onChange={handleOnNameChange}/>
 
@@ -97,7 +97,7 @@ const ShippingForm: FC = () => {
                     <FormControl type="text" value={contactNumber} onChange={handleOnContactNumberChange}/>
                 </InputGroup>
             </FormGroup>
-        </Form>
+        </div>
     );
 }
 
