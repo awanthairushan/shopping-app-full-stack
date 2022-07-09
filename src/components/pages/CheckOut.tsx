@@ -150,7 +150,7 @@ const CheckOut: FC<CheckoutProps> = (props) => {
                                 </p>
                                 <ShippingForm/>
                             </Col>
-                            <Col md={12} className="px-0 mt-lg-4">
+                            <Col md={12} className="px-0 mt-4 mt-lg-4">
                                 <ChangeShippingAddressSection/>
                             </Col>
                             <Col md={12} className='d-flex justify-content-center'>

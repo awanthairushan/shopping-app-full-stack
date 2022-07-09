@@ -29,7 +29,7 @@ const ChangeShippingAddressSection: FC = () => {
 
     return (
         <>
-            <span >Change Shipping Address</span>
+            <span className='mt-5'>Change Shipping Address</span>
             <Form>
                 <FormGroup className='shipping-address-change-radio my-2'>
                     <Row>
@@ -38,7 +38,7 @@ const ChangeShippingAddressSection: FC = () => {
                                        name='userAddressCheck' type='radio'
                                        label='Same as user address' onChange={handleOnRadioChange} checked={isSameUserAddress}/>
                         </Col>
-                        <Col lg={4} className='ps-lg-0'>
+                        <Col lg={6} className='ps-lg-0'>
                             <FormCheck className='d-flex align-items-center' name='userAddressCheck' id='changeAddress'
                                        type='radio' label='Change shipping address'
                                        onChange={handleOnRadioChange}/>
