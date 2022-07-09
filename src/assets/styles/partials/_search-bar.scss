@@ -4,13 +4,21 @@
     border-width: 2px;
     border-radius: 1rem;
     margin-top: 2rem;
-    height: 4rem;
-    width: 50%;
+    height: 3rem;
+    width: 35%;
 
     .search-icon {
       background-color: white;
       border: none;
       border-radius: 1rem;
+      color: #9AA1A7;
+
+
+      svg{
+        font-size: 5px;
+        size: 5px;
+        width: 30px !important;
+      }
 
       :hover {
         cursor: pointer;
@@ -27,7 +35,7 @@
       border: none;
       box-shadow: none !important;
       border-radius: 1rem;
-      font-size: 1.7rem;
+      font-size: 14px;
       font-weight: 500;
       height: 100%;
       margin: auto 2.5rem;
