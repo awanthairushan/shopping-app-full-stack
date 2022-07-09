@@ -4,7 +4,7 @@ import PromotionImage from './../../assets/images/PromotionImage.jpg';
 import PromotionBanner from './PromotionBanner'
 
 type PromotionSectionProps = {
-    setProductSectionVisible: (isProductSectionVisible : Boolean) => void;
+    setProductSectionVisible: () => void;
 }
 
 const PromotionSection:React.FC<PromotionSectionProps> = (props) => {

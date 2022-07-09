@@ -6,6 +6,7 @@
     color: $category-header-font-color;
   }
 
+
   .category-item:enabled {
     background-color: red !important;
   }
@@ -34,8 +35,43 @@
 
   @media (max-width: $md-screen-size) {
     .card {
-      height: 150px;
-      margin: 10px;
+      height: 110px !important;
+      margin: 5px;
+      padding: 1px;
+    }
+
+    .category-item {
+      display: flex;
+      flex-direction: column !important;
+      justify-content: center;
+      justify-items: center;
+      align-items: center;
+
+      .card-title {
+        font-size: 9px !important;
+        display: block !important;
+      }
+
+      .card-img {
+        max-width: 100% !important;
+        height: 70px !important;
+        padding-bottom: 0;
+      }
+    }
+  }
+  @media (max-width: $lg-screen-size) {
+    .category-item {
+      display: flex;
+      flex-direction: column !important;
+      justify-content: center;
+      justify-items: center;
+      align-items: center;
+      margin: 0 8px;
+
+      .card-img {
+        max-width: 100% !important;
+        padding-bottom: 5px;
+      }
     }
   }
   @media (max-width: $xs-screen-size) {
@@ -46,9 +82,7 @@
       width: 90%;
       height: 50px;
     }
-    .card-img {
-      display: none;
-    }
+
 
     .card-title {
       font-size: large;
