@@ -6,6 +6,10 @@
     color: $category-header-font-color;
   }
 
+  .category-item:enabled {
+    background-color: red !important;
+  }
+
   .card {
     cursor: pointer;
     border-radius: 10px;
@@ -28,25 +32,25 @@
     background-color: #a7ee75;
   }
 
-  @media (max-width:$md-screen-size){
-    .card{
+  @media (max-width: $md-screen-size) {
+    .card {
       height: 150px;
       margin: 10px;
     }
   }
-  @media (max-width:$xs-screen-size){
-    .card{
+  @media (max-width: $xs-screen-size) {
+    .card {
       display: flex;
       flex-direction: row;
       align-items: center;
       width: 90%;
       height: 50px;
     }
-    .card-img{
+    .card-img {
       display: none;
     }
 
-    .card-title{
+    .card-title {
       font-size: large;
       font-weight: bold;
       width: 100%;

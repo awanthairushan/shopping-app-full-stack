@@ -28,7 +28,6 @@ const Home: React.FC<HomeProps> = (props) => {
                 <Row className='mx-lg-5'>
                     <Col className='mx-lg-4'>
                         <CategoryList items={category} onCartItemCreate={onCartItemCreate}/>
-
                     </Col>
                 </Row>
                 {/* <ProductSection onCartItemCreate={onCartItemCreate}/> */}
