@@ -49,12 +49,13 @@ const App = () => {
         <BrowserRouter>
             <Routes>
                 <Route path='/' element={<ECommerceApp cartItems={cartItems}
-                    onCartItemRemove={handleOnCartItemRemove} />}>
-                    <Route path='/' element={<Home onCartItemCreate={handleOnCartItemCreate} />} />
-                    <Route path='/about' element={<AboutUs />} />
-                    <Route path='/contact' element={<ContactUs />} />
-                    <Route path='/faq' element={<FAQ />} />
-                    <Route path='/checkout' element={<CheckOut cartItems={cartItems} setCartItems={setCartItems} />} />
+                    onCartItemRemove={handleOnCartItemRemove}/>}>
+                    <Route path='/' element={<Home onCartItemCreate={handleOnCartItemCreate}/>}/>
+                    <Route path='/about' element={<AboutUs/>}/>
+                    <Route path='/contact' element={<ContactUs/>}/>
+                    <Route path='/faq' element={<FAQ/>}/>
+                    <Route path='/pricing' element={<Pricing/>}/>
+                    <Route path='/checkout' element={<CheckOut cartItems={cartItems} setCartItems={setCartItems}/>}/>
                     <Route path='/loginandsignup' element={<LoginAndSignUp/>}/>
                     <Route path='/forgotpassword' element={<ForgotPassWord/>}/>
                 </Route>
