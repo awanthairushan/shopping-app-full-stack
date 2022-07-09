@@ -67,7 +67,7 @@ const ShippingForm: FC = () => {
     }
 
     return (
-        <Form className="px-3 pt-2 pb-5 shipping-form">
+        <Form className="px-lg-3 px-2 pt-2 pb-5 shipping-form">
             <FormLabel>Full Name*</FormLabel>
             <FormControl type="text" placeholder="Your Full Name" value={fullName} onChange={handleOnFullNameChange}/>
 
@@ -75,16 +75,16 @@ const ShippingForm: FC = () => {
             <FormControl type="text" placeholder="Street Address" value={address} onChange={handleOnAddressChange}/>
 
             <Row>
-                <Col>
+                <Col className='ps-3 pe-1'>
                     <FormLabel>City / suburb*</FormLabel>
                     <FormControl type="text" placeholder="City / suburb" value={city} onChange={handleOnCityChange}/>
                 </Col>
-                <Col>
+                <Col className='px-1'>
                     <FormLabel>Postal Code*</FormLabel>
                     <FormControl type="text" placeholder="Postal Code*" value={postalCode}
                                  onChange={handleOnPostalCodeChange}/>
                 </Col>
-                <Col>
+                <Col className='ps-1'>
                     <FormLabel>Country*</FormLabel>
                     <Select options={countryList} placeholder="Select..." id='shipping-country'
                             onChange={handleOnCountryChange}/>
