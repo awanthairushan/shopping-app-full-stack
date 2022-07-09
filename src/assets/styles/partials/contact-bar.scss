@@ -6,7 +6,8 @@ $green: #89f302;
 .contact-bar {
   padding-left: 0;
   margin-left: 0;
-  font-size: 20px;
+  font-size: 13px !important;
+  line-height: 18px !important;
 
   .label {
     color: $apply-green;

@@ -14,7 +14,7 @@ type ECommerceAppProps = {
 const ECommerceApp: React.FC<ECommerceAppProps> = (props) => {
     const {cartItems, onCartItemRemove} = props;
     return (
-        <Container fluid={true} className='outer'>
+        <Container fluid={true} >
             <Row>
                 <Col>
                     <ContactBar/>
