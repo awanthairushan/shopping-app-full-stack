@@ -13,8 +13,8 @@ const ShippingForm: FC = () => {
     const [address, setAddress] = useState<string>('');
     const [city, setCity] = useState<string>('');
     const [postalCode, setPostalCode] = useState<string>('');
-    const [selectedCountryCode, setSelectedCountryCode] = useState<string>('');
-    const [selectedCountryDialCode, setSelectedCountryDialCode] = useState<string>('');
+    const [selectedCountryCode, setSelectedCountryCode] = useState<string>('LK');
+    const [selectedCountryDialCode, setSelectedCountryDialCode] = useState<string>('+94');
     const [contactNumber, setContactNumber] = useState<string>('');
     const [email, setEmail] = useState<string>('');
     const [retypedEmail, setRetypedEmail] = useState<string>('');
@@ -87,7 +87,7 @@ const ShippingForm: FC = () => {
                 <Col>
                     <FormLabel>Country*</FormLabel>
                     <Select options={countryList} placeholder="Select..." id='shipping-country'
-                            onChange={handleOnCountryChange}/>
+                            onChange={handleOnCountryChange} />
                 </Col>
             </Row>
 
