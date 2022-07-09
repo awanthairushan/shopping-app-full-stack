@@ -55,7 +55,22 @@
       .card-img {
         max-width: 100% !important;
         height: 70px !important;
-        padding-bottom: 0px;
+        padding-bottom: 0;
+      }
+    }
+  }
+  @media (max-width: $lg-screen-size) {
+    .category-item {
+      display: flex;
+      flex-direction: column !important;
+      justify-content: center;
+      justify-items: center;
+      align-items: center;
+      margin: 0 8px;
+
+      .card-img {
+        max-width: 100% !important;
+        padding-bottom: 5px;
       }
     }
   }
