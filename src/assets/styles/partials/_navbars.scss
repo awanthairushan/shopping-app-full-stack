@@ -2,6 +2,12 @@ $quentity-color: #cacaca;
 $pricing-red: #dc3545;
 $link-black: #262626;
 $link-padding: 6px;
+.stick{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 10000 !important;
+}
 .logo-bar {
   background-color: #ffffff;
   padding-top: 1.1rem;
