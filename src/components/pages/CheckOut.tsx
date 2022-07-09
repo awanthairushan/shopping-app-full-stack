@@ -18,11 +18,13 @@ const CheckOut: FC<CheckoutProps> = (props) => {
     const [isTablet, setIsTablet] = useState<boolean>(false);
     const [colSpan1, setColSpan1] = useState<number>(3);
     const [colSpan2, setColSpan2] = useState<number>(4);
+    const [cartTotal, setCartTotal] = useState<number>(0);
 
     const handleOnItemRemoved = (index: number) => {
         cartItems.splice(index, 1);
         setCartItems([...cartItems]);
     }
+
 
     const renderCartItems = () => {
         return cartItems.map((item, index) => {
@@ -64,11 +66,12 @@ const CheckOut: FC<CheckoutProps> = (props) => {
             setColSpan2(7);
         }
     }
+
     return (
         <Row className='mx-lg-5'>
             <Col className='mx-lg-3'>
                 <Row className="mx-lg-5 mx-md-4 mx-3 px-lg-5 px-md-2 pt-3 my-5 ">
-                    <h5 className="ps-0 page-title mx-lg-5">Checkout Page</h5>
+                    <h5 className="ps-0 page-title">Checkout Page</h5>
                     <Col md={12} className="checkout p-3 ">
                         <h5 className="ps-2 table-title">Shopping Cart</h5>
                         <Table className='checkout-table' responsive={true}>
@@ -76,7 +79,7 @@ const CheckOut: FC<CheckoutProps> = (props) => {
                             <tr>
                                 <th>#</th>
                                 <th/>
-                                <th className="">Item</th>
+                                <th>Name</th>
                                 <th>Qty</th>
                                 <th>Unit Price</th>
                                 <th>Amount</th>
@@ -103,6 +106,7 @@ const CheckOut: FC<CheckoutProps> = (props) => {
                                     <NumberFormat className='checkout-number-format' prefix="Rs." value={400.99}
                                                   decimalScale={2}
                                                   fixedDecimalScale={true}
+                                                  disabled
                                     />
                                 </td>
                             </tr>
@@ -110,9 +114,10 @@ const CheckOut: FC<CheckoutProps> = (props) => {
                                 <td colSpan={5}>Total</td>
                                 <td colSpan={2} className=" ">
                                     <NumberFormat className='checkout-number-format text-red fw-bold' prefix="Rs."
-                                                  value={400.99}
+                                                  value={cartTotal}
                                                   decimalScale={2}
                                                   fixedDecimalScale={true}
+                                                  disabled
                                     />
                                 </td>
                             </tr>

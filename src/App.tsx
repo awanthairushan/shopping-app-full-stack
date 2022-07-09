@@ -36,6 +36,7 @@ const App = () => {
             setCartItems(allItems);
         }
         addToast("Item Add To Cart", { appearance: 'success', autoDismiss: true });
+        console.log(allItems)
     };
 
     const handleOnCartItemRemove = (index: number) => {

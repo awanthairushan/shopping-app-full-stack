@@ -1,9 +1,9 @@
 import {BaseSyntheticEvent, FC, useEffect, useState} from 'react';
-import Carrot from '../../assets/images/carrot.png';
 import {Image} from "react-bootstrap";
 import {MinusCircle, PlusCircle, X} from "react-feather";
 import {ICart} from "../../Types/ShoppingTypes";
 import NumberFormat from 'react-number-format';
+import {carrot, coconut} from "../../assets/images/images";
 
 type checkOutTableItemProps = {
     onRemoveItem: (index: number) => void;
@@ -11,11 +11,17 @@ type checkOutTableItemProps = {
     index: number;
 }
 const CheckOutTableItem: FC<checkOutTableItemProps> = (props) => {
-    const {onRemoveItem, cartItem, index} = props;
+    const {onRemoveItem, cartItem, index , } = props;
     const unitPrice: number = parseFloat(cartItem.price); //This should be replaced with the real unit value
-    const [itemQty, setItemQty] = useState<number>(0);
-    const [itemTotal, setItemTotal] = useState<number>(0)
+    const [itemQty, setItemQty] = useState<number>(cartItem.quantity);
+    const [itemTotal, setItemTotal] = useState<number>(itemQty*unitPrice)
 
+    let image;
+    if (cartItem.img === "carrot") {
+        image = carrot;
+    } else if (cartItem.img === "coconut") {
+        image = coconut;
+    }
     //Item quantity  increase handler
     const handleOnItemQtyIncrease = (e: BaseSyntheticEvent) => {
         const newQty = itemQty + 1;
@@ -41,11 +47,12 @@ const CheckOutTableItem: FC<checkOutTableItemProps> = (props) => {
         onRemoveItem(index);
     }
 
+
     return (
-        <tr>
+        <tr key={index}>
             <td>{index + 1}</td>
             <td>
-                <Image src={Carrot} className='checkout-table-item-image' fluid={false}/>
+                <Image src={image} className='checkout-table-item-image' fluid={false}/>
             </td>
             <td>{cartItem.name}</td>
             <td>

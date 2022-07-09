@@ -12,7 +12,7 @@ type CartDropDownItemProps = {
 const CartDropDownItem: React.FC<CartDropDownItemProps> = (props) => {
     const { item, onCartItemRemove, index } = props;
     var imglink;
-    const itemfullprice = parseInt(item.price) * item.quentity;
+    const itemfullprice = parseInt(item.price) * item.quantity;
 
     if (item.img === "carrot") {
         imglink = carrot;
@@ -29,7 +29,7 @@ const CartDropDownItem: React.FC<CartDropDownItemProps> = (props) => {
                     <h5 className='font-12px ps-4 mb-4'>{item.name}</h5>
                 </Row>
                 <Row className='cart-d-quentity'>
-                    <h5 className='font-12px ps-4'>Qty: {item.quentity}</h5>
+                    <h5 className='font-12px ps-4'>Qty: {item.quantity}</h5>
                 </Row>
             </Col>
             <Col xs={2} className="cart-d-price p-0">
