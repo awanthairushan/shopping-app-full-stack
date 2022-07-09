@@ -10,6 +10,10 @@ $button-green: #4CAF50;
   border: 1px solid $grey !important;
   border-radius: $border-radius;
 
+  input[type='radio'] {
+    font-size: 15px;
+  }
+
   th {
     font-weight: bold !important;
   }
@@ -71,25 +75,51 @@ $button-green: #4CAF50;
       font-size: 17px !important;
       font-weight: 500;
     }
+
+
   }
 
 
+}
+
+.form-check-input {
+  margin-right: 8px !important;
+}
+
+.shipping-address-change-radio {
+  .form-check {
+    //float: left !important;
+    label {
+      width: max-content !important;
+    }
+
+    input, label {
+      cursor: pointer;
+    }
+  }
 }
 
 .shipping-form {
-  label {
-    margin-top: 8px;
-    margin-bottom: 0;
-  }
+  font-size: 13px;
 
-  input{
-    &:focus{
-      box-shadow: none;
-      border: 1px solid $border-color;
-    }
+  input {
+    font-size: 13px;
   }
 
 }
+
+label {
+  margin-top: 8px;
+  margin-bottom: 0;
+}
+
+input {
+  &:focus {
+    box-shadow: none;
+    border: 1px solid $border-color;
+  }
+}
+
 
 .checkout-table-item-image {
   width: 100px;
@@ -126,7 +156,7 @@ $button-green: #4CAF50;
     background-color: $button-green;
   }
 
-  &:focus{
+  &:focus {
     border: none;
     background-color: $button-green;
     box-shadow: none;

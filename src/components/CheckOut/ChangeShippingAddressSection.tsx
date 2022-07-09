@@ -4,6 +4,7 @@ import {FaRegCreditCard, FaRegMoneyBillAlt} from "react-icons/fa";
 
 import cash from '../../assets/images/CheckOutForm/cash.png';
 import card from '../../assets/images/CheckOutForm/creditCard.png';
+import ChangeShippingAddressForm from "./ChangeShippingAddressForm";
 
 const ChangeShippingAddressSection: FC = () => {
 
@@ -30,14 +31,26 @@ const ChangeShippingAddressSection: FC = () => {
         <>
             <span>Change Shipping Address</span>
             <Form>
-                <FormGroup className='float-start d-flex mt-lg-3'>
-                    <FormCheck className='me-lg-3 ' id='sameAddress' name='userAddressCheck' type='radio'
-                               label='Same as user address' onChange={handleOnRadioChange}/>
-                    <FormCheck name='userAddressCheck' id='changeAddress' type='radio' label='Change shipping address'
-                               onChange={handleOnRadioChange}/>
+                <FormGroup className='shipping-address-change-radio'>
+                    <Row>
+                        <Col lg={4}  md={12} className='pe-0'>
+                            <FormCheck className='d-flex align-items-center' id='sameAddress'
+                                       name='userAddressCheck' type='radio'
+                                       label='Same as user address' onChange={handleOnRadioChange}/>
+                        </Col>
+                        <Col lg={4} className='ps-0'>
+                            <FormCheck className='d-flex align-items-center' name='userAddressCheck' id='changeAddress'
+                                       type='radio' label='Change shipping address'
+                                       onChange={handleOnRadioChange}/>
+                        </Col>
+                    </Row>
                 </FormGroup>
+
                 <FormGroup>
-                    <FormLabel className='mt-lg-4'>Add Delivery Instructions (Optional)</FormLabel>
+                    {!isSameUserAddress && <ChangeShippingAddressForm/>}
+                </FormGroup>
+                <FormGroup className='mt-lg-2'>
+                    <FormLabel >Add Delivery Instructions (Optional)</FormLabel>
                     <FormControl as='textarea' rows={3}/>
                 </FormGroup>
                 <FormLabel className='my-lg-2'>Payment Methods</FormLabel>

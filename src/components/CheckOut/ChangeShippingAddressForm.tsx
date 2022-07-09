@@ -9,16 +9,13 @@ import PasswordStrengthBar from "react-password-strength-bar";
 
 const ShippingForm: FC = () => {
 
-    const [fullName, setFullName] = useState<string>('');
+    const [name, setName] = useState<string>('');
     const [address, setAddress] = useState<string>('');
     const [city, setCity] = useState<string>('');
     const [postalCode, setPostalCode] = useState<string>('');
     const [selectedCountryCode, setSelectedCountryCode] = useState<string>('');
     const [selectedCountryDialCode, setSelectedCountryDialCode] = useState<string>('');
     const [contactNumber, setContactNumber] = useState<string>('');
-    const [email, setEmail] = useState<string>('');
-    const [retypedEmail, setRetypedEmail] = useState<string>('');
-    const [currentPassword, setCurrentPassword] = useState<string>('');
 
     const countryList = countries.map((country, index) => {
         const countryItem: ICountryItem = {
@@ -29,8 +26,8 @@ const ShippingForm: FC = () => {
         return countryItem;
     });
 
-    const handleOnFullNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setFullName(e.target.value);
+    const handleOnNameChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setName(e.target.value);
     }
 
     const handleOnAddressChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -54,24 +51,12 @@ const ShippingForm: FC = () => {
         setContactNumber(e.target.value);
     }
 
-    const handleOnEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setEmail(e.target.value);
-    }
-
-    const handleOnRetypedEmailChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setRetypedEmail(e.target.value);
-    }
-
-    const handleOnPasswordChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setCurrentPassword(e.target.value);
-    }
-
     return (
-        <Form className="px-3 pt-2 pb-5 shipping-form">
-            <FormLabel>Full Name*</FormLabel>
-            <FormControl type="text" placeholder="Your Full Name" value={fullName} onChange={handleOnFullNameChange}/>
+        <Form className="px-0 mt-lg-0 pt-2 pb-2 shipping-form">
+            <FormLabel>Name*</FormLabel>
+            <FormControl type="text" placeholder="Your Full Name" value={name} onChange={handleOnNameChange}/>
 
-            <FormLabel>Address*</FormLabel>
+            <FormLabel>Billing Address*</FormLabel>
             <FormControl type="text" placeholder="Street Address" value={address} onChange={handleOnAddressChange}/>
 
             <Row>
@@ -112,26 +97,6 @@ const ShippingForm: FC = () => {
                     <FormControl type="text" value={contactNumber} onChange={handleOnContactNumberChange}/>
                 </InputGroup>
             </FormGroup>
-
-
-            <Row>
-                <Col sm={12}>
-                    <FormLabel>Email*</FormLabel>
-                    <FormControl type="email" placeholder="Email" value={email} onChange={handleOnEmailChange}/>
-                </Col>
-                <Col sm={12}>
-                    <FormLabel>Retype Email*</FormLabel>
-                    <FormControl type="email" placeholder="" value={retypedEmail} onChange={handleOnRetypedEmailChange}/>
-                </Col>
-            </Row>
-
-            <FormLabel>Choose Your Password*</FormLabel>
-            <FormControl type="password" onChange={handleOnPasswordChange}/>
-            <PasswordStrengthBar
-                password={currentPassword}
-                scoreWordStyle={{display: 'none'}}
-                scoreWords={['weak', 'weak', 'okay', 'okay', 'good', 'strong']}
-            />
         </Form>
     );
 }
