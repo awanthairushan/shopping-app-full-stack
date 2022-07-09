@@ -85,13 +85,13 @@ const CheckOut: FC<CheckoutProps> = (props) => {
                     {renderCartItems()}
                     <tr className="px-0">
                         {colSpan1 !== 0 && <td colSpan={colSpan1}/>}
-                        <td colSpan={colSpan2}>
+                        <td colSpan={colSpan2} className='pe-0'>
                             <Form className="d-flex justify-content-start align-items-center"
                                   onSubmit={handleOnDiscountCodeSubmit}>
                                 <span className="fs-5 me-3 discount-code-text">Have a discount code? </span>
                                 <FormControl type="text" className="discount-input me-3" value={discountCode}
                                              onChange={handleOnDiscountCodeChange}/>
-                                <Button className="apply-discount px-4" type="submit">APPLY</Button>
+                                <Button className="signing-button px-4" type="submit">APPLY</Button>
                             </Form>
                         </td>
                     </tr>
@@ -126,12 +126,12 @@ const CheckOut: FC<CheckoutProps> = (props) => {
                 <Row>
                     <Col md={12} className="border py-4">
                         <Row>
-                            <Col lg={6} md={6} className='align-items-center d-inline-flex'>
+                            <Col lg={9} md={6} className='align-items-center d-inline-flex'>
                               <span>
                             Already have an account?
                         </span>
                             </Col>
-                            <Col lg={6} md={6}>
+                            <Col lg={3} md={3} className='d-flex justify-content-end'>
                                 <Button className="signing-button" type="submit">Sign in</Button>
                             </Col>
                         </Row>

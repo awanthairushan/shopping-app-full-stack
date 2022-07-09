@@ -49,11 +49,11 @@ const ChangeShippingAddressSection: FC = () => {
                 <FormGroup>
                     {!isSameUserAddress && <ChangeShippingAddressForm/>}
                 </FormGroup>
-                <FormGroup className='mt-lg-2'>
+                <FormGroup className='mt-lg-2 fs-6'>
                     <FormLabel >Add Delivery Instructions (Optional)</FormLabel>
                     <FormControl as='textarea' rows={3}/>
                 </FormGroup>
-                <FormLabel className='my-lg-2'>Payment Methods</FormLabel>
+                <FormLabel className='my-lg-2' >Payment Methods</FormLabel>
 
                 <FormGroup className='payment-method'>
                     <Row className='mx-0 '>
