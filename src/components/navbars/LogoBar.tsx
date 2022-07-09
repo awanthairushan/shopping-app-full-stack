@@ -21,6 +21,8 @@ const LogoBar: React.FC<LogoBarProp> = (props) => {
             setIsCartVisible(true);
         }
     }
+
+    //Sticky header
     let scrollFunc: () => void;
     window.addEventListener('load', () => {
         const navbar = document.getElementById("navigation");
@@ -47,11 +49,11 @@ const LogoBar: React.FC<LogoBarProp> = (props) => {
 
 
     return (
-        <Row className="logo-bar stck" id='navigation'>
+        <Row className="logo-bar" id='navigation'>
             <Col className='mx-lg-5'>
                 <Row className='mx-lg-5'>
                     <Col lg={9} sm={8} xs={9} className="ps-0">
-                        <Image src={Logo} className="img-fluid ms-lg-5 ms-md-4 ms-sm-0"/>
+                        <Image src={Logo} className="img-fluid navbar-logo ms-lg-5 ms-md-4 ms-sm-0"/>
                     </Col>
                     <Col lg={1} sm={1} xs={2} onClick={cartVisible}
                          className='shopping-cart-and-basket d-flex justify-content-end pe-sm-3 ms-xl-5 pe-0'>
