@@ -29,7 +29,7 @@ const CategoryList: React.FC<CategoryListProps> = (props: CategoryListProps) => 
     }
     return (
         <React.Fragment>
-            <Row xs={12} className='d-flex flex-row justify-content-center pt-4 mx-lg-5 category'>
+            <Row xs={12} className='d-flex flex-row justify-content-center pt-4 category'>
                 <h2 className='text-center'>Our Products</h2>
                 <Col xl={12} lg={12} xs={12}
                      className='d-flex flex-md-row justify-content-around mb-2'>
