@@ -70,7 +70,7 @@ const CheckOut: FC<CheckoutProps> = (props) => {
     return (
         <Row className='mx-lg-5'>
             <Col className='mx-lg-3'>
-                <Row className="mx-lg-5 mx-md-4 mx-3 px-lg-5 px-md-2 pt-3 my-5 ">
+                <Row className="mx-md-4 mx-3 px-md-2 pt-3 my-5 ">
                     <h5 className="ps-0 page-title">Checkout Page</h5>
                     <Col md={12} className="checkout p-3 ">
                         <h5 className="ps-2 table-title">Shopping Cart</h5>

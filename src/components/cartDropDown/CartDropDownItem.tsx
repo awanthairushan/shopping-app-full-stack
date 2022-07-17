@@ -26,7 +26,7 @@ const CartDropDownItem: React.FC<CartDropDownItemProps> = (props) => {
             </Col>
             <Col xs={6} className="cart-d-details p-0">
                 <Row className='cart-d-name'>
-                    <h5 className='font-12px ps-4 mb-4'>{item.name}</h5>
+                    <p className='font-12px ps-4 mb-3'>{item.name}</p>
                 </Row>
                 <Row className='cart-d-quentity'>
                     <h5 className='font-12px ps-4'>Qty: {item.quantity}</h5>
@@ -36,7 +36,7 @@ const CartDropDownItem: React.FC<CartDropDownItemProps> = (props) => {
                 <h5 className='font-12px mb-3 me-3' onClick={() => onCartItemRemove(index)}><Trash className='cart-trash colour-gray' /></h5>
                 <h5 className='font-12px me-3'>Rs.{itemfullprice}.00</h5>
             </Col>
-            <hr />
+            <hr className='mb-0'/>
         </Row>
     )
 }

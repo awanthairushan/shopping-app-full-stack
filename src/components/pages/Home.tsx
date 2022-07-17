@@ -32,7 +32,7 @@ const Home: React.FC<HomeProps> = (props) => {
                     <PromotionSection setProductSectionVisible={executeScroll}/>
                     <SearchBar/>
                 <div ref={myRef}>
-                    <Row className='mx-lg-5'>
+                    <Row>
                         <Col className='mx-lg-4'>
                             <CategoryList items={category} onCartItemCreate={onCartItemCreate}/>
                         </Col>

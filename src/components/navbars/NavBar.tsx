@@ -30,7 +30,7 @@ const NavBar: React.FC = () => {
     }
 
     return (
-        <Row className='mx-lg-5'>
+        <Row>
             <Col className='mx-lg-5'>
                 <Navbar className='py-3 header-navbar' collapseOnSelect>
                     <Nav className='ms-0 ms-lg-5 ms-md-4 my-1'>

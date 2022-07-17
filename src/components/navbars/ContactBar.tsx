@@ -16,7 +16,7 @@ const ContactBar: React.FC = () => {
     <Row>
       <Col xs={12} className="ms-sm-0 ps-sm-0 ps-3 me-xl-4">
         <Navbar expand="lg" className="contact-bar float-end py-lg-0">
-          <Container className='pe-lg-0'>
+          <Container className='pe-0'>
             <Navbar.Brand href="#home" className='py-1'>
                 <a href="tel:+94 112 123456" className={show?"href":"href contact-number"}>
                   <PhoneCall className='me-2' /> +94 112 123456</a>

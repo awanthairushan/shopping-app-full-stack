@@ -79,25 +79,25 @@ const CartDropDown: React.FC<CartDropDownProp> = (props) => {
                 <Row className='mt-3'>
                     <Col xs={6} md={8}>
                         <Row>
-                            <h5 className='font-12px ps-0'>Subtotal ({calculateItemTotal()} items)</h5>
+                            <p className='font-12px ps-0 mb-1'>Subtotal ({calculateItemTotal()} items)</p>
                         </Row>
                         <Row>
-                            <h5 className='font-12px ps-0'>Discount</h5>
+                            <p className='font-12px ps-0 mb-1'>Discount</p>
                         </Row>
                     </Col>
                     <Col xs={6} md={4} className="cart-values">
-                        <h5 className='colour-red font-12px pe-4'><NumberFormat value={subTotalCalculate()} displayType={'text'} thousandSeparator={true} prefix={'Rs. '} />.00</h5>
-                        <h5 className='font-12px pe-4'><NumberFormat value={discountCalculate()} displayType={'text'} thousandSeparator={true} prefix={'Rs. '} />.00</h5>
+                        <p className='colour-red font-12px pe-4 mb-1'><NumberFormat value={subTotalCalculate()} displayType={'text'} thousandSeparator={true} prefix={'Rs. '} />.00</p>
+                        <p className='font-12px pe-4 mb-1'><NumberFormat value={discountCalculate()} displayType={'text'} thousandSeparator={true} prefix={'Rs. '} />.00</p>
                     </Col>
-                    <hr className='hr' />
+                    <hr className='hr mb-0' />
                 </Row>
 
                 <Row>
                     <Col xs={6} className='ps-0'>
-                        <h5 className='font-12px ps-0'>Total</h5>
+                        <p className='font-12px ps-0 my-2'>Total</p>
                     </Col>
                     <Col xs={6} className="cart-values">
-                        <h5 className='colour-red font-12px pe-4'><NumberFormat value={totalSet()} displayType={'text'} thousandSeparator={true} prefix={'Rs. '} />.00</h5>
+                        <p className='colour-red font-12px pe-4 my-2'><NumberFormat value={totalSet()} displayType={'text'} thousandSeparator={true} prefix={'Rs. '} />.00</p>
                     </Col>
                 </Row>
                 <Link to='/checkout'>

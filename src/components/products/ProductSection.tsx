@@ -63,7 +63,7 @@ const ProductSection: React.FC<ProductSectionProps> = (props) => {
   }
 
   return (
-    <Row className='product mb-5 mx-0 mx-lg-5 px-lg-4'>
+    <Row className='product mb-5 mx-0 mx-lg-5 px-lg-3'>
       <p className='my-2 catagery-types-text'>Grocery</p>
       {renderProducts(products)}
       <p className='my-2 catagery-types-text'>Fruits</p>

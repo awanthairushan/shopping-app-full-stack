@@ -65,7 +65,7 @@ $green: #89f302;
   }
 }
 
-@media (min-width: 414px) {
+@media (min-width: 0) {
   .contact-bar {
     font-size: 15px;
 
@@ -96,6 +96,11 @@ $green: #89f302;
 
   // Large devices (desktops, 992px and up)
   @media (min-width: 992px) {
+    .button-login {
+      span{
+        margin-top: 3px;
+      }
+    }
     .contact-bar {
       .register-button {
         color: $green;
@@ -107,11 +112,12 @@ $green: #89f302;
         border-radius: 3px;
         cursor: pointer;
         width: auto;
+        
 
         span {
           color: $apply-green;
           border-color: $apply-green;
-
+          margin-top: 2px;
         }
       }
     }
