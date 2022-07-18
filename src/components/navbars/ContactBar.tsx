@@ -33,10 +33,10 @@ const ContactBar: React.FC = () => {
                   <span className="ms-1 colour-gray">My Account</span>
                 </Nav.Item>
                 <Nav.Item className="register-button ms-lg-2 d-flex float-end mt-2 mt-md-0">
-                  <span className="px-2 mx-2">Register</span>
+                  <span className="px-2 mx-2"><Link to={"/signuppage"} className="href login-btn">Register</Link></span>
                 </Nav.Item>
                 <Nav.Item className="button-login ps-lg-2 ms-lg-3 me-2 d-flex float-end mt-2 mt-md-0 ">
-                  <span><Link to={"LoginAndSignup"} className="href login">Login</Link></span>
+                  <span><Link to={"/loginpage"} className="href login-btn">Login</Link></span>
                 </Nav.Item>
               </Nav>
             </Navbar.Collapse>
