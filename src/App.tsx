@@ -10,7 +10,8 @@ import {ICart} from './Types/ShoppingTypes';
 import {useToasts} from 'react-toast-notifications';
 import CheckOut from "./components/pages/CheckOut";
 import Pricing from "./components/pages/staticpages/Pricing";
-import LoginAndSignUp from './components/pages/loginAndSignUp';
+import LoginPage from './components/pages/LoginPage';
+import SignupPage from './components/pages/SignupPage';
 import ForgotPassWord from "./components/pages/staticpages/ForgotPassWord";
 
 const App = () => {
@@ -56,7 +57,8 @@ const App = () => {
                     <Route path='/faq' element={<FAQ />} />
                     <Route path='/pricing' element={<Pricing/>}/>
                     <Route path='/checkout' element={<CheckOut cartItems={cartItems} setCartItems={setCartItems} />} />
-                    <Route path='/loginandsignup' element={<LoginAndSignUp/>}/>
+                    <Route path='/loginpage' element={<LoginPage/>}/>
+                    <Route path='/signuppage' element={<SignupPage/>}/>
                     <Route path='/forgotpassword' element={<ForgotPassWord/>}/>
                 </Route>
             </Routes>
