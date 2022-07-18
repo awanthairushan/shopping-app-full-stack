@@ -3,15 +3,16 @@ import {Button, Col, Form, InputGroup, Row} from "react-bootstrap";
 import {User, Mail, Phone, Lock} from 'react-feather'
 import {Link} from "react-router-dom";
 
-const SignupPage = () => {
+const SignupPage: React.FC = () => {
     return (
         <Row className='signup'>
             <Col md={5} className='animation-shield d-flex align-items-center justify-content-center'>
                 <div>
                     <h1 className='mb-3'>Welcome Back!</h1>
                     <p className='mb-4'>To keep connect with us please<br/>login with your personal details</p>
-                    <Link to={'/loginpage'}><Button type="button" className="btn btn-outline-light">SIGN
-                        IN</Button></Link>
+                    <Link to={'/loginpage'}>
+                        <Button type="button" className="btn btn-outline-light">SIGN IN</Button>
+                    </Link>
                 </div>
             </Col>
             <Col md={7} className='px-0'>
@@ -35,12 +36,14 @@ const SignupPage = () => {
                     <InputGroup className="mb-3 data-field" id="formBasicPassword">
                         <InputGroup.Text className='data-field-icon' id="basic-addon1"><Lock/></InputGroup.Text>
                         <Form.Control type="password" placeholder="Password" required
-                                      pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"/> {/* Minimum eight characters, at least one letter and one number:*/}
+                                      pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"/>
+                        {/* Minimum eight characters, at least one letter and one number:*/}
                     </InputGroup>
                     <InputGroup className="mb-3 data-field" id="formBasicRePassword">
                         <InputGroup.Text className='data-field-icon' id="basic-addon1"><Lock/></InputGroup.Text>
                         <Form.Control type="password" placeholder="Repassword" required
-                                      pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"/> {/* Minimum eight characters, at least one letter and one number:*/}
+                                      pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$"/>
+                        {/* Minimum eight characters, at least one letter and one number:*/}
                     </InputGroup>
                     <Button className='signup-button mb-3' type="submit">
                         SIGN UP
