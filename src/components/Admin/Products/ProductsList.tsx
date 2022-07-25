@@ -1,11 +1,11 @@
 import React, {FC} from "react";
-import {Col} from "react-bootstrap";
+import {Col, Row} from "react-bootstrap";
 
 const ProductsList: FC = () => {
     return (
-        <Col lg={10}>
-            ProductsList
-        </Col>
+        <Row className='mx-0 p-lg-4 content' >
+            Product list
+        </Row>
     );
 }
 
