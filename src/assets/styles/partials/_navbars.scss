@@ -61,6 +61,7 @@ $link-padding: 6px;
 
 @media (max-width: 576px) {
   .logo-bar {
+
     .shopping-cart-and-basket {
       .cart-basket {
         padding-top: 2px;
@@ -70,8 +71,9 @@ $link-padding: 6px;
 
 }
 
-@media (max-width: 411px) {
-  background-color: red !important;
+@media (max-width: 418px) {
+  //background-color: red !important;
+  font-size: 10px !important;
 }
 
 @media all and (max-width: 360px) {
