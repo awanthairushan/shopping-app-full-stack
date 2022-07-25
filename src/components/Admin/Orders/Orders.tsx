@@ -1,11 +1,11 @@
 import React, {FC} from "react";
-import {Col} from "react-bootstrap";
+import {Col, Row} from "react-bootstrap";
 
 const Orders: FC = () => {
     return (
-        <Col lg={10}>
+        <Row lg={10} className='content-wrapper'>
             Orders
-        </Col>
+        </Row>
     );
 }
 
