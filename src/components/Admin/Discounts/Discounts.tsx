@@ -4,7 +4,7 @@ import DiscountsList from "./DiscountsList";
 
 const Discounts: FC = () => {
     return (
-        <Row className='content-wrapper d-grid p-lg-4 mx-0 br'>
+        <Row className='content-wrapper d-grid p-lg-4 mx-0'>
             <Row className='mx-0'>
                 Discounts
             </Row>
