@@ -9,7 +9,7 @@ const AdminApp: FC = () => {
         <Container fluid className='vh-100'>
             <Row>
                 <LeftNavigation/>
-                <Col>
+                <Col className='px-lg-0'>
                     <AdminHeader />
                     <Outlet/>
                 </Col>
