@@ -1,6 +1,7 @@
 import React, {FC} from "react";
 import {Col, Row} from "react-bootstrap";
 import ProductsList from "./ProductsList";
+import AddProduct from "./AddProduct";
 
 const Products: FC = () => {
     return (
@@ -8,7 +9,8 @@ const Products: FC = () => {
             <Row className='mx-0'>
                 Products
             </Row>
-            <ProductsList/>
+            <AddProduct/>
+            {/*<ProductsList/>*/}
         </Row>
     );
 }
