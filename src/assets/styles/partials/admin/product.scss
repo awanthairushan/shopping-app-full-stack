@@ -1,0 +1,26 @@
+.admin-product {
+    p {
+        display: flex;
+        vertical-align: middle;
+        font-weight: bolder;
+    }
+}
+
+.add-product {
+    background-color: #11a1fd;
+    border: none;
+    font-weight: bold;
+    padding: 8px 15px;
+}
+.table > :not(:first-child){
+    border: #e7f1f7;
+}
+td{
+    border-color: #e7f1f7;
+}
+th{
+    color: #8ba9bd;
+}
+.bold{
+    font-weight: bolder;
+}
