@@ -19,6 +19,15 @@ const ProductsList: FC = () => {
     const setActive = (num:number) => {
         setPage(num);
     }
+    const clickBack = () => {
+        if(page!==1){
+        setPage(page-1);
+        }
+    }
+    const clickNext = () => {
+        if(page<=productList.length / 10)
+        setPage(page+1);
+    }
     if (productList.length === 0) {
         return (
             <p className="mt-2">
@@ -83,7 +92,7 @@ const ProductsList: FC = () => {
                 </Table>
                 <Row className="admin-pagi">
                     <div className="pagination">
-                        <a href="#" className="links">&laquo; Prev</a>
+                        <a href="#" className="links" onClick={() => clickBack()}>&laquo; Prev</a>
                         {renderPagination()}
                         {/* <a href="#">1</a>
                         <a href="#" className="active">2</a>
@@ -91,7 +100,7 @@ const ProductsList: FC = () => {
                         <a href="#">4</a>
                         <a href="#">5</a>
                         <a href="#">6</a> */}
-                        <a href="#" className="links">Next &raquo;</a>
+                        <a href="#" className="links" onClick={() => clickNext()}>Next &raquo;</a>
                     </div>
                 </Row>
             </Col>
