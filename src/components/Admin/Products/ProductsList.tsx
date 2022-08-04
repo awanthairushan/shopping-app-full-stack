@@ -1,5 +1,6 @@
 import React, { FC, useState, useEffect } from "react";
 import { Col, Row, Table } from "react-bootstrap";
+import ProductsListItem from "./ProductsListItem";
 
 const ProductsList: FC = () => {
 
@@ -41,19 +42,21 @@ const ProductsList: FC = () => {
             <tbody>
                 {
                     productList.slice(page*10-10, page*10).map((product: number, index: number) => (
-                        <tr>
+/*                        <tr>
                             <td>{index}</td>
                             <td>Mark</td>
                             <td>Otto</td>
                             <td>Mark</td>
                             <td>Otto</td>
                             <td>@mdo</td>
-                        </tr>
+                        </tr>*/
                         //   <Author
                         //     author={author}
                         //     index={index}
                         //     key={index}
                         //   />
+
+                      <ProductsListItem />
                     ))
                 }
             </tbody>
