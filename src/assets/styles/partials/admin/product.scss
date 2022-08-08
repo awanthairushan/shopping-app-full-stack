@@ -7,10 +7,21 @@
 }
 
 .add-product {
-  background-color: #11a1fd;
+  background-color: #0C2556;
   border: none;
-  font-weight: bold;
+  font-weight: 500;
   padding: 8px 15px;
+  color: white;
+  border-radius: 5px;
+
+  &:hover {
+    background-color: #0C2556;
+    cursor: pointer;
+  }
+
+
+  box-shadow: none;
+  outline: none !important;
 }
 
 .table > :not(:first-child) {
