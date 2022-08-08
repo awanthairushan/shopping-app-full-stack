@@ -1,8 +1,7 @@
 import React, {FC, useEffect, useState} from "react";
-import {Col, Image} from "react-bootstrap";
+import {Col} from "react-bootstrap";
 import {Link, useLocation} from "react-router-dom";
-import Logo from "../../../assets/images/LOGO.png";
-import {FiHome, FiPercent, FiShoppingCart, FiTag, FiUser, FiUsers} from "react-icons/fi";
+import {FiShoppingCart, FiTag} from "react-icons/fi";
 
 const LeftNavigation: FC = () => {
 
@@ -20,36 +19,21 @@ const LeftNavigation: FC = () => {
                 LOGO
             </div>
             <ul className='list-unstyled px-0 nav-list'>
-                <Link to='/dashboard' className={url === '/dashboard' ? 'active' : ''}>
-                    <li className='px-lg-4 '>
-                        <FiHome/>
-                        Dashboard
-                    </li>
-                </Link>
-                <Link to='/products' className={url === '/products' ? 'active' : ''}>
+
+                <Link to='/admin/products' className={url === '/admin/products' ? 'active' : ''}>
                     <li className='px-lg-4'>
                         <FiTag/>
                         Products
                     </li>
                 </Link>
-                <Link to='/customers' className={url === '/customers' ? 'active' : ''}>
-                    <li className='px-lg-4'>
-                        <FiUsers/>
-                        Customers
-                    </li>
-                </Link>
-                <Link to='/orders' className={url === '/orders' ? 'active' : ''}>
+
+                <Link to='/admin/orders' className={url === '/admin/orders' ? 'active' : ''}>
                     <li className='px-lg-4'>
                         <FiShoppingCart/>
                         Orders
                     </li>
                 </Link>
-                <Link to='/discounts' className={url === '/discounts' ? 'active' : ''}>
-                    <li className='px-lg-4'>
-                        <FiPercent/>
-                        Discounts
-                    </li>
-                </Link>
+
             </ul>
         </Col>
     );
