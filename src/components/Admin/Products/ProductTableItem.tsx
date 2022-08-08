@@ -89,14 +89,10 @@ const ProductsListItem: FC<ProductTableItemProps> = (product) => {
             </td>
             <td className="p-lg-0 py-1">
                 <Row className='mx-0'>
-                    <Col className="text-center">
-                        <Eye className="btn-eye"/>
-                    </Col>
-                    <Col className="text-center">
-                        <Edit2 className="btn-edit"/>
-                    </Col>
-                    <Col>
-                        <Trash2 className="float-start  btn-trash2"/>
+                    <Col className='d-flex px-0 product-table-item-actions justify-content-around'>
+                        <Eye className="btn-eye" size={'18px'} color={'black'}/>
+                        <Edit2 className="btn-edit" size={'18px'} color={'#D0A617'}/>
+                        <Trash2 className="btn-trash2" size={'18px'} color={'#F42B3D'}/>
                     </Col>
                 </Row>
             </td>
