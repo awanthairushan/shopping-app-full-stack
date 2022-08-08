@@ -1,15 +1,32 @@
-import React, {FC} from "react";
+import React, {FC, useState} from "react";
 import {Col, Form, Row} from "react-bootstrap";
 import Select from 'react-select'
 import NumberFormat from 'react-number-format';
+import Product from "../../products/Product";
+import {IProduct} from "../../../Types/ShoppingTypes";
 
-const options = [
-    {value: 'chocolate', label: 'Chocolate'},
-    {value: 'strawberry', label: 'Strawberry'},
-    {value: 'vanilla', label: 'Vanilla'}
+const categoryOptions = [
+    {value: 'grocery', label: 'Grocery'},
+    {value: 'food', label: 'Food'},
+    {value: 'pharmacy', label: 'Pharmacy'},
+    {value: 'electronic', label: 'Electronic'}
+];
+
+const statusOptions = [
+    {value: 'grocery', label: 'Grocery'},
+    {value: 'food', label: 'Food'},
+    {value: 'pharmacy', label: 'Pharmacy'},
+    {value: 'electronic', label: 'Electronic'}
 ]
 
 const AddProduct: React.FC = () => {
+
+    const [product, setProduct] = useState<IProduct>({ name: "product 1", price: "65.34", oldPrice: "65.00", img: "coconut", category: "Food" });
+
+    const onCartItemCreate = () => {
+
+    }
+
     return (
         <Col className='content mx-0 p-lg-4'>
             <h5 className='font-weight-bold'>Basic Information</h5>
@@ -21,18 +38,22 @@ const AddProduct: React.FC = () => {
                             <Form.Control placeholder="Enter Product Name"/>
                         </Form.Group>
                         <Form.Group className="mb-3">
-                            <Form.Label>PRODUCT QUANTITY</Form.Label>
+                            <Form.Label>QUANTITY</Form.Label>
                             <Form.Control placeholder="Enter Product Quantity"/>
+                        </Form.Group>
+                        <Form.Group className="mb-3">
+                            <Form.Label>PRICE</Form.Label>
+                            <Form.Control placeholder="Enter Product Price" as={NumberFormat} thousandSeparator={true}/>
                         </Form.Group>
                     </Col>
                     <Col lg={6}>
                         <Form.Group className="mb-3">
                             <Form.Label>PRODUCT CATEGORY</Form.Label>
-                            <Select options={options} placeholder="Enter Product Category" isClearable={true}/>
+                            <Select options={categoryOptions} placeholder="Select Product Category" isClearable={true}/>
                         </Form.Group>
                         <Form.Group className="mb-3">
-                            <Form.Label>PRODUCT PRICE</Form.Label>
-                            <Form.Control placeholder="Enter Product Price" as={NumberFormat} thousandSeparator={true}/>
+                            <Form.Label>DISCOUNTED PRICE</Form.Label>
+                            <Form.Control placeholder="Enter discounted Price" as={NumberFormat} thousandSeparator={true}/>
                         </Form.Group>
                     </Col>
                     <Col xs={12}>
@@ -41,11 +62,18 @@ const AddProduct: React.FC = () => {
                             <Form.Control as="textarea" rows={3}/>
                         </Form.Group>
                     </Col>
-                    <Col xs={12}>
+                    <Col xs={6}>
                         <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
                             <Form.Label>PRODUCT IMAGE</Form.Label>
                             <Form.Control type='file' className='custom-file-label'/>
                         </Form.Group>
+                    </Col>
+                    <Col xs={6} >
+                        <Product
+                            product={product}
+                            index={1}
+                            onCartItemCreate={onCartItemCreate}
+                        />
                     </Col>
                 </Row>
             </Form>

@@ -41,8 +41,8 @@ const Product: React.FC<ProductProps> = (props) => {
     return (
         <Col xs={6} md={4} lg={3} className='mt-1 mb-1 mb-sm-2 products'>
             <Row className='product-item'>
-                <Col sm={12} className='product-img mt-1'>
-                    <Image src={imglink} alt="product img"/>
+                <Col sm={12} className='product-img'>
+                    <Image src={imglink} alt="product" className=''/>
                 </Col>
                 <Col sm={12} className='product-name px-3'>
                     <p>{product.name}</p>
