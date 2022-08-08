@@ -84,4 +84,11 @@ th {
 .product-table-item-actions {
   width: 20px !important;
   max-width: 80px !important;
+
+  svg {
+    &:hover {
+      transform: scale(1.1);
+      transition: 0.2s;
+    }
+  }
 }
