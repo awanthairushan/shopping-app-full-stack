@@ -1,64 +1,82 @@
 .admin-product {
-    p {
-        display: flex;
-        vertical-align: middle;
-        font-weight: bolder;
-    }
+  p {
+    display: flex;
+    vertical-align: middle;
+    font-weight: bolder;
+  }
 }
 
 .add-product {
-    background-color: #11a1fd;
-    border: none;
-    font-weight: bold;
-    padding: 8px 15px;
+  background-color: #11a1fd;
+  border: none;
+  font-weight: bold;
+  padding: 8px 15px;
 }
-.table > :not(:first-child){
-    border: #e7f1f7;
+
+.table > :not(:first-child) {
+  border: #e7f1f7;
 }
-td{
-    border: unset;
+
+td {
+  border: unset;
 }
-th{
-    border: unset;
-    color: #8ba9bd;
+
+th {
+  border: unset;
+  color: #8ba9bd;
 }
-.bold{
-    font-weight: bolder;
+
+.bold {
+  font-weight: bolder;
 }
 
 
 //pagination
 
-.admin-pagi{
-    justify-content: center;
-    position: absolute;
-    bottom: 5%;
-    right: 3%;
+.admin-pagi {
+  justify-content: center;
+  position: absolute;
+  bottom: 5%;
+  right: 3%;
 }
+
 .pagination {
-    
-    justify-content: center;
-  }
-  
-  .pagination a {
-    color: black;
-    float: left;
-    padding: 8px 16px;
-    text-decoration: none;
-    transition: background-color .3s;
-    border: 1px solid #ddd;
-    margin: 0 4px;
-    border-radius: 50%;
-  }
-  
-  .pagination a.active {
-    background-color: #4CAF50;
-    color: white;
-    border: 1px solid #4CAF50;
-  }
-  
-  .pagination a:hover:not(.active) {background-color: #ddd;}
-  .links{
-    border: unset !important;
-    font-weight: bold;
-  }
+
+  justify-content: center;
+}
+
+.pagination a {
+  color: black;
+  float: left;
+  padding: 8px 16px;
+  text-decoration: none;
+  transition: background-color .3s;
+  border: 1px solid #ddd;
+  margin: 0 4px;
+  border-radius: 50%;
+}
+
+.pagination a.active {
+  background-color: #4CAF50;
+  color: white;
+  border: 1px solid #4CAF50;
+}
+
+.pagination a:hover:not(.active) {
+  background-color: #ddd;
+}
+
+.links {
+  border: unset !important;
+  font-weight: bold;
+}
+
+//=========================================================
+.product-item-image {
+  width: 50px;
+  border-radius: 5px;
+}
+
+.product-table-item td {
+  vertical-align: middle;
+}

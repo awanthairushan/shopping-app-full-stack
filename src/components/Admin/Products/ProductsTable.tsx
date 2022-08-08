@@ -1,9 +1,10 @@
 import React, {FC, useEffect, useState} from "react";
 import {Col, Row, Table} from "react-bootstrap";
-import ProductsListItem from "./ProductsListItem";
+import allProducts from '../../../assets/data/products.json';
+import ProductTableItem from "./ProductTableItem";
 
 const ProductsTable: FC = () => {
-
+    const products = allProducts.products;
     const productList = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17,];
     const [paginationNum, setPaginationNum] = useState<number[]>([1])
     const [page, setPage] = useState<number>(1);
@@ -41,9 +42,17 @@ const ProductsTable: FC = () => {
         return (
             <tbody>
             {
-                productList.slice(page * 10 - 10, page * 10).map((product: number, index: number) => (
-                    <ProductsListItem/>
-                ))
+                // productList.slice(page * 10 - 10, page * 10).map((product: number, index: number) => (
+                //     <ProductsListItem/>
+                // ))
+
+                products.map((product, index) => {
+                    if (index < 6) {
+                        return <ProductTableItem product={product} key={index}/>
+                    }
+                })
+
+
             }
             </tbody>
         );
@@ -78,7 +87,7 @@ const ProductsTable: FC = () => {
                         <th className="bold  py-3 px-0">Action</th>
                     </tr>
                     </thead>
-                    {/*{renderProduct()}*/}
+                    {renderProducts()}
                 </Table>
 
 
