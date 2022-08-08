@@ -1,7 +1,7 @@
 import React, {FC} from "react";
 import {Button, Col, Row} from "react-bootstrap";
 import {Plus} from "react-feather";
-import ProductsList from "./ProductsList";
+import ProductsTable from "./ProductsTable";
 
 const Products: FC = () => {
     return (
@@ -14,7 +14,7 @@ const Products: FC = () => {
                     <Button className="add-product fs-6"> <Plus/> Add Products</Button>
                 </Col>
             </Row>
-            <ProductsList />
+            <ProductsTable/>
         </Row>
     );
 }
