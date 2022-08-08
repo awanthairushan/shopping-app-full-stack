@@ -1,6 +1,6 @@
-import React, { FC } from "react";
-import { Button, Col, Row } from "react-bootstrap";
-import { Plus } from "react-feather";
+import React, {FC} from "react";
+import {Button, Col, Row} from "react-bootstrap";
+import {Plus} from "react-feather";
 import ProductsList from "./ProductsList";
 
 const Products: FC = () => {
@@ -13,7 +13,6 @@ const Products: FC = () => {
                 <Col className="d-flex justify-content-end p-0">
                     <Button className="add-product fs-6"> <Plus/> Add Products</Button>
                 </Col>
-
             </Row>
             <ProductsList />
         </Row>
