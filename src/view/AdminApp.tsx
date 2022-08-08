@@ -7,10 +7,10 @@ import AdminHeader from "../components/Admin/Navigation/AdminHeader";
 const AdminApp: FC = () => {
     return (
         <Container fluid className='vh-100'>
-            <Row>
+            <Row className='h-100'>
                 <LeftNavigation/>
-                <Col className='px-lg-0'>
-                    <AdminHeader />
+                <Col className='px-lg-0 h-100'>
+                    <AdminHeader/>
                     <Outlet/>
                 </Col>
 

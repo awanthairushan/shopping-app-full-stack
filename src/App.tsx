@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import './App.scss';
-import {BrowserRouter, Routes, Route} from "react-router-dom";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
 import ECommerceApp from './view/ECommerceApp';
 import Home from "./components/pages/Home";
 import AboutUs from "./components/pages/staticpages/AboutUs";
@@ -13,12 +13,9 @@ import Pricing from "./components/pages/staticpages/Pricing";
 import LoginPage from './components/pages/LoginPage';
 import SignupPage from './components/pages/SignupPage';
 import ForgotPassWord from "./components/pages/staticpages/ForgotPassWord";
-import Customers from "./components/Admin/Customers/Customers";
 import AdminApp from "./view/AdminApp";
-import Dashboard from "./components/Admin/Dashboard/Dashboard";
 import Products from "./components/Admin/Products/Products";
 import Orders from "./components/Admin/Orders/Orders";
-import Discounts from "./components/Admin/Discounts/Discounts";
 
 const App = () => {
     const {addToast} = useToasts();
@@ -67,12 +64,9 @@ const App = () => {
                     <Route path='/signuppage' element={<SignupPage/>}/>
                     <Route path='/forgotpassword' element={<ForgotPassWord/>}/>
                 </Route>
-                <Route path='/' element={<AdminApp/>}>
-                    <Route path='dashboard' element={<Dashboard/>}/>
+                <Route path='/admin' element={<AdminApp/>}>
                     <Route path='products' element={<Products/>}/>
-                    <Route path='customers' element={<Customers/>}/>
                     <Route path='orders' element={<Orders/>}/>
-                    <Route path='discounts' element={<Discounts/>}/>
                 </Route>
             </Routes>
         </BrowserRouter>
