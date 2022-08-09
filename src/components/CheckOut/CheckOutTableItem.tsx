@@ -1,6 +1,6 @@
 import {BaseSyntheticEvent, FC, useEffect, useState} from 'react';
 import {Image} from "react-bootstrap";
-import {MinusCircle, PlusCircle, X} from "react-feather";
+import {MinusCircle, PlusCircle, Trash} from "react-feather";
 import {ICart} from "../../Types/ShoppingTypes";
 import NumberFormat from 'react-number-format';
 import {carrot, coconut} from "../../assets/images/images";
@@ -66,7 +66,7 @@ const CheckOutTableItem: FC<checkOutTableItemProps> = (props) => {
                               fixedDecimalScale={true} readOnly/></td>
             <td><NumberFormat className='checkout-number-format' prefix="Rs." value={itemTotal} decimalScale={2}
                               fixedDecimalScale={true}/></td>
-            <td><X className="hover-pointer" onClick={handleOnRemoveItemClick}/></td>
+            <td><Trash className="hover-pointer checkout-remove" onClick={handleOnRemoveItemClick}/></td>
         </tr>
 
     )
