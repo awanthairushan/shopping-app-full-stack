@@ -65,7 +65,7 @@ const LogoBar: React.FC<LogoBarProp> = (props) => {
                     <Col lg={1} sm={2}
                          className='ps-0 d-sm-block d-none'>
                         <Link to='/checkout'>
-                            <button type="button" className=" py-0 btn text-light">Checkout</button>
+                            <button type="button" className=" py-0 px-2 btn text-light">Checkout</button>
                         </Link>
                     </Col>
                     <Col xs={12} className='cart-priview'>
