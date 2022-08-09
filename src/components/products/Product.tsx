@@ -1,7 +1,8 @@
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {ICart, IProduct} from '../../Types/ShoppingTypes';
 import {carrot, coconut} from "../../assets/images/images";
 import {Button, Col, Image, Row, Form} from 'react-bootstrap';
+import {useLocation} from "react-router-dom";
 
 type ProductProps = {
     product: IProduct,
@@ -9,6 +10,14 @@ type ProductProps = {
     onCartItemCreate: (newItem: ICart) => void;
 }
 const Product: React.FC<ProductProps> = (props) => {
+
+    const location = useLocation();
+    const [url, setURL] = useState<string>('');
+
+    useEffect(() => {
+        setURL(location.pathname);
+    }, [location]);
+
 
     const {onCartItemCreate} = props;
     const [quantity, setQuantity] = useState<number>(1);
@@ -39,7 +48,7 @@ const Product: React.FC<ProductProps> = (props) => {
         setCartBtnBackground("add-cart-btn-u");
     }
     return (
-        <Col xs={6} md={4} lg={3} className='mt-1 mb-1 mb-sm-2 products'>
+        <Col xs={6} md={4} lg={url === '/products' ? 6 : 3} className={url === '/products' ? 'mb-1 mb-sm-2 products ps-0' : 'mt-1 mb-1 mb-sm-2 products'}>
             <Row className='product-item'>
                 <Col sm={12} className='product-img'>
                     <Image src={imglink} alt="product" className=''/>

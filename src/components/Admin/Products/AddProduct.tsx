@@ -13,15 +13,19 @@ const categoryOptions = [
 ];
 
 const statusOptions = [
-    {value: 'grocery', label: 'Grocery'},
-    {value: 'food', label: 'Food'},
-    {value: 'pharmacy', label: 'Pharmacy'},
-    {value: 'electronic', label: 'Electronic'}
+    {value: 'inStock', label: 'In Stock'},
+    {value: 'outOfStock', label: 'Out Of Stock'},
 ]
 
 const AddProduct: React.FC = () => {
 
-    const [product, setProduct] = useState<IProduct>({ name: "product 1", price: "65.34", oldPrice: "65.00", img: "coconut", category: "Food" });
+    const [product, setProduct] = useState<IProduct>({
+        name: "product 1",
+        price: "65.34",
+        oldPrice: "65.00",
+        img: "coconut",
+        category: "Food"
+    });
 
     const onCartItemCreate = () => {
 
@@ -52,8 +56,13 @@ const AddProduct: React.FC = () => {
                             <Select options={categoryOptions} placeholder="Select Product Category" isClearable={true}/>
                         </Form.Group>
                         <Form.Group className="mb-3">
+                            <Form.Label>STATUS</Form.Label>
+                            <Select options={statusOptions} isClearable={true}/>
+                        </Form.Group>
+                        <Form.Group className="mb-3">
                             <Form.Label>DISCOUNTED PRICE</Form.Label>
-                            <Form.Control placeholder="Enter discounted Price" as={NumberFormat} thousandSeparator={true}/>
+                            <Form.Control placeholder="Enter discounted Price" as={NumberFormat}
+                                          thousandSeparator={true}/>
                         </Form.Group>
                     </Col>
                     <Col xs={12}>
@@ -68,7 +77,8 @@ const AddProduct: React.FC = () => {
                             <Form.Control type='file' className='custom-file-label'/>
                         </Form.Group>
                     </Col>
-                    <Col xs={6} >
+                    <Col xs={6} className='product'>
+                        <Form.Label>PRODUCT IMAGE</Form.Label>
                         <Product
                             product={product}
                             index={1}
