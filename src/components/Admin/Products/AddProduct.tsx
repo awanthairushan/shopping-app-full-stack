@@ -1,9 +1,10 @@
-import React, {FC, useState} from "react";
+import React, {FC, useCallback, useState} from "react";
 import {Col, Form, Row} from "react-bootstrap";
 import Select from 'react-select'
 import NumberFormat from 'react-number-format';
 import Product from "../../products/Product";
 import {IProduct} from "../../../Types/ShoppingTypes";
+import {Image} from "react-feather";
 
 const categoryOptions = [
     {value: 'grocery', label: 'Grocery'},
@@ -28,7 +29,12 @@ const AddProduct: React.FC = () => {
     });
 
     const onCartItemCreate = () => {
+    }
 
+    const [image, setImage] = useState<string>("");
+
+    const handleImageChange = (event:any) => {
+        setImage(event.target.file[0]);
     }
 
     return (
@@ -74,11 +80,19 @@ const AddProduct: React.FC = () => {
                     <Col xs={6}>
                         <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
                             <Form.Label>PRODUCT IMAGE</Form.Label>
-                            <Form.Control type='file' className='custom-file-label'/>
+                            <label className="custom-file-upload mt-0">
+                                <span>
+                                    <input type="file" className='d-none' onChange={handleImageChange}/>
+                                    <Image className='d-flex align-self-center mx-auto image-icon'/>
+                                    <br/>
+                                    Click to upload the image
+                                </span>
+                            </label>
                         </Form.Group>
+
                     </Col>
                     <Col xs={6} className='product'>
-                        <Form.Label>PRODUCT IMAGE</Form.Label>
+                        <Form.Label>PRODUCT PREVIEW</Form.Label>
                         <Product
                             product={product}
                             index={1}
