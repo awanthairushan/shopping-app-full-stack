@@ -4,7 +4,7 @@ import Select from 'react-select'
 import NumberFormat from 'react-number-format';
 import Product from "../../products/Product";
 import {IProduct} from "../../../Types/ShoppingTypes";
-import {Image} from "react-feather";
+import {Image, ThumbsUp} from "react-feather";
 
 const categoryOptions = [
     {value: 'grocery', label: 'Grocery'},
@@ -31,10 +31,13 @@ const AddProduct: React.FC = () => {
     const onCartItemCreate = () => {
     }
 
-    const [image, setImage] = useState<string>("");
+    const [image, setImage] = useState<any>(null);
+    const [isImageUploaded, setIsImageUploaded] = useState<boolean>(false);
 
-    const handleImageChange = (event:any) => {
-        setImage(event.target.file[0]);
+    const handleImageChange = (event: any) => {
+        const tempImage = event.target.files[0];
+        setImage(tempImage);
+        setIsImageUploaded(true);
     }
 
     return (
@@ -82,10 +85,21 @@ const AddProduct: React.FC = () => {
                             <Form.Label>PRODUCT IMAGE</Form.Label>
                             <label className="custom-file-upload mt-0">
                                 <span>
-                                    <input type="file" className='d-none' onChange={handleImageChange}/>
-                                    <Image className='d-flex align-self-center mx-auto image-icon'/>
+                                    <input type="file" className='d-none' onChange={handleImageChange}
+                                           disabled={isImageUploaded}/>
+                                    {
+                                        isImageUploaded ?
+                                            <ThumbsUp className='d-flex align-self-center mx-auto image-icon'/>
+                                            :
+                                            <Image className='d-flex align-self-center mx-auto image-icon'/>
+                                    }
                                     <br/>
-                                    Click to upload the image
+                                    {
+                                        isImageUploaded ?
+                                            <p>Image is uploaded</p>
+                                            :
+                                            <p>Click to upload the image</p>
+                                    }
                                 </span>
                             </label>
                         </Form.Group>
