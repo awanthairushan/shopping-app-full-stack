@@ -66,7 +66,7 @@ const CheckOutTableItem: FC<checkOutTableItemProps> = (props) => {
                               fixedDecimalScale={true} readOnly/></td>
             <td><NumberFormat className='checkout-number-format' prefix="Rs." value={itemTotal} decimalScale={2}
                               fixedDecimalScale={true}/></td>
-            <td><Trash className="hover-pointer checkout-remove" onClick={handleOnRemoveItemClick}/></td>
+            <td className='delete-trash'><Trash className="hover-pointer checkout-remove" onClick={handleOnRemoveItemClick}/></td>
         </tr>
 
     )
