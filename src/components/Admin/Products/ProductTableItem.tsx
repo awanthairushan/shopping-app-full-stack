@@ -64,7 +64,7 @@ const ProductsListItem: FC<ProductTableItemProps> = (product) => {
         <tr className='product-table-item'>
             <td className="px-lg-0 py-1">
                 <Row className='mx-0'>
-                    <Col xs={2} className="px-lg-0">
+                    <Col xs={2} className="px-lg-0 py-lg-2">
                         <Image src={productItem.image} className="product-item-image"/>
                     </Col>
                     <Col xs={10}>
