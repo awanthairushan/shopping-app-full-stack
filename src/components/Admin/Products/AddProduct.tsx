@@ -1,4 +1,4 @@
-import React, {FC, useState} from "react";
+import React, {FC, useEffect, useState} from "react";
 import {Button, Col, Form, Row} from "react-bootstrap";
 import Select from 'react-select'
 import NumberFormat from 'react-number-format';
@@ -20,17 +20,9 @@ const statusOptions = [
 
 const AddProduct: React.FC = () => {
 
-    const [product, setProduct] = useState<IProduct>({
-        name: "product 1",
-        price: "65.34",
-        oldPrice: "65.00",
-        img: "coconut",
-        category: "Food"
-    });
-
     const [validated, setValidated] = useState(false);
 
-    const handleSubmit = (event:any) => {
+    const handleSubmit = (event: any) => {
         const form = event.currentTarget;
         if (form.checkValidity() === false) {
             event.preventDefault();
@@ -44,12 +36,61 @@ const AddProduct: React.FC = () => {
     const onCartItemCreate = () => {
     }
 
+    const [productName, setProductName] = useState<string>("");
+    const [productQuantity, setProductQuantity] = useState<number>(0);
+    const [productPrice, setProductPrice] = useState<string>("0");
+    const [productDiscountedPrice, setProductDiscountedPrice] = useState<string>("0");
+
+
     const [image, setImage] = useState<any>(null);
     const [isImageUploaded, setIsImageUploaded] = useState<boolean>(false);
 
     const handleImageChange = (event: any) => {
         setImage(URL.createObjectURL(event.target.files[0]));
         setIsImageUploaded(true);
+    }
+
+    const handleOnProductNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setProductName(event.target.value);
+    }
+
+    const handleOnProductQuantityChange = (values: any) => {
+        setProductQuantity(values.floatValue);
+    }
+
+    const handleOnProductPriceChange = (values: any) => {
+        setProductPrice(values.floatValue);
+    }
+    const handleOnProductDiscountedPriceChange = (values: any) => {
+        setProductDiscountedPrice(values.floatValue);
+    }
+
+    useEffect(() => {
+        setProduct({
+            name: "Name",
+            price: "D Price",
+            oldPrice: "Price",
+            img: "coconut",
+            category: "Food"
+        })
+    }, [productName, productPrice, productDiscountedPrice])
+
+    const [product, setProduct] = useState<IProduct>({
+        name: productName,
+        price: productPrice,
+        oldPrice: productDiscountedPrice,
+        img: "coconut",
+        category: "Food"
+    });
+
+    const renderProduct = () => {
+        return (
+            <Product
+                product={product}
+                index={1}
+                onCartItemCreate={onCartItemCreate}
+            />
+        )
     }
 
     return (
@@ -60,15 +101,18 @@ const AddProduct: React.FC = () => {
                     <Col lg={6}>
                         <Form.Group className="mb-3 data-field">
                             <Form.Label>PRODUCT NAME</Form.Label>
-                            <Form.Control type='text' placeholder="Enter Product Name" required pattern="[A-Za-z]+"/>
+                            <Form.Control type='text' placeholder="Enter Product Name" required pattern="[A-Za-z]+"
+                                          onChange={handleOnProductNameChange}/>
                         </Form.Group>
                         <Form.Group className="mb-3 data-field">
                             <Form.Label>QUANTITY</Form.Label>
-                            <Form.Control type='number' placeholder="Enter Product Quantity" as={NumberFormat} allowNegative={false} required/>
+                            <Form.Control type='number' placeholder="Enter Product Quantity" as={NumberFormat}
+                                          allowNegative={false} required onValueChange={handleOnProductQuantityChange}/>
                         </Form.Group>
                         <Form.Group className="mb-3">
                             <Form.Label>PRICE</Form.Label>
-                            <Form.Control placeholder="Enter Product Price" as={NumberFormat} allowNegative={false} thousandSeparator={true} required/>
+                            <Form.Control placeholder="Enter Product Price" as={NumberFormat} allowNegative={false}
+                                          thousandSeparator={true} required onValueChange={handleOnProductPriceChange}/>
                         </Form.Group>
                     </Col>
                     <Col lg={6}>
@@ -83,7 +127,8 @@ const AddProduct: React.FC = () => {
                         <Form.Group className="mb-3">
                             <Form.Label>DISCOUNTED PRICE</Form.Label>
                             <Form.Control placeholder="Enter discounted Price" as={NumberFormat}
-                                          thousandSeparator={true} allowNegative={false} required/>
+                                          thousandSeparator={true} allowNegative={false} required
+                                          onValueChange={handleOnProductDiscountedPriceChange}/>
                         </Form.Group>
                     </Col>
                     <Col xs={12}>
@@ -127,11 +172,7 @@ const AddProduct: React.FC = () => {
                     </Col>
                     <Col xs={6} className='product'>
                         <Form.Label>PRODUCT PREVIEW</Form.Label>
-                        <Product
-                            product={product}
-                            index={1}
-                            onCartItemCreate={onCartItemCreate}
-                        />
+                        {renderProduct()}
                     </Col>
                     <Col xs={12} className='d-flex justify-content-end'>
                         <Button className='create-product-button mb-3 px-4 py-2' type="submit">
