@@ -16,6 +16,7 @@ import ForgotPassWord from "./components/pages/staticpages/ForgotPassWord";
 import AdminApp from "./view/AdminApp";
 import Products from "./components/Admin/Products/Products";
 import Orders from "./components/Admin/Orders/Orders";
+import AddProduct from "./components/Admin/Products/AddProduct";
 
 const App = () => {
     const {addToast} = useToasts();
@@ -66,6 +67,7 @@ const App = () => {
                 </Route>
                 <Route path='/admin' element={<AdminApp/>}>
                     <Route path='products' element={<Products/>}/>
+                    <Route path='products/addproduct' element={<AddProduct/>}/>
                     <Route path='orders' element={<Orders/>}/>
                 </Route>
             </Routes>

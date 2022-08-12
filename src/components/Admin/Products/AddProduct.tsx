@@ -1,5 +1,5 @@
-import React, {FC, useCallback, useState} from "react";
-import {Col, Form, Row} from "react-bootstrap";
+import React, {FC, useState} from "react";
+import {Button, Col, Form, Row} from "react-bootstrap";
 import Select from 'react-select'
 import NumberFormat from 'react-number-format';
 import Product from "../../products/Product";
@@ -28,6 +28,19 @@ const AddProduct: React.FC = () => {
         category: "Food"
     });
 
+    const [validated, setValidated] = useState(false);
+
+    const handleSubmit = (event:any) => {
+        const form = event.currentTarget;
+        if (form.checkValidity() === false) {
+            event.preventDefault();
+            event.stopPropagation();
+        }
+
+        setValidated(true);
+    };
+
+
     const onCartItemCreate = () => {
     }
 
@@ -35,28 +48,27 @@ const AddProduct: React.FC = () => {
     const [isImageUploaded, setIsImageUploaded] = useState<boolean>(false);
 
     const handleImageChange = (event: any) => {
-        const tempImage = event.target.files[0];
-        setImage(tempImage);
+        setImage(URL.createObjectURL(event.target.files[0]));
         setIsImageUploaded(true);
     }
 
     return (
         <Col className='content mx-0 p-lg-4'>
             <h5 className='font-weight-bold'>Basic Information</h5>
-            <Form>
+            <Form noValidate validated={validated} onSubmit={handleSubmit}>
                 <Row>
                     <Col lg={6}>
-                        <Form.Group className="mb-3">
+                        <Form.Group className="mb-3 data-field">
                             <Form.Label>PRODUCT NAME</Form.Label>
-                            <Form.Control placeholder="Enter Product Name"/>
+                            <Form.Control type='text' placeholder="Enter Product Name" required pattern="[A-Za-z]+"/>
                         </Form.Group>
-                        <Form.Group className="mb-3">
+                        <Form.Group className="mb-3 data-field">
                             <Form.Label>QUANTITY</Form.Label>
-                            <Form.Control placeholder="Enter Product Quantity"/>
+                            <Form.Control type='number' placeholder="Enter Product Quantity" as={NumberFormat} allowNegative={false} required/>
                         </Form.Group>
                         <Form.Group className="mb-3">
                             <Form.Label>PRICE</Form.Label>
-                            <Form.Control placeholder="Enter Product Price" as={NumberFormat} thousandSeparator={true}/>
+                            <Form.Control placeholder="Enter Product Price" as={NumberFormat} allowNegative={false} thousandSeparator={true} required/>
                         </Form.Group>
                     </Col>
                     <Col lg={6}>
@@ -71,7 +83,7 @@ const AddProduct: React.FC = () => {
                         <Form.Group className="mb-3">
                             <Form.Label>DISCOUNTED PRICE</Form.Label>
                             <Form.Control placeholder="Enter discounted Price" as={NumberFormat}
-                                          thousandSeparator={true}/>
+                                          thousandSeparator={true} allowNegative={false} required/>
                         </Form.Group>
                     </Col>
                     <Col xs={12}>
@@ -84,26 +96,34 @@ const AddProduct: React.FC = () => {
                         <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
                             <Form.Label>PRODUCT IMAGE</Form.Label>
                             <label className="custom-file-upload mt-0">
-                                <span>
+                                <span className='w-100'>
                                     <input type="file" className='d-none' onChange={handleImageChange}
                                            disabled={isImageUploaded}/>
                                     {
                                         isImageUploaded ?
-                                            <ThumbsUp className='d-flex align-self-center mx-auto image-icon'/>
+                                            <Row className='d-flex align-items-center justify-content-center w-100'>
+                                                <Col xs={4}>
+                                                    <ThumbsUp className='d-flex align-self-center mx-auto image-icon'/>
+                                                    <br/>
+                                                    <p>Image is uploaded</p>
+                                                </Col>
+                                                <Col xs={8} className='d-flex justify-content-center'>
+                                                    <img src={image} className='uploaded-image'/>
+                                                </Col>
+                                            </Row>
+
                                             :
-                                            <Image className='d-flex align-self-center mx-auto image-icon'/>
-                                    }
-                                    <br/>
-                                    {
-                                        isImageUploaded ?
-                                            <p>Image is uploaded</p>
-                                            :
-                                            <p>Click to upload the image</p>
+                                            <div>
+                                                <Image className='d-flex align-self-center mx-auto image-icon'/>
+                                                <br/>
+                                                <div className='d-flex justify-content-center'>
+                                                    <p>Click to upload the image</p>
+                                                </div>
+                                            </div>
                                     }
                                 </span>
                             </label>
                         </Form.Group>
-
                     </Col>
                     <Col xs={6} className='product'>
                         <Form.Label>PRODUCT PREVIEW</Form.Label>
@@ -112,6 +132,11 @@ const AddProduct: React.FC = () => {
                             index={1}
                             onCartItemCreate={onCartItemCreate}
                         />
+                    </Col>
+                    <Col xs={12} className='d-flex justify-content-end'>
+                        <Button className='create-product-button mb-3 px-4 py-2' type="submit">
+                            Create Product
+                        </Button>
                     </Col>
                 </Row>
             </Form>
