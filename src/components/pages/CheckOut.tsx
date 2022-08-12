@@ -153,7 +153,7 @@ const CheckOut: FC<CheckoutProps> = (props) => {
                             <Col md={12} className="px-0 mt-4 mt-lg-4">
                                 <ChangeShippingAddressSection/>
                             </Col>
-                            <Col md={12} className='d-flex justify-content-end'>
+                            <Col md={12} className='d-flex justify-content-end p-0'>
                                 <Button className="signing-button mt-3 py-2" type="submit"
                                         onSubmit={handleOnFormSubmit}>Order</Button>
                             </Col>
