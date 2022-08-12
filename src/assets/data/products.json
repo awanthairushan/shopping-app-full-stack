@@ -1,0 +1,116 @@
+{
+  "products": [
+    {
+      "name": "Nike Shoes",
+      "id": "p-001",
+      "category": "Shoes",
+      "price": 4999,
+      "quantity": 75,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbHUlKGoenwoIaKeBMDXix_J_qNYzl8EDA7MCr3a_8mLl7jTJpktkt1Nc2Q4v-AlPdAYQ&usqp=CAU"
+    },
+    {
+      "name": "Coconut",
+      "id": "p-001",
+      "category": "all",
+      "price": 150,
+      "quantity": 0,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR55QjDWYPTUldf6Fc7OUcQeeVStn8MyOWIPQ&usqp=CAU"
+    },
+    {
+      "name": "Nike Air Jordan",
+      "id": "p-058",
+      "category": "Shoes",
+      "price": 2999,
+      "quantity": 0,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzIbn11rnospIPs-ffrg7yQJAKGV9vvhG7LQ&usqp=CAU"
+    },
+    {
+      "name": "Coconut",
+      "id": "p-001",
+      "category": "all",
+      "price": 150,
+      "quantity": 20,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR55QjDWYPTUldf6Fc7OUcQeeVStn8MyOWIPQ&usqp=CAU"
+    },
+    {
+      "name": "Coconut",
+      "id": "p-001",
+      "category": "all",
+      "price": 150,
+      "quantity": 0,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR55QjDWYPTUldf6Fc7OUcQeeVStn8MyOWIPQ&usqp=CAU"
+    },
+    {
+      "name": "Coconut",
+      "id": "p-001",
+      "category": "all",
+      "price": 150,
+      "quantity": 20,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR55QjDWYPTUldf6Fc7OUcQeeVStn8MyOWIPQ&usqp=CAU"
+    },
+    {
+      "name": "Coconut",
+      "id": "p-001",
+      "category": "all",
+      "price": 150,
+      "quantity": 20,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR55QjDWYPTUldf6Fc7OUcQeeVStn8MyOWIPQ&usqp=CAU"
+    },
+    {
+      "name": "Coconut",
+      "id": "p-001",
+      "category": "all",
+      "price": 150,
+      "quantity": 20,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR55QjDWYPTUldf6Fc7OUcQeeVStn8MyOWIPQ&usqp=CAU"
+    },
+    {
+      "name": "Coconut",
+      "id": "p-001",
+      "category": "all",
+      "price": 150,
+      "quantity": 20,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR55QjDWYPTUldf6Fc7OUcQeeVStn8MyOWIPQ&usqp=CAU"
+    },
+    {
+      "name": "Coconut",
+      "id": "p-001",
+      "category": "all",
+      "price": 150,
+      "quantity": 20,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR55QjDWYPTUldf6Fc7OUcQeeVStn8MyOWIPQ&usqp=CAU"
+    },
+    {
+      "name": "Coconut",
+      "id": "p-001",
+      "category": "all",
+      "price": 150,
+      "quantity": 20,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR55QjDWYPTUldf6Fc7OUcQeeVStn8MyOWIPQ&usqp=CAU"
+    },
+    {
+      "name": "Coconut",
+      "id": "p-001",
+      "category": "all",
+      "price": 150,
+      "quantity": 20,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR55QjDWYPTUldf6Fc7OUcQeeVStn8MyOWIPQ&usqp=CAU"
+    },
+    {
+      "name": "Coconut",
+      "id": "p-001",
+      "category": "all",
+      "price": 150,
+      "quantity": 20,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR55QjDWYPTUldf6Fc7OUcQeeVStn8MyOWIPQ&usqp=CAU"
+    },
+    {
+      "name": "Coconut",
+      "id": "p-001",
+      "category": "all",
+      "price": 150,
+      "quantity": 20,
+      "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR55QjDWYPTUldf6Fc7OUcQeeVStn8MyOWIPQ&usqp=CAU"
+    }
+  ]
+}

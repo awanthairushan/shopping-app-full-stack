@@ -165,6 +165,14 @@ input {
   }
 }
 
+#shipping-country > div {
+  min-height: unset;
+  height: 34px !important;
+}
+#shipping-country > div >div {
+  margin-top: -3px;
+}
+
 @media all and (max-width: 768px) {
   .shipping-form, .input-group-text {
     font-size: 13px;
@@ -173,7 +181,7 @@ input {
       font-size: 12px;
     }
 
-    #shipping-country {
+    #shipping-country > div {
       height: 32px !important;
     }
   }
@@ -188,3 +196,11 @@ input {
   }
 
 }
+.checkout-remove{
+  width: 17px;
+  height: 17px;
+}
+.delete-trash :hover{
+  cursor: pointer;
+}
+
