@@ -13,11 +13,6 @@ const categoryOptions = [
     {value: 'electronic', label: 'Electronic'}
 ];
 
-const statusOptions = [
-    {value: 'inStock', label: 'In Stock'},
-    {value: 'outOfStock', label: 'Out Of Stock'},
-]
-
 const AddProduct: React.FC = () => {
 
     const [validated, setValidated] = useState(false);
@@ -36,13 +31,13 @@ const AddProduct: React.FC = () => {
     const onCartItemCreate = () => {
     }
 
-    const [productName, setProductName] = useState<string>("");
+    const [productName, setProductName] = useState<string>("Name");
     const [productQuantity, setProductQuantity] = useState<number>(0);
     const [productPrice, setProductPrice] = useState<string>("0");
     const [productDiscountedPrice, setProductDiscountedPrice] = useState<string>("0");
 
 
-    const [image, setImage] = useState<any>(null);
+    const [image, setImage] = useState<any>("coconut");
     const [isImageUploaded, setIsImageUploaded] = useState<boolean>(false);
 
     const handleImageChange = (event: any) => {
@@ -67,31 +62,21 @@ const AddProduct: React.FC = () => {
 
     useEffect(() => {
         setProduct({
-            name: "Name",
-            price: "D Price",
-            oldPrice: "Price",
-            img: "coconut",
+            name: productName,
+            price: productPrice,
+            oldPrice: productDiscountedPrice,
+            img: image,
             category: "Food"
         })
-    }, [productName, productPrice, productDiscountedPrice])
+    }, [productName, productPrice, productDiscountedPrice, image])
 
     const [product, setProduct] = useState<IProduct>({
-        name: productName,
-        price: productPrice,
-        oldPrice: productDiscountedPrice,
+        name: "Name",
+        price: "D Price",
+        oldPrice: "Price",
         img: "coconut",
         category: "Food"
     });
-
-    const renderProduct = () => {
-        return (
-            <Product
-                product={product}
-                index={1}
-                onCartItemCreate={onCartItemCreate}
-            />
-        )
-    }
 
     return (
         <Col className='content mx-0 p-lg-4'>
@@ -122,7 +107,7 @@ const AddProduct: React.FC = () => {
                         </Form.Group>
                         <Form.Group className="mb-3">
                             <Form.Label>STATUS</Form.Label>
-                            <Select options={statusOptions} isClearable={true}/>
+                            <Form.Control type='text' value={productQuantity === 0 ? 'Out Of Stock' : 'In Stock'} disabled={true}/>
                         </Form.Group>
                         <Form.Group className="mb-3">
                             <Form.Label>DISCOUNTED PRICE</Form.Label>
@@ -134,7 +119,7 @@ const AddProduct: React.FC = () => {
                     <Col xs={12}>
                         <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
                             <Form.Label>DESCRIPTION</Form.Label>
-                            <Form.Control as="textarea" rows={3}/>
+                            <Form.Control as="textarea" rows={4} placeholder="Enter Product Name"/>
                         </Form.Group>
                     </Col>
                     <Col xs={6}>
@@ -172,7 +157,11 @@ const AddProduct: React.FC = () => {
                     </Col>
                     <Col xs={6} className='product'>
                         <Form.Label>PRODUCT PREVIEW</Form.Label>
-                        {renderProduct()}
+                        <Product
+                            product={product}
+                            index={1}
+                            onCartItemCreate={onCartItemCreate}
+                        />
                     </Col>
                     <Col xs={12} className='d-flex justify-content-end'>
                         <Button className='create-product-button mb-3 px-4 py-2' type="submit">

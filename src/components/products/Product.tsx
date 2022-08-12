@@ -31,6 +31,8 @@ const Product: React.FC<ProductProps> = (props) => {
         imglink = carrot;
     } else if (product.img === "coconut") {
         imglink = coconut;
+    } else {
+        imglink = product.img;
     }
 
     const handleOnQuantityChanged = (num: string) => {
@@ -79,7 +81,9 @@ const Product: React.FC<ProductProps> = (props) => {
                             </Col>
                             <Col xs={12} sm={7} md={8} className='product-add-cart ps-sm-0 px-0'>
                                 <Button type='submit' variant="light" className={cartBtnBackground}
-                                        onClick={cartAdd}>{cartBtnText}</Button>
+                                        onClick={cartAdd}
+                                        disabled={url === '/admin/products/addproduct' ? true : false}
+                                >{cartBtnText}</Button>
                             </Col>
                         </Row>
                     </Form>
