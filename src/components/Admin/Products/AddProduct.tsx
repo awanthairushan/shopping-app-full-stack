@@ -1,10 +1,10 @@
-import React, {FC, useEffect, useState} from "react";
-import {Button, Col, Container, Form, Nav, Navbar, NavDropdown, Row} from "react-bootstrap";
+import React, { useEffect, useState} from "react";
+import {Button, Col, Form, Nav, Navbar, Row} from "react-bootstrap";
 import Select from 'react-select'
 import NumberFormat from 'react-number-format';
 import Product from "../../products/Product";
 import {IProduct} from "../../../Types/ShoppingTypes";
-import {Image, Plus, ThumbsUp, ChevronRight} from "react-feather";
+import {Image, ThumbsUp, ChevronRight} from "react-feather";
 import {Link, useLocation} from "react-router-dom";
 
 const categoryOptions = [
@@ -163,7 +163,7 @@ const AddProduct: React.FC = () => {
                                                     <p>Image is uploaded</p>
                                                 </Col>
                                                 <Col xs={8} className='d-flex justify-content-center'>
-                                                    <img src={image} className='uploaded-image'/>
+                                                    <img src={image} className='uploaded-image' alt='Uploaded'/>
                                                 </Col>
                                             </Row>
 
