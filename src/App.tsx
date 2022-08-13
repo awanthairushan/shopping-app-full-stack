@@ -66,9 +66,9 @@ const App = () => {
                     <Route path='/forgotpassword' element={<ForgotPassWord/>}/>
                 </Route>
                 <Route path='/admin' element={<AdminApp/>}>
-                    <Route path='products' element={<Products/>}/>
-                    <Route path='products/addproduct' element={<AddProduct/>}/>
-                    <Route path='orders' element={<Orders/>}/>
+                    <Route path='/admin/products' element={<Products/>}/>
+                    <Route path='/admin/products/addproduct' element={<AddProduct/>}/>
+                    <Route path='/admin/orders' element={<Orders/>}/>
                 </Route>
             </Routes>
         </BrowserRouter>
