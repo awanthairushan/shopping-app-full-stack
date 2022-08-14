@@ -87,7 +87,7 @@ const AddProduct: React.FC = () => {
     });
 
     return (
-        <Row className='content-wrapper d-grid p-lg-4 pt-lg-2 mx-0'>
+        <Row className='content-wrapper d-grid p-lg-4 pt-lg-2 mx-0 '>
             <Row className='mx-0 p-0 pb-lg-4'>
                 <Col xs={12}>
                     <Navbar className='bg-transparent' expand="lg">
@@ -100,7 +100,7 @@ const AddProduct: React.FC = () => {
                     <p className="m-0 fs-4">New Product</p>
                 </Col>
             </Row>
-            <Col className='content mx-0 p-lg-4'>
+            <Col className='content mx-0 p-lg-4 admin-add-product'>
                 <h5 className='font-weight-bold'>Basic Information</h5>
                 <Form noValidate validated={validated} onSubmit={handleSubmit}>
                     <Row>
@@ -112,7 +112,7 @@ const AddProduct: React.FC = () => {
                             </Form.Group>
                             <Form.Group className="mb-3 data-field">
                                 <Form.Label>QUANTITY</Form.Label>
-                                <Form.Control type='number' placeholder="Enter Product Quantity" as={NumberFormat}
+                                <Form.Control type='number' placeholder="Enter Product Quantity" min='0' as={NumberFormat}
                                               allowNegative={false} required
                                               onValueChange={handleOnProductQuantityChange}/>
                             </Form.Group>
