@@ -1,6 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {ICart, IProduct} from '../../Types/ShoppingTypes';
-import {carrot, coconut} from "../../assets/images/images";
+import {carrot, coconut, no_image} from "../../assets/images/images";
 import {Button, Col, Image, Row, Form} from 'react-bootstrap';
 import {useLocation} from "react-router-dom";
 
@@ -31,6 +31,8 @@ const Product: React.FC<ProductProps> = (props) => {
         imglink = carrot;
     } else if (product.img === "coconut") {
         imglink = coconut;
+    }else if (product.img === "noImage") {
+        imglink = no_image;
     } else {
         imglink = product.img;
     }
@@ -53,7 +55,7 @@ const Product: React.FC<ProductProps> = (props) => {
         <Col xs={6} md={4} lg={url === '/admin/products/addproduct' ? 6 : 3} className={url === '/admin/products/addproduct' ? 'mb-1 mb-sm-2 products ps-0' : 'mt-1 mb-1 mb-sm-2 products'}>
             <Row className='product-item'>
                 <Col sm={12} className='product-img'>
-                    <Image src={imglink} alt="product" className=''/>
+                    <Image src={imglink} alt="product"/>
                 </Col>
                 <Col sm={12} className='product-name px-3'>
                     <p>{product.name}</p>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState} from "react";
+import React, {useEffect, useState} from "react";
 import {Button, Col, Form, Nav, Navbar, Row} from "react-bootstrap";
 import Select from 'react-select'
 import NumberFormat from 'react-number-format';
@@ -45,12 +45,17 @@ const AddProduct: React.FC = () => {
     const [productDiscountedPrice, setProductDiscountedPrice] = useState<string>("0");
 
 
-    const [image, setImage] = useState<any>("coconut");
+    const [image, setImage] = useState<any>("noImage");
     const [isImageUploaded, setIsImageUploaded] = useState<boolean>(false);
 
     const handleImageChange = (event: any) => {
         setImage(URL.createObjectURL(event.target.files[0]));
         setIsImageUploaded(true);
+    }
+
+    const handleOnImageRemoveClick = () => {
+        setIsImageUploaded(false);
+        setImage("noImage");
     }
 
     const handleOnProductNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -91,9 +96,12 @@ const AddProduct: React.FC = () => {
             <Row className='mx-0 p-0 pb-lg-4'>
                 <Col xs={12}>
                     <Navbar className='bg-transparent' expand="lg">
-                        <Nav.Item as={Link} to='/admin/products' className={url === '/admin/products' ? 'p-0 text-decoration-none text-dark pe-none' : 'p-0 text-decoration-none'}>Products</Nav.Item>
+                        <Nav.Item as={Link} to='/admin/products'
+                                  className={url === '/admin/products' ? 'p-0 text-decoration-none text-dark pe-none' : 'p-0 text-decoration-none'}>Products</Nav.Item>
                         <ChevronRight className='chevron-right-icon'/>
-                        <Nav.Item  as={Link} to='/admin/products/addproduct' className={url === '/admin/products/addproduct' ? 'p-0 text-decoration-none text-dark pe-none' : 'p-0 text-decoration-none'}>Add Product</Nav.Item>
+                        <Nav.Item as={Link} to='/admin/products/addproduct'
+                                  className={url === '/admin/products/addproduct' ? 'p-0 text-decoration-none text-dark pe-none' : 'p-0 text-decoration-none'}>Add
+                            Product</Nav.Item>
                     </Navbar>
                 </Col>
                 <Col className="admin-product" xs={12}>
@@ -112,7 +120,8 @@ const AddProduct: React.FC = () => {
                             </Form.Group>
                             <Form.Group className="mb-3 data-field">
                                 <Form.Label>QUANTITY</Form.Label>
-                                <Form.Control type='number' placeholder="Enter Product Quantity" min='0' as={NumberFormat}
+                                <Form.Control type='number' placeholder="Enter Product Quantity" min='0'
+                                              as={NumberFormat}
                                               allowNegative={false} required
                                               onValueChange={handleOnProductQuantityChange}/>
                             </Form.Group>
@@ -150,22 +159,29 @@ const AddProduct: React.FC = () => {
                         <Col xs={6}>
                             <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
                                 <Form.Label>PRODUCT IMAGE</Form.Label>
-                                <label className="custom-file-upload mt-0">
+                                <label
+                                    className={isImageUploaded ? 'custom-file-upload mt-0 custom-file-upload-active' : 'custom-file-upload mt-0'}>
                                 <span className='w-100'>
                                     <input type="file" className='d-none' onChange={handleImageChange}
                                            disabled={isImageUploaded}/>
                                     {
                                         isImageUploaded ?
-                                            <Row className='d-flex align-items-center justify-content-center w-100'>
-                                                <Col xs={4}>
-                                                    <ThumbsUp className='d-flex align-self-center mx-auto image-icon'/>
-                                                    <br/>
+                                            <div>
+                                                {/*<Col xs={12}>*/}
+                                                <ThumbsUp className='d-flex align-self-center mx-auto image-icon'/>
+                                                <br/>
+                                                <div className='d-flex justify-content-center'>
                                                     <p>Image is uploaded</p>
-                                                </Col>
-                                                <Col xs={8} className='d-flex justify-content-center'>
-                                                    <img src={image} className='uploaded-image' alt='Uploaded'/>
-                                                </Col>
-                                            </Row>
+                                                </div>
+                                                <div className='d-flex justify-content-center'>
+                                                    <Button variant="warning" onClick={handleOnImageRemoveClick}>Remove
+                                                        Image</Button>
+                                                </div>
+                                                {/*</Col>*/}
+                                                {/*<Col xs={8} className='d-flex justify-content-center'>*/}
+                                                {/*    <img src={image} className='uploaded-image' alt='Uploaded'/>*/}
+                                                {/*</Col>*/}
+                                            </div>
 
                                             :
                                             <div>
