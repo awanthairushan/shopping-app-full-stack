@@ -20,10 +20,13 @@ export const productSlice = createSlice({
             getProduct: (state, action: PayloadAction<string>) => {
 
             },
+            setProducts: (state, action: PayloadAction<any>) => {
+
+            },
         }
     })
 ;
 
-export const {addProduct, updateProduct, deleteProduct, getProducts, getProduct} = productSlice.actions;
+export const {addProduct, updateProduct, deleteProduct, getProducts, getProduct, setProducts} = productSlice.actions;
 export default productSlice.reducer;
 
