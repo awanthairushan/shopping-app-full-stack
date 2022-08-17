@@ -1,32 +1,37 @@
 import {createSlice, PayloadAction} from "@reduxjs/toolkit";
+import {IProduct} from "../../Types/IProduct";
 
-const initialState = {}
+interface productState {
+    products: IProduct[]
+}
+
+const initialState: productState = {
+    products: []
+}
 export const productSlice = createSlice({
-        name: 'products',
-        initialState,
-        reducers: {
-            addProduct: (state, action: PayloadAction<any>) => {
+    name: 'products',
+    initialState,
+    reducers: {
+        addProduct: (state, action: PayloadAction<IProduct>) => {
 
-            },
-            updateProduct: (state, action: PayloadAction<any>) => {
+        },
+        updateProduct: (state, action: PayloadAction<IProduct>) => {
 
-            },
-            deleteProduct: (state, action: PayloadAction<string>) => {
+        },
+        deleteProduct: (state, action: PayloadAction<string>) => {
 
-            },
-            getProducts: (state) => {
+        },
 
-            },
-            getProduct: (state, action: PayloadAction<string>) => {
+        getProduct: (state, action: PayloadAction<string>) => {
 
-            },
-            setProducts: (state, action: PayloadAction<any>) => {
-
-            },
-        }
+        },
+        setProducts: (state, action: PayloadAction<IProduct[]>) => {
+            state.products = action.payload;
+        },
+    }
     })
 ;
 
-export const {addProduct, updateProduct, deleteProduct, getProducts, getProduct, setProducts} = productSlice.actions;
+export const {addProduct, updateProduct, deleteProduct, getProduct, setProducts} = productSlice.actions;
 export default productSlice.reducer;
 

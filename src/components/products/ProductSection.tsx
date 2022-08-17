@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
-import { ICart, IProduct } from '../../Types/ShoppingTypes';
+import React, {useState} from 'react';
+import {ICart, IProduct} from '../../Types/ShoppingTypes';
 import Product from './Product';
-import { Row } from 'react-bootstrap';
+import {Row} from 'react-bootstrap';
+// import productsList from '../../data/'
 
 type ProductSectionProps = {
   selectedCategory: String,
@@ -10,7 +11,7 @@ type ProductSectionProps = {
 
 const ProductSection: React.FC<ProductSectionProps> = (props) => {
 
-  const { onCartItemCreate, selectedCategory } = props;
+  const {onCartItemCreate, selectedCategory} = props;
 
   const productList: IProduct[] = [
     { name: "product 1", price: "65.34", oldPrice: "65.00", img: "coconut", category: "Food" },
