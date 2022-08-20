@@ -118,7 +118,6 @@ const ProductsTable: FC = () => {
     return (
         <Row className='mx-0 p-lg-4 content h-100'>
             <Col>
-                <p className="fs-5 bold">Product list</p>
                 <Table bordered hover>
                     <thead>
                     <tr>
