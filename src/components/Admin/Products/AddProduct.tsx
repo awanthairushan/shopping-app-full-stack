@@ -4,7 +4,7 @@ import Select from 'react-select'
 import NumberFormat from 'react-number-format';
 import Product from "../../products/Product";
 import {IProduct} from "../../../Types/ShoppingTypes";
-import {ChevronRight, Image, ThumbsUp} from "react-feather";
+import {Image, ThumbsUp, ChevronRight} from "react-feather";
 import {Link, useLocation} from "react-router-dom";
 
 const categoryOptions = [
@@ -45,12 +45,20 @@ const AddProduct: React.FC = () => {
     const [productDiscountedPrice, setProductDiscountedPrice] = useState<string>("0");
 
 
-    const [image, setImage] = useState<any>("coconut");
+
+    const [image, setImage] = useState<any>("noImage");
+
     const [isImageUploaded, setIsImageUploaded] = useState<boolean>(false);
 
     const handleImageChange = (event: any) => {
         setImage(URL.createObjectURL(event.target.files[0]));
         setIsImageUploaded(true);
+    }
+
+
+    const handleOnImageRemoveClick = () => {
+        setIsImageUploaded(false);
+        setImage("noImage");
     }
 
     const handleOnProductNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -154,24 +162,32 @@ const AddProduct: React.FC = () => {
                         <Col xs={6}>
                             <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
                                 <Form.Label>PRODUCT IMAGE</Form.Label>
-                                <label className="custom-file-upload mt-0">
+
+                                <label
+                                    className={isImageUploaded ? 'custom-file-upload mt-0 custom-file-upload-active' : 'custom-file-upload mt-0'}>
                                 <span className='w-100'>
                                     <input type="file" className='d-none' onChange={handleImageChange}
                                            disabled={isImageUploaded}/>
                                     {
                                         isImageUploaded ?
-                                            <Row className='d-flex align-items-center justify-content-center w-100'>
-                                                <Col xs={4}>
-                                                    <ThumbsUp className='d-flex align-self-center mx-auto image-icon'/>
-                                                    <br/>
-                                                    <p>Image is uploaded</p>
-                                                </Col>
-                                                <Col xs={8} className='d-flex justify-content-center'>
-                                                    <img src={image} className='uploaded-image' alt='Uploaded'/>
-                                                </Col>
-                                            </Row>
 
-                                            :
+                                            <div>
+                                                {/*<Col xs={12}>*/}
+                                                <ThumbsUp className='d-flex align-self-center mx-auto image-icon'/>
+                                                <br/>
+                                                <div className='d-flex justify-content-center'>
+                                                    <p>Image is uploaded</p>
+                                                </div>
+                                                <div className='d-flex justify-content-center'>
+                                                    <Button variant="warning" onClick={handleOnImageRemoveClick}>Remove
+                                                        Image</Button>
+                                                </div>
+                                                {/*</Col>*/}
+                                                {/*<Col xs={8} className='d-flex justify-content-center'>*/}
+                                                {/*    <img src={image} className='uploaded-image' alt='Uploaded'/>*/}
+                                                {/*</Col>*/}
+                                            </div>
+
                                             <div>
                                                 <Image className='d-flex align-self-center mx-auto image-icon'/>
                                                 <br/>
