@@ -4,7 +4,7 @@ import Select from 'react-select'
 import NumberFormat from 'react-number-format';
 import Product from "../../products/Product";
 import {IProduct} from "../../../Types/ShoppingTypes";
-import {Image, ThumbsUp, ChevronRight} from "react-feather";
+import {ChevronRight, Image, ThumbsUp} from "react-feather";
 import {Link, useLocation} from "react-router-dom";
 
 const categoryOptions = [
@@ -187,7 +187,7 @@ const AddProduct: React.FC = () => {
                                                 {/*    <img src={image} className='uploaded-image' alt='Uploaded'/>*/}
                                                 {/*</Col>*/}
                                             </div>
-
+                                            :
                                             <div>
                                                 <Image className='d-flex align-self-center mx-auto image-icon'/>
                                                 <br/>
