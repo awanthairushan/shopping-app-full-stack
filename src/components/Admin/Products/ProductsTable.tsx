@@ -139,7 +139,7 @@ const ProductsTable: FC = () => {
                         {
                             pageNumbers.map((pageNumber, idx) => {
                                 return <label
-                                    className={'single-page-number mx-1 px-2'}
+                                    className={'single-page-number mx-1 px-2 mb-2'}
                                     id={String(pageNumber)} key={pageNumber}
                                     onClick={handleOnPageNumberChange}
                                 >
