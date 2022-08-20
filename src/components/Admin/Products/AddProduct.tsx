@@ -156,7 +156,7 @@ const AddProduct: React.FC = () => {
                         <Col xs={12}>
                             <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
                                 <Form.Label>DESCRIPTION</Form.Label>
-                                <Form.Control as="textarea" rows={4} placeholder="Enter Product Name"/>
+                                <Form.Control as="textarea" rows={4} placeholder="Enter Product description"/>
                             </Form.Group>
                         </Col>
                         <Col xs={6}>
