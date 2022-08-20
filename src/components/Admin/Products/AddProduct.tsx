@@ -45,13 +45,16 @@ const AddProduct: React.FC = () => {
     const [productDiscountedPrice, setProductDiscountedPrice] = useState<string>("0");
 
 
+
     const [image, setImage] = useState<any>("noImage");
+
     const [isImageUploaded, setIsImageUploaded] = useState<boolean>(false);
 
     const handleImageChange = (event: any) => {
         setImage(URL.createObjectURL(event.target.files[0]));
         setIsImageUploaded(true);
     }
+
 
     const handleOnImageRemoveClick = () => {
         setIsImageUploaded(false);
@@ -159,6 +162,7 @@ const AddProduct: React.FC = () => {
                         <Col xs={6}>
                             <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
                                 <Form.Label>PRODUCT IMAGE</Form.Label>
+
                                 <label
                                     className={isImageUploaded ? 'custom-file-upload mt-0 custom-file-upload-active' : 'custom-file-upload mt-0'}>
                                 <span className='w-100'>
@@ -166,6 +170,7 @@ const AddProduct: React.FC = () => {
                                            disabled={isImageUploaded}/>
                                     {
                                         isImageUploaded ?
+
                                             <div>
                                                 {/*<Col xs={12}>*/}
                                                 <ThumbsUp className='d-flex align-self-center mx-auto image-icon'/>
@@ -183,7 +188,6 @@ const AddProduct: React.FC = () => {
                                                 {/*</Col>*/}
                                             </div>
 
-                                            :
                                             <div>
                                                 <Image className='d-flex align-self-center mx-auto image-icon'/>
                                                 <br/>
