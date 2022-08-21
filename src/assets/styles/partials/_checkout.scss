@@ -33,10 +33,17 @@ $button-green: #4CAF50;
     font-size: 13px;
     width: 100% !important;
 
-    td, th {
+    td {
       vertical-align: middle;
       white-space: nowrap !important;
       font-weight: 500;
+    }
+    th {
+      vertical-align: middle;
+      white-space: nowrap !important;
+      font-weight: 500;
+      justify-content: center;
+      text-align: center;
     }
 
     td:nth-child(7) {
@@ -124,6 +131,7 @@ input {
 
 .checkout-table-item-image {
   width: 100px;
+  margin: auto;
 }
 
 .text-red {
@@ -136,7 +144,16 @@ input {
 
 .checkout-number-format {
   border: none transparent;
-
+  text-align: center;
+  width: 100%;
+  &:focus {
+    outline: none;
+  }
+}
+.checkout-number-format-total, .checkout-number-format-delivery {
+  border: none transparent;
+ text-align: right;
+  width: 100%;
   &:focus {
     outline: none;
   }
@@ -165,6 +182,14 @@ input {
   }
 }
 
+#shipping-country > div {
+  min-height: unset;
+  height: 34px !important;
+}
+#shipping-country > div >div {
+  margin-top: -3px;
+}
+
 @media all and (max-width: 768px) {
   .shipping-form, .input-group-text {
     font-size: 13px;
@@ -173,7 +198,7 @@ input {
       font-size: 12px;
     }
 
-    #shipping-country {
+    #shipping-country > div {
       height: 32px !important;
     }
   }
@@ -188,3 +213,11 @@ input {
   }
 
 }
+.checkout-remove{
+  width: 17px;
+  height: 17px;
+}
+.delete-trash :hover{
+  cursor: pointer;
+}
+

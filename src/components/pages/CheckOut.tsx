@@ -18,7 +18,7 @@ const CheckOut: FC<CheckoutProps> = (props) => {
     const [isTablet, setIsTablet] = useState<boolean>(false);
     const [colSpan1, setColSpan1] = useState<number>(3);
     const [colSpan2, setColSpan2] = useState<number>(4);
-    const [cartTotal, setCartTotal] = useState<number>(0);
+    const [cartTotal, setCartTotal] = useState<number>(100);
 
     const handleOnItemRemoved = (index: number) => {
         cartItems.splice(index, 1);
@@ -88,6 +88,7 @@ const CheckOut: FC<CheckoutProps> = (props) => {
                             </thead>
                             <tbody>
                             {renderCartItems()}
+
                             <tr className="px-0">
                                 {colSpan1 !== 0 && <td colSpan={colSpan1}/>}
                                 <td colSpan={colSpan2} className='pe-0'>
@@ -100,20 +101,25 @@ const CheckOut: FC<CheckoutProps> = (props) => {
                                     </Form>
                                 </td>
                             </tr>
+
                             <tr>
                                 <td colSpan={5}>Delivery Charge</td>
-                                <td colSpan={2}>
-                                    <NumberFormat className='checkout-number-format' prefix="Rs." value={400.99}
+                                <td colSpan={2} className="px-0">
+                                    <NumberFormat className='checkout-number-format-delivery bg-transparent'
+                                                  prefix="Rs."
+                                                  value={400.99}
                                                   decimalScale={2}
                                                   fixedDecimalScale={true}
                                                   disabled
                                     />
                                 </td>
                             </tr>
+
                             <tr className="checkout-total">
-                                <td colSpan={5}>Total</td>
-                                <td colSpan={2} className=" ">
-                                    <NumberFormat className='checkout-number-format text-red fw-bold' prefix="Rs."
+                                <td colSpan={5} className='left text'>Total</td>
+                                <td colSpan={2} className="px-0">
+                                    <NumberFormat className='checkout-number-format-total text-red fw-bold bg-transparent'
+                                                  prefix="Rs."
                                                   value={cartTotal}
                                                   decimalScale={2}
                                                   fixedDecimalScale={true}
@@ -121,6 +127,7 @@ const CheckOut: FC<CheckoutProps> = (props) => {
                                     />
                                 </td>
                             </tr>
+
                             </tbody>
                         </Table>
                     </Col>
@@ -153,9 +160,9 @@ const CheckOut: FC<CheckoutProps> = (props) => {
                             <Col md={12} className="px-0 mt-4 mt-lg-4">
                                 <ChangeShippingAddressSection/>
                             </Col>
-                            <Col md={12} className='d-flex justify-content-center'>
-                                <Button className="signing-button mt-3 py-1" type="submit"
-                                        onSubmit={handleOnFormSubmit}>Submit</Button>
+                            <Col md={12} className='d-flex justify-content-end p-0'>
+                                <Button className="signing-button mt-3 py-2" type="submit"
+                                        onSubmit={handleOnFormSubmit}>Order</Button>
                             </Col>
 
                         </Row>
