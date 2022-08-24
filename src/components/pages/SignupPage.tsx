@@ -1,9 +1,43 @@
-import React from "react";
+import React, {useState} from "react";
 import {Button, Col, Form, InputGroup, Row} from "react-bootstrap";
 import {User, Mail, Phone, Lock} from 'react-feather'
 import {Link} from "react-router-dom";
+import {useToasts} from "react-toast-notifications";
 
 const SignupPage: React.FC = () => {
+
+    const damyemail = "admin@gmail.com";
+    const damypassword = "admin123";
+
+    const { addToast } = useToasts()
+    const [email, setEmail] = useState<string>()
+    const [name, setName] = useState<string>()
+    const [tp, setTp] = useState<string>()
+    const [password, setPassword] = useState<string>()
+    const [rePassword, setRePassword] = useState<string>()
+    const [validated, setValidated] = useState(false);
+
+    const handleSubmit = (event: any) => {
+        event.preventDefault();
+        const form = event.currentTarget;
+        if (form.checkValidity() === false) {
+            event.preventDefault();
+            event.stopPropagation();
+        }
+        setValidated(true);
+        console.log('hi' + email + " " + password)
+        if (!email || !password) {
+            return;
+        } else if(email !== damyemail || password !== damypassword){
+            console.log('wrong user');
+            addToast("wrong user", { appearance: 'warning', autoDismiss: true });
+        } else {
+            console.log('user logged');
+            addToast("user logged", { appearance: 'success', autoDismiss: true });
+        }
+        setValidated(false);
+    };
+
     return (
         <Row className='signup'>
             <Col md={5} className='animation-shield d-flex align-items-center justify-content-center'>
@@ -16,7 +50,7 @@ const SignupPage: React.FC = () => {
                 </div>
             </Col>
             <Col md={7} className='px-0'>
-                <Form>
+                <Form noValidate validated={validated} onSubmit={handleSubmit}>
                     <h2 className='mt-2'>Create Account</h2>
                     <Form.Text className="text-muted">
                         We'll never share your details with anyone else.
