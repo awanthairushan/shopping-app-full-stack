@@ -79,8 +79,8 @@ const AddProduct: React.FC = () => {
     useEffect(() => {
         setProduct({
             name: productName,
-            price: productPrice,
-            oldPrice: productDiscountedPrice,
+            price: productDiscountedPrice,
+            oldPrice:productPrice,
             img: image,
             category: "Food"
         })
