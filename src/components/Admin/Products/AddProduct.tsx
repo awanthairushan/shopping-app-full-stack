@@ -35,7 +35,6 @@ const AddProduct: React.FC = () => {
         setValidated(true);
     };
 
-
     const onCartItemCreate = () => {
     }
 
@@ -44,17 +43,14 @@ const AddProduct: React.FC = () => {
     const [productPrice, setProductPrice] = useState<string>("0");
     const [productDiscountedPrice, setProductDiscountedPrice] = useState<string>("0");
 
-
-
     const [image, setImage] = useState<any>("noImage");
-
     const [isImageUploaded, setIsImageUploaded] = useState<boolean>(false);
+    const [isDiscountedPriceValidated, setIsDiscountedPriceValidated] = useState<boolean>(false);
 
     const handleImageChange = (event: any) => {
         setImage(URL.createObjectURL(event.target.files[0]));
         setIsImageUploaded(true);
     }
-
 
     const handleOnImageRemoveClick = () => {
         setIsImageUploaded(false);
@@ -80,7 +76,7 @@ const AddProduct: React.FC = () => {
         setProduct({
             name: productName,
             price: productDiscountedPrice,
-            oldPrice:productPrice,
+            oldPrice: productPrice,
             img: image,
             category: "Food"
         })
@@ -93,6 +89,15 @@ const AddProduct: React.FC = () => {
         img: "coconut",
         category: "Food"
     });
+
+    useEffect(() => {
+            if (productDiscountedPrice > productPrice) {
+                setIsDiscountedPriceValidated(true);
+            } else {
+                setIsDiscountedPriceValidated(false);
+            }
+        },[productPrice,productDiscountedPrice]
+    );
 
     return (
         <Row className='content-wrapper d-grid p-lg-4 pt-lg-2 mx-0 '>
@@ -143,14 +148,16 @@ const AddProduct: React.FC = () => {
                             </Form.Group>
                             <Form.Group className="mb-3">
                                 <Form.Label>STATUS</Form.Label>
-                                <Form.Control type='text' value={productQuantity === 0 ? 'Out Of Stock' : 'In Stock'}
+                                <Form.Control value={productQuantity === 0 ? 'Out Of Stock' : 'In Stock'}
                                               disabled={true}/>
                             </Form.Group>
                             <Form.Group className="mb-3">
                                 <Form.Label>DISCOUNTED PRICE</Form.Label>
                                 <Form.Control placeholder="Enter discounted Price" as={NumberFormat}
                                               thousandSeparator={true} allowNegative={false} required
-                                              onValueChange={handleOnProductDiscountedPriceChange}/>
+                                              onValueChange={handleOnProductDiscountedPriceChange}
+                                              isInvalid={isDiscountedPriceValidated}
+                                />
                             </Form.Group>
                         </Col>
                         <Col xs={12}>
