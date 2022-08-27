@@ -30,13 +30,16 @@ const ContactBar: React.FC = () => {
                                 </Nav.Item>
                                 <Nav.Item className="mx-lg-3 mt-2 mt-md-0 my-account">
                                     <User/>
-                                    <span className="ms-1 colour-gray"><Link to={'/admin/products'} className='href'>My Account</Link></span>
+                                    <span className="ms-1 colour-gray"><Link to={'/admin/products'} className='href'>
+                                        My Account</Link></span>
                                 </Nav.Item>
-                                <Nav.Item className="register-button ms-lg-2 d-flex float-end mt-2 mt-md-0">
+                                <Nav.Item className="register-button ms-lg-2 d-flex float-end mt-2 mt-md-0
+                                                     align-items-center">
                                     <span className="px-2 mx-2"><Link to={"/signuppage"}
                                                                       className="href login-btn">Register</Link></span>
                                 </Nav.Item>
-                                <Nav.Item className="button-login ps-lg-2 ms-lg-3 me-2 d-flex float-end mt-2 mt-md-0 ">
+                                <Nav.Item className="button-login ps-lg-2 ms-lg-3 me-2 d-flex float-end mt-2 mt-md-0
+                                                     align-items-center">
                                     <span><Link to={"/loginpage"} className="href login-btn">Login</Link></span>
                                 </Nav.Item>
                             </Nav>
