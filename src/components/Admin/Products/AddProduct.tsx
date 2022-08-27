@@ -35,7 +35,6 @@ const AddProduct: React.FC = () => {
         setValidated(true);
     };
 
-
     const onCartItemCreate = () => {
     }
 
@@ -44,17 +43,22 @@ const AddProduct: React.FC = () => {
     const [productPrice, setProductPrice] = useState<string>("0");
     const [productDiscountedPrice, setProductDiscountedPrice] = useState<string>("0");
 
-
-
     const [image, setImage] = useState<any>("noImage");
-
     const [isImageUploaded, setIsImageUploaded] = useState<boolean>(false);
+
+    const [isDisabled, setIsDisabled] = useState<boolean>(true);
+
+    useEffect(() => {
+            if (isDisabled) {
+                setIsImageUploaded(isDisabled);
+            }
+        }
+    )
 
     const handleImageChange = (event: any) => {
         setImage(URL.createObjectURL(event.target.files[0]));
         setIsImageUploaded(true);
     }
-
 
     const handleOnImageRemoveClick = () => {
         setIsImageUploaded(false);
@@ -80,7 +84,7 @@ const AddProduct: React.FC = () => {
         setProduct({
             name: productName,
             price: productDiscountedPrice,
-            oldPrice:productPrice,
+            oldPrice: productPrice,
             img: image,
             category: "Food"
         })
@@ -100,11 +104,11 @@ const AddProduct: React.FC = () => {
                 <Col xs={12}>
                     <Navbar className='bg-transparent' expand="lg">
                         <Nav.Item as={Link} to='/admin/products'
-                                  className={url === '/admin/products' ? 'p-0 text-decoration-none text-dark pe-none' : 'p-0 text-decoration-none'}>Products</Nav.Item>
+                                  className='p-0 text-decoration-none'>Products</Nav.Item>
                         <ChevronRight className='chevron-right-icon'/>
-                        <Nav.Item as={Link} to='/admin/products/addproduct'
-                                  className={url === '/admin/products/addproduct' ? 'p-0 text-decoration-none text-dark pe-none' : 'p-0 text-decoration-none'}>Add
-                            Product</Nav.Item>
+                        <Nav.Item className='p-0 text-decoration-none text-dark pe-none'>
+                            {isDisabled? 'View Product' : 'Add Product'}
+                        </Nav.Item>
                     </Navbar>
                 </Col>
                 <Col className="admin-product" xs={12}>
@@ -119,27 +123,36 @@ const AddProduct: React.FC = () => {
                             <Form.Group className="mb-3 data-field">
                                 <Form.Label>PRODUCT NAME</Form.Label>
                                 <Form.Control type='text' placeholder="Enter Product Name" required pattern="[A-Za-z]+"
-                                              onChange={handleOnProductNameChange}/>
+                                              onChange={handleOnProductNameChange}
+                                              disabled={isDisabled}
+                                />
                             </Form.Group>
                             <Form.Group className="mb-3 data-field">
                                 <Form.Label>QUANTITY</Form.Label>
                                 <Form.Control type='number' placeholder="Enter Product Quantity" min='0'
                                               as={NumberFormat}
                                               allowNegative={false} required
-                                              onValueChange={handleOnProductQuantityChange}/>
+                                              onValueChange={handleOnProductQuantityChange}
+                                              disabled={isDisabled}
+                                />
                             </Form.Group>
                             <Form.Group className="mb-3">
                                 <Form.Label>PRICE</Form.Label>
                                 <Form.Control placeholder="Enter Product Price" as={NumberFormat} allowNegative={false}
                                               thousandSeparator={true} required
-                                              onValueChange={handleOnProductPriceChange}/>
+                                              onValueChange={handleOnProductPriceChange}
+                                              disabled={isDisabled}
+                                />
                             </Form.Group>
                         </Col>
                         <Col lg={6}>
                             <Form.Group className="mb-3">
                                 <Form.Label>PRODUCT CATEGORY</Form.Label>
                                 <Select options={categoryOptions} placeholder="Select Product Category"
-                                        isClearable={true}/>
+                                        isClearable={true}
+                                        isDisabled={isDisabled}
+
+                                />
                             </Form.Group>
                             <Form.Group className="mb-3">
                                 <Form.Label>STATUS</Form.Label>
@@ -149,14 +162,20 @@ const AddProduct: React.FC = () => {
                             <Form.Group className="mb-3">
                                 <Form.Label>DISCOUNTED PRICE</Form.Label>
                                 <Form.Control placeholder="Enter discounted Price" as={NumberFormat}
-                                              thousandSeparator={true} allowNegative={false} required
-                                              onValueChange={handleOnProductDiscountedPriceChange}/>
+                                              thousandSeparator={true}
+                                              allowNegative={false}
+                                              required
+                                              onValueChange={handleOnProductDiscountedPriceChange}
+                                              disabled={isDisabled}
+                                />
                             </Form.Group>
                         </Col>
                         <Col xs={12}>
                             <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
                                 <Form.Label>DESCRIPTION</Form.Label>
-                                <Form.Control as="textarea" rows={4} placeholder="Enter Product description"/>
+                                <Form.Control as="textarea" rows={4} placeholder="Enter Product description"
+                                              disabled={isDisabled}
+                                />
                             </Form.Group>
                         </Col>
                         <Col xs={6}>
@@ -179,8 +198,11 @@ const AddProduct: React.FC = () => {
                                                     <p>Image is uploaded</p>
                                                 </div>
                                                 <div className='d-flex justify-content-center'>
-                                                    <Button variant="warning" onClick={handleOnImageRemoveClick}>Remove
-                                                        Image</Button>
+                                                    <Button variant="warning" onClick={handleOnImageRemoveClick}
+                                                            disabled={isDisabled}
+                                                    >
+                                                        Remove Image
+                                                    </Button>
                                                 </div>
                                                 {/*</Col>*/}
                                                 {/*<Col xs={8} className='d-flex justify-content-center'>*/}

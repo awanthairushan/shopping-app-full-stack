@@ -4,13 +4,16 @@ import AppleImage from "../../../assets/images/prodcuts/Apple.jpg"
 import {Edit2, Eye, Trash2} from "react-feather";
 import {IProduct} from "../../../Types/IProduct";
 import {BsFillCircleFill} from "react-icons/bs";
+import {useNavigate} from "react-router-dom";
 
 type ProductTableItemProps = {
     product: IProduct
 }
 
-
 const ProductsListItem: FC<ProductTableItemProps> = (product) => {
+
+    const navigate = useNavigate();
+
     const productItem = product.product;
     let temp_products = [
         {
@@ -60,6 +63,13 @@ const ProductsListItem: FC<ProductTableItemProps> = (product) => {
                 <span className='ms-lg-1' style={{color: "#32CC96"}}>In Stock</span>
             </label>;
     }
+
+    const handleOnViewClick = () => {
+        //  this isDisabled need to create in redux store and have to send data from here
+        // isDisabled = true;
+        navigate('/admin/products/addproduct');
+    }
+
     return (
         <tr className='product-table-item'>
             <td className="px-lg-0 py-1">
@@ -90,7 +100,7 @@ const ProductsListItem: FC<ProductTableItemProps> = (product) => {
             <td className="p-lg-0 py-1">
                 <Row className='mx-0'>
                     <Col className='d-flex px-0 product-table-item-actions justify-content-around'>
-                        <Eye className="btn-eye" size={'18px'} color={'black'}/>
+                        <Eye className="btn-eye" size={'18px'} color={'black'} onClick={handleOnViewClick}/>
                         <Edit2 className="btn-edit" size={'18px'} color={'#D0A617'}/>
                         <Trash2 className="btn-trash2" size={'18px'} color={'#F42B3D'}/>
                     </Col>
