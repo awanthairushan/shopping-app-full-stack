@@ -1,6 +1,6 @@
 import {Button, Card, Col, Form, InputGroup, Row} from "react-bootstrap";
 import React, { useState } from "react";
-import {Link} from "react-router-dom";
+import {Link, useNavigate} from "react-router-dom";
 import {Lock, Mail} from "react-feather";
 import { useToasts } from 'react-toast-notifications';
 
@@ -8,6 +8,8 @@ const LoginPage:React.FC = () => {
 
     const damyemail = "admin@gmail.com";
     const damypassword = "admin123";
+
+    const navigate = useNavigate();
 
     const { addToast } = useToasts()
     const [email, setEmail] = useState<string>()
@@ -27,10 +29,11 @@ const LoginPage:React.FC = () => {
             return;
         } else if(email !== damyemail || password !== damypassword){
             console.log('wrong user');
-            addToast("wrong user", { appearance: 'warning', autoDismiss: true });
+            addToast("wrong user", { appearance: 'error', autoDismiss: true });
         } else {
             console.log('user logged');
             addToast("user logged", { appearance: 'success', autoDismiss: true });
+            navigate('/');
         }
         setValidated(false);
     };
@@ -49,20 +52,22 @@ const LoginPage:React.FC = () => {
                             className='data-field-icon'
                             id="basic-addon1"
                             aria-valuetext={email}
-                            onChange={(ev: React.ChangeEvent<HTMLInputElement>) => setEmail(ev.target.value)}
                         ><Mail/>
                         </InputGroup.Text>
-                        <Form.Control type="email" placeholder="Email" required></Form.Control>
+                        <Form.Control type="email" placeholder="Email" required
+                        onChange={(ev: React.ChangeEvent<HTMLInputElement>) => setEmail(ev.target.value)}
+                        ></Form.Control>
                     </InputGroup>
                     <InputGroup className="mb-3 data-field" id="formBasicPassword">
                         <InputGroup.Text
                             className='data-field-icon'
                             id="basic-addon1"
                             aria-valuetext={password}
-                            onChange={(ev: React.ChangeEvent<HTMLInputElement>) => setPassword(ev.target.value)}>
+                            >
                             <Lock/>
                         </InputGroup.Text>
-                        <Form.Control type="password" placeholder="Password" required/>
+                        <Form.Control type="password" placeholder="Password" required
+                        onChange={(ev: React.ChangeEvent<HTMLInputElement>) => setPassword(ev.target.value)}/>
                     </InputGroup>
                     <Form.Group className="mb-3 text-center" controlId="fogottonPassword">
                         <span>
