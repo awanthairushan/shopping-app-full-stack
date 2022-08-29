@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import {Button, Col, Form, Nav, Navbar, Row} from "react-bootstrap";
 import Select from 'react-select'
 import NumberFormat from 'react-number-format';
@@ -18,6 +18,11 @@ const AddProduct: React.FC = () => {
 
     const location = useLocation();
     const [url, setURL] = useState<string>('');
+
+    const [image, setImage] = useState<any>("noImage");
+    const [isImageUploaded, setIsImageUploaded] = useState<boolean>(false);
+    const [isDiscountedPriceValidated, setIsDiscountedPriceValidated] = useState<boolean>(false);
+    const inputRef = useRef<any>(null);
 
     useEffect(() => {
         setURL(location.pathname);
@@ -43,10 +48,6 @@ const AddProduct: React.FC = () => {
     const [productPrice, setProductPrice] = useState<string>("0");
     const [productDiscountedPrice, setProductDiscountedPrice] = useState<string>("0");
 
-    const [image, setImage] = useState<any>("noImage");
-    const [isImageUploaded, setIsImageUploaded] = useState<boolean>(false);
-    const [isDiscountedPriceValidated, setIsDiscountedPriceValidated] = useState<boolean>(false);
-
     const handleImageChange = (event: any) => {
         setImage(URL.createObjectURL(event.target.files[0]));
         setIsImageUploaded(true);
@@ -55,6 +56,8 @@ const AddProduct: React.FC = () => {
     const handleOnImageRemoveClick = () => {
         setIsImageUploaded(false);
         setImage("noImage");
+        inputRef.current.value=null;
+
     }
 
     const handleOnProductNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -173,15 +176,14 @@ const AddProduct: React.FC = () => {
                                 <Form.Label>PRODUCT IMAGE</Form.Label>
 
                                 <label
-                                    className={isImageUploaded ? 'custom-file-upload mt-0 custom-file-upload-active' : 'custom-file-upload mt-0'}>
+                                    className={isImageUploaded ? 'custom-file-upload mt-0 custom-file-upload-active' :
+                                        'custom-file-upload mt-0'}>
                                 <span className='w-100'>
                                     <input type="file" className='d-none' onChange={handleImageChange}
-                                           disabled={isImageUploaded}/>
+                                           disabled={isImageUploaded} ref={inputRef}/>
                                     {
                                         isImageUploaded ?
-
                                             <div>
-                                                {/*<Col xs={12}>*/}
                                                 <ThumbsUp className='d-flex align-self-center mx-auto image-icon'/>
                                                 <br/>
                                                 <div className='d-flex justify-content-center'>
@@ -191,10 +193,6 @@ const AddProduct: React.FC = () => {
                                                     <Button variant="warning" onClick={handleOnImageRemoveClick}>Remove
                                                         Image</Button>
                                                 </div>
-                                                {/*</Col>*/}
-                                                {/*<Col xs={8} className='d-flex justify-content-center'>*/}
-                                                {/*    <img src={image} className='uploaded-image' alt='Uploaded'/>*/}
-                                                {/*</Col>*/}
                                             </div>
                                             :
                                             <div>
