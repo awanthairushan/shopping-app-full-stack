@@ -105,11 +105,13 @@ const AddProduct: React.FC = () => {
                 <Col xs={12}>
                     <Navbar className='bg-transparent' expand="lg">
                         <Nav.Item as={Link} to='/admin/products'
-                                  className={url === '/admin/products' ? 'p-0 text-decoration-none text-dark pe-none' : 'p-0 text-decoration-none'}>Products</Nav.Item>
+                                  className={url === '/admin/products' ? 'p-0 text-decoration-none text-dark pe-none' :
+                                      'p-0 text-decoration-none'}>Products</Nav.Item>
                         <ChevronRight className='chevron-right-icon'/>
                         <Nav.Item as={Link} to='/admin/products/addproduct'
-                                  className={url === '/admin/products/addproduct' ? 'p-0 text-decoration-none text-dark pe-none' : 'p-0 text-decoration-none'}>Add
-                            Product</Nav.Item>
+                                  className={url === '/admin/products/addproduct' ?
+                                      'p-0 text-decoration-none text-dark pe-none' : 'p-0 text-decoration-none'}>
+                            Add Product</Nav.Item>
                     </Navbar>
                 </Col>
                 <Col className="admin-product" xs={12}>
