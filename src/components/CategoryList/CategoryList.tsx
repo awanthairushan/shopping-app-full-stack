@@ -1,7 +1,5 @@
 import React, {useState} from 'react';
-import {Col, Row, Card, CardImg} from "react-bootstrap";
-import ProductSection from "../products/ProductSection";
-import {ICart} from "../../Types/ShoppingTypes";
+import {Card, CardImg, Col, Row} from "react-bootstrap";
 
 type CategoryListProps = {
     items: {
@@ -9,24 +7,18 @@ type CategoryListProps = {
         name: string
         image: string
     }[],
-    onCartItemCreate: (newItem: ICart) => void;
+    onCategoryChange: (category: string) => void;
 }
 
 const CategoryList: React.FC<CategoryListProps> = (props: CategoryListProps) => {
 
-    const {onCartItemCreate} = props;
+    const {onCategoryChange} = props;
     const [selectedCategory, setSelectedCategory] = useState<String>("All");
 
-    const handleCategoryChange = (category: String) => {
-        setSelectedCategory(category);
+    const handleCategoryChange = (category: string) => {
+        onCategoryChange(category);
     }
 
-    const getProductByCategory = () => {
-        if (selectedCategory) {
-            return <ProductSection selectedCategory={selectedCategory}
-                                   onCartItemCreate={onCartItemCreate}/>
-        }
-    }
     return (
         <React.Fragment>
             <Row xs={12} className='d-flex flex-row justify-content-center pt-4 mx-lg-5 category'>
@@ -46,7 +38,7 @@ const CategoryList: React.FC<CategoryListProps> = (props: CategoryListProps) => 
                     })}
                 </Col>
             </Row>
-            {getProductByCategory()}
+            {/*{getProductByCategory()}*/}
         </React.Fragment>
     );
 };

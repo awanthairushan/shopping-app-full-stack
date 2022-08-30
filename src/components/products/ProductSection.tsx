@@ -5,6 +5,7 @@ import productsList from '../../assets/data/products.json';
 import {useDispatch} from "react-redux";
 import {setProducts} from "../../redux/slices/ProductSlice";
 import {useAppSelector} from "../../hooks/hooks";
+import {IProduct} from "../../Types/IProduct";
 
 type ProductSectionProps = {
     selectedCategory: String,
@@ -15,8 +16,9 @@ type ProductSectionProps = {
 const ProductSection: React.FC<ProductSectionProps> = (props) => {
     const dispatch = useDispatch();
     dispatch(setProducts(productsList.products));
-    const products = useAppSelector((state => state.products.products))
 
+    const products = useAppSelector((state => state.products.products))
+    // const selectedCategory
     const {onCartItemCreate, selectedCategory} = props;
 
     // const productList: IProduct[] = [
@@ -39,35 +41,30 @@ const ProductSection: React.FC<ProductSectionProps> = (props) => {
         );
     }
 
-    // const renderProducts = (item: IProduct) => {
-    //     if (selectedCategory === 'All') {
-    //         return (
-    //             <>
-    //                 {item.map((product: IProduct, index: number) => (
-    //                     <Product
-    //                         product={product}
-    //                         index={index}
-    //                         key={index}
-    //                         onCartItemCreate={onCartItemCreate}
-    //                     />
-    //                 ))}
-    //             </>
-    //         );
-    //     }
-    //     return (
-    //         <>
-    //             {products.filter(products => products.category === selectedCategory).map((product: IProduct, index: number) => (
-    //                     <Product
-    //                         product={product}
-    //                         index={index}
-    //                         key={index}
-    //                         onCartItemCreate={onCartItemCreate}
-    //                     />
-    //                 )
-    //             )}
-    //         </>
-    //     );
-    // }
+    const renderProducts = () => {
+        if (selectedCategory === 'All') {
+            return (
+                <>
+                    {products.map((product: IProduct, index: number) => (
+                        console.log(product)
+                    ))}
+                </>
+            );
+        }
+        // return (
+        //     <>
+        //         {products.filter(products => products.category === selectedCategory).map((product: IProduct, index: number) => (
+        //                 <Product
+        //                     product={product}
+        //                     index={index}
+        //                     key={index}
+        //                     onCartItemCreate={onCartItemCreate}
+        //                 />
+        //             )
+        //         )}
+        //     </>
+        // );
+    }
 
     return (
         <Row className='product mb-5 mx-0 mx-lg-5 px-lg-4'>
