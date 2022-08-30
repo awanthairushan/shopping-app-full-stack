@@ -20,14 +20,14 @@ const LeftNavigation: FC = () => {
             </div>
             <ul className='list-unstyled px-0 nav-list'>
 
-                <Link to='/admin/products' className={url === '/admin/products' ? 'active' : ''}>
+                <Link to='/admin/products' className={url.includes('/admin/products') ? 'active' : ''}>
                     <li className='px-lg-4'>
                         <FiTag/>
                         Products
                     </li>
                 </Link>
 
-                <Link to='/admin/orders' className={url === '/admin/orders' ? 'active' : ''}>
+                <Link to='/admin/orders' className={url.includes('/admin/orders') ? 'active' : ''}>
                     <li className='px-lg-4'>
                         <FiShoppingCart/>
                         Orders

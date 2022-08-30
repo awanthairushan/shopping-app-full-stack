@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import {Button, Col, Form, Nav, Navbar, Row} from "react-bootstrap";
 import Select from 'react-select'
 import NumberFormat from 'react-number-format';
@@ -19,6 +19,10 @@ const AddProduct: React.FC = () => {
     const location = useLocation();
     const [url, setURL] = useState<string>('');
 
+    const [image, setImage] = useState<any>("noImage");
+    const [isImageUploaded, setIsImageUploaded] = useState<boolean>(false);
+    const inputRef = useRef<any>(null);
+
     useEffect(() => {
         setURL(location.pathname);
     }, [location]);
@@ -35,7 +39,6 @@ const AddProduct: React.FC = () => {
         setValidated(true);
     };
 
-
     const onCartItemCreate = () => {
     }
 
@@ -44,13 +47,16 @@ const AddProduct: React.FC = () => {
     const [productPrice, setProductPrice] = useState<string>("0");
     const [productDiscountedPrice, setProductDiscountedPrice] = useState<string>("0");
 
-
-    const [image, setImage] = useState<any>("coconut");
-    const [isImageUploaded, setIsImageUploaded] = useState<boolean>(false);
-
     const handleImageChange = (event: any) => {
         setImage(URL.createObjectURL(event.target.files[0]));
         setIsImageUploaded(true);
+    }
+
+    const handleOnImageRemoveClick = () => {
+        setIsImageUploaded(false);
+        setImage("noImage");
+        inputRef.current.value=null;
+
     }
 
     const handleOnProductNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -71,8 +77,8 @@ const AddProduct: React.FC = () => {
     useEffect(() => {
         setProduct({
             name: productName,
-            price: productPrice,
-            oldPrice: productDiscountedPrice,
+            price: productDiscountedPrice,
+            oldPrice: productPrice,
             img: image,
             category: "Food"
         })
@@ -92,10 +98,12 @@ const AddProduct: React.FC = () => {
                 <Col xs={12}>
                     <Navbar className='bg-transparent' expand="lg">
                         <Nav.Item as={Link} to='/admin/products'
-                                  className={url === '/admin/products' ? 'p-0 text-decoration-none text-dark pe-none' : 'p-0 text-decoration-none'}>Products</Nav.Item>
+                                  className={url === '/admin/products' ? 'p-0 text-decoration-none text-dark pe-none' :
+                                      'p-0 text-decoration-none'}>Products</Nav.Item>
                         <ChevronRight className='chevron-right-icon'/>
                         <Nav.Item as={Link} to='/admin/products/addproduct'
-                                  className={url === '/admin/products/addproduct' ? 'p-0 text-decoration-none text-dark pe-none' : 'p-0 text-decoration-none'}>Add
+                                  className={url === '/admin/products/addproduct' ?
+                                      'p-0 text-decoration-none text-dark pe-none' : 'p-0 text-decoration-none'}>Add
                             Product</Nav.Item>
                     </Navbar>
                 </Col>
@@ -148,29 +156,32 @@ const AddProduct: React.FC = () => {
                         <Col xs={12}>
                             <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
                                 <Form.Label>DESCRIPTION</Form.Label>
-                                <Form.Control as="textarea" rows={4} placeholder="Enter Product Name"/>
+                                <Form.Control as="textarea" rows={4} placeholder="Enter Product description"/>
                             </Form.Group>
                         </Col>
                         <Col xs={6}>
                             <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
                                 <Form.Label>PRODUCT IMAGE</Form.Label>
-                                <label className="custom-file-upload mt-0">
+
+                                <label
+                                    className={isImageUploaded ? 'custom-file-upload mt-0 custom-file-upload-active' :
+                                        'custom-file-upload mt-0'}>
                                 <span className='w-100'>
                                     <input type="file" className='d-none' onChange={handleImageChange}
-                                           disabled={isImageUploaded}/>
+                                           disabled={isImageUploaded} ref={inputRef}/>
                                     {
                                         isImageUploaded ?
-                                            <Row className='d-flex align-items-center justify-content-center w-100'>
-                                                <Col xs={4}>
-                                                    <ThumbsUp className='d-flex align-self-center mx-auto image-icon'/>
-                                                    <br/>
+                                            <div>
+                                                <ThumbsUp className='d-flex align-self-center mx-auto image-icon'/>
+                                                <br/>
+                                                <div className='d-flex justify-content-center'>
                                                     <p>Image is uploaded</p>
-                                                </Col>
-                                                <Col xs={8} className='d-flex justify-content-center'>
-                                                    <img src={image} className='uploaded-image' alt='Uploaded'/>
-                                                </Col>
-                                            </Row>
-
+                                                </div>
+                                                <div className='d-flex justify-content-center'>
+                                                    <Button variant="warning" onClick={handleOnImageRemoveClick}>Remove
+                                                        Image</Button>
+                                                </div>
+                                            </div>
                                             :
                                             <div>
                                                 <Image className='d-flex align-self-center mx-auto image-icon'/>
