@@ -1,12 +1,10 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {ICart} from '../../Types/ShoppingTypes';
-import Product from './Product';
 import {Row} from 'react-bootstrap';
 import productsList from '../../assets/data/products.json';
 import {useDispatch} from "react-redux";
 import {setProducts} from "../../redux/slices/ProductSlice";
 import {useAppSelector} from "../../hooks/hooks";
-import {IProduct} from "../../Types/IProduct";
 
 type ProductSectionProps = {
     selectedCategory: String,
@@ -41,44 +39,44 @@ const ProductSection: React.FC<ProductSectionProps> = (props) => {
         );
     }
 
-    const renderProducts = (item: IProduct) => {
-        if (selectedCategory === 'All') {
-            return (
-                <>
-                    {item.map((product: IProduct, index: number) => (
-                        <Product
-                            product={product}
-                            index={index}
-                            key={index}
-                            onCartItemCreate={onCartItemCreate}
-                        />
-                    ))}
-                </>
-            );
-        }
-        return (
-            <>
-                {products.filter(products => products.category === selectedCategory).map((product: IProduct, index: number) => (
-                        <Product
-                            product={product}
-                            index={index}
-                            key={index}
-                            onCartItemCreate={onCartItemCreate}
-                        />
-                    )
-                )}
-            </>
-        );
-    }
+    // const renderProducts = (item: IProduct) => {
+    //     if (selectedCategory === 'All') {
+    //         return (
+    //             <>
+    //                 {item.map((product: IProduct, index: number) => (
+    //                     <Product
+    //                         product={product}
+    //                         index={index}
+    //                         key={index}
+    //                         onCartItemCreate={onCartItemCreate}
+    //                     />
+    //                 ))}
+    //             </>
+    //         );
+    //     }
+    //     return (
+    //         <>
+    //             {products.filter(products => products.category === selectedCategory).map((product: IProduct, index: number) => (
+    //                     <Product
+    //                         product={product}
+    //                         index={index}
+    //                         key={index}
+    //                         onCartItemCreate={onCartItemCreate}
+    //                     />
+    //                 )
+    //             )}
+    //         </>
+    //     );
+    // }
 
     return (
         <Row className='product mb-5 mx-0 mx-lg-5 px-lg-4'>
             <p className='my-2 catagery-types-text'>Grocery</p>
-            {renderProducts(products)}
+            {/*{renderProducts(products)}*/}
             <p className='my-2 catagery-types-text'>Fruits</p>
-            {renderProducts(products)}
+            {/*{renderProducts(products)}*/}
             <p className='my-2 catagery-types-text'>Vegetables</p>
-            {renderProducts(products)}
+            {/*{renderProducts(products)}*/}
         </Row>
     )
 }
