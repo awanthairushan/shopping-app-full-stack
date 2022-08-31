@@ -1,11 +1,23 @@
-import React from 'react';
+import React,{useEffect} from 'react';
 import {Row, Card, Button} from 'react-bootstrap';
+import {useNavigate} from "react-router-dom";
 
 type PromotionBannerProps = {
     setProductSectionVisible: () => void;
 }
 
 const PromotionBanner: React.FC<PromotionBannerProps> = (props) => {
+
+    const navigate = useNavigate();
+    const user = localStorage.getItem('role');
+
+    useEffect(() => {
+        console.log(user)
+        if(user == null || user == "nouser") {
+            navigate('/loginpage');
+        }
+    }, []);
+
     return (
         <div className="promotion-banner">
             <Card.Body>

@@ -6,12 +6,14 @@ import NumberFormat from "react-number-format";
 import ShippingForm from "../CheckOut/ShippingForm";
 import banner from '../../assets/images/banners/checkoutPageBanner.png';
 import ChangeShippingAddressSection from "../CheckOut/ChangeShippingAddressSection";
+import {useNavigate} from "react-router-dom";
 
 type CheckoutProps = {
     cartItems: ICart[];
     setCartItems: (items: ICart[]) => void;
 }
 const CheckOut: FC<CheckoutProps> = (props) => {
+    const navigate = useNavigate();
     const {cartItems, setCartItems} = props;
     const [discountCode, setDiscountCode] = useState<string>('')
     const [isMobile, setIsMobile] = useState<boolean>(false);
@@ -19,7 +21,14 @@ const CheckOut: FC<CheckoutProps> = (props) => {
     const [colSpan1, setColSpan1] = useState<number>(3);
     const [colSpan2, setColSpan2] = useState<number>(4);
     const [cartTotal, setCartTotal] = useState<number>(100);
+    const user = localStorage.getItem('role');
 
+    useEffect(() => {
+        console.log(user)
+        if(user == null || user == "nouser") {
+            navigate('/loginpage');
+        }
+    }, []);
     const handleOnItemRemoved = (index: number) => {
         cartItems.splice(index, 1);
         setCartItems([...cartItems]);
