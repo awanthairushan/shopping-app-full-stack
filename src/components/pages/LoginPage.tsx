@@ -31,6 +31,7 @@ const LoginPage:React.FC = () => {
             console.log('wrong user');
             addToast("wrong user", { appearance: 'error', autoDismiss: true });
         } else {
+            localStorage.setItem('role', email)
             console.log('user logged');
             addToast("user logged", { appearance: 'success', autoDismiss: true });
             navigate('/');

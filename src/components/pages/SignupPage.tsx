@@ -33,6 +33,7 @@ const SignupPage: React.FC = () => {
             console.log('wrong user');
             addToast("user already logged to the system", { appearance: 'warning', autoDismiss: true });
         } else {
+            localStorage.setItem('role', email)
             console.log('user logged');
             addToast("user logged", { appearance: 'success', autoDismiss: true });
             navigate('/');

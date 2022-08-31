@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { ICart, IProduct } from '../../Types/ShoppingTypes';
 import Product from './Product';
 import { Row } from 'react-bootstrap';
+import {useNavigate} from "react-router-dom";
 
 type ProductSectionProps = {
   selectedCategory: String,
@@ -10,7 +11,17 @@ type ProductSectionProps = {
 
 const ProductSection: React.FC<ProductSectionProps> = (props) => {
 
+  const navigate = useNavigate();
   const { onCartItemCreate, selectedCategory } = props;
+
+  const user = localStorage.getItem('role');
+
+    useEffect(() => {
+        console.log(user)
+        if(user == null || user == "nouser") {
+            navigate('/loginpage');
+        }
+    }, []);
 
   const productList: IProduct[] = [
     { name: "product 1", price: "65.34", oldPrice: "65.00", img: "coconut", category: "Food" },

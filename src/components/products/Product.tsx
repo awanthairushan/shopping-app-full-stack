@@ -3,6 +3,7 @@ import {ICart, IProduct} from '../../Types/ShoppingTypes';
 import {carrot, coconut, no_image} from "../../assets/images/images";
 import {Button, Col, Form, Image, Row} from 'react-bootstrap';
 import {useLocation} from "react-router-dom";
+import {useNavigate} from "react-router-dom";
 
 type ProductProps = {
     product: IProduct,
@@ -11,6 +12,7 @@ type ProductProps = {
 }
 const Product: React.FC<ProductProps> = (props) => {
 
+    const navigate = useNavigate();
     const location = useLocation();
     const [url, setURL] = useState<string>('');
 
@@ -18,6 +20,14 @@ const Product: React.FC<ProductProps> = (props) => {
         setURL(location.pathname);
     }, [location]);
 
+    const user = localStorage.getItem('role');
+
+    useEffect(() => {
+        console.log(user)
+        if(user == null || user == "nouser") {
+            navigate('/loginpage');
+        }
+    }, []);
 
     const {onCartItemCreate} = props;
     const [quantity, setQuantity] = useState<number>(1);
@@ -55,6 +65,7 @@ const Product: React.FC<ProductProps> = (props) => {
         <Col xs={6} md={4} lg={url === '/admin/products/addproduct' ? 6 : 3}
              className={url === '/admin/products/addproduct' ? 'mb-1 mb-sm-2 products ps-0' : 'mt-1 mb-1 mb-sm-2 products'}>
             <Row className='product-item'>
+                {console.log( "hi" + user)}
                 <Col sm={12} className='product-img'>
                     <Image src={imageLink} alt="product"/>
                 </Col>
