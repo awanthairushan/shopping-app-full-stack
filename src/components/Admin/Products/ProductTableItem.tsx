@@ -5,6 +5,7 @@ import {Edit2, Eye, Trash2} from "react-feather";
 import {IProduct} from "../../../Types/IProduct";
 import {BsFillCircleFill} from "react-icons/bs";
 import Swal from "sweetalert2";
+import {useToasts} from 'react-toast-notifications';
 
 type ProductTableItemProps = {
     product: IProduct
@@ -12,6 +13,7 @@ type ProductTableItemProps = {
 
 
 const ProductsListItem: FC<ProductTableItemProps> = (product) => {
+    const {addToast} = useToasts();
     const productItem = product.product;
     let temp_products = [
         {
@@ -73,7 +75,7 @@ const ProductsListItem: FC<ProductTableItemProps> = (product) => {
           confirmButtonText: "Yes, delete it!",
         }).then((result: any) => {
           if (result.isConfirmed) {
-
+            addToast("Product deleted", {appearance: 'success', autoDismiss: true});
           }
         });
       };
