@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {Card, CardImg, Col, Row} from "react-bootstrap";
 
 type CategoryListProps = {
@@ -13,7 +13,6 @@ type CategoryListProps = {
 const CategoryList: React.FC<CategoryListProps> = (props: CategoryListProps) => {
 
     const {onCategoryChange} = props;
-    const [selectedCategory, setSelectedCategory] = useState<String>("All");
 
     const handleCategoryChange = (category: string) => {
         onCategoryChange(category);

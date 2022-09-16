@@ -5,6 +5,7 @@ import CategoryList from "../CategoryList/CategoryList";
 import CategoryDateList from "../../Types/CategoryDateList";
 import {ICart} from '../../Types/ShoppingTypes';
 import SearchBar from './SearchBar';
+import ProductSection from "../products/ProductSection";
 
 type HomeProps = {
     onCartItemCreate: (newItem: ICart) => void;
@@ -12,7 +13,7 @@ type HomeProps = {
 const Home: React.FC<HomeProps> = (props) => {
     const {onCartItemCreate} = props;
     const [isProductSectionVisible, setIsProductSectionVisible] = useState<Boolean>(false);
-
+    const [selectedCategory, setSelectedCategory] = useState<String>("All");
     const setProductSectionVisible = (isProductSectionVisible: Boolean) => {
         setIsProductSectionVisible(isProductSectionVisible);
     }
@@ -24,7 +25,7 @@ const Home: React.FC<HomeProps> = (props) => {
     const executeScroll = () => myRef.current.scrollIntoView(); // run this function from an event handler or pass it to useEffect to execute scroll
 
     const handleOnCategoryChange = (category: string) => {
-        console.log(category);
+        setSelectedCategory(category);
     }
 
     return (
@@ -38,7 +39,7 @@ const Home: React.FC<HomeProps> = (props) => {
                             <CategoryList items={categories} onCategoryChange={handleOnCategoryChange}/>
                         </Col>
                     </Row>
-                    {/* <ProductSection onCartItemCreate={onCartItemCreate}/> */}
+                    <ProductSection onCartItemCreate={onCartItemCreate} selectedCategory={selectedCategory}/>
                 </div>
             </Col>
         </Row>

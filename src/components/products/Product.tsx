@@ -1,8 +1,10 @@
 import React, {useEffect, useState} from 'react';
-import {ICart, IProduct} from '../../Types/ShoppingTypes';
+import {ICart} from '../../Types/ShoppingTypes';
 import {carrot, coconut, no_image} from "../../assets/images/images";
 import {Button, Col, Form, Image, Row} from 'react-bootstrap';
 import {useLocation} from "react-router-dom";
+import {IProduct} from "../../Types/IProduct";
+import {ICartItem} from "../../Types/ICartItem";
 
 type ProductProps = {
     product: IProduct,
@@ -13,28 +15,26 @@ const Product: React.FC<ProductProps> = (props) => {
 
     const location = useLocation();
     const [url, setURL] = useState<string>('');
-
-    useEffect(() => {
-        setURL(location.pathname);
-    }, [location]);
-
-
     const {onCartItemCreate} = props;
     const [quantity, setQuantity] = useState<number>(1);
     const {product, index} = props;
     const [cartBtnText, setCartBtnText] = useState('Add To Cart');
     const [cartBtnBackground, setCartBtnBackground] = useState('add-cart-btn');
 
+    useEffect(() => {
+        setURL(location.pathname);
+    }, [location]);
+
     var imageLink;
 
-    if (product.img === "carrot") {
+    if (product.image === "carrot") {
         imageLink = carrot;
-    } else if (product.img === "coconut") {
+    } else if (product.image === "coconut") {
         imageLink = coconut;
-    } else if (product.img === "noImage") {
+    } else if (product.image === "noImage") {
         imageLink = no_image;
     } else {
-        imageLink = product.img;
+        imageLink = product.image;
     }
 
     const handleOnQuantityChanged = (num: string) => {
@@ -43,14 +43,21 @@ const Product: React.FC<ProductProps> = (props) => {
 
     const handleSubmit = (event: any) => {
         event.preventDefault();
-        const newItem: ICart = {name: product.name, price: product.price, quantity: quantity, img: product.img};
-        onCartItemCreate(newItem);
-        setQuantity(1);
+        console.log(event);
+        // const newItem: ICart = {name: product.name, price: product.price, quantity: quantity, img: product.image};
+        const newItem: ICartItem = {
+            productID: '1',
+            quantity: 5
+        }
+        // onCartItemCreate(newItem);
+        // setQuantity(1);
     }
+
     const cartAdd = () => {
         setCartBtnText("Update");
         setCartBtnBackground("add-cart-btn-u");
     }
+
     return (
         <Col xs={6} md={4} lg={url === '/admin/products/addproduct' ? 6 : 3}
              className={url === '/admin/products/addproduct' ? 'mb-1 mb-sm-2 products ps-0' : 'mt-1 mb-1 mb-sm-2 products'}>
@@ -64,7 +71,7 @@ const Product: React.FC<ProductProps> = (props) => {
                 <Col sm={12} className='product-price sm-1 px-4'>
                     <Row>
                         <Col xs={6} className='old-price ps-2'>
-                            <p>Rs.{product.oldPrice}</p>
+                            {/*<p>Rs.{product.oldPrice}</p>*/}
                         </Col>
                         <Col xs={6} className='new-price pe-2'>
                             <p>Rs.{product.price}</p>
