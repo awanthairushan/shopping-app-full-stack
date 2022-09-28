@@ -3,7 +3,7 @@ import {Button, Col, Form, Nav, Navbar, Row} from "react-bootstrap";
 import Select from 'react-select'
 import NumberFormat from 'react-number-format';
 import Product from "../../products/Product";
-import {IProduct} from "../../../Types/ShoppingTypes";
+import {IProduct} from "../../../Types/IProduct";
 import {ChevronRight, Image, ThumbsUp} from "react-feather";
 import {Link, useLocation} from "react-router-dom";
 
@@ -19,7 +19,7 @@ const AddProduct: React.FC = () => {
     const location = useLocation();
     const [url, setURL] = useState<string>('');
 
-    const [image, setImage] = useState<any>("noImage");
+    const [image, setImage] = useState<string>("noImage");
     const [isImageUploaded, setIsImageUploaded] = useState<boolean>(false);
     const inputRef = useRef<any>(null);
 
@@ -55,7 +55,7 @@ const AddProduct: React.FC = () => {
     const handleOnImageRemoveClick = () => {
         setIsImageUploaded(false);
         setImage("noImage");
-        inputRef.current.value=null;
+        inputRef.current.value = null;
 
     }
 
@@ -76,19 +76,23 @@ const AddProduct: React.FC = () => {
 
     useEffect(() => {
         setProduct({
+            description: "", id: "", quantity: 0,
             name: productName,
-            price: productDiscountedPrice,
-            oldPrice: productPrice,
-            img: image,
+            discountedPrice: productDiscountedPrice,
+            price: productPrice,
+            image: image,
             category: "Food"
         })
     }, [productName, productPrice, productDiscountedPrice, image])
 
     const [product, setProduct] = useState<IProduct>({
+        description: "",
+        id: "",
+        quantity: 0,
         name: "Name",
-        price: "D Price",
-        oldPrice: "Price",
-        img: "coconut",
+        discountedPrice: "D Price",
+        price: "Price",
+        image: "coconut",
         category: "Food"
     });
 
