@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react';
 import {ICart} from '../../Types/ShoppingTypes';
-import {carrot, coconut, no_image} from "../../assets/images/images";
 import {Button, Col, Form, Image, Row} from 'react-bootstrap';
 import {useLocation} from "react-router-dom";
 import {IProduct} from "../../Types/IProduct";
@@ -25,17 +24,17 @@ const Product: React.FC<ProductProps> = (props) => {
         setURL(location.pathname);
     }, [location]);
 
-    var imageLink;
-
-    if (product.image === "carrot") {
-        imageLink = carrot;
-    } else if (product.image === "coconut") {
-        imageLink = coconut;
-    } else if (product.image === "noImage") {
-        imageLink = no_image;
-    } else {
-        imageLink = product.image;
-    }
+    // var imageLink;
+    //
+    // if (product.image === "carrot") {
+    //     imageLink = carrot;
+    // } else if (product.image === "coconut") {
+    //     imageLink = coconut;
+    // } else if (product.image === "noImage") {
+    //     imageLink = no_image;
+    // } else {
+    //     imageLink = product.image;
+    // }
 
     const handleOnQuantityChanged = (num: string) => {
         setQuantity(parseInt(num));
@@ -43,7 +42,6 @@ const Product: React.FC<ProductProps> = (props) => {
 
     const handleSubmit = (event: any) => {
         event.preventDefault();
-        console.log(event);
         // const newItem: ICart = {name: product.name, price: product.price, quantity: quantity, img: product.image};
         const newItem: ICartItem = {
             productID: '1',
@@ -63,7 +61,7 @@ const Product: React.FC<ProductProps> = (props) => {
              className={url === '/admin/products/addproduct' ? 'mb-1 mb-sm-2 products ps-0' : 'mt-1 mb-1 mb-sm-2 products'}>
             <Row className='product-item'>
                 <Col sm={12} className='product-img'>
-                    <Image src={imageLink} alt="product"/>
+                    <Image src={props.product.image} alt="product"/>
                 </Col>
                 <Col sm={12} className='product-name px-3'>
                     <p>{product.name}</p>

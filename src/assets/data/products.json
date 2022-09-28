@@ -3,7 +3,7 @@
     {
       "name": "Coconut",
       "id": "p-001",
-      "category": "all",
+      "category": "grocery",
       "price": "150",
       "discountedPrice": "0",
       "quantity": 0,
@@ -12,7 +12,7 @@
     {
       "name": "Garlic",
       "id": "p-002",
-      "category": "all",
+      "category": "grocery",
       "price": "560",
       "discountedPrice": "0",
       "quantity": 0,
@@ -21,7 +21,7 @@
     {
       "name": "Milk Powder",
       "id": "p-003",
-      "category": "all",
+      "category": "grocery",
       "price": "380",
       "discountedPrice": "0",
       "quantity": 20,
@@ -30,7 +30,7 @@
     {
       "name": "Onions",
       "id": "p-004",
-      "category": "all",
+      "category": "grocery",
       "price": "150",
       "discountedPrice": "0",
       "quantity": 20,
@@ -39,7 +39,7 @@
     {
       "name": "Dhal",
       "id": "p-005",
-      "category": "all",
+      "category": "grocery",
       "price": "400",
       "discountedPrice": "0",
       "quantity": 0,
@@ -48,7 +48,7 @@
     {
       "name": "Cinnamon",
       "id": "p-006",
-      "category": "all",
+      "category": "grocery",
       "price": "250",
       "discountedPrice": "0",
       "quantity": 20,
@@ -57,7 +57,7 @@
     {
       "name": "Chickpea",
       "id": "p-007",
-      "category": "all",
+      "category": "grocery",
       "price": "250",
       "discountedPrice": "0",
       "quantity": 20,
@@ -66,7 +66,7 @@
     {
       "name": "Cream cracker",
       "id": "p-008",
-      "category": "all",
+      "category": "grocery",
       "price": "150",
       "discountedPrice": "0",
       "quantity": 20,
