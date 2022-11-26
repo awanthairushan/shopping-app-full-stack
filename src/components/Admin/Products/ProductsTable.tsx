@@ -118,7 +118,6 @@ const ProductsTable: FC = () => {
     return (
         <Row className='mx-0 p-lg-4 content h-100'>
             <Col>
-                <p className="fs-5 bold">Product list</p>
                 <Table bordered hover>
                     <thead>
                     <tr>
@@ -140,7 +139,7 @@ const ProductsTable: FC = () => {
                         {
                             pageNumbers.map((pageNumber, idx) => {
                                 return <label
-                                    className={'single-page-number mx-1 px-2'}
+                                    className={'single-page-number mx-1 px-2 mb-2'}
                                     id={String(pageNumber)} key={pageNumber}
                                     onClick={handleOnPageNumberChange}
                                 >

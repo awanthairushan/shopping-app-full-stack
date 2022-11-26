@@ -1,9 +1,9 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import {Button, Col, Form, Nav, Navbar, Row} from "react-bootstrap";
 import Select from 'react-select'
 import NumberFormat from 'react-number-format';
 import Product from "../../products/Product";
-import {IProduct} from "../../../Types/ShoppingTypes";
+import {IProduct} from "../../../Types/IProduct";
 import {ChevronRight, Image, ThumbsUp} from "react-feather";
 import {Link, useLocation} from "react-router-dom";
 
@@ -18,6 +18,10 @@ const AddProduct: React.FC = () => {
 
     const location = useLocation();
     const [url, setURL] = useState<string>('');
+
+    const [image, setImage] = useState<string>("noImage");
+    const [isImageUploaded, setIsImageUploaded] = useState<boolean>(false);
+    const inputRef = useRef<any>(null);
 
     useEffect(() => {
         setURL(location.pathname);
@@ -35,7 +39,6 @@ const AddProduct: React.FC = () => {
         setValidated(true);
     };
 
-
     const onCartItemCreate = () => {
     }
 
@@ -44,13 +47,25 @@ const AddProduct: React.FC = () => {
     const [productPrice, setProductPrice] = useState<string>("0");
     const [productDiscountedPrice, setProductDiscountedPrice] = useState<string>("0");
 
+    const [isDisabled, setIsDisabled] = useState<boolean>(true);
 
-    const [image, setImage] = useState<any>("coconut");
-    const [isImageUploaded, setIsImageUploaded] = useState<boolean>(false);
+    useEffect(() => {
+            if (isDisabled) {
+                setIsImageUploaded(isDisabled);
+            }
+        }
+    )
 
     const handleImageChange = (event: any) => {
         setImage(URL.createObjectURL(event.target.files[0]));
         setIsImageUploaded(true);
+    }
+
+    const handleOnImageRemoveClick = () => {
+        setIsImageUploaded(false);
+        setImage("noImage");
+        inputRef.current.value = null;
+
     }
 
     const handleOnProductNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -70,19 +85,23 @@ const AddProduct: React.FC = () => {
 
     useEffect(() => {
         setProduct({
+            description: "", id: "", quantity: 0,
             name: productName,
+            discountedPrice: productDiscountedPrice,
             price: productPrice,
-            oldPrice: productDiscountedPrice,
-            img: image,
+            image: image,
             category: "Food"
         })
     }, [productName, productPrice, productDiscountedPrice, image])
 
     const [product, setProduct] = useState<IProduct>({
+        description: "",
+        id: "",
+        quantity: 0,
         name: "Name",
-        price: "D Price",
-        oldPrice: "Price",
-        img: "coconut",
+        discountedPrice: "D Price",
+        price: "Price",
+        image: "coconut",
         category: "Food"
     });
 
@@ -92,10 +111,12 @@ const AddProduct: React.FC = () => {
                 <Col xs={12}>
                     <Navbar className='bg-transparent' expand="lg">
                         <Nav.Item as={Link} to='/admin/products'
-                                  className={url === '/admin/products' ? 'p-0 text-decoration-none text-dark pe-none' : 'p-0 text-decoration-none'}>Products</Nav.Item>
+                                  className={url === '/admin/products' ? 'p-0 text-decoration-none text-dark pe-none' :
+                                      'p-0 text-decoration-none'}>Products</Nav.Item>
                         <ChevronRight className='chevron-right-icon'/>
                         <Nav.Item as={Link} to='/admin/products/addproduct'
-                                  className={url === '/admin/products/addproduct' ? 'p-0 text-decoration-none text-dark pe-none' : 'p-0 text-decoration-none'}>Add
+                                  className={url === '/admin/products/addproduct' ?
+                                      'p-0 text-decoration-none text-dark pe-none' : 'p-0 text-decoration-none'}>Add
                             Product</Nav.Item>
                     </Navbar>
                 </Col>
@@ -111,27 +132,36 @@ const AddProduct: React.FC = () => {
                             <Form.Group className="mb-3 data-field">
                                 <Form.Label>PRODUCT NAME</Form.Label>
                                 <Form.Control type='text' placeholder="Enter Product Name" required pattern="[A-Za-z]+"
-                                              onChange={handleOnProductNameChange}/>
+                                              onChange={handleOnProductNameChange}
+                                              disabled={isDisabled}
+                                />
                             </Form.Group>
                             <Form.Group className="mb-3 data-field">
                                 <Form.Label>QUANTITY</Form.Label>
                                 <Form.Control type='number' placeholder="Enter Product Quantity" min='0'
                                               as={NumberFormat}
                                               allowNegative={false} required
-                                              onValueChange={handleOnProductQuantityChange}/>
+                                              onValueChange={handleOnProductQuantityChange}
+                                              disabled={isDisabled}
+                                />
                             </Form.Group>
                             <Form.Group className="mb-3">
                                 <Form.Label>PRICE</Form.Label>
                                 <Form.Control placeholder="Enter Product Price" as={NumberFormat} allowNegative={false}
                                               thousandSeparator={true} required
-                                              onValueChange={handleOnProductPriceChange}/>
+                                              onValueChange={handleOnProductPriceChange}
+                                              disabled={isDisabled}
+                                />
                             </Form.Group>
                         </Col>
                         <Col lg={6}>
                             <Form.Group className="mb-3">
                                 <Form.Label>PRODUCT CATEGORY</Form.Label>
                                 <Select options={categoryOptions} placeholder="Select Product Category"
-                                        isClearable={true}/>
+                                        isClearable={true}
+                                        isDisabled={isDisabled}
+
+                                />
                             </Form.Group>
                             <Form.Group className="mb-3">
                                 <Form.Label>STATUS</Form.Label>
@@ -141,36 +171,48 @@ const AddProduct: React.FC = () => {
                             <Form.Group className="mb-3">
                                 <Form.Label>DISCOUNTED PRICE</Form.Label>
                                 <Form.Control placeholder="Enter discounted Price" as={NumberFormat}
-                                              thousandSeparator={true} allowNegative={false} required
-                                              onValueChange={handleOnProductDiscountedPriceChange}/>
+                                              thousandSeparator={true}
+                                              allowNegative={false}
+                                              required
+                                              onValueChange={handleOnProductDiscountedPriceChange}
+                                              disabled={isDisabled}
+                                />
                             </Form.Group>
                         </Col>
                         <Col xs={12}>
                             <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
                                 <Form.Label>DESCRIPTION</Form.Label>
-                                <Form.Control as="textarea" rows={4} placeholder="Enter Product Name"/>
+                                <Form.Control as="textarea" rows={4} placeholder="Enter Product description"
+                                              disabled={isDisabled}
+                                />
                             </Form.Group>
                         </Col>
                         <Col xs={6}>
                             <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
                                 <Form.Label>PRODUCT IMAGE</Form.Label>
-                                <label className="custom-file-upload mt-0">
+
+                                <label
+                                    className={isImageUploaded ? 'custom-file-upload mt-0 custom-file-upload-active' :
+                                        'custom-file-upload mt-0'}>
                                 <span className='w-100'>
                                     <input type="file" className='d-none' onChange={handleImageChange}
-                                           disabled={isImageUploaded}/>
+                                           disabled={isImageUploaded} ref={inputRef}/>
                                     {
                                         isImageUploaded ?
-                                            <Row className='d-flex align-items-center justify-content-center w-100'>
-                                                <Col xs={4}>
-                                                    <ThumbsUp className='d-flex align-self-center mx-auto image-icon'/>
-                                                    <br/>
+                                            <div>
+                                                <ThumbsUp className='d-flex align-self-center mx-auto image-icon'/>
+                                                <br/>
+                                                <div className='d-flex justify-content-center'>
                                                     <p>Image is uploaded</p>
-                                                </Col>
-                                                <Col xs={8} className='d-flex justify-content-center'>
-                                                    <img src={image} className='uploaded-image' alt='Uploaded'/>
-                                                </Col>
-                                            </Row>
-
+                                                </div>
+                                                <div className='d-flex justify-content-center'>
+                                                    <Button variant="warning" onClick={handleOnImageRemoveClick}
+                                                            disabled={isDisabled}
+                                                    >
+                                                        Remove Image
+                                                    </Button>
+                                                </div>
+                                            </div>
                                             :
                                             <div>
                                                 <Image className='d-flex align-self-center mx-auto image-icon'/>
