@@ -89,7 +89,7 @@ const ProductsListItem: FC<ProductTableItemProps> = (product) => {
                 {productItem.category}
             </td>
             <td className="p-lg-0 py-1">
-                Rs.{(Math.round(productItem.price * 100) / 100).toFixed(2)}
+                Rs.{(Math.round(parseFloat(productItem.price) * 100) / 100).toFixed(2)}
             </td>
             <td className="p-lg-0 py-1">
                 {productItem.quantity}

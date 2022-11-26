@@ -1,9 +1,9 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useRef, useState} from "react";
 import {Button, Col, Form, Nav, Navbar, Row} from "react-bootstrap";
 import Select from 'react-select'
 import NumberFormat from 'react-number-format';
 import Product from "../../products/Product";
-import {IProduct} from "../../../Types/ShoppingTypes";
+import {IProduct} from "../../../Types/IProduct";
 import {ChevronRight, Image, ThumbsUp} from "react-feather";
 import {Link, useLocation} from "react-router-dom";
 
@@ -18,6 +18,10 @@ const AddProduct: React.FC = () => {
 
     const location = useLocation();
     const [url, setURL] = useState<string>('');
+
+    const [image, setImage] = useState<string>("noImage");
+    const [isImageUploaded, setIsImageUploaded] = useState<boolean>(false);
+    const inputRef = useRef<any>(null);
 
     useEffect(() => {
         setURL(location.pathname);
@@ -43,9 +47,6 @@ const AddProduct: React.FC = () => {
     const [productPrice, setProductPrice] = useState<string>("0");
     const [productDiscountedPrice, setProductDiscountedPrice] = useState<string>("0");
 
-    const [image, setImage] = useState<any>("noImage");
-    const [isImageUploaded, setIsImageUploaded] = useState<boolean>(false);
-
     const [isDisabled, setIsDisabled] = useState<boolean>(true);
 
     useEffect(() => {
@@ -63,6 +64,8 @@ const AddProduct: React.FC = () => {
     const handleOnImageRemoveClick = () => {
         setIsImageUploaded(false);
         setImage("noImage");
+        inputRef.current.value = null;
+
     }
 
     const handleOnProductNameChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -82,19 +85,23 @@ const AddProduct: React.FC = () => {
 
     useEffect(() => {
         setProduct({
+            description: "", id: "", quantity: 0,
             name: productName,
-            price: productDiscountedPrice,
-            oldPrice: productPrice,
-            img: image,
+            discountedPrice: productDiscountedPrice,
+            price: productPrice,
+            image: image,
             category: "Food"
         })
     }, [productName, productPrice, productDiscountedPrice, image])
 
     const [product, setProduct] = useState<IProduct>({
+        description: "",
+        id: "",
+        quantity: 0,
         name: "Name",
-        price: "D Price",
-        oldPrice: "Price",
-        img: "coconut",
+        discountedPrice: "D Price",
+        price: "Price",
+        image: "coconut",
         category: "Food"
     });
 
@@ -104,11 +111,13 @@ const AddProduct: React.FC = () => {
                 <Col xs={12}>
                     <Navbar className='bg-transparent' expand="lg">
                         <Nav.Item as={Link} to='/admin/products'
-                                  className='p-0 text-decoration-none'>Products</Nav.Item>
+                                  className={url === '/admin/products' ? 'p-0 text-decoration-none text-dark pe-none' :
+                                      'p-0 text-decoration-none'}>Products</Nav.Item>
                         <ChevronRight className='chevron-right-icon'/>
-                        <Nav.Item className='p-0 text-decoration-none text-dark pe-none'>
-                            {isDisabled? 'View Product' : 'Add Product'}
-                        </Nav.Item>
+                        <Nav.Item as={Link} to='/admin/products/addproduct'
+                                  className={url === '/admin/products/addproduct' ?
+                                      'p-0 text-decoration-none text-dark pe-none' : 'p-0 text-decoration-none'}>Add
+                            Product</Nav.Item>
                     </Navbar>
                 </Col>
                 <Col className="admin-product" xs={12}>
@@ -183,15 +192,14 @@ const AddProduct: React.FC = () => {
                                 <Form.Label>PRODUCT IMAGE</Form.Label>
 
                                 <label
-                                    className={isImageUploaded ? 'custom-file-upload mt-0 custom-file-upload-active' : 'custom-file-upload mt-0'}>
+                                    className={isImageUploaded ? 'custom-file-upload mt-0 custom-file-upload-active' :
+                                        'custom-file-upload mt-0'}>
                                 <span className='w-100'>
                                     <input type="file" className='d-none' onChange={handleImageChange}
-                                           disabled={isImageUploaded}/>
+                                           disabled={isImageUploaded} ref={inputRef}/>
                                     {
                                         isImageUploaded ?
-
                                             <div>
-                                                {/*<Col xs={12}>*/}
                                                 <ThumbsUp className='d-flex align-self-center mx-auto image-icon'/>
                                                 <br/>
                                                 <div className='d-flex justify-content-center'>
@@ -204,10 +212,6 @@ const AddProduct: React.FC = () => {
                                                         Remove Image
                                                     </Button>
                                                 </div>
-                                                {/*</Col>*/}
-                                                {/*<Col xs={8} className='d-flex justify-content-center'>*/}
-                                                {/*    <img src={image} className='uploaded-image' alt='Uploaded'/>*/}
-                                                {/*</Col>*/}
                                             </div>
                                             :
                                             <div>
