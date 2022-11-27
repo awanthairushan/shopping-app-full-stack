@@ -17,6 +17,7 @@ import AdminApp from "./view/AdminApp";
 import Products from "./components/Admin/Products/Products";
 import Orders from "./components/Admin/Orders/Orders";
 import AddProduct from "./components/Admin/Products/AddProduct";
+import ViewOrder from "./components/Admin/Orders/ViewOrder";
 
 const App = () => {
     const {addToast} = useToasts();
@@ -69,6 +70,7 @@ const App = () => {
                     <Route path='/admin/products' element={<Products/>}/>
                     <Route path='/admin/products/addproduct' element={<AddProduct/>}/>
                     <Route path='/admin/orders' element={<Orders/>}/>
+                    <Route path='/admin/orders/view-order' element={<ViewOrder/>}/>
                 </Route>
             </Routes>
         </BrowserRouter>
