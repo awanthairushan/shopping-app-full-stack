@@ -75,7 +75,7 @@ const ProductsListItem: FC<ProductTableItemProps> = (product) => {
           confirmButtonText: "Yes, delete it!",
         }).then((result: any) => {
           if (result.isConfirmed) {
-            addToast("Product deleted", {appearance: 'success', autoDismiss: true});
+            addToast("Product deleted", {appearance: 'success', autoDismiss: true, placement:'top-right'});
           }
         });
       };
