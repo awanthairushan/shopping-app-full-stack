@@ -6,14 +6,17 @@ import {IProduct} from "../../../Types/IProduct";
 import {BsFillCircleFill} from "react-icons/bs";
 import Swal from "sweetalert2";
 import {useToasts} from 'react-toast-notifications';
+import {useNavigate} from "react-router-dom";
 
 type ProductTableItemProps = {
     product: IProduct
 }
 
-
 const ProductsListItem: FC<ProductTableItemProps> = (product) => {
     const {addToast} = useToasts();
+
+    const navigate = useNavigate();
+
     const productItem = product.product;
     let temp_products = [
         {
@@ -79,6 +82,11 @@ const ProductsListItem: FC<ProductTableItemProps> = (product) => {
           }
         });
       };
+    const handleOnViewClick = () => {
+        //  this isDisabled need to create in redux store and have to send data from here
+        // isDisabled = true;
+        navigate('/admin/products/addproduct');
+    }
 
     return (
         <tr className='product-table-item'>
@@ -99,7 +107,7 @@ const ProductsListItem: FC<ProductTableItemProps> = (product) => {
                 {productItem.category}
             </td>
             <td className="p-lg-0 py-1">
-                Rs.{(Math.round(productItem.price * 100) / 100).toFixed(2)}
+                Rs.{(Math.round(parseFloat(productItem.price) * 100) / 100).toFixed(2)}
             </td>
             <td className="p-lg-0 py-1">
                 {productItem.quantity}
@@ -110,7 +118,7 @@ const ProductsListItem: FC<ProductTableItemProps> = (product) => {
             <td className="p-lg-0 py-1">
                 <Row className='mx-0'>
                     <Col className='d-flex px-0 product-table-item-actions justify-content-around'>
-                        <Eye className="btn-eye" size={'18px'} color={'black'}/>
+                        <Eye className="btn-eye" size={'18px'} color={'black'} onClick={handleOnViewClick}/>
                         <Edit2 className="btn-edit" size={'18px'} color={'#D0A617'}/>
                         <Trash2 className="btn-trash2" size={'18px'} color={'#F42B3D'} onClick={handleOnClick}/>
                     </Col>
